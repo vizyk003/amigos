@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;background:#FAFAF6;}
+    a{color:#437613;} a:hover{color:#2A4A0B;}
+    @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
+    @media (max-height: 640px){ [data-m="hint"]{display:none !important;} [data-m="caption"]{display:none !important;} }
+  </style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:#171C12;">
+  <div data-m="runway" style="position:relative;height:340vh;">
+    <section data-screen-label="Video hero" style="position:sticky;top:0;height:100vh;overflow:hidden;background:#437613;">
+
+      <div data-m="pattern" aria-hidden="true" style="position:absolute;left:-0.04em;bottom:-0.16em;font-family:var(--font-display);font-weight:600;font-size:clamp(220px,34vw,560px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">BARÁTSÁG</div>
+
+      <div data-m="frame" style="position:absolute;inset:0;clip-path:inset(28% 34% 28% 34%);will-change:clip-path;">
+        <video data-m="video" poster="assets/lens-friendship.png" muted="" playsinline="" loop="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:transform;"></video>
+        <div data-m="scrim" style="position:absolute;inset:0;background:#24410A;opacity:0.18;will-change:opacity;"></div>
+      </div>
+
+      <header style="position:relative;display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,48px);z-index:3;">
+        <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 65px; width: auto; display: block">
+        <nav style="display:flex;gap:32px;font-size:var(--text-nav);font-weight:500;">
+          <a href="#" style="color:#FFFFFF;text-decoration:none;">Rólunk</a>
+          <a href="#" style="color:#FFFFFF;text-decoration:none;">Legyél Amigo</a>
+          <a href="#" style="color:#FFFFFF;text-decoration:none;">Támogass</a>
+        </nav>
+      </header>
+
+      <div data-m="copy" style="position:relative;z-index:3;max-width:1280px;margin:0 auto;padding:clamp(40px,8vh,110px) clamp(20px,4vw,48px) clamp(88px,15vh,150px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,4vw,48px);will-change:transform,opacity;">
+        <div style="grid-column:1 / span 8;display:flex;flex-direction:column;gap:32px;">
+          <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Amigos a gyerekekért</div>
+          <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);color:#FFFFFF;max-width:13ch;text-wrap:pretty;">
+            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block; width: 610px; height: 96px">A barátság</span></span>
+            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block; width: 615px; height: 91px">csodákra képes.</span></span>
+          </h1>
+          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:40ch;color:#FFFFFF;text-wrap:pretty;">300 egyetemista Amigo jár hetente kórházban fekvő gyerekekhez játszani, tanulni, barátkozni.</p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="#" hint-size="auto,52px">Legyél Te is Amigo</x-import>
+            <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverseOutline" size="lg" href="#" hint-size="auto,52px">Támogasd a munkánkat</x-import>
+          </div>
+        </div>
+      </div>
+
+      <div data-m="line" style="position:absolute;z-index:3;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 clamp(20px,4vw,48px);text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;">
+        <p style="margin:0 auto;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:#FFFFFF;max-width:20ch;text-wrap:balance;">Minden barátság egy találkozással kezdődik.</p>
+      </div>
+
+      <div data-m="line2" style="position:absolute;z-index:3;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 clamp(20px,4vw,48px);text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;">
+        <p style="margin:0 auto;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:#FFFFFF;max-width:20ch;text-wrap:balance;">Egy közös játékkal, egy közös nevetéssel.</p>
+      </div>
+
+      
+
+      <div style="position:absolute;z-index:4;right:clamp(20px,4vw,48px);bottom:28px;display:flex;gap:10px;">
+        <button data-m="sound" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF;background:transparent;border:2px solid #FFFFFF;border-radius:999px;padding:9px 18px;cursor:pointer;" style-hover="background:rgba(255,255,255,0.12)">Hang be</button>
+        <button data-m="toggle" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF;background:transparent;border:2px solid #FFFFFF;border-radius:999px;padding:9px 18px;cursor:pointer;" style-hover="background:rgba(255,255,255,0.12)">Szünet</button>
+      </div>
+
+      <div data-m="hint" style="position:absolute;z-index:4;left:50%;bottom:24px;width:2px;height:min(56px,6vh);display:var(--hint-display,block);background:rgba(255,255,255,0.35);overflow:hidden;pointer-events:none;">
+        <span data-m="hintfill" style="position:absolute;left:0;top:0;width:2px;height:100%;background:#FFFFFF;display:block;transform:translateY(-100%);"></span>
+      </div>
+    </section>
+  </div>
+
+  <section data-screen-label="Numbers" data-m="numbers" style="position:relative;background:#FAFAF6;overflow:hidden;padding:clamp(120px,18vh,220px) 0 clamp(96px,14vh,180px);">
+    <div data-m="pattern2" aria-hidden="true" style="position:absolute;left:-0.04em;top:-0.12em;font-family:var(--font-display);font-weight:600;font-size:clamp(220px,34vw,560px);line-height:1;letter-spacing:-0.03em;color:#EEF3E8;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">HETENTE</div>
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,4vw,48px);">
+      <div style="grid-column:1 / span 5;display:flex;flex-direction:column;gap:20px;">
+        <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Hat városban</div>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:#171C12;max-width:16ch;text-wrap:pretty;">Egyetemista Amigók, akik minden héten visszajönnek.</h2>
+      </div>
+      <div style="grid-column:7 / span 6;display:grid;grid-template-columns:1fr;border-top:1px solid #DDE3D5;">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid #DDE3D5;">
+          <span style="font-size:var(--text-body);color:#171C12;">Egyetemista Amigo önkéntes</span>
+          <span data-count="300" style="font-family:var(--font-display);font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.02em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid #DDE3D5;">
+          <span style="font-size:var(--text-body);color:#171C12;">Amigo város</span>
+          <span data-count="6" style="font-family:var(--font-display);font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.02em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid #DDE3D5;">
+          <span style="font-size:var(--text-body);color:#171C12;">Gyerek, akivel 2025-ben foglalkoztunk</span>
+          <span data-count="20770" style="font-family:var(--font-display);font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.02em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;videoSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Video&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const q = s => document.querySelector(s);
+    const bind = () => {
+      this.runway = q('[data-m="runway"]'); if (!this.runway) return false;
+      this.frame = q('[data-m="frame"]'); this.video = q('[data-m="video"]');
+      this.scrim = q('[data-m="scrim"]'); this.pattern = q('[data-m="pattern"]');
+      this.copy = q('[data-m="copy"]'); this.line = q('[data-m="line"]'); this.line2 = q('[data-m="line2"]');
+      this.hintfill = q('[data-m="hintfill"]'); this.dot = q('[data-m="dot"]');
+      this.words = Array.from(document.querySelectorAll('[data-m="wi"]'));
+      // placeholder stock footage (CC0) until the brand film is cut — swap via the videoSrc prop
+      const list = [this.props.videoSrc, 'https://www.pexels.com/download/video/8556936/', 'https://www.pexels.com/download/video/3681881/', 'https://www.pexels.com/download/video/5272794/', 'https://mdn.github.io/shared-assets/videos/flower.mp4'].filter(Boolean);
+      if (this.video) {
+        this.video.muted = true; this.video.defaultMuted = true;
+        this.video.autoplay = true; this.video.setAttribute('autoplay', '');
+        this.video.loop = true; this.video.setAttribute('loop', '');
+        this.video.addEventListener('ended', () => { this.video.currentTime = 0; this.video.play().catch(() => {}); });
+        let i = 0;
+        const tryNext = () => { if (i >= list.length) return; this.video.src = list[i++]; this.video.play().catch(() => {}); };
+        this.video.addEventListener('error', tryNext);
+        tryNext();
+      }
+      const snd = q('[data-m="sound"]'), tog = q('[data-m="toggle"]');
+      if (snd) snd.onclick = () => { if (!this.video) return; this.video.muted = !this.video.muted; snd.textContent = this.video.muted ? 'Hang be' : 'Hang ki'; };
+      if (tog && this.video) { const sync = () => { tog.textContent = this.video.paused ? 'Lejátszás' : 'Szünet'; }; this.video.addEventListener('play', sync); this.video.addEventListener('pause', sync); sync(); }
+      if (snd && this.video) snd.textContent = this.video.muted ? 'Hang be' : 'Hang ki';
+      if (tog) tog.onclick = () => { if (!this.video) return; if (this.video.paused) { this.video.play().catch(() => {}); tog.textContent = 'Szünet'; this.scrollToFull(); } else { this.video.pause(); tog.textContent = 'Lejátszás'; } };
+      if (this.frame) { this.frame.style.cursor = 'pointer'; this.frame.onclick = () => this.scrollToFull(); }
+      return true;
+    };
+    if (!bind()) { const iv = setInterval(() => { if (bind()) { clearInterval(iv); this.start(); } }, 100); return; }
+    this.start();
+  }
+  start() {
+    // opening: headline blocks clip up from a hard line, frame eases open a touch
+    if (!this.reduced) {
+      this.words.forEach((w, i) => {
+        w.style.transform = 'translateY(105%)';
+        w.style.transition = `transform 620ms cubic-bezier(0.2,0.7,0.2,1) ${120 + i * 90}ms`;
+        void w.offsetHeight; // same-frame reflow so the end pose always lands
+        w.style.transform = 'translateY(0)';
+        setTimeout(() => { w.style.transition = ''; w.style.transform = ''; }, 900 + i * 90);
+      });
+      if (this.frame) {
+        this.frame.style.transition = 'clip-path 900ms cubic-bezier(0.2,0.7,0.2,1)';
+        this.frame.style.clipPath = 'inset(34% 40% 34% 40%)';
+        requestAnimationFrame(() => { this.frame.style.clipPath = 'inset(28% 34% 28% 34%)'; setTimeout(() => { this.frame.style.transition = ''; }, 950); });
+      }
+    }
+    // the opening stretch (p 0 → FULL) is binary: the page rests only at the start or at full bleed
+    this.FULL = 0.42;
+    const geo = () => { const top = this.runway.getBoundingClientRect().top + window.scrollY; const span = this.runway.offsetHeight - window.innerHeight; return { top, span, p: (window.scrollY - top) / span }; };
+    const gesture = e => {
+      if (this.reduced || !this.runway) return;
+      if (this.snapping) { e.preventDefault(); return; }
+      const { p } = geo();
+      const dy = e.type === 'wheel' ? e.deltaY : (this.touchY != null ? this.touchY - e.touches[0].clientY : 0);
+      if (Math.abs(dy) < 2) return;
+      if (dy > 0 && p > -0.01 && p < this.FULL - 0.005) { e.preventDefault(); this.flyTo(this.FULL); }
+      else if (dy < 0 && p > 0.005 && p <= this.FULL + 0.005) { e.preventDefault(); this.flyTo(0); }
+    };
+    window.addEventListener('wheel', gesture, { passive: false });
+    window.addEventListener('touchstart', e => { this.touchY = e.touches[0].clientY; }, { passive: true });
+    window.addEventListener('touchmove', gesture, { passive: false });
+    // scrollbar / keyboard fallback: if the page settles between the two poses, finish toward the nearer one
+    window.addEventListener('scroll', () => {
+      if (this.reduced || this.snapping || !this.runway) return;
+      clearTimeout(this.snapT);
+      this.snapT = setTimeout(() => {
+        if (this.snapping) return;
+        const { p } = geo();
+        if (p > 0.005 && p < this.FULL - 0.005) this.flyTo(p < this.FULL * 0.3 ? 0 : this.FULL);
+      }, 100);
+    }, { passive: true });
+    this.alive = true; this.last = -1;
+    const loop = () => {
+      if (!this.alive) return;
+      requestAnimationFrame(loop);
+      const k = window.scrollY + ':' + window.innerWidth + ':' + window.innerHeight;
+      if (k !== this.last) { this.last = k; try { this.apply(); } catch (e) { if (!this.warned) { this.warned = 1; console.warn(e); } } }
+      this.pulse();
+    };
+    requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { this.alive = false; }
+  scrollToFull() { this.flyTo(this.FULL || 0.42); }
+  flyTo(pt) {
+    // own the tween so a trailing gesture can't interrupt native smooth scrolling mid-flight
+    if (!this.runway) return;
+    const top = this.runway.getBoundingClientRect().top + window.scrollY;
+    const target = Math.round(top + (this.runway.offsetHeight - window.innerHeight) * pt);
+    if (this.reduced) { window.scrollTo(0, target); return; }
+    const from = window.scrollY, dist = target - from, t0 = performance.now(), dur = 760;
+    this.snapping = true;
+    const step = now => {
+      const t = Math.min(1, (now - t0) / dur);
+      const e = 1 - Math.pow(1 - t, 3);
+      window.scrollTo(0, from + dist * e);
+      if (t < 1) requestAnimationFrame(step);
+      else { window.scrollTo(0, target); clearTimeout(this.snapT); setTimeout(() => { this.snapping = false; }, 120); }
+    };
+    requestAnimationFrame(step);
+  }
+  pulse() {
+    // idle scroll hint draws down, then resets — the only loop on the page
+    if (this.reduced || !this.hintfill) return;
+    const t = (performance.now() % 2600) / 2600;
+    const e = t < 0.75 ? 1 - Math.pow(1 - t / 0.75, 3) : 1;
+    this.hintfill.style.transform = `translateY(${(e - 1) * 100}%)`;
+    this.hintfill.style.opacity = t > 0.85 ? String(1 - (t - 0.85) / 0.15) : '1';
+  }
+  apply() {
+    const vh = window.innerHeight;
+    if (this.runway && !this.reduced) {
+      const top = this.runway.getBoundingClientRect().top + window.scrollY;
+      const p = Math.max(0, Math.min(1, (window.scrollY - top) / (this.runway.offsetHeight - vh)));
+      const ease = t => 1 - Math.pow(1 - t, 3);
+      const seg = (a, b) => ease(Math.max(0, Math.min(1, (p - a) / (b - a))));
+      // 1 · the frame opens from a slit to full bleed
+      const open = seg(0, 0.42);
+      const insetY = 28 * (1 - open), insetX = 34 * (1 - open);
+      if (this.frame) this.frame.style.clipPath = `inset(${insetY}% ${insetX}% ${insetY}% ${insetX}%)`;
+      if (this.video) this.video.style.transform = `scale(${1.12 - 0.12 * open})`;
+      // 2 · scrim deepens only as much as the copy over it needs
+      // scrim stays clear through the full-bleed pose; it only deepens for the film lines
+      if (this.scrim) this.scrim.style.opacity = String(0.18 * (1 - seg(0.3, 0.42)) + 0.52 * seg(0.44, 0.56));
+      if (this.pattern) this.pattern.style.transform = `translate3d(${-window.innerWidth * 0.5 * seg(0, 0.5)}px,0,0)`;
+      // 3 · hero copy hands over to the two film lines
+      const out = seg(0.18, 0.34);
+      if (this.copy) { this.copy.style.opacity = String(1 - out); this.copy.style.transform = `translate3d(0,${-48 * out}px,0)`; }
+      const a1 = seg(0.42, 0.55) * (1 - seg(0.62, 0.72));
+      const a2 = seg(0.74, 0.86);
+      if (this.line) { this.line.style.opacity = String(a1); this.line.style.transform = `translate3d(0,calc(-50% + ${(1 - a1) * 24}px),0)`; }
+      if (this.line2) { this.line2.style.opacity = String(a2); this.line2.style.transform = `translate3d(0,calc(-50% + ${(1 - a2) * 24}px),0)`; }
+    }
+    this.numbers(vh);
+  }
+  numbers(vh) {
+    const sec = document.querySelector('[data-m="numbers"]'); if (!sec) return;
+    const r = sec.getBoundingClientRect();
+    const pat = sec.querySelector('[data-m="pattern2"]');
+    if (pat && !this.reduced) pat.style.transform = `translate3d(${-(vh - r.top) * 0.35}px,0,0)`;
+    const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    sec.querySelectorAll('[data-count]').forEach(el => {
+      const target = +el.dataset.count;
+      const t = Math.max(0, Math.min(1, (vh * 0.9 - el.getBoundingClientRect().top) / (vh * 0.25)));
+      const v = fmt(target * (1 - Math.pow(1 - t, 3)));
+      if (el.textContent !== v) el.textContent = v;
+    });
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

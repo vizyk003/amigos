@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html,body{margin:0;background:#FAFAF6;}
+    a{color:#437613;} a:hover{color:#2A4A0B;}
+    @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;animation:none !important;} }
+    @keyframes am-wave-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}
+    @keyframes am-wave-drift{0%{transform:translate(-50%,0);}50%{transform:translate(-50%,1.5px);}100%{transform:translate(-50%,0);}}
+    @media (prefers-reduced-motion: reduce){ [data-wave]{animation:none !important;} [data-wave] path{animation:none !important;stroke-dashoffset:0 !important;} }
+
+    @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
+    @media (max-width: 1150px){ [data-kid-side]{height:clamp(160px,20vw,240px) !important;} }
+    @media (max-width: 760px){ [data-kid-side]{display:none !important;} }
+    @media (max-width: 680px){ #kalandok [data-kid-card]{grid-column:1 / -1;} }
+    @keyframes am-bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  </style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:#171C12;">
+
+  <header style="position:sticky;top:0;z-index:30;background:#FAFAF6;border-bottom:1px solid #DDE3D5;">
+    <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
+      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;"></a>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+        <a href="Legyel Amigo.dc.html" style="color:#171C12;text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Legyél Amigo</a>
+        <a href="Munkank es hatasunk.dc.html" style="color:#171C12;text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" aria-current="page" style="color:#437613;text-decoration:none;font-weight:600;position:relative;display:inline-block;">Gyerekek &amp; Szülők<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 620ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Adomanybolt.dc.html" style="color:#171C12;text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Adománybolt</a>
+      </nav>
+      <div style="display:flex;justify-content:flex-end;">
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+      </div>
+    </div>
+  </header>
+
+  <section data-screen-label="Hero" style="background:#FAFAF6;padding:clamp(64px,9vw,120px) 0 clamp(56px,8vw,104px);">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:28px;">
+        <span style="font-size:13px;color:#5A6650;">Főoldal / Gyerekek és szülők</span>
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Családoknak</span>
+        <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);max-width:14ch;text-wrap:pretty;">
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--am-green-700)">Mi történik,</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">amikor bekopog</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">egy Amigo?</span></span>
+        </h1>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:44ch;color:#3A4433;text-wrap:pretty;">Röviden: semmi kötelező. A gyerek dönti el, hogy van-e kedve, és hogy mihez. Ez az oldal két részből áll — az első a szülőknek szól, a második a gyerekeknek.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:4px;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="primary" size="lg" href="#szuloknek" hint-size="auto,52px">Szülőknek</x-import>
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="lg" href="#gyerekeknek" hint-size="auto,52px">Gyerekeknek — Kalandozz!</x-import>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#E7EEDF;">
+          <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2024/09/Baratokkal-baratkent-a-gyerekekert-scaled.jpg" alt="Amigo és gyerek közös játék közben" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#5A6650;text-align:center;">Közös játék egy heti foglalkozáson</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="szuloknek" data-screen-label="Szülőknek — a foglalkozás" style="background:#FFFFFF;border-top:1px solid #DDE3D5;padding:clamp(88px,12vw,160px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(40px,6vw,72px);">
+      <div data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Szülőknek</span>
+          <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Egy foglalkozás, lépésről lépésre</h2>
+        </div>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:#3A4433;">Heti egy alkalom, kb. két óra. Az Amigo mindig ugyanaz a személy, mindig bemutatkozik, és mindig az ápolókkal egyeztet, mielőtt bekopog.</p>
+      </div>
+      <div style="position:relative;">
+        <svg data-m="kotes" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:28px;overflow:visible;pointer-events:none;z-index:0;opacity:0;"><path data-m="kotespath" fill="none" stroke="#437613" stroke-width="2"></path></svg>
+        <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,3vw,40px);">
+          <div data-step="" style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;">
+            <span style="width:28px;height:28px;border-radius:50%;background:#437613;display:block;"></span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">01</span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Bejelentkezés</span>
+            <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Az Amigo az osztályon jelentkezik be, és az ápolókkal egyeztet, kihez mehet be aznap.</span>
+          </div>
+          <div data-step="" style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;">
+            <span style="width:28px;height:28px;border-radius:50%;background:#437613;display:block;"></span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">02</span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Kopogás</span>
+            <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Megkérdezi a gyereket, van-e kedve. A nem is válasz — és semmit nem befolyásol.</span>
+          </div>
+          <div data-step="" style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;">
+            <span style="width:28px;height:28px;border-radius:50%;background:#437613;display:block;"></span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">03</span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Együtt töltött idő</span>
+            <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Játék, beszélgetés, tanulás, LEGO, rajz — amit a gyerek választ. Az ágy mellett is működik.</span>
+          </div>
+          <div data-step="" style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;">
+            <span style="width:28px;height:28px;border-radius:50%;background:#437613;display:block;"></span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">04</span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Elköszönés</span>
+            <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Megbeszélik, mikor jön legközelebb. Ugyanazon a napon, ugyanabban az időben.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Szülőknek — adatok és kapcsolat" style="background:#FAFAF6;padding:clamp(88px,12vw,160px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,104px);align-items:start;">
+      <div data-sticky="" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:20px;">
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Amit jó tudni</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Fotók, adatok, kihez fordulhatsz</h2>
+        <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:38ch;color:#3A4433;">A gyerekek méltósága az első. Ezek a szabályok minden Amigóra, minden osztályon érvényesek.</p>
+        <a href="Amigos Aloldalak.dc.html#adatkezeles" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Adatkezelési tájékoztató →</a>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #DDE3D5;">
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span aria-hidden="true" style="width:14px;height:14px;border-radius:50%;border:2px solid #437613;margin-top:7px;"></span>
+          <span style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Fénykép csak írásos hozzájárulással</span><span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">És akkor is úgy, hogy a gyerek ne legyen azonosítható. A hozzájárulás bármikor visszavonható.</span></span>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span aria-hidden="true" style="width:14px;height:14px;border-radius:50%;border:2px solid #437613;margin-top:7px;"></span>
+          <span style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Nevet, diagnózist nem kérdezünk és nem tárolunk</span><span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Az Amigók nem egészségügyi dolgozók. Amit a gyerek magáról elmond, az köztük marad.</span></span>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span aria-hidden="true" style="width:14px;height:14px;border-radius:50%;border:2px solid #437613;margin-top:7px;"></span>
+          <span style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Minden Amigo képzett és kísért</span><span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Felvételi, Amigos Akadémia, Senior Amigo. Az első alkalmakra nem megy be egyedül.</span></span>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span aria-hidden="true" style="width:14px;height:14px;border-radius:50%;border:2px solid #437613;margin-top:7px;"></span>
+          <span style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Van, akihez fordulhatsz</span><span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Minden osztálynak saját Amigo-felelőse van. Kérdéssel, visszajelzéssel őt keresd — az elérhetősége az osztályon ki van függesztve.</span></span>
+        </div>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;padding-top:26px;">
+          <a href="Amigos Aloldalak.dc.html#kapcsolat" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Kapcsolat →</a>
+          <a href="Amigos Aloldalak.dc.html#csaladoknak-gyik" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Gyakori kérdések →</a>
+          <a href="#" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Jelezz vissza egy foglalkozásról →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div data-screen-label="Váltás" style="position:relative;background:#FAFAF6;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px) 40px;display:flex;align-items:center;gap:16px;">
+      <span style="flex:1;height:1px;background:#DDE3D5;"></span>
+      <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#993166;">Innentől a gyerekeknek szól</span>
+      <span style="flex:1;height:1px;background:#DDE3D5;"></span>
+    </div>
+  </div>
+
+  <section id="gyerekeknek" data-screen-label="Gyerekeknek — Kalandozz" style="position:relative;overflow:hidden;color:#FFFFFF;background:#993166 url('assets/backgrounds/brush-purple.png') center/cover;padding:clamp(72px,10vw,128px) 0 clamp(56px,8vw,96px);">
+    <img data-kid-side="" data-m="aladar" src="assets/characters/aladar-hero.png" alt="" style="position:absolute;left:clamp(-40px,2vw,60px);bottom:0;height:clamp(240px,30vw,460px);width:auto;display:block;pointer-events:none;will-change:transform;">
+    <img data-kid-side="" data-m="abigel" src="assets/characters/abigel-hero.png" alt="" style="position:absolute;right:clamp(-40px,2vw,60px);bottom:0;height:clamp(240px,30vw,460px);width:auto;display:block;pointer-events:none;will-change:transform;">
+    <div style="position:relative;max-width:840px;margin:0 auto;padding:0 clamp(20px,4vw,48px) clamp(160px,22vw,0px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;">
+      <span style="font-family:'Amatic SC',cursive;font-weight:700;font-size:clamp(28px,3.4vw,40px);letter-spacing:0.04em;color:#F2DCE8;">Szia! Mi vagyunk az Amigók.</span>
+      <h2 style="margin:0;font-family:'Amatic SC',cursive;font-weight:700;font-size:clamp(72px,11vw,160px);line-height:0.95;letter-spacing:0.02em;color:#FFFFFF;text-wrap:balance;">Kalandozz velünk!</h2>
+      <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:36ch;color:#FFFFFF;text-wrap:pretty;">Játékok és kalandok azokra a napokra, amikor nem lehet felkelni az ágyból. Nem kell hozzá semmi, csak te.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;padding-top:8px;">
+        <a href="#kalandok" style="display:inline-flex;align-items:center;justify-content:center;height:64px;padding:0 36px;border-radius:999px;background:#E4B21C;color:#171C12;font-family:'Amatic SC',cursive;font-weight:700;font-size:32px;letter-spacing:0.04em;text-decoration:none;">Nézd meg a kurzusokat!</a>
+        <a href="#eszkozok" style="display:inline-flex;align-items:center;justify-content:center;height:64px;padding:0 36px;border-radius:999px;border:3px solid #FFFFFF;color:#FFFFFF;font-family:'Amatic SC',cursive;font-weight:700;font-size:32px;letter-spacing:0.04em;text-decoration:none;">Mit hozunk?</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="kalandok" data-screen-label="Kurzusok" style="background:#FAF2F6;padding:clamp(72px,10vw,128px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,5vw,56px);">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+        <h2 style="margin:0;font-family:'Amatic SC',cursive;font-weight:700;font-size:clamp(48px,7vw,88px);line-height:1;letter-spacing:0.02em;color:#993166;">Nézd meg, milyen kurzusokkal várunk!</h2>
+        <span style="font-size:var(--text-body-lg);color:#3A4433;max-width:44ch;">Mind ingyenes, és egyetemista Amigók tartják. Bármikor megállhatsz, és folytathatod.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,32px);">
+        <a href="https://kalandozz.amigos.hu" data-kid-card="" style="display:flex;flex-direction:column;gap:18px;background:#8A5A20;border-radius:24px;padding:24px;text-decoration:none;color:#FFFFFF;border:3px solid transparent;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="transform:translateY(-4px)">
+          <span style="display:block;border-radius:16px;overflow:hidden;background:#FFFFFF;"><img src="assets/kalandozz/kalandor.png" alt="Amigos Kalandor" style="width:100%;height:auto;display:block;"></span>
+          <span style="font-family:'Amatic SC',cursive;font-weight:700;font-size:48px;line-height:1;letter-spacing:0.02em;">Kalandor</span>
+          <span style="font-size:var(--text-body);line-height:var(--lh-body);">Ismerd meg öt ország kultúráját egyetemista önkénteseink vezetésével!</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;">Jelentkezem <span aria-hidden="true">→</span></span>
+        </a>
+        <a href="https://kalandozz.amigos.hu" data-kid-card="" style="display:flex;flex-direction:column;gap:18px;background:#993166;border-radius:24px;padding:24px;text-decoration:none;color:#FFFFFF;border:3px solid transparent;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="transform:translateY(-4px)">
+          <span style="display:block;border-radius:16px;overflow:hidden;background:#FFFFFF;"><img src="assets/kalandozz/szintlepo.png" alt="SzintLépő nyelvi kurzusok" style="width:100%;height:auto;display:block;"></span>
+          <span style="font-family:'Amatic SC',cursive;font-weight:700;font-size:48px;line-height:1;letter-spacing:0.02em;">SzintLépő</span>
+          <span style="font-size:var(--text-body);line-height:var(--lh-body);">Emeld új szintre nyelvtudásod angol, német, francia, spanyol és olasz nyelvekből!</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;">Irány a kurzusok <span aria-hidden="true">→</span></span>
+        </a>
+        <a href="https://kalandozz.amigos.hu" data-kid-card="" style="display:flex;flex-direction:column;gap:18px;background:#3C5A6B;border-radius:24px;padding:24px;text-decoration:none;color:#FFFFFF;border:3px solid transparent;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="transform:translateY(-4px)">
+          <span style="display:block;border-radius:16px;overflow:hidden;background:#FFFFFF;"><img src="assets/kalandozz/mi-leszek.png" alt="Mi leszek, ha nagy leszek? — pályaválasztási videók" style="width:100%;height:auto;display:block;"></span>
+          <span style="font-family:'Amatic SC',cursive;font-weight:700;font-size:48px;line-height:1;letter-spacing:0.02em;">Mi leszek, ha nagy leszek?</span>
+          <span style="font-size:var(--text-body);line-height:var(--lh-body);">Ismerkedj meg különböző szakmákkal egyetemista önkénteseink tapasztalatain keresztül!</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;">Megnézem a videókat <span aria-hidden="true">→</span></span>
+        </a>
+        <a href="https://kalandozz.amigos.hu" data-kid-card="" style="display:flex;flex-direction:column;gap:18px;background:#5E7A56;border-radius:24px;padding:24px;text-decoration:none;color:#FFFFFF;border:3px solid transparent;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="transform:translateY(-4px)">
+          <span style="display:block;border-radius:16px;overflow:hidden;background:#FFFFFF;"><img src="assets/kalandozz/nagyvilag.png" alt="Kalandozzunk együtt a nagyvilágban!" style="width:100%;height:auto;display:block;"></span>
+          <span style="font-family:'Amatic SC',cursive;font-weight:700;font-size:48px;line-height:1;letter-spacing:0.02em;">Kalandozzunk együtt!</span>
+          <span style="font-size:var(--text-body);line-height:var(--lh-body);">Tarts velünk egy utazáson, ahol felfedezheted országok hagyományait és ételeit!</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;">Kalandra fel <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      <div style="display:flex;justify-content:center;">
+        <a href="https://kalandozz.amigos.hu" style="display:inline-flex;align-items:center;justify-content:center;height:64px;padding:0 36px;border-radius:999px;background:#993166;color:#FFFFFF;font-family:'Amatic SC',cursive;font-weight:700;font-size:32px;letter-spacing:0.04em;text-decoration:none;">Irány a kalandozz.amigos.hu</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="eszkozok" data-screen-label="Mit hozunk" style="background:#FFFFFF;padding:clamp(72px,10vw,128px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,5vw,56px);">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+        <h2 style="margin:0;font-family:'Amatic SC',cursive;font-weight:700;font-size:clamp(48px,7vw,88px);line-height:1;letter-spacing:0.02em;color:#993166;">Ezeket hozzuk magunkkal</h2>
+        <span style="font-size:var(--text-body-lg);color:#3A4433;">Ha egy Amigo bekopog, valamelyik biztosan a táskájában van.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(20px,3vw,32px);">
+        <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;background:#FAF2F6;border-radius:24px;padding:32px 24px;">
+          <img src="assets/sub-brands/amigos-mini-badge.png" alt="Amigos Mini" style="height:120px;width:auto;display:block;">
+          <span style="font-family:'Amatic SC',cursive;font-weight:700;font-size:40px;line-height:1;color:#993166;">Amigos Mini</span>
+          <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:28ch;">A legkisebbeknek: mesék, bábok, puha játékok.</span>
+        </div>
+        <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;background:#FFF3D6;border-radius:24px;padding:32px 24px;">
+          <img src="assets/sub-brands/tanultablet-wordmark.png" alt="TanulTablet" style="height:120px;width:auto;display:block;object-fit:contain;">
+          <span style="font-family:'Amatic SC',cursive;font-weight:700;font-size:40px;line-height:1;color:#993166;">TanulTablet</span>
+          <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:28ch;">Hogy a suli ne maradjon le — de játékosan.</span>
+        </div>
+        <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;background:#E6EEDC;border-radius:24px;padding:32px 24px;">
+          <img src="assets/sub-brands/amigos-online-badge.png" alt="Amigos Online" style="height:120px;width:auto;display:block;">
+          <span style="font-family:'Amatic SC',cursive;font-weight:700;font-size:40px;line-height:1;color:#993166;">Amigos Online</span>
+          <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:28ch;">Ha nem tudunk bemenni, videón is játszunk veled.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Az Amigók" style="position:relative;overflow:hidden;background:#993166;color:#FFFFFF;padding:clamp(64px,9vw,112px) 0 0;">
+    <div style="max-width:840px;margin:0 auto;padding:0 clamp(20px,4vw,48px) clamp(32px,5vw,56px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;">
+      <h2 style="margin: 0; font-family: 'Amatic SC',cursive; font-weight: 700; font-size: clamp(48px,7vw,88px); line-height: 1; letter-spacing: 0.02em; color: var(--bg-surface)">Jövő héten is jövünk!</h2>
+      <span style="font-size:var(--text-body-lg);color:#F2DCE8;max-width:36ch;">Ugyanazon a napon, ugyanabban az időben. Addig is: kalandozz!</span>
+    </div>
+    <div data-m="lineup" style="display:flex;justify-content:center;overflow:hidden;">
+      <img src="assets/characters/amigos-lineup.png" alt="Az Amigók" style="width:min(100%,1100px);height:auto;display:block;transform:translateY(6%);">
+    </div>
+  </section>
+
+  <footer style="background:#171C12;color:#FFFFFF;padding:clamp(48px,7vw,80px) 0 32px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+      <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 65px; width: 65px; display: block">
+          <span style="font-size:15px;line-height:1.5;color:#C7CFC0;max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:#C7CFC0;">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">Ügyintézés</span>
+            <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Dokumentumok</a>
+            <a href="Blog.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Blog</a>
+            <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Átláthatóság</a>
+            <a href="Amigos Aloldalak.dc.html#gyik" style="color:#FFFFFF;text-decoration:none;font-size:15px;">GYIK</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">Támogatás</span>
+            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Ado 1 szazalek.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <a href="Adomanybolt.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Adománybolt</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">Jogi</span>
+            <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="Amigos Aloldalak.dc.html#aszf" style="color:#FFFFFF;text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="Amigos Aloldalak.dc.html#sitemap" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Oldaltérkép</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:#C7CFC0;">
+        <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const bind = () => {
+      this.path = document.querySelector('[data-m="kotespath"]');
+      this.aladar = document.querySelector('[data-m="aladar"]');
+      this.abigel = document.querySelector('[data-m="abigel"]');
+      if (!this.path) return false;
+      this.intro(); this.reveal(); this.layoutKotes();
+      window.addEventListener('resize', () => this.layoutKotes());
+      this.alive = true; this.last = -1;
+      const loop = () => {
+        if (!this.alive) return;
+        requestAnimationFrame(loop);
+        const k = window.scrollY + ':' + window.innerWidth;
+        if (k !== this.last) { this.last = k; try { this.apply(); } catch (e) {} }
+      };
+      requestAnimationFrame(loop);
+      return true;
+    };
+    if (!bind()) { const iv = setInterval(() => { if (bind()) clearInterval(iv); }, 100); }
+  }
+  componentWillUnmount() { this.alive = false; }
+  intro() {
+    if (this.reduced) return;
+    document.querySelectorAll('[data-m="wi"]').forEach((w, i) => {
+      w.style.transform = 'translateY(105%)';
+      w.style.transition = `transform 620ms cubic-bezier(0.2,0.7,0.2,1) ${100 + i * 80}ms`;
+      void w.offsetHeight;
+      w.style.transform = 'translateY(0)';
+      setTimeout(() => { w.style.transition = ''; w.style.transform = ''; }, 900 + i * 80);
+    });
+  }
+  layoutKotes() {
+    const svg = document.querySelector('[data-m="kotes"]');
+    if (!svg || !this.path) return;
+    const host = svg.parentElement;
+    const dots = Array.from(host.querySelectorAll('[data-step] > span:first-child'));
+    if (dots.length < 2) return;
+    const hb = host.getBoundingClientRect();
+    const pts = dots.map(d => { const r = d.getBoundingClientRect(); return { x: r.left - hb.left + r.width / 2, y: r.top - hb.top + r.height / 2 }; });
+    if (!pts.every(p => Math.abs(p.y - pts[0].y) < 6)) { svg.style.opacity = '0'; this.pathLen = 0; return; }
+    const y = pts[0].y;
+    let d = `M ${pts[0].x} ${y}`;
+    for (let i = 1; i < pts.length; i++) { const a = pts[i - 1], b = pts[i]; const lift = (i % 2 ? -1 : 1) * 10; d += ` C ${a.x + (b.x - a.x) * 0.35} ${y + lift}, ${a.x + (b.x - a.x) * 0.65} ${y - lift}, ${b.x} ${y}`; }
+    this.path.setAttribute('d', d);
+    svg.style.opacity = '1';
+    const len = this.path.getTotalLength();
+    this.pathLen = len; this.path.style.strokeDasharray = len; this.path.style.strokeDashoffset = this.reduced ? 0 : len;
+  }
+  reveal() {
+    if (this.reduced || !('IntersectionObserver' in window)) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal], [data-step], [data-kid-card]'));
+    els.forEach((el, i) => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
+      el.style.transition = `opacity 420ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 90}ms, transform 420ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 90}ms, border-color 200ms`;
+    });
+    const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); }), { rootMargin: '0px 0px -10% 0px' });
+    els.forEach(el => io.observe(el));
+  }
+  apply() {
+    const vh = window.innerHeight;
+    const clamp = t => Math.max(0, Math.min(1, t));
+    if (this.reduced) return;
+    if (this.path && this.pathLen) {
+      const r = this.path.closest('section').getBoundingClientRect();
+      const t = clamp((vh * 0.8 - r.top) / (vh * 0.55));
+      this.path.style.strokeDashoffset = String(this.pathLen * (1 - t));
+    }
+    // the two characters walk in from the edges as the kids' field arrives
+    if (this.aladar && this.abigel) {
+      const r = this.aladar.parentElement.getBoundingClientRect();
+      const t = clamp((vh * 0.95 - r.top) / (vh * 0.6));
+      const e = 1 - Math.pow(1 - t, 3);
+      this.aladar.style.transform = `translate3d(${-(1 - e) * 60}%,0,0)`;
+      this.abigel.style.transform = `translate3d(${(1 - e) * 60}%,0,0)`;
+    }
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

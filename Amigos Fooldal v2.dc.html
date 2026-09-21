@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <style>
+    @keyframes am-marquee{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
+    [data-marquee]:hover{animation-play-state:paused;}
+    @media (prefers-reduced-motion: reduce){ [data-marquee]{animation:none !important;} }
+    @keyframes am-wave-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}
+    [data-post]:hover [data-post-arrow]{transform:translateX(6px);}
+    [data-navlink]:hover [data-wave]{opacity:1;}
+    [data-navlink]:hover [data-wave] path{animation:am-wave-draw 460ms cubic-bezier(0.2,0.7,0.2,1) both;}
+    @media (prefers-reduced-motion: reduce){ [data-navlink]:hover [data-wave] path{animation:none;stroke-dashoffset:0;} }
+    html,body{margin:0;background:#FAFAF6;}
+    a{color:#437613;} a:hover{color:#2A4A0B;}
+    @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
+    #tamogatom input::placeholder{color:#F2DCE8;opacity:1;}
+    @media (max-width: 840px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-hero-copy]>div{grid-column:1 / -1 !important;} [data-utility]{display:none !important;} }
+    @media (max-height: 640px){ [data-m="hint"]{display:none !important;} }
+  </style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:#171C12;">
+
+
+  <div data-m="runway" style="position:relative;height:240vh;">
+    <section data-screen-label="Video hero" style="position:sticky;top:0;height:100vh;overflow:hidden;background:#437613;z-index:5;">
+
+      <div aria-hidden="true" style="position:absolute;inset:0;background:#437613;z-index:0;"></div>
+      <div data-m="pattern" style="position:absolute;left:-0.04em;bottom:-0.16em;font-family:var(--font-display);font-weight:600;font-size:clamp(220px,34vw,560px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">BARÁTSÁG</div>
+
+      <div data-m="frame" style="position:absolute;inset:0;z-index:1;background:#437613;clip-path:inset(28% 34% 28% 34%);will-change:clip-path;cursor:pointer;">
+        <img data-m="poster" src="assets/brandfilm-poster.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;display:block;opacity:1;transition:opacity 320ms cubic-bezier(0.2,0.7,0.2,1);">
+        <video data-m="video" muted="" playsinline="" loop="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:transform;"></video>
+        <div data-m="scrim" style="position:absolute;inset:0;background:#24410A;opacity:0.18;will-change:opacity;"></div>
+      </div>
+
+      <header data-split="" style="position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:22px clamp(20px,4vw,48px) 20px;z-index:6;">
+        <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:56px;width:auto;display:block;flex:none;">
+        <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+          <a data-navlink="" href="Legyel Amigo.dc.html" style="color:#FFFFFF;text-decoration:none;font-weight:600;position:relative;display:inline-block;">Legyél Amigo<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;opacity:0;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;"></path></svg></a>
+          <a data-navlink="" href="Munkank es hatasunk.dc.html" style="color:#FFFFFF;text-decoration:none;font-weight:600;position:relative;display:inline-block;">Munkánk &amp; Hatásunk<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;opacity:0;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;"></path></svg></a>
+          <a data-navlink="" href="Gyerekek es szulok.dc.html" style="color:#FFFFFF;text-decoration:none;font-weight:600;position:relative;display:inline-block;">Gyerekek &amp; Szülők<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;opacity:0;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;"></path></svg></a>
+          <a data-navlink="" href="Adomanybolt.dc.html" style="color:#FFFFFF;text-decoration:none;font-weight:600;position:relative;display:inline-block;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;opacity:0;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;"></path></svg></a>
+        </nav>
+        <div style="display:flex;justify-content:flex-end;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="md" href="#tamogatom" hint-size="auto,44px">Adományozok</x-import>
+        </div>
+      </header>
+
+      <div data-m="copy" data-hero-copy="" style="position:relative;z-index:6;max-width:1280px;margin:0 auto;padding:clamp(32px,6vh,88px) clamp(20px,4vw,48px) clamp(88px,15vh,150px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,4vw,48px);will-change:transform,opacity;">
+        <div style="grid-column:1 / span 8;display:flex;flex-direction:column;gap:32px;">
+          <div style="font-size: var(--text-label); letter-spacing: var(--ls-label); text-transform: uppercase; font-weight: 600; color: #DCE6D2; width: 771px; height: 8px">Amigos a gyerekekért</div>
+          <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);color:#FFFFFF;max-width:13ch;text-wrap:pretty;">
+            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block; padding-bottom: 0.14em; margin-bottom: -0.14em; width: 618px; height: 92px">A barátság</span></span>
+            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display:block;padding-bottom:0.14em;margin-bottom:-0.14em;">csodákra képes.</span></span>
+          </h1>
+          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:40ch;color:#FFFFFF;text-wrap:pretty;">Egyetemista Amigóink minden héten ugyanahhoz a gyerekhez térnek vissza a kórházba: játszani, tanulni, barátkozni.</p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="#tamogatom" hint-size="auto,52px">Támogatom</x-import>
+            <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverseOutline" size="lg" href="#legyel-amigo" hint-size="auto,52px">Amigo lennék</x-import>
+          </div>
+        </div>
+      </div>
+
+      <div data-m="line" style="position:absolute;z-index:6;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 clamp(20px,4vw,48px);text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;">
+        <p style="margin:0 auto;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:#FFFFFF;max-width:20ch;text-wrap:balance;">Minden barátság egy találkozással kezdődik.</p>
+      </div>
+
+      <div data-m="line2" style="position:absolute;z-index:6;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 clamp(20px,4vw,48px);text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;">
+        <p style="margin:0 auto;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:#FFFFFF;max-width:20ch;text-wrap:balance;">Egy közös játékkal, egy közös nevetéssel.</p>
+      </div>
+
+      <div data-m="controls" style="position:absolute;z-index:7;right:clamp(20px,4vw,48px);bottom:28px;display:flex;gap:10px;will-change:opacity;">
+        <button data-m="sound" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF;background:transparent;border:2px solid #FFFFFF;border-radius:999px;padding:9px 18px;cursor:pointer;" style-hover="background:rgba(255,255,255,0.12)">Hang be</button>
+        <button data-m="toggle" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF;background:transparent;border:2px solid #FFFFFF;border-radius:999px;padding:9px 18px;cursor:pointer;" style-hover="background:rgba(255,255,255,0.12)">Szünet</button>
+      </div>
+
+      <div data-m="hint" style="position:absolute;z-index:7;left:50%;bottom:24px;width:2px;height:min(56px,6vh);background:rgba(255,255,255,0.35);overflow:hidden;pointer-events:none;">
+        <span data-m="hintfill" style="position:absolute;left:0;top:0;width:2px;height:100%;background:#FFFFFF;display:block;transform:translateY(-100%);"></span>
+      </div>
+    </section>
+  </div>
+
+  <div data-m="stickyhead" style="position:sticky;top:0;z-index:20;">
+   <div data-m="stickybar" style="background:#FAFAF6;border-bottom:1px solid #DDE3D5;">
+    <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
+      <a href="#" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height: 54px; width: auto; display: block"></a>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+        <a data-navlink="" href="Legyel Amigo.dc.html" style="color:#171C12;text-decoration:none;position:relative;display:inline-block;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Legyél Amigo<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;opacity:0;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;"></path></svg></a>
+        <a data-navlink="" href="Munkank es hatasunk.dc.html" style="color:#171C12;text-decoration:none;position:relative;display:inline-block;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Munkánk &amp; Hatásunk<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;opacity:0;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;"></path></svg></a>
+        <a data-navlink="" href="Gyerekek es szulok.dc.html" style="color:#171C12;text-decoration:none;position:relative;display:inline-block;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Gyerekek &amp; Szülők<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;opacity:0;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;"></path></svg></a>
+        <a data-navlink="" href="Adomanybolt.dc.html" style="color:#171C12;text-decoration:none;position:relative;display:inline-block;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;opacity:0;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;"></path></svg></a>
+      </nav>
+      <div style="display:flex;justify-content:flex-end;">
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+      </div>
+    </div>
+   </div>
+  </div>
+
+<aside data-screen-label="Új bejegyzés" aria-label="Legújabb történet" style="position:relative;z-index:6;background:#FAFAF6;">
+    <a href="Blog.dc.html#pulcsi" data-post="" style="display:block;text-decoration:none;color:inherit;border-bottom:1px solid #DDE3D5;">
+      <div style="max-width:1280px;margin:0 auto;padding:clamp(22px,3vw,30px) clamp(20px,4vw,48px);display:flex;align-items:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;">
+        <span style="display:flex;align-items:center;gap:10px;flex:none;">
+          <span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:#437613;display:block;"></span>
+          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Friss hír</span>
+        </span>
+        <span style="font-size:15px;color:#5A6650;flex:none;font-variant-numeric:tabular-nums;">2026. szeptember 12.</span>
+        <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(20px,2.2vw,28px);line-height:1.15;letter-spacing:-0.02em;flex:1 1 320px;min-width:0;text-wrap:pretty;">A zöld pulcsi az új szuperhős köpeny</span>
+        <span data-post-arrow="" style="font-size:22px;color:#437613;flex:none;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);display:block;">→</span>
+      </div>
+    </a>
+  </aside>
+
+  <section id="munkank" data-m="pillars" data-screen-label="Mit csinálunk" style="position:relative;z-index:6;background:#FAFAF6;padding:clamp(80px,12vw,140px) 0 clamp(120px,16vw,200px);">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,7vw,104px);">
+      <div style="position:sticky;top:96px;align-self:start;display:flex;flex-direction:column;gap:clamp(16px,2.5vh,28px);max-height:calc(100vh - 128px);">
+        <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Mit csinálunk?</div>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:16ch;text-wrap:pretty;">Nem szórakoztatunk. Barátkozunk, hétről hétre.</h2>
+        <div data-orb-slot="" style="position:relative;width:min(100%,42vh,420px);aspect-ratio:1/1;flex:none;border-radius:50%;overflow:hidden;background:#E7EEDF;">
+          <div data-orb-layer="0" style="position:absolute;inset:0;opacity:1;"><img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52019587606_3d3e56e560_o-scaled.jpg" alt="Kórházi foglalkozás – Amigo és gyerek" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div data-orb-layer="1" style="position:absolute;inset:0;opacity:0;"><img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2024/09/Baratokkal-baratkent-a-gyerekekert-scaled.jpg" alt="Saját fejlesztésű eszközök" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div data-orb-layer="2" style="position:absolute;inset:0;opacity:0;"><img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52020108215_3c7ba49607_o-3-scaled.jpg" alt="Amigo közösség" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;">
+        <article data-row="0" style="min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:18px;border-top:1px solid #DDE3D5;padding:32px 0;">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">01</span>
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:18ch;text-wrap:pretty;">Heti kórházi foglalkozások</h3>
+          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;color:#3A4433;">Húsz kórházi osztályon vagyunk jelen. Ugyanaz az Amigo, ugyanabban az időpontban, minden héten — a kiszámíthatóság a lényeg.</p>
+          <a href="Munkank es hatasunk.dc.html" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Hol vagyunk jelen →</a>
+        </article>
+        <article data-row="1" style="min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:18px;border-top:1px solid #DDE3D5;padding:32px 0;">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">02</span>
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:18ch;text-wrap:pretty;">Saját fejlesztésű eszközök</h3>
+          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;color:#3A4433;">TanulTablet, Amigos Mini és Kalandozz: kórházi használatra tervezett, fertőtleníthető, egy ágy mellett is működő tananyagok és játékok.</p>
+          <a href="Amigos Aloldalak.dc.html#programok" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Programjaink és eszközeink →</a>
+        </article>
+        <article data-row="2" style="min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:18px;border-top:1px solid #DDE3D5;border-bottom:1px solid #DDE3D5;padding:32px 0;">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">03</span>
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:18ch;text-wrap:pretty;">Képzett egyetemista Amigók</h3>
+          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;color:#3A4433;">Felvételi, Amigos Akadémia, Senior Amigo-kíséret. Aki bemegy egy kórterembe, arra előtte felkészítettük — és utána sem hagyjuk magára.</p>
+          <a href="Legyel Amigo.dc.html" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Így lesz valakiből Amigo →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div data-m="statsrunway" data-screen-label="Számok" style="position:relative;z-index:6;height:300vh;background:#FAFAF6;">
+    <div style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;">
+      <div data-m="statspattern" style="position:absolute;left:0;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-weight:600;font-size:clamp(200px,30vw,520px);line-height:1;letter-spacing:-0.03em;color:#EEF3E8;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">HETENTE HETENTE</div>
+      <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);">
+        <div data-pane="0" style="display:flex;flex-direction:column;gap:12px;">
+          <span data-count="300" style="font-family:var(--font-display);font-weight:600;font-size:min(clamp(96px,18vw,320px),34vh);line-height:0.86;letter-spacing:-0.04em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;">egyetemista Amigo önkéntes hat városban</span>
+          <span style="font-size:13px;color:#5A6650;">[ADAT: forrás, dátum]</span>
+        </div>
+        <div data-pane="1" style="position:absolute;left:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px);top:0;display:flex;flex-direction:column;gap:12px;opacity:0;">
+          <span data-count="20" style="font-family:var(--font-display);font-weight:600;font-size:min(clamp(96px,18vw,320px),34vh);line-height:0.86;letter-spacing:-0.04em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;">kórházi osztály, ahol minden héten ott vagyunk</span>
+          <span style="font-size:13px;color:#5A6650;">[ADAT: forrás, dátum]</span>
+        </div>
+        <div data-pane="2" style="position:absolute;left:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px);top:0;display:flex;flex-direction:column;gap:12px;opacity:0;">
+          <span data-count="20770" style="font-family:var(--font-display);font-weight:600;font-size:min(clamp(96px,18vw,320px),34vh);line-height:0.86;letter-spacing:-0.04em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;">gyerek, akivel egy évben foglalkozunk</span>
+          <span style="font-size:13px;color:#5A6650;">[ADAT: forrás, dátum]</span>
+        </div>
+      </div>
+      <div style="position:absolute;left:clamp(20px,4vw,48px);bottom:40px;display:flex;align-items:center;gap:14px;font-size:14px;color:#3A4433;">
+        <span aria-hidden="true" style="width:28px;height:28px;border-radius:50%;background:#437613;display:block;flex:none;"></span>
+        <span>Etikus adománygyűjtő tanúsítvány</span>
+        <a href="Munkank es hatasunk.dc.html#atlathatosag" style="font-weight:600;text-decoration:none;">Átláthatóság →</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="tamogatom" data-m="donate" data-screen-label="Rendszeres támogatás" style="position:relative;z-index:6;background:#993166;color:#FFFFFF;padding:clamp(120px,16vw,200px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 6fr;gap:clamp(48px,7vw,104px);align-items:start;">
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#F2DCE8;">Rendszeres támogatás</div>
+        <h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); max-width: 17ch; text-wrap: pretty; color: #FFFFFF">Egy gyerek barátsága nem egyszeri alkalom.</h2>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:44ch;">A heti látogatás akkor működik, ha jövő héten is ott tudunk lenni. Ehhez kiszámítható háttér kell.</p>
+        <ul style="list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:var(--text-body);">
+          <li style="display:flex;gap:12px;align-items:flex-start;"><span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:#FFFFFF;margin-top:9px;flex:none;"></span><span>Bármikor módosítható vagy leállítható.</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start;"><span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:#FFFFFF;margin-top:9px;flex:none;"></span><span>Az összegről minden hónapban visszaigazolást küldünk.</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start;"><span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:#FFFFFF;margin-top:9px;flex:none;"></span><span>Évente nyilvános beszámolóban számolunk el vele.</span></li>
+        </ul>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:32px;">
+        <div role="radiogroup" aria-label="Gyakoriság" style="display:flex;gap:28px;font-size:var(--text-body);font-weight:600;">
+          <button data-freq="rendszeres" type="button" role="radio" aria-checked="true" style="background:transparent;border:0;border-bottom:2px solid #FFFFFF;color:#FFFFFF;font:inherit;padding:0 0 6px;cursor:pointer;">Rendszeres</button>
+          <button data-freq="egyszeri" type="button" role="radio" aria-checked="false" style="background:transparent;border:0;border-bottom:2px solid transparent;color:#F2DCE8;font:inherit;padding:0 0 6px;cursor:pointer;">Egyszeri</button>
+        </div>
+
+        <div role="radiogroup" aria-label="Összeg" style="display:flex;gap:clamp(12px,2vw,24px);flex-wrap:wrap;">
+          <button data-amount="3000" type="button" role="radio" aria-checked="false" style="width:clamp(108px,13vw,156px);aspect-ratio:1/1;border-radius:50%;border:2px solid #FFFFFF;background:transparent;color:#FFFFFF;font-family:var(--font-display);font-weight:600;font-size:clamp(20px,2.4vw,28px);letter-spacing:-0.02em;cursor:pointer;font-variant-numeric:tabular-nums;">3 000</button>
+          <button data-amount="5000" type="button" role="radio" aria-checked="true" style="width:clamp(108px,13vw,156px);aspect-ratio:1/1;border-radius:50%;border:2px solid #FFFFFF;background:#FFFFFF;color:#993166;font-family:var(--font-display);font-weight:600;font-size:clamp(20px,2.4vw,28px);letter-spacing:-0.02em;cursor:pointer;font-variant-numeric:tabular-nums;">5 000</button>
+          <button data-amount="10000" type="button" role="radio" aria-checked="false" style="width:clamp(108px,13vw,156px);aspect-ratio:1/1;border-radius:50%;border:2px solid #FFFFFF;background:transparent;color:#FFFFFF;font-family:var(--font-display);font-weight:600;font-size:clamp(20px,2.4vw,28px);letter-spacing:-0.02em;cursor:pointer;font-variant-numeric:tabular-nums;">10 000</button>
+          <label style="display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:150px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#F2DCE8;">Más összeg</span>
+            <span style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #FFFFFF;padding-bottom:6px;">
+              <input data-custom="" inputmode="numeric" placeholder="0" style="width: 100%; min-width: 0; background: transparent; border: 0; outline: 0; color: #FFFFFF; font-family: var(--font-display); font-weight: 600; font-size: 28px; letter-spacing: -0.02em">
+              <span style="font-size:15px;">Ft</span>
+            </span>
+          </label>
+        </div>
+
+        <div style="overflow:hidden;min-height:3.4em;">
+          <p data-cover="" style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;will-change:transform,opacity;">{{ coverText }}</p>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="Amigos Aloldalak.dc.html#tamogatom-checkout" hint-size="auto,52px">Támogatom</x-import>
+          <a href="Ado 1 szazalek.dc.html" style="color:#FFFFFF;font-size:var(--text-body);font-weight:600;">Adó 1% →</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:#F2DCE8;border-top:1px solid rgba(255,255,255,0.35);padding-top:18px;">
+          <span>Biztonságos bankkártyás fizetés</span><span>Adatkezelési tájékoztató</span><span>Számlaadatok</span><span>[ADAT: belső költségbecslés, forrás, dátum]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Partnerek" aria-label="Stratégiai partnerek és kiemelt támogatók" style="position:relative;z-index:6;background:#FAFAF6;border-top:1px solid #DDE3D5;border-bottom:1px solid #DDE3D5;padding:clamp(56px,7vw,88px) 0;overflow:hidden;">
+    <div style="max-width:1280px;margin:0 auto 32px;padding:0 clamp(20px,4vw,48px);display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#5A6650;">Partnereink</span>
+      <span style="display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;">
+        <a href="Munkank es hatasunk.dc.html#tamogatoink" style="font-size:15px;color:#437613;font-weight:600;">Minden támogatónk →</a>
+        <a href="Vallalati tamogatas.dc.html" style="font-size:15px;color:#437613;">Legyél partner →</a>
+      </span>
+    </div>
+    <div data-marquee="" style="position:relative;display:flex;width:max-content;animation:am-marquee 48s linear infinite;">
+      <div style="display:flex;align-items:center;"><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/lego.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/wolt.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/roche.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/kpmg.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/mckinsey.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/uefa-foundation.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/unicredit-foundation.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/knorr-bremse.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/magnet-bank.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/mupa.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/foxpost.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/indotek.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/hupx.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/mavir.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/brain-bar.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/amcham.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/immergas.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/hello-parks.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span></div>
+      <div aria-hidden="true" style="display:flex;align-items:center;"><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/lego.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/wolt.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/roche.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/kpmg.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/mckinsey.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/uefa-foundation.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/unicredit-foundation.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/knorr-bremse.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/magnet-bank.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/mupa.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/foxpost.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/indotek.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/hupx.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/mavir.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/brain-bar.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/amcham.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/immergas.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span><span style="flex:none;height:120px;width:200px;margin:0 12px;display:flex;align-items:center;justify-content:center;border:1px solid #DDE3D5;border-radius:12px;background:#FFFFFF;padding:16px 20px;"><img src="assets/partners/hello-parks.png" alt="" loading="lazy" style="max-height:84px;max-width:160px;width:auto;height:auto;object-fit:contain;display:block;"></span></div>
+    </div>
+    <div aria-hidden="true" style="position:absolute;left:0;bottom:clamp(56px,7vw,88px);width:clamp(48px,8vw,120px);height:120px;background:linear-gradient(90deg,#FAFAF6,rgba(250,250,246,0));"></div>
+    <div aria-hidden="true" style="position:absolute;right:0;bottom:clamp(56px,7vw,88px);width:clamp(48px,8vw,120px);height:120px;background:linear-gradient(270deg,#FAFAF6,rgba(250,250,246,0));"></div>
+  </section>
+
+
+  <section id="legyel-amigo" data-m="recruit" data-screen-label="Legyél Amigo" style="position:relative;z-index:6;background:#437613;color:#FFFFFF;overflow:hidden;padding:clamp(120px,16vw,200px) 0;">
+    <div data-m="cities" aria-hidden="true" style="position:absolute;left:0;top:clamp(24px,6vw,80px);display:flex;gap:0.4em;font-family:var(--font-display);font-weight:600;font-size:clamp(140px,20vw,340px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">
+      <span>BUDAPEST</span><span>DEBRECEN</span><span>SZEGED</span><span>PÉCS</span><span>MISKOLC</span><span>GYŐR</span>
+    </div>
+    <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:6fr 5fr;gap:clamp(48px,7vw,96px);align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:28px;">
+        <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Legyél Amigo!</div>
+        <h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); max-width: 16ch; text-wrap: pretty; color: #FFFFFF">Heti két óra. Egy gyereknek az egész hete.</h2>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;">Egyetemista vagy hat Amigo-városunk valamelyikében? A jelentkezés komoly: felvételi, képzés és egy tanéves vállalás. Pont ezért működik.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px 24px;font-size:var(--text-body);">
+          <button data-city="Budapest" type="button" style="background:transparent;border:0;border-bottom:2px solid #FFFFFF;color:#FFFFFF;font:inherit;padding:0 0 4px;cursor:pointer;">Budapest</button>
+          <button data-city="Debrecen" type="button" style="background:transparent;border:0;border-bottom:2px solid transparent;color:#DCE6D2;font:inherit;padding:0 0 4px;cursor:pointer;">Debrecen</button>
+          <button data-city="Szeged" type="button" style="background:transparent;border:0;border-bottom:2px solid transparent;color:#DCE6D2;font:inherit;padding:0 0 4px;cursor:pointer;">Szeged</button>
+          <button data-city="Pécs" type="button" style="background:transparent;border:0;border-bottom:2px solid transparent;color:#DCE6D2;font:inherit;padding:0 0 4px;cursor:pointer;">Pécs</button>
+          <button data-city="Miskolc" type="button" style="background:transparent;border:0;border-bottom:2px solid transparent;color:#DCE6D2;font:inherit;padding:0 0 4px;cursor:pointer;">Miskolc</button>
+          <button data-city="Győr" type="button" style="background:transparent;border:0;border-bottom:2px solid transparent;color:#DCE6D2;font:inherit;padding:0 0 4px;cursor:pointer;">Győr</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="Legyel Amigo.dc.html#jelentkezes" hint-size="auto,52px">Jelentkezem Amigónak</x-import>
+          <a href="Legyel Amigo.dc.html" style="color:#FFFFFF;font-size:var(--text-body);font-weight:600;">Mit jelent Amigónak lenni? →</a>
+        </div>
+      </div>
+      <div><div style="position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#365F0F;">
+        <img data-city-img="" src="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52020108215_3c7ba49607_o-3-scaled.jpg" alt="Amigók egy kórházi foglalkozáson" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 320ms cubic-bezier(0.2,0.7,0.2,1);">
+              </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="csaladoknak" data-screen-label="Kalandozz és egyebek" style="position:relative;z-index:6;background:#FAFAF6;padding:clamp(120px,16vw,200px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;">
+      <div data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);border-top:1px solid #DDE3D5;padding:40px 0;align-items:baseline;">
+        <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);line-height:1.05;letter-spacing:-0.02em;">Gyerekeknek és szülőknek</h3>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:#3A4433;">Szülőknek: mi történik egy foglalkozáson, hogyan kezeljük a képeket és az adatokat, kihez lehet fordulni. Gyerekeknek: Kalandozz! — online játékok és feladatok kórházban töltött napokra.</p>
+          <div style="display:flex;gap:28px;flex-wrap:wrap;"><a href="Gyerekek es szulok.dc.html#szuloknek" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Szülőknek →</a><a href="Gyerekek es szulok.dc.html#gyerekeknek" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Kalandozz! →</a></div>
+        </div>
+      </div>
+      <div id="bolt" data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);border-top:1px solid #DDE3D5;padding:40px 0;align-items:baseline;">
+        <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);line-height:1.05;letter-spacing:-0.02em;">Adománybolt</h3>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:#3A4433;">Amigos pólók, bögrék, képeslapok — a bevétel a kórházi programokra megy.</p>
+          <a href="Adomanybolt.dc.html" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Megnézem a boltot →</a>
+        </div>
+      </div>
+      
+      <div data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);border-top:1px solid #DDE3D5;border-bottom:1px solid #DDE3D5;padding:40px 0;align-items:center;">
+        <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);line-height:1.05;letter-spacing:-0.02em;">Hírlevél</h3>
+        <form style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <label for="hirlevel-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">E-mail cím</label>
+          <input id="hirlevel-email" type="email" placeholder="E-mail cím — havonta egy levél" style="flex:1 1 280px;height:48px;padding:0 16px;border:2px solid #DDE3D5;border-radius:12px;font:inherit;font-size:16px;background:#FFFFFF;color:#171C12;min-width:0;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="primary" size="md" href="#" hint-size="auto,44px">Feliratkozom</x-import>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="kapcsolat" style="position:relative;z-index:6;">
+    <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.SiteFooter" logo-src="assets/amigos-logo-inverse.png" columns="{{ footerColumns }}" bank="10700024-04616002-51100005" tax-id="18516378-1-42" socials="{{ footerSocials }}" note="Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta." hint-size="100%,420px"></x-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;videoSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/Wr2K6diFiIA&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Videó&quot;}}">
+class Component extends DCLogic {
+  state = { amount: 5000, freq: 'rendszeres' };
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const q = s => document.querySelector(s);
+    const bind = () => {
+      this.runway = q('[data-m="runway"]'); if (!this.runway) return false;
+      this.frame = q('[data-m="frame"]');
+      this.video = q('[data-m="video"]'); this.scrim = q('[data-m="scrim"]');
+      this.layers = Array.from(document.querySelectorAll('[data-orb-layer]'));
+      this.pattern = q('[data-m="pattern"]'); this.copy = q('[data-m="copy"]');
+      this.line = q('[data-m="line"]'); this.line2 = q('[data-m="line2"]');
+      this.hintfill = q('[data-m="hintfill"]'); this.head = q('[data-m="stickyhead"]');
+      this.pillars = q('[data-m="pillars"]'); this.statsRunway = q('[data-m="statsrunway"]');
+      this.statsPattern = q('[data-m="statspattern"]'); this.cities = q('[data-m="cities"]');
+      this.recruit = q('[data-m="recruit"]');
+      this.rows = Array.from(document.querySelectorAll('[data-row]'));
+      this.panes = Array.from(document.querySelectorAll('[data-pane]'));
+      this.words = Array.from(document.querySelectorAll('[data-m="wi"]'));
+      const src = this.props.videoSrc || 'assets/amigos-brandfilm.mp4';
+      const YT_FALLBACK = 'Wr2K6diFiIA';
+      const ytMatch = src.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+      this.yt = null;
+      this.mountYt = (id) => {
+        if (!this.video) return;
+        // YouTube brand film: an iframe behind the same clip-path, scaled to cover, driven via the IFrame API
+        const ifr = document.createElement('iframe');
+        ifr.setAttribute('data-m', 'yt');
+        ifr.src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&cc_load_policy=0&cc_lang_pref=hu&fs=0&showinfo=0&color=white&enablejsapi=1`;
+        ifr.allow = 'autoplay; encrypted-media; picture-in-picture';
+        ifr.referrerPolicy = 'origin-when-cross-origin';
+        ifr.title = 'Amigos brandfilm';
+        ifr.tabIndex = -1;
+        ifr.style.cssText = 'position:absolute;left:50%;top:50%;border:0;pointer-events:none;transform:translate(-50%,-50%);';
+        this.video.replaceWith(ifr);
+        this.video = null; this.yt = ifr;
+        this.ytCmd = (func, args) => { try { ifr.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args: args || [] }), '*'); } catch (e) {} };
+        this.ytMuted = true; this.ytPaused = false;
+        this.onYtMsg = e => {
+          if (!String(e.origin).includes('youtube.com')) return;
+          let d; try { d = JSON.parse(e.data); } catch (err) { return; }
+          if (d.event === 'onReady') this.ytCmd('playVideo');
+          if (d.event === 'onStateChange' && d.info === 0) { this.ytCmd('seekTo', [0, true]); this.ytCmd('playVideo'); }
+        };
+        window.addEventListener('message', this.onYtMsg);
+        const listen = () => { try { ifr.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 'amigos-hero' }), '*'); } catch (err) {} };
+        ifr.addEventListener('load', listen); setTimeout(listen, 600); setTimeout(listen, 1800);
+        this.fitYt = () => { const w = ifr.parentElement.clientWidth, h = ifr.parentElement.clientHeight; const k = 1.06; const iw = Math.max(w, h * 16 / 9) * k, ih = Math.max(h, w * 9 / 16) * k; ifr.style.width = iw + 'px'; ifr.style.height = ih + 'px'; };
+        this.fitYt(); window.addEventListener('resize', this.fitYt);
+        ifr.addEventListener('load', () => this.ytCmd('playVideo'));
+        setTimeout(() => { this.ytCmd('playVideo'); this.ytCmd('setOption', ['captions', 'track', {}]); this.ytCmd('unloadModule', ['captions']); this.ytCmd('unloadModule', ['cc']); }, 1200);
+        const snd = q('[data-m="sound"]'), tog = q('[data-m="toggle"]');
+        if (snd) snd.onclick = () => { this.ytMuted = !this.ytMuted; this.ytCmd(this.ytMuted ? 'mute' : 'unMute'); snd.textContent = this.ytMuted ? 'Hang be' : 'Hang ki'; };
+        if (tog) tog.onclick = () => { this.ytPaused = !this.ytPaused; this.ytCmd(this.ytPaused ? 'pauseVideo' : 'playVideo'); tog.textContent = this.ytPaused ? 'Lejátszás' : 'Szünet'; if (!this.ytPaused) this.scrollToFull(); };
+      };
+      const list = [ytMatch ? 'assets/amigos-brandfilm.mp4' : src];
+      if (this.video) {
+        this.video.muted = true; this.video.defaultMuted = true;
+        this.video.autoplay = true; this.video.setAttribute('autoplay', '');
+        this.video.loop = true; this.video.setAttribute('loop', '');
+        this.video.addEventListener('ended', () => { this.video.currentTime = 0; this.video.play().catch(() => {}); });
+        // the video paints its own black box before metadata arrives — keep the green frame until then
+        this.video.style.opacity = '0';
+        this.video.style.transition = 'opacity 320ms cubic-bezier(0.2,0.7,0.2,1)';
+        this.video.addEventListener('loadedmetadata', () => { this.video.style.opacity = '1'; const ph = this.video.parentElement && this.video.parentElement.querySelector('[data-m="poster"]'); if (ph) ph.style.opacity = '0'; });
+        let i = 0;
+        // native file first (works wherever the project files are served); YouTube only if the file itself fails
+        const toYt = () => { clearTimeout(this.vT); if (!this.video) return; this.video.removeAttribute('src'); this.video.load(); this.video.style.display = 'none'; const ph = this.video.parentElement && this.video.parentElement.querySelector('[data-m="poster"]'); if (ph) ph.style.opacity = '1'; };
+        const tryNext = () => { if (i >= list.length) { toYt(); return; } this.video.src = list[i++]; this.video.load(); this.video.play().catch(() => {}); };
+        this.video.addEventListener('error', tryNext);
+        this.video.addEventListener('loadedmetadata', () => clearTimeout(this.vT));
+        
+        tryNext();
+      }
+      const snd = q('[data-m="sound"]'), tog = q('[data-m="toggle"]');
+      if (snd && this.video) { snd.textContent = this.video.muted ? 'Hang be' : 'Hang ki'; snd.onclick = () => { this.video.muted = !this.video.muted; snd.textContent = this.video.muted ? 'Hang be' : 'Hang ki'; }; }
+      if (tog && this.video) {
+        const sync = () => { tog.textContent = this.video.paused ? 'Lejátszás' : 'Szünet'; };
+        this.video.addEventListener('play', sync); this.video.addEventListener('pause', sync); sync();
+        tog.onclick = () => { if (this.video.paused) { this.video.play().catch(() => {}); this.scrollToFull(); } else { this.video.pause(); } };
+      }
+      if (this.frame) this.frame.onclick = () => this.scrollToFull();
+      this.bindDonate(); this.bindCities();
+      // arriving from another page with #tamogatom: the section only exists after mount
+      if (location.hash) {
+        const t = document.querySelector(location.hash);
+        if (t) setTimeout(() => { window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 72, behavior: 'auto' }); }, 120);
+      }
+      return true;
+    };
+    if (!bind()) { const iv = setInterval(() => { if (bind()) { clearInterval(iv); this.start(); } }, 100); return; }
+    this.start();
+  }
+  bindDonate() {
+    const freq = Array.from(document.querySelectorAll('[data-freq]'));
+    freq.forEach(b => b.onclick = () => {
+      this.setState({ freq: b.dataset.freq }, () => this.flipCover());
+      freq.forEach(o => { const on = o === b; o.setAttribute('aria-checked', String(on)); o.style.borderBottomColor = on ? '#FFFFFF' : 'transparent'; o.style.color = on ? '#FFFFFF' : '#F2DCE8'; });
+    });
+    const amts = Array.from(document.querySelectorAll('[data-amount]'));
+    const custom = document.querySelector('[data-custom]');
+    const paint = active => amts.forEach(o => {
+      const on = o === active;
+      o.setAttribute('aria-checked', String(on));
+      o.style.background = on ? '#FFFFFF' : 'transparent';
+      o.style.color = on ? '#993166' : '#FFFFFF';
+    });
+    amts.forEach(b => b.onclick = () => {
+      if (custom) custom.value = '';
+      this.setState({ amount: +b.dataset.amount }, () => this.flipCover());
+      paint(b);
+    });
+    if (custom) custom.oninput = () => {
+      custom.value = custom.value.replace(/\D/g, '');
+      paint(null);
+      this.setState({ amount: custom.value ? +custom.value : 0 }, () => this.flipCover());
+    };
+  }
+  flipCover() {
+    // the cover line clips up on change — same vocabulary as the hero headline
+    const el = document.querySelector('[data-cover]'); if (!el || this.reduced) return;
+    el.style.transition = 'none'; el.style.transform = 'translateY(100%)'; el.style.opacity = '0';
+    void el.offsetHeight;
+    el.style.transition = 'transform 320ms cubic-bezier(0.2,0.7,0.2,1), opacity 320ms cubic-bezier(0.2,0.7,0.2,1)';
+    el.style.transform = 'translateY(0)'; el.style.opacity = '1';
+  }
+  bindCities() {
+    const btns = Array.from(document.querySelectorAll('[data-city]'));
+    const label = document.querySelector('[data-city-label]');
+    const img = document.querySelector('[data-city-img]');
+    const shots = {
+      'Budapest': 'https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52020108215_3c7ba49607_o-3-scaled.jpg',
+      'Debrecen': 'https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52019587606_3d3e56e560_o-scaled.jpg',
+      'Szeged': 'https://amigos-20546.kxcdn.com/wp-content/uploads/2024/09/Baratokkal-baratkent-a-gyerekekert-scaled.jpg',
+      'Pécs': 'https://amigos-20546.kxcdn.com/wp-content/uploads/2026/09/AMIGOS-4-1080x675.jpg',
+      'Miskolc': 'https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52019587606_3d3e56e560_o-scaled.jpg',
+      'Győr': 'https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52020108215_3c7ba49607_o-3-scaled.jpg'
+    };
+    const set = b => {
+      btns.forEach(o => { const on = o === b; o.style.borderBottomColor = on ? '#FFFFFF' : 'transparent'; o.style.color = on ? '#FFFFFF' : '#DCE6D2'; });
+      const city = b.dataset.city;
+      if (label) label.textContent = `${city} — Amigo és gyerek, kórházi foglalkozás`;
+      if (img && shots[city] && img.getAttribute('src') !== shots[city]) {
+        img.style.opacity = '0';
+        setTimeout(() => { img.src = shots[city]; img.style.opacity = '1'; }, 160);
+      }
+    };
+    btns.forEach(b => { b.onmouseenter = () => set(b); b.onfocus = () => set(b); b.onclick = () => set(b); });
+  }
+  start() {
+    if (!this.reduced) {
+      this.words.forEach((w, i) => {
+        w.style.transform = 'translateY(105%)';
+        w.style.transition = `transform 620ms cubic-bezier(0.2,0.7,0.2,1) ${120 + i * 90}ms`;
+        void w.offsetHeight;
+        w.style.transform = 'translateY(0)';
+        setTimeout(() => { w.style.transition = ''; w.style.transform = ''; }, 900 + i * 90);
+      });
+    }
+    this.FULL = 0.40;
+    const geo = () => { const top = this.runway.getBoundingClientRect().top + window.scrollY; const span = this.span(); return { top, span, p: (window.scrollY - top) / span }; };
+    const gesture = e => {
+      if (this.reduced || !this.runway) return;
+      if (this.snapping) { e.preventDefault(); return; }
+      const { p } = geo();
+      const dy = e.type === 'wheel' ? e.deltaY : (this.touchY != null ? this.touchY - e.touches[0].clientY : 0);
+      if (Math.abs(dy) < 2) return;
+      if (dy > 0 && p > -0.01 && p < this.FULL - 0.005) { e.preventDefault(); this.flyTo(this.FULL); return; }
+      if (dy < 0 && p > 0.005 && p <= this.FULL + 0.005) { e.preventDefault(); this.flyTo(0); return; }
+      // numbers: the section is a set of stops, never an in-between state
+      const stops = this.statStops();
+      if (stops.length) {
+        const y = window.scrollY, vh = window.innerHeight;
+        const sTop = this.statsRunway.getBoundingClientRect().top + y, sEnd = sTop + this.statsRunway.offsetHeight - vh;
+        const near = stops.findIndex(s => Math.abs(s - y) < 4);
+        if (dy > 0) {
+          if (y < sTop && sTop - y < vh * 0.7 && y > sTop - vh) { e.preventDefault(); this.flyToY(stops[0]); return; }
+          if (near >= 0 && near < stops.length - 1) { e.preventDefault(); this.flyToY(stops[near + 1]); return; }
+          if (near === stops.length - 1) { e.preventDefault(); this.flyToY(sEnd + vh * 0.5); return; }
+          if (y >= sTop && y < sEnd && near < 0) { e.preventDefault(); this.flyToY(stops.find(s => s > y + 4) ?? sEnd + vh * 0.5); return; }
+        } else {
+          if (near > 0) { e.preventDefault(); this.flyToY(stops[near - 1]); return; }
+          if (near === 0) { e.preventDefault(); this.flyToY(sTop - vh * 0.6); return; }
+          if (y > sEnd && y - sEnd < vh * 0.7) { e.preventDefault(); this.flyToY(stops[stops.length - 1]); return; }
+          if (y > sTop && y <= sEnd && near < 0) { e.preventDefault(); this.flyToY([...stops].reverse().find(s => s < y - 4) ?? sTop - vh * 0.6); return; }
+        }
+      }
+    };
+    window.addEventListener('wheel', gesture, { passive: false });
+    window.addEventListener('touchstart', e => { this.touchY = e.touches[0].clientY; }, { passive: true });
+    window.addEventListener('touchmove', gesture, { passive: false });
+    window.addEventListener('scroll', () => {
+      if (this.reduced || this.snapping || !this.runway) return;
+      clearTimeout(this.snapT);
+      this.snapT = setTimeout(() => {
+        if (this.snapping) return;
+        const { p } = geo();
+        if (p > 0.005 && p < this.FULL - 0.005) { this.flyTo(p < this.FULL * 0.3 ? 0 : this.FULL); return; }
+        const stops = this.statStops();
+        if (stops.length) {
+          const y = window.scrollY, vh = window.innerHeight;
+          const sTop = this.statsRunway.getBoundingClientRect().top + y, sEnd = sTop + this.statsRunway.offsetHeight - vh;
+          if (y > sTop + 2 && y < sEnd - 2 && !stops.some(s => Math.abs(s - y) < 4)) {
+            const nearest = stops.reduce((a, b) => Math.abs(b - y) < Math.abs(a - y) ? b : a);
+            this.flyToY(nearest);
+          }
+        }
+      }, 100);
+    }, { passive: true });
+    this.alive = true; this.last = -1;
+    const loop = () => {
+      if (!this.alive) return;
+      requestAnimationFrame(loop);
+      const k = window.scrollY + ':' + window.innerWidth + ':' + window.innerHeight;
+      if (k !== this.last) { this.last = k; try { this.apply(); } catch (e) { if (!this.warned) { this.warned = 1; console.warn(e); } } }
+      this.pulse();
+    };
+    requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { this.alive = false; }
+  span() { return this.runway.offsetHeight - window.innerHeight + window.innerHeight * 0.6; }
+  scrollToFull() { this.flyTo(this.FULL || 0.40); }
+  flyTo(pt) {
+    if (!this.runway) return;
+    const top = this.runway.getBoundingClientRect().top + window.scrollY;
+    this.flyToY(Math.round(top + this.span() * pt));
+  }
+  statStops() {
+    // rest positions: one per pane, at the centre of that pane's slice of the runway
+    if (!this.statsRunway || !this.panes.length) return [];
+    const top = this.statsRunway.getBoundingClientRect().top + window.scrollY;
+    const span = this.statsRunway.offsetHeight - window.innerHeight;
+    const n = this.panes.length;
+    return this.panes.map((_, i) => Math.round(top + span * ((i + 0.5) / n)));
+  }
+  flyToY(target) {
+    if (this.reduced) { window.scrollTo(0, target); return; }
+    const from = window.scrollY, dist = target - from, t0 = performance.now(), dur = 760;
+    this.snapping = true;
+    const step = now => {
+      const t = Math.min(1, (now - t0) / dur);
+      const e = 1 - Math.pow(1 - t, 3);
+      window.scrollTo(0, from + dist * e);
+      if (t < 1) requestAnimationFrame(step);
+      else { window.scrollTo(0, target); clearTimeout(this.snapT); setTimeout(() => { this.snapping = false; }, 120); }
+    };
+    requestAnimationFrame(step);
+  }
+  pulse() {
+    if (this.reduced || !this.hintfill) return;
+    const t = (performance.now() % 2600) / 2600;
+    const e = t < 0.75 ? 1 - Math.pow(1 - t / 0.75, 3) : 1;
+    this.hintfill.style.transform = `translateY(${(e - 1) * 100}%)`;
+    this.hintfill.style.opacity = t > 0.85 ? String(1 - (t - 0.85) / 0.15) : '1';
+  }
+  apply() {
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    const clamp = t => Math.max(0, Math.min(1, t));
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    const rTop = this.runway.getBoundingClientRect().top + window.scrollY;
+    const p = clamp((window.scrollY - rTop) / this.span());
+    const seg = (a, b) => ease(clamp((p - a) / (b - a)));
+    this.inHero = p < 0.99;
+
+    // the frame opens from a slit to full bleed, then closes back to a slit
+    const open = seg(0, 0.40), close = seg(0.62, 1);
+    if (this.frame) {
+      if (close <= 0) {
+        const insetY = 28 * (1 - open), insetX = 34 * (1 - open);
+        this.frame.style.clipPath = `inset(${insetY}% ${insetX}% ${insetY}% ${insetX}%)`;
+      } else {
+        // full bleed → a centred circle, then the disc shrinks and rises behind the secondary header
+        const form = seg(0.62, 0.74), leave = clamp((p - 0.74) / 0.26);
+        const rFull = Math.hypot(vw, vh) / 2;
+        const rDisc = Math.min(vw, vh) * 0.27;
+        const r = lerp(lerp(rFull, rDisc, form), 28, leave);
+        // ends fully past the bottom edge — no sliver of the disc left on screen
+        const cy = lerp(vh / 2, vh + r + 24, leave);
+        this.frame.style.clipPath = `circle(${r}px at 50% ${cy}px)`;
+      }
+    }
+
+    if (this.video) this.video.style.transform = `scale(${1.12 - 0.12 * open})`;
+    if (this.yt) this.yt.style.transform = `translate(-50%,-50%) scale(${1.12 - 0.12 * open})`;
+    if (this.scrim) this.scrim.style.opacity = String(0.18 * (1 - seg(0.28, 0.40)) + 0.52 * seg(0.42, 0.54));
+    // scroll hint leaves with the first gesture; the film controls leave as the disc forms
+    const hint = document.querySelector('[data-m="hint"]');
+    if (hint) { const o = 1 - seg(0, 0.06); hint.style.opacity = String(o); hint.style.visibility = o > 0.02 ? 'visible' : 'hidden'; }
+    const controls = document.querySelector('[data-m="controls"]');
+    if (controls) { const o = 1 - seg(0.60, 0.66); controls.style.opacity = String(o); controls.style.pointerEvents = o > 0.5 ? 'auto' : 'none'; controls.style.visibility = o > 0.02 ? 'visible' : 'hidden'; }
+
+    // hero chrome
+    if (this.pattern) this.pattern.style.transform = `translate3d(${-vw * 0.5 * seg(0, 0.5)}px,0,0)`;
+    const out = seg(0.16, 0.32);
+    if (this.copy) { this.copy.style.opacity = String(1 - out); this.copy.style.transform = `translate3d(0,${-48 * out}px,0)`; }
+    const a1 = seg(0.40, 0.47) * (1 - seg(0.50, 0.54));
+    const a2 = seg(0.54, 0.59) * (1 - seg(0.62, 0.66));
+    if (this.line) { this.line.style.opacity = String(a1); this.line.style.transform = `translate3d(0,calc(-50% + ${(1 - a1) * 24}px),0)`; }
+    if (this.line2) { this.line2.style.opacity = String(a2); this.line2.style.transform = `translate3d(0,calc(-50% + ${(1 - a2) * 24}px),0)`; }
+
+
+    // pillars — the orb's content follows the row crossing the midline
+    if (this.rows.length && this.layers.length) {
+      let active = 0;
+      this.rows.forEach((r, i) => { const b = r.getBoundingClientRect(); if (b.top < vh * 0.55) active = i; });
+      this.layers.forEach((l, i) => {
+        l.style.transition = 'opacity 320ms cubic-bezier(0.2,0.7,0.2,1)';
+        l.style.opacity = active === i ? '1' : '0';
+      });
+      this.rows.forEach((r, i) => {
+        r.style.transition = 'opacity 240ms cubic-bezier(0.2,0.7,0.2,1)';
+        r.style.opacity = active === i ? '1' : '0.38';
+      });
+    }
+
+    // stats panes — one number per viewport
+    if (this.statsRunway && this.panes.length) {
+      const sTop = this.statsRunway.getBoundingClientRect().top + window.scrollY;
+      const sp = clamp((window.scrollY - sTop) / (this.statsRunway.offsetHeight - vh));
+      const n = this.panes.length;
+      const idx = Math.min(n - 1, Math.floor(sp * n * 0.999));
+      const local = clamp(sp * n - idx);
+      this.panes.forEach((pane, i) => {
+        let o = 0, ty = 40;
+        if (i === idx) { const c = Math.abs(local - 0.5) * 2; o = c < 0.7 ? 1 : 1 - (c - 0.7) / 0.3; ty = lerp(-18, 18, local); }
+        pane.style.opacity = String(o);
+        pane.style.transform = `translate3d(0,${ty}px,0)`;
+      });
+      if (this.statsPattern && !this.reduced) this.statsPattern.style.transform = `translate3d(${-sp * vw * 0.6}px,-50%,0)`;
+      const fmt = v => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      this.panes.forEach((pane, i) => {
+        const el = pane.querySelector('[data-count]'); if (!el) return;
+        const t = i < idx ? 1 : i > idx ? 0 : ease(clamp((local - 0.15) / 0.35));
+        const v = fmt(+el.dataset.count * t);
+        if (el.textContent !== v) el.textContent = v;
+      });
+    }
+
+    // recruitment — city names pass at half speed behind the copy
+    if (this.cities && this.recruit && !this.reduced) {
+      const rr = this.recruit.getBoundingClientRect();
+      const t = (vh - rr.top) / (vh + rr.height);
+      this.cities.style.transform = `translate3d(${-t * (this.cities.scrollWidth - vw) * 0.9}px,0,0)`;
+    }
+  }
+  renderVals() {
+    const covers = {
+      3000: 'Egy kórházi foglalkozás kreatív alapanyaga — gyurma, papír, filc, társasjáték-pótlás.',
+      5000: 'Egy Amigo havi útiköltsége a kórházba, négy látogatásra.',
+      10000: 'Egy TanulTablet havi tartalomfrissítése egy osztályon.'
+    };
+    const a = this.state.amount;
+    const freqWord = this.state.freq === 'rendszeres' ? 'Havonta' : 'Egyszeri támogatásként';
+    const S = 'Amigos Aloldalak.dc.html';
+    return {
+      coverText: covers[a] ? `${freqWord}: ${covers[a]}` : `${freqWord} szabadon választott összeggel támogatod a heti kórházi látogatásokat.`,
+      footerColumns: [
+        { title: 'Ügyintézés', links: [{ label: 'Kapcsolat', href: S + '#kapcsolat' }, { label: 'Dokumentumok', href: S + '#dokumentumok' }, { label: 'Átláthatósági jelentés', href: S + '#atlathatosag' }, { label: 'GYIK', href: S + '#gyik' }] },
+        { title: 'Támogatás', links: [{ label: 'Rendszeres támogatás', href: S + '#tamogatom' }, { label: 'Adó 1%', href: S + '#ado-1-szazalek' }, { label: 'Vállalati támogatás', href: S + '#vallalati' }, { label: 'Adománybolt', href: S + '#bolt' }] },
+        { title: 'Jogi', links: [{ label: 'Adatkezelési tájékoztató', href: S + '#adatkezeles' }, { label: 'ÁSZF', href: S + '#aszf' }, { label: 'Etikus adománygyűjtő tanúsítvány', href: S + '#atlathatosag' }] }
+      ],
+      footerSocials: [{ label: 'Facebook' }, { label: 'Instagram' }, { label: 'TikTok' }, { label: 'LinkedIn' }]
+    };
+  }
+}
+</script>
+</body>
+</html>

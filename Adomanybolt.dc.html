@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;background:#FAFAF6;}
+    a{color:#437613;} a:hover{color:#2A4A0B;}
+    @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
+    @keyframes am-wave-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}
+    @keyframes am-wave-drift{0%{transform:translate(-50%,0);}50%{transform:translate(-50%,1.5px);}100%{transform:translate(-50%,0);}}
+    @media (prefers-reduced-motion: reduce){ [data-wave]{animation:none !important;} [data-wave] path{animation:none !important;stroke-dashoffset:0 !important;} }
+
+    @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
+  </style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:#171C12;">
+
+  <header style="position:sticky;top:0;z-index:30;background:#FAFAF6;border-bottom:1px solid #DDE3D5;">
+    <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
+      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;"></a>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+        <a href="Legyel Amigo.dc.html" style="color:#171C12;text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Legyél Amigo</a>
+        <a href="Munkank es hatasunk.dc.html" style="color:#171C12;text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:#171C12;text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Gyerekek &amp; Szülők</a>
+        <a href="Adomanybolt.dc.html" aria-current="page" style="color:#437613;text-decoration:none;font-weight:600;position:relative;display:inline-block;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 620ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+      </nav>
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:16px;">
+        <button data-cart-open="" type="button" style="display:flex;align-items:center;gap:10px;background:transparent;border:0;font:inherit;font-size:var(--text-nav);font-weight:500;color:#171C12;cursor:pointer;padding:0;">
+          Kosár
+          <span data-cart-count="" style="min-width:26px;height:26px;padding:0 7px;border-radius:999px;background:#437613;color:#FFFFFF;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;">0</span>
+        </button>
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+      </div>
+    </div>
+  </header>
+
+  <section data-screen-label="Hero" style="position:relative;background:#437613;color:#FFFFFF;overflow:hidden;padding:clamp(64px,9vw,120px) 0 clamp(56px,8vw,104px);">
+    <div data-m="pattern" aria-hidden="true" style="position:absolute;left:0;bottom:-0.18em;font-family:var(--font-display);font-weight:600;font-size:clamp(180px,26vw,440px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">AMIGOS AMIGOS</div>
+    <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:26px;">
+        <span style="font-size:13px;color:#DCE6D2;">Főoldal / Adománybolt</span>
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Adománybolt</span>
+        <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);max-width:15ch;text-wrap:pretty;color:#FFFFFF;">
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;color:#B2C7A3;">Veszel egy könyvet:</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">két gyerekhez is</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">eljut egy élmény.</span></span>
+        </h1>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:44ch;text-wrap:pretty;">Könyvek, munkafüzetek és játékok, amiket eredetileg kórházban gyógyuló gyerekeknek készítettünk. A befolyt adományból a heti foglalkozásainkat valósítjuk meg.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:4px;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="#termekek" hint-size="auto,52px">Termékek</x-import>
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverseOutline" size="lg" href="#hova-megy" hint-size="auto,52px">Mire megy a bevétel?</x-import>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#365F0F;display:flex;align-items:center;justify-content:center;">
+          <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/ID22-339075.jpg" alt="Egy világraszóló felfedezés — kalandkönyv" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="termekek" data-screen-label="Termékek" style="background:#FAFAF6;padding:clamp(72px,10vw,128px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(28px,4vw,48px);">
+      <div data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Termékek</span>
+          <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Amit megvehetsz</h2>
+        </div>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:#3A4433;">Minden kiadványunkat eredetileg kórházban gyógyuló gyerekeknek készítettük. A csomagot a megrendelést követő két héten belül, ingyenesen küldjük a választott Foxpost automatába.</p>
+      </div>
+
+      <div role="tablist" aria-label="Kategóriák" style="display:flex;gap:10px;flex-wrap:wrap;border-bottom:1px solid #DDE3D5;padding-bottom:20px;">
+        <button data-filter="all" type="button" role="tab" aria-selected="true" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #437613;background:#437613;color:#FFFFFF;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Minden</button>
+        <button data-filter="konyv" type="button" role="tab" aria-selected="false" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #DDE3D5;background:transparent;color:#171C12;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Könyv</button>
+        <button data-filter="fuzet" type="button" role="tab" aria-selected="false" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #DDE3D5;background:transparent;color:#171C12;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Munkafüzet</button>
+        <button data-filter="jatek" type="button" role="tab" aria-selected="false" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #DDE3D5;background:transparent;color:#171C12;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Játék</button>
+        <button data-filter="zokni" type="button" role="tab" aria-selected="false" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #DDE3D5;background:transparent;color:#171C12;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">AdományoZokni</button>
+      </div>
+
+      <div data-grid="" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:clamp(16px,2vw,24px);">
+
+        <article data-product="" tabindex="0" role="button" data-cat="konyv" data-name="Egy világraszóló felfedezés" data-stock="20" data-full="Készen állsz egy különleges kalandra? Ezzel a könyvvel bejárhatod a világot az Amigókkal, miközben izgalmas országokat, kultúrákat, nyelveket és szokásokat ismersz meg játékos, kreatív formában.|Az utazás során olyan helyekre látogatsz el, mint Kanada, az Egyesült Királyság, Portugália, Hollandia, Ausztria, Olaszország, Jordánia és Ausztrália — felfedezheted a hagyományaikat, ételeiket és látványosságaikat, és a nyelveikbe is bepillantasz.|Az útitársad Matyi Kalandor, aki végigvezet a felfedezésen. Rajzolhatsz, színezhetsz, alkothatsz, és a készségfejlesztő feladatokon keresztül még közelebb kerülsz az utazás élményéhez.|Eredetileg azért készítettük, hogy a kórházban gyógyuló gyerekekhez is elvigyük a felfedezés örömét. Az adományodból a programjainkat és a foglalkozásainkat valósítjuk meg." data-price="3990" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/ID22-339075.jpg" alt="Egy világraszóló felfedezés" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+            <span style="position:absolute;left:12px;top:12px;height:28px;padding:0 12px;border-radius:999px;background:#437613;color:#FFFFFF;font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;display:flex;align-items:center;">Népszerű</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Egy világraszóló felfedezés</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">3 990 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="jatek" data-name="Amigos PárParádé" data-stock="10" data-full="A PárParádé egy pörgős kártyajáték, amely játékosan segíti az angol és a német nyelv gyakorlását. Az Egy világraszóló felfedezés könyv alapján készült, iskolás korú gyerekeknek.|Gyorsasági játék, ami fejleszt is: miközben a figyelem, a reakcióidő és a koncentráció erősödik, új szavakkal és kifejezésekkel ismerkedtek meg két idegen nyelven.|5 éves kor felett ajánljuk, és minimum 2 fő játszhatja — jó választás családi játékhoz, baráti összejövetelhez vagy tanulás mellé." data-price="4990" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/ParParade.jpg" alt="Amigos PárParádé" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Amigos PárParádé</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">4 990 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="jatek" data-name="Amigos Világutazó memóriajáték" data-stock="55" data-full="Ez a memóriajáték nemcsak szórakoztató, hanem tanulságos is: a kártyák segítségével megismerheted a világ országait, zászlóit és érdekességeit.|Tökéletes választás gyerekeknek és felnőtteknek egyaránt — közös családi játékhoz vagy ajándékba.|Az adományodból a programjainkat és a foglalkozásainkat valósítjuk meg, hogy még több élményt és tanulási lehetőséget adhassunk a gyerekeknek." data-price="2790" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/03/Vilagutazo-memoria-1.jpg" alt="Amigos Világutazó memóriajáték" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Amigos Világutazó memóriajáték</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">2 790 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="jatek" data-name="Amigos Világutazó kártyajáték" data-stock="58" data-full="Készen állsz egy világ körüli kártyapartira? Ebben a pörgős játékban a lapok segítségével ismeritek meg a világ országait, zászlóit és érdekességeit.|Mindenki igyekszik minél több párt összegyűjteni, és elkerülni, hogy nála maradjon az utolsó lap. Nevetés, izgalom és egy kis földrajz egy pakliban.|Az adományoddal a kórházi foglalkozásainkat is segíted, így a játék öröme másokhoz is eljut." data-price="2990" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/03/Vilagutazo.jpg" alt="Amigos Világutazó kártyajáték" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Amigos Világutazó kártyajáték</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">2 990 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="fuzet" data-name="Német nyelvgyakorló füzet — ismerkedő szint" data-stock="10" data-full="Ez a munkafüzet azoknak a gyerekeknek készült, akik most kezdenek ismerkedni a német nyelvvel, és az első lépéseket játékos formában tennék meg.|A feladatok segítenek az alapok elsajátításában, bővítik a szókincset, és megszerettetik a nyelvtanulást már egészen kicsi kortól.|Eredetileg kórházban lévő gyerekeknek készítettük, hogy vidámabbá tegyük a gyógyulás időszakát. Most szeretnénk, ha még több tanulni vágyó gyerekhez eljutna." data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Nemet-ismerkedo-munkafuzet-scaled.png" alt="Német nyelvgyakorló füzet — ismerkedő szint" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Német nyelvgyakorló füzet — ismerkedő szint</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">1 990 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="fuzet" data-name="Német nyelvgyakorló füzet — haladó szint" data-stock="10" data-full="Azoknak a gyerekeknek, akik már ismerkednek a német nyelvvel, és szeretnének többet tanulni játékos formában.|A feladatok bővítik a szókincset és fejlesztik a nyelvi készségeket, miközben a tanulás valóban élménnyé válik.|Eredetileg kórházi foglalkozásokra készült. Az adományodból a programjainkat valósítjuk meg." data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Nemet-halado-munkafuzet-1.jpg" alt="Német nyelvgyakorló füzet — haladó szint" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Német nyelvgyakorló füzet — haladó szint</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">1 990 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="fuzet" data-name="Angol nyelvgyakorló füzet — ismerkedő szint" data-stock="10" data-full="Hiszünk benne, hogy a nyelvtanulás új világokat nyit meg. Az angollal való ismerkedés lehet játékos és inspiráló — különösen, ha az első lépéseket örömmel tesszük meg.|A feladatok segítenek az alapok elsajátításában, bővítik a szókincset, és megszerettetik a nyelvtanulást a kezdetektől.|Eredetileg kórházban lévő gyerekeknek készítettük, hogy a gyógyulás ideje is tartalmasabb legyen." data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Angol-ismerkedo-munkafuzet-1.jpg" alt="Angol nyelvgyakorló füzet — ismerkedő szint" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Angol nyelvgyakorló füzet — ismerkedő szint</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">1 990 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="fuzet" data-name="Angol nyelvgyakorló füzet — haladó szint" data-stock="10" data-full="Ez a haladó szintű füzet azoknak szól, akik már ismerik az alapokat, és tovább fejlesztenék a tudásukat.|A feladatok bővítik a szókincset, elmélyítik a nyelvi készségeket, és magabiztosabbá teszik az angol használatát.|Eredetileg kórházi foglalkozásokra készült — most szeretnénk, ha még több gyerekhez eljutna." data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Angol-halado-munkafuzet-2.-kiadas-1.jpg" alt="Angol nyelvgyakorló füzet — haladó szint" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Angol nyelvgyakorló füzet — haladó szint</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">1 990 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="fuzet" data-name="Nyelvi kavalkád munkafüzet" data-stock="10" data-full="Ismerd meg velünk, mennyire színes a világ! Ebben a füzetben többféle nyelvvel találkozhatsz — a franciától és a spanyoltól egészen a törökig vagy a vietnámiig.|A játékos feladatokkal új szavakat tanulhatsz, bepillantasz különböző kultúrákba, és felfedezheted, milyen sokféleképpen kommunikálnak az emberek.|Eredetileg kórházban lévő gyerekeknek készítettük, hogy megmutassuk: a tanulás egyszerre lehet izgalmas és örömteli." data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Nyelvi-kavalkad.jpg" alt="Nyelvi kavalkád munkafüzet" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Nyelvi kavalkád munkafüzet</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">1 990 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="fuzet" data-name="Egy pályán a nagyokkal — focis munkafüzet (angol)" data-stock="10" data-full="Ez a munkafüzet a labdarúgás világába vezet be — játékosan, kreatívan, élményekkel teli feladatokon keresztül.|Készíthetsz saját címert, megtalálhatod a hozzád illő posztot, megírhatod a csapatod indulóját, és közben egyre többet tudsz meg a sportágról.|A feladatok során az angol nyelvvel is találkozol, így a tanulás még színesebb élménnyé válik. Eredetileg kórházi foglalkozásokra készült." data-price="2490" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/focis-munkafuzet-angol-1-scaled.png" alt="Egy pályán a nagyokkal — focis munkafüzet (angol)" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Egy pályán a nagyokkal — focis munkafüzet (angol)</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">2 490 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="fuzet" data-name="Egy pályán a nagyokkal — focis munkafüzet (német)" data-stock="10" data-full="Ez a füzet a labdarúgást és a német nyelvet hozza össze egy játékos kalandban.|Saját címer, a hozzád illő poszt, saját induló — és közben egyre többet tudsz meg a sportág különlegességeiről.|A kaland során Abigél és Aladár, az Amigo kalandorok is végigkísérnek, videós és extra tartalmakkal. Eredetileg kórházban lévő gyerekeknek készítettük." data-price="2490" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/nemet_UEFA-x-Amigos-munkafuzet_VEGLEGES.png" alt="Egy pályán a nagyokkal — focis munkafüzet (német)" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Egy pályán a nagyokkal — focis munkafüzet (német)</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">2 490 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="zokni" data-name="Húsvéti AdományoZokni 2026" data-stock="183" data-full="Lepd meg magad vagy egy szerettedet egy vidám, tavaszi mintás zoknival, miközben egy jó ügyet is támogatsz.|A csomag egy pár zoknit tartalmaz, 31–34, 35–38, 39–42 és 43–46 méretben. A designt Varsányi Orsi grafikusnak köszönhetjük.|Az adományoddal hozzájárulsz ahhoz, hogy az Amigók még több kórházban fekvő gyerekhez eljuthassanak." data-price="3490" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/03/Husveti-zokni-2026-1-1-1.jpg" alt="Húsvéti AdományoZokni 2026" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+            <span style="position:absolute;left:12px;top:12px;height:28px;padding:0 12px;border-radius:999px;background:#993166;color:#FFFFFF;font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;display:flex;align-items:center;">Kampány</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Húsvéti AdományoZokni 2026</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">3 490 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="zokni" data-name="Húsvéti Nosztalgia AdományoZokni 2025" data-stock="83" data-full="Lemaradtál a korábbi AdományoZoknikról? Visszahoztuk tavaszi meglepetésként a 2025-ös kollekciót.|A csomag egy pár zoknit tartalmaz, 36–39 és 39–42 méretben. A designt Varsányi Orsi grafikusnak köszönhetjük.|Ez a zokni nemcsak a lábadat melengeti: az adományoddal a kórházi foglalkozásainkat támogatod." data-price="3490" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2025/04/zokni-2-3-scaled.jpg" alt="Húsvéti Nosztalgia AdományoZokni 2025" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Húsvéti Nosztalgia AdományoZokni 2025</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">3 490 Ft-tól</span>
+        </article>
+
+        <article data-product="" tabindex="0" role="button" data-cat="zokni" data-name="Húsvéti Nosztalgia AdományoZokni 2022" data-stock="14" data-full="Visszahoztuk a 2022-es AdományoZoknit is — a régi kedvenc újra kapható.|A csomag egy pár zoknit tartalmaz, 36–39 és 40–44 méretben. A designt Varsányi Orsi grafikusnak köszönhetjük.|Az adományoddal a kórházi foglalkozásainkat támogatod." data-price="3490" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E7EEDF;">
+            <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/03/Husveti-zokni2022-1.jpg" alt="Húsvéti Nosztalgia AdományoZokni 2022" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 300ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0px;">
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Húsvéti Nosztalgia AdományoZokni 2022</h3>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#437613;margin-top:-6px;">3 490 Ft-tól</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="hova-megy" data-screen-label="Hova megy a bevétel" style="background:#FFFFFF;border-top:1px solid #DDE3D5;border-bottom:1px solid #DDE3D5;padding:clamp(88px,12vw,160px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,104px);align-items:start;">
+      <div data-sticky="" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:20px;">
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Hova megy a bevétel</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Egy vásárlás, egy konkrét tétel</h2>
+        <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:38ch;color:#3A4433;">Az összegek a belső költségbecslésünkön alapulnak, és minden évben a nyilvános beszámolóban is elszámolunk velük.</p>
+        <a href="Munkank es hatasunk.dc.html#atlathatosag" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Átláthatóság →</a>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #DDE3D5;">
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:baseline;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;color:#437613;font-variant-numeric:tabular-nums;white-space:nowrap;">1 munkafüzet</span>
+          <span style="font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:#171C12;">= egy kórházi foglalkozás teljes alapanyaga</span>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:baseline;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;color:#437613;font-variant-numeric:tabular-nums;white-space:nowrap;">1 zokni</span>
+          <span style="font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:#171C12;">= egy Amigo havi útiköltsége, négy kórházi látogatásra</span>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:baseline;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;color:#437613;font-variant-numeric:tabular-nums;white-space:nowrap;">1 kalandkönyv</span>
+          <span style="font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:#171C12;">= egy nyelvi foglalkozás öt gyereknek, eszközökkel együtt</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px 40px;padding-top:26px;font-size:15px;color:#3A4433;">
+          <span>Ingyenes Foxpost kiszállítás</span>
+          <span>A csomag két héten belül érkezik</span>
+          <span>Kérdés: kapcsolat@amigos.hu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Rendszeres támogatás" style="background:#993166;color:#FFFFFF;padding:clamp(72px,10vw,120px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,56px);align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:17ch;text-wrap:pretty;color:#FFFFFF;">Egy könyv egy foglalkozás. Egy rendszeres támogatás egy egész év.</h2>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;">Havi 5 000 Ft-tal egy Amigo útiköltségét fedezed — bármikor módosítható vagy leállítható.</p>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;">
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,52px">Rendszeres támogatás</x-import>
+      </div>
+    </div>
+  </section>
+
+  <div data-detail="" role="dialog" aria-modal="true" aria-label="Termék részletei" aria-hidden="true" style="position:fixed;inset:0;z-index:70;pointer-events:none;display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px);">
+    <div data-detail-scrim="" style="position:absolute;inset:0;background:rgba(23,28,18,0.5);opacity:0;transition:opacity 240ms cubic-bezier(0.2,0.7,0.2,1);"></div>
+    <div data-detail-panel="" style="position:relative;width:min(980px,100%);max-height:100%;overflow:auto;background:#FAFAF6;border-radius:24px;opacity:0;transform:scale(0.96) translateY(12px);transition:opacity 260ms cubic-bezier(0.2,0.7,0.2,1),transform 260ms cubic-bezier(0.2,0.7,0.2,1);">
+      <button data-detail-close="" type="button" aria-label="Bezárás" style="position:absolute;right:16px;top:16px;z-index:2;width:44px;height:44px;border-radius:50%;border:2px solid #DDE3D5;background:#FAFAF6;color:#171C12;font:inherit;font-size:20px;line-height:1;cursor:pointer;">×</button>
+      <div data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(20px,3vw,40px);">
+        <div style="aspect-ratio:4/5;background:#E7EEDF;border-radius:24px 0 0 24px;overflow:hidden;">
+          <img data-detail-img="" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;padding:clamp(24px,3vw,40px) clamp(24px,3vw,40px) clamp(24px,3vw,40px) 0;">
+          <h2 data-detail-title="" style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:22ch;text-wrap:pretty;"></h2>
+          <span data-detail-stock="" style="font-size:13px;color:#5A6650;"></span>
+          <div data-detail-body="" style="display:flex;flex-direction:column;gap:12px;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:56ch;"></div>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;">
+            <span data-detail-min="" style="font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:#5A6650;"></span>
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+              <label style="display:flex;align-items:center;gap:8px;border:2px solid #DDE3D5;border-radius:12px;padding:0 16px;height:52px;background:#FFFFFF;width:200px;">
+                <input data-detail-amount="" inputmode="numeric" style="width:100%;min-width:0;border:0;outline:0;background:transparent;font-family:var(--font-display);font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#171C12;font-variant-numeric:tabular-nums;">
+                <span style="font-size:15px;color:#5A6650;">Ft</span>
+              </label>
+              <button data-detail-add="" type="button" style="height:52px;padding:0 28px;border-radius:12px;border:2px solid #437613;background:#437613;color:#FFFFFF;font:inherit;font-weight:600;font-size:16px;cursor:pointer;">Kosárba</button>
+            </div>
+            <span style="font-size:14px;color:#5A6650;">Ingyenes Foxpost kiszállítás · két héten belül</span>
+          </div>
+          <span data-detail-note="" style="font-size:13px;color:#5A6650;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-cart="" role="dialog" aria-label="Kosár" aria-hidden="true" style="position:fixed;inset:0;z-index:60;pointer-events:none;">
+    <div data-cart-scrim="" style="position:absolute;inset:0;background:rgba(23,28,18,0.5);opacity:0;transition:opacity 240ms cubic-bezier(0.2,0.7,0.2,1);"></div>
+    <aside data-cart-panel="" style="position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);background:#FAFAF6;border-left:1px solid #DDE3D5;display:flex;flex-direction:column;transform:translateX(100%);transition:transform 280ms cubic-bezier(0.2,0.7,0.2,1);">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,4vw,32px);border-bottom:1px solid #DDE3D5;">
+        <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;">Kosár</span>
+        <button data-cart-close="" type="button" aria-label="Bezárás" style="width:40px;height:40px;border-radius:50%;border:2px solid #DDE3D5;background:transparent;color:#171C12;font:inherit;font-size:18px;line-height:1;cursor:pointer;">×</button>
+      </div>
+      <div data-cart-items="" style="flex:1;overflow:auto;padding:0 clamp(20px,4vw,32px);"></div>
+      <div style="border-top:1px solid #DDE3D5;padding:20px clamp(20px,4vw,32px);display:flex;flex-direction:column;gap:14px;">
+        <label style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:#3A4433;">
+          <input data-round="" type="checkbox" style="width:20px;height:20px;margin-top:2px;accent-color:#437613;flex:none;">
+          <span>Kiegészítem 500 Ft adománnyal</span>
+        </label>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;">
+          <span style="font-size:var(--text-body);color:#3A4433;">Adomány összesen</span>
+          <span data-cart-total="" style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;font-variant-numeric:tabular-nums;">0 Ft</span>
+        </div>
+        <span data-cart-ship="" style="font-size:13px;color:#5A6650;">Ingyenes Foxpost kiszállítás · két héten belül</span>
+        <a href="Amigos Aloldalak.dc.html#penztar" style="display:flex;align-items:center;justify-content:center;height:52px;border-radius:12px;background:#437613;color:#FFFFFF;font-weight:600;font-size:16px;text-decoration:none;">Támogatom a gyerekeket</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer style="background:#171C12;color:#FFFFFF;padding:clamp(48px,7vw,80px) 0 32px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+      <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;">
+          <span style="font-size:15px;line-height:1.5;color:#C7CFC0;max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:#C7CFC0;">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">Bolt</span>
+            <a href="#termekek" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Termékek</a>
+            <a href="Amigos Aloldalak.dc.html#kosar" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Kosár</a>
+            <a href="Amigos Aloldalak.dc.html#penztar" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Pénztár</a>
+            <a href="Amigos Aloldalak.dc.html#aszf" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Szállítás és elállás</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">Támogatás</span>
+            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Ado 1 szazalek.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <a href="Blog.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Blog</a>
+            <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Átláthatóság</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">Jogi</span>
+            <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="Amigos Aloldalak.dc.html#aszf" style="color:#FFFFFF;text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="Amigos Aloldalak.dc.html#sitemap" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Oldaltérkép</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:#C7CFC0;">
+        <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.cart = [];
+    const bind = () => {
+      this.pattern = document.querySelector('[data-m="pattern"]');
+      this.grid = document.querySelector('[data-grid]');
+      if (!this.grid) return false;
+      this.intro(); this.reveal(); this.bindFilters(); this.bindCart(); this.bindDetail(); this.renderCart();
+      this.alive = true; this.last = -1;
+      const loop = () => {
+        if (!this.alive) return;
+        requestAnimationFrame(loop);
+        const k = window.scrollY + ':' + window.innerWidth;
+        if (k !== this.last) { this.last = k; try { this.apply(); } catch (e) {} }
+      };
+      requestAnimationFrame(loop);
+      return true;
+    };
+    if (!bind()) { const iv = setInterval(() => { if (bind()) clearInterval(iv); }, 100); }
+  }
+  componentWillUnmount() { this.alive = false; }
+  intro() {
+    if (this.reduced) return;
+    document.querySelectorAll('[data-m="wi"]').forEach((w, i) => {
+      w.style.transform = 'translateY(105%)';
+      w.style.transition = `transform 620ms cubic-bezier(0.2,0.7,0.2,1) ${100 + i * 80}ms`;
+      void w.offsetHeight;
+      w.style.transform = 'translateY(0)';
+      setTimeout(() => { w.style.transition = ''; w.style.transform = ''; }, 900 + i * 80);
+    });
+  }
+  reveal() {
+    if (this.reduced || !('IntersectionObserver' in window)) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal], [data-product]'));
+    els.forEach((el, i) => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
+      el.style.transition = `opacity 400ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 70}ms, transform 400ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 70}ms`;
+    });
+    const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(el => io.observe(el));
+    // image lifts 2% on card hover, per the design system's card rule
+    document.querySelectorAll('[data-product]').forEach(card => {
+      const img = card.querySelector('img');
+      if (!img) return;
+      card.onmouseenter = () => { img.style.transform = 'scale(1.02)'; };
+      card.onmouseleave = () => { img.style.transform = 'none'; };
+    });
+  }
+  bindFilters() {
+    const btns = Array.from(document.querySelectorAll('[data-filter]'));
+    btns.forEach(b => b.onclick = () => {
+      btns.forEach(o => {
+        const on = o === b;
+        o.setAttribute('aria-selected', String(on));
+        o.style.background = on ? '#437613' : 'transparent';
+        o.style.borderColor = on ? '#437613' : '#DDE3D5';
+        o.style.color = on ? '#FFFFFF' : '#171C12';
+      });
+      const f = b.dataset.filter;
+      document.querySelectorAll('[data-product]').forEach(p => {
+        p.style.display = (f === 'all' || p.dataset.cat === f) ? '' : 'none';
+      });
+    });
+  }
+  bindCart() {
+    const open = document.querySelector('[data-cart-open]');
+    const close = document.querySelector('[data-cart-close]');
+    const scrim = document.querySelector('[data-cart-scrim]');
+    const root = document.querySelector('[data-cart]');
+    const panel = document.querySelector('[data-cart-panel]');
+    const setOpen = on => {
+      root.style.pointerEvents = on ? 'auto' : 'none';
+      root.setAttribute('aria-hidden', String(!on));
+      scrim.style.opacity = on ? '1' : '0';
+      panel.style.transform = on ? 'translateX(0)' : 'translateX(100%)';
+    };
+    if (open) open.onclick = () => setOpen(true);
+    if (close) close.onclick = () => setOpen(false);
+    if (scrim) scrim.onclick = () => setOpen(false);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+    this.setCartOpen = setOpen;
+
+    document.querySelectorAll('[data-product]').forEach(card => {
+      const btn = card.querySelector('[data-add]');
+      if (!btn) return;
+      const input = card.querySelector('[data-amount]');
+      const note = card.querySelector('[data-amount-note]');
+      const min = +card.dataset.price;
+      const fmtNum = v => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      if (input) {
+        input.oninput = () => {
+          const raw = input.value.replace(/\D/g, '');
+          input.value = raw ? fmtNum(+raw) : '';
+          if (note) note.textContent = (+raw && +raw < min) ? `A minimum adomány ${fmtNum(min)} Ft.` : '';
+          if (note) note.style.color = (+raw && +raw < min) ? '#B3261E' : '#5A6650';
+        };
+        input.onblur = () => { const v = +input.value.replace(/\D/g, ''); if (!v || v < min) { input.value = fmtNum(min); if (note) { note.textContent = ''; note.style.color = '#5A6650'; } } };
+      }
+      btn.onclick = () => {
+        const name = card.dataset.name;
+        let price = input ? +input.value.replace(/\D/g, '') : min;
+        if (!price || price < min) {
+          price = min;
+          if (input) input.value = fmtNum(min);
+          if (note) { note.textContent = `A minimum adomány ${fmtNum(min)} Ft — ennyivel tettük a kosárba.`; note.style.color = '#5A6650'; }
+        }
+        const line = this.cart.find(l => l.name === name && l.price === price);
+        if (line) line.qty++; else this.cart.push({ name, price, qty: 1 });
+        btn.textContent = 'Kosárban ✓';
+        btn.style.background = '#437613'; btn.style.color = '#FFFFFF';
+        setTimeout(() => { btn.textContent = 'Kosárba'; btn.style.background = 'transparent'; btn.style.color = '#437613'; }, 1200);
+        this.renderCart();
+      };
+    });
+    const round = document.querySelector('[data-round]');
+    if (round) round.onchange = () => this.renderCart();
+  }
+  bindDetail() {
+    const root = document.querySelector('[data-detail]');
+    if (!root) return;
+    const scrim = root.querySelector('[data-detail-scrim]');
+    const panel = root.querySelector('[data-detail-panel]');
+    const img = root.querySelector('[data-detail-img]');
+    const title = root.querySelector('[data-detail-title]');
+    const stock = root.querySelector('[data-detail-stock]');
+    const body = root.querySelector('[data-detail-body]');
+    const minEl = root.querySelector('[data-detail-min]');
+    const input = root.querySelector('[data-detail-amount]');
+    const note = root.querySelector('[data-detail-note]');
+    const addBtn = root.querySelector('[data-detail-add]');
+    const fmtNum = v => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    let current = null;
+
+    const setOpen = on => {
+      root.style.pointerEvents = on ? 'auto' : 'none';
+      root.setAttribute('aria-hidden', String(!on));
+      scrim.style.opacity = on ? '1' : '0';
+      panel.style.opacity = on ? '1' : '0';
+      panel.style.transform = on ? 'scale(1) translateY(0)' : 'scale(0.96) translateY(12px)';
+      document.body.style.overflow = on ? 'hidden' : '';
+    };
+    const open = card => {
+      current = card;
+      const min = +card.dataset.price;
+      const cimg = card.querySelector('img');
+      if (cimg) { img.src = cimg.src; img.alt = cimg.alt; }
+      title.textContent = card.dataset.name;
+      stock.textContent = card.dataset.stock ? `${card.dataset.stock} készleten` : '';
+      body.textContent = '';
+      (card.dataset.full || '').split('|').forEach(p => {
+        const el = document.createElement('p');
+        el.textContent = p;
+        el.style.margin = '0';
+        body.appendChild(el);
+      });
+      minEl.textContent = `Támogatás összege — minimum ${fmtNum(min)} Ft`;
+      input.value = fmtNum(min);
+      note.textContent = '';
+      setOpen(true);
+    };
+    input.oninput = () => {
+      const raw = input.value.replace(/\D/g, '');
+      input.value = raw ? fmtNum(+raw) : '';
+      const min = current ? +current.dataset.price : 0;
+      const low = +raw && +raw < min;
+      note.textContent = low ? `A minimum adomány ${fmtNum(min)} Ft.` : '';
+      note.style.color = low ? '#B3261E' : '#5A6650';
+    };
+    addBtn.onclick = () => {
+      if (!current) return;
+      const min = +current.dataset.price;
+      let price = +input.value.replace(/\D/g, '');
+      if (!price || price < min) { price = min; input.value = fmtNum(min); }
+      const name = current.dataset.name;
+      const line = this.cart.find(l => l.name === name && l.price === price);
+      if (line) line.qty++; else this.cart.push({ name, price, qty: 1 });
+      this.renderCart();
+      setOpen(false);
+      if (this.setCartOpen) this.setCartOpen(true);
+    };
+    scrim.onclick = () => setOpen(false);
+    root.querySelector('[data-detail-close]').onclick = () => setOpen(false);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+
+    document.querySelectorAll('[data-product]').forEach(card => {
+      const go = e => {
+        if (e.target.closest('[data-add], [data-amount], label')) return;
+        open(card);
+      };
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', go);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); } });
+    });
+  }
+  renderCart() {
+    const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' Ft';
+    const box = document.querySelector('[data-cart-items]');
+    const countEl = document.querySelector('[data-cart-count]');
+    const totalEl = document.querySelector('[data-cart-total]');
+    const shipEl = document.querySelector('[data-cart-ship]');
+    const round = document.querySelector('[data-round]');
+    const count = this.cart.reduce((s, l) => s + l.qty, 0);
+    let total = this.cart.reduce((s, l) => s + l.qty * l.price, 0);
+    if (round && round.checked && count) total += 500;
+    if (countEl) countEl.textContent = String(count);
+    if (totalEl) totalEl.textContent = fmt(total);
+    if (shipEl) shipEl.textContent = total >= 20000 ? 'Ingyenes szállítás · 2–4 munkanap' : 'Szállítás 1 490 Ft · 20 000 Ft felett ingyenes';
+    if (!box) return;
+    box.textContent = '';
+    if (!this.cart.length) {
+      const empty = document.createElement('p');
+      empty.textContent = 'Még üres. Minden vásárlás a heti kórházi programokat fedezi.';
+      empty.style.cssText = 'margin:24px 0;font-size:15px;line-height:1.6;color:#5A6650;';
+      box.appendChild(empty);
+      return;
+    }
+    this.cart.forEach(l => {
+      const row = document.createElement('div');
+      row.style.cssText = 'display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:18px 0;border-bottom:1px solid #DDE3D5;';
+      const left = document.createElement('span');
+      left.style.cssText = 'display:flex;flex-direction:column;gap:6px;min-width:0;';
+      const nm = document.createElement('span');
+      nm.textContent = l.name;
+      nm.style.cssText = 'font-family:var(--font-display);font-weight:600;font-size:17px;letter-spacing:-0.02em;';
+      const qty = document.createElement('span');
+      qty.style.cssText = 'display:flex;align-items:center;gap:10px;font-size:15px;color:#3A4433;';
+      const mk = (label, fn) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.setAttribute('aria-label', label === '−' ? 'Kevesebb' : 'Több'); b.style.cssText = 'width:30px;height:30px;border-radius:50%;border:2px solid #437613;background:transparent;color:#437613;font:inherit;font-size:15px;line-height:1;cursor:pointer;'; b.onclick = fn; return b; };
+      qty.appendChild(mk('−', () => { l.qty--; if (l.qty <= 0) this.cart = this.cart.filter(x => x !== l); this.renderCart(); }));
+      const n = document.createElement('span'); n.textContent = String(l.qty); n.style.fontVariantNumeric = 'tabular-nums'; qty.appendChild(n);
+      qty.appendChild(mk('+', () => { l.qty++; this.renderCart(); }));
+      left.appendChild(nm); left.appendChild(qty);
+      const price = document.createElement('span');
+      price.textContent = fmt(l.qty * l.price);
+      price.style.cssText = 'font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap;';
+      row.appendChild(left); row.appendChild(price);
+      box.appendChild(row);
+    });
+  }
+  apply() {
+    if (this.reduced || !this.pattern) return;
+    const r = this.pattern.parentElement.getBoundingClientRect();
+    this.pattern.style.transform = `translate3d(${-(window.innerHeight - r.top) * 0.16}px,0,0)`;
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

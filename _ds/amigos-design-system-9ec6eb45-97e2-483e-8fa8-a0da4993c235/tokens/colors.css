@@ -1,0 +1,71 @@
+/* Amigos color tokens. Brand values from "2025 Amigos Brandbook Kisokos" (p.9). Tints/shades derived tonally from them. */
+:root{
+/* Brand — source of truth */
+--am-green-700:#437613; /* "zöld alap" primary brand green */
+--am-green-500:#6DA834; /* "zöld világosabb" */
+--am-green-200:#B2C7A3; /* "fakó zöld" */
+--am-purple-600:#993166; /* "lila" */
+/* Derived brand ramp (tonal, same hue as brand green) */
+--am-green-900:#2A4A0B;
+--am-green-800:#365F0F;
+--am-green-600:#528F1E;
+--am-green-300:#9DBE86;
+--am-green-100:#E6EEDC;
+--am-green-50:#F3F7EC;
+--am-purple-700:#7A2751;
+--am-purple-100:#F3E3EB;
+--am-purple-50:#FAF2F6;
+/* Sub-brand only (Amigos Mini brush red, TanulTablet yellow) — never on master brand UI */
+--am-mini-red:#C8222B;
+--am-tablet-yellow:#E4B21C;
+/* Neutrals — warm, faintly green-cast */
+--am-white:#FFFFFF;
+--am-paper:#FAFAF6;
+--am-mist:#EEF0EA;
+--am-line:#D9DDD2;
+--am-line-strong:#B9BFB0;
+--am-ink-3:#5F6858;
+--am-ink-2:#3E4638;
+--am-ink:#171C12;
+/* Functional / semantic — NOT brand colors. Always paired with an icon or label. */
+--am-error:#B3261E;
+--am-error-bg:#FBECEA;
+--am-warning:#8A5A00;
+--am-warning-bg:#FFF3D6;
+--am-info:#2C5D8F;
+--am-info-bg:#E7EFF7;
+--am-success:#437613;
+--am-success-bg:#E6EEDC;
+/* Semantic aliases */
+--color-primary:var(--am-green-700);
+--color-primary-hover:var(--am-green-800);
+--color-primary-active:var(--am-green-900);
+--color-primary-soft:var(--am-green-100);
+--color-primary-softer:var(--am-green-50);
+--color-secondary:var(--am-green-500);
+--color-accent:var(--am-purple-600);
+--color-accent-hover:var(--am-purple-700);
+--color-accent-soft:var(--am-purple-100);
+--bg-page:var(--am-paper);
+--bg-surface:var(--am-white);
+--bg-surface-muted:var(--am-mist);
+--bg-field:var(--am-green-700);        /* large controlled color field (hero, CTA, footer) */
+--bg-field-deep:var(--am-green-900);
+--bg-field-pale:var(--am-green-200);   /* tonal field: green-200 with green-900 text */
+--bg-field-accent:var(--am-purple-600);
+--text-primary:var(--am-ink);
+--text-secondary:var(--am-ink-2);
+--text-tertiary:var(--am-ink-3);
+--text-brand:var(--am-green-700);
+--text-on-field:var(--am-white);
+--text-on-field-muted:var(--am-green-200);
+--text-on-pale:var(--am-green-900);
+--text-on-accent:var(--am-white);
+--text-link:var(--am-green-700);
+--text-link-hover:var(--am-green-900);
+--border-default:var(--am-line);
+--border-strong:var(--am-line-strong);
+--border-brand:var(--am-green-700);
+--border-focus:var(--am-green-700);
+--focus-ring:0 0 0 3px var(--am-green-200);/* @kind shadow */
+}

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;background:#FAFAF6;}
+    a{color:#437613;} a:hover{color:#2A4A0B;}
+    @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
+    @keyframes am-wave-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}
+    @keyframes am-wave-drift{0%{transform:translate(-50%,0);}50%{transform:translate(-50%,1.5px);}100%{transform:translate(-50%,0);}}
+    @media (prefers-reduced-motion: reduce){ [data-wave]{animation:none !important;} [data-wave] path{animation:none !important;stroke-dashoffset:0 !important;} }
+
+    @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
+    #jelentkezes input::placeholder, #jelentkezes textarea::placeholder{color:#DCE6D2;opacity:1;}
+  </style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:#171C12;">
+
+  <header style="position:sticky;top:0;z-index:30;background:#FAFAF6;border-bottom:1px solid #DDE3D5;">
+    <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
+      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;"></a>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+        <a href="Legyel Amigo.dc.html" aria-current="page" style="color:#437613;text-decoration:none;font-weight:600;position:relative;display:inline-block;">Legyél Amigo<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 620ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Munkank es hatasunk.dc.html" style="color:#171C12;text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:#171C12;text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Gyerekek &amp; Szülők</a>
+        <a href="Adomanybolt.dc.html" style="color:#171C12;text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Adománybolt</a>
+      </nav>
+      <div style="display:flex;justify-content:flex-end;">
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+      </div>
+    </div>
+  </header>
+
+  <section data-screen-label="Hero" style="position:relative;background:#437613;color:#FFFFFF;overflow:hidden;padding:clamp(72px,11vw,148px) 0 clamp(64px,9vw,120px);">
+    <div data-m="pattern" aria-hidden="true" style="position:absolute;left:0;bottom:-0.18em;font-family:var(--font-display);font-weight:600;font-size:clamp(200px,30vw,500px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">AMIGO AMIGO</div>
+    <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:28px;">
+        <span style="font-size:13px;color:#DCE6D2;">Főoldal / Legyél Amigo</span>
+        <span style="font-size: var(--text-label); letter-spacing: var(--ls-label); text-transform: uppercase; font-weight: 600; color: #DCE6D2; width: 693px; height: 8px">Önkéntesség egyetemistáknak</span>
+        <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);max-width:13ch;text-wrap:pretty;">
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--am-green-200)">Heti két óra.</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--bg-page)">Egy gyereknek</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--bg-page)">az egész hete.</span></span>
+        </h1>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:44ch;text-wrap:pretty;">Egyetemistaként hetente egyszer ugyanahhoz a gyerekhez jársz vissza a kórházba. Nem animátor vagy, nem terapeuta. Barát.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:4px;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="#jelentkezes" hint-size="auto,52px">Jelentkezem</x-import>
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverseOutline" size="lg" href="#utvonal" hint-size="auto,52px">Hogyan kezdődik?</x-import>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#365F0F;">
+          <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52020108215_3c7ba49607_o-3-scaled.jpg" alt="Amigo és gyerek egy kórházi foglalkozáson" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Számok" style="background:#FAFAF6;border-bottom:1px solid #DDE3D5;">
+    <div style="max-width:1280px;margin:0 auto;padding:clamp(32px,5vw,56px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(20px,3vw,40px);">
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <span data-stat="" data-count="300" style="font-family:var(--font-display);font-weight:600;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.03em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+        <span style="font-size:var(--text-body);color:#3A4433;">Amigo önkéntes</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <span data-stat="" data-count="6" style="font-family:var(--font-display);font-weight:600;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.03em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+        <span style="font-size:var(--text-body);color:#3A4433;">egyetemi város</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <span data-stat="" data-count="20" style="font-family:var(--font-display);font-weight:600;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.03em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+        <span style="font-size:var(--text-body);color:#3A4433;">kórházi osztály</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <span data-stat="" data-count="2" style="font-family:var(--font-display);font-weight:600;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.03em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+        <span style="font-size:var(--text-body);color:#3A4433;">óra hetente</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Kinek szól" style="background:#FAFAF6;padding:clamp(88px,12vw,160px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,104px);align-items:start;">
+      <div data-sticky="" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:20px;">
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Kinek szól</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:15ch;text-wrap:pretty;">Komoly vállalás. Pont ezért működik.</h2>
+        <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:38ch;color:#3A4433;">A gyerekek akkor engednek közel valakit, ha biztosak lehetnek benne, hogy jövő héten is jön.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #DDE3D5;">
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span aria-hidden="true" style="width:14px;height:14px;border-radius:50%;border:2px solid #437613;margin-top:7px;"></span>
+          <span style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Aktív egyetemista vagy</span><span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Bármelyik szak, bármelyik évfolyam. Hallgatói jogviszony kell hozzá.</span></span>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span aria-hidden="true" style="width:14px;height:14px;border-radius:50%;border:2px solid #437613;margin-top:7px;"></span>
+          <span style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Hat városunk egyikében tanulsz</span><span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Budapest, Debrecen, Szeged, Pécs, Miskolc vagy Győr.</span></span>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span aria-hidden="true" style="width:14px;height:14px;border-radius:50%;border:2px solid #437613;margin-top:7px;"></span>
+          <span style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Egy tanévet vállalsz</span><span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Heti egy alkalom, kb. két óra, ugyanabban az időpontban.</span></span>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:26px 0;border-bottom:1px solid #DDE3D5;">
+          <span aria-hidden="true" style="width:14px;height:14px;border-radius:50%;border:2px solid #437613;margin-top:7px;"></span>
+          <span style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Elvégzed az Amigos Akadémiát</span><span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Egy hétvégényi képzés kórházi szabályokról és a gyerekekkel való munkáról.</span></span>
+        </div>
+        <p style="margin:26px 0 0;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:52ch;">Nem kell egészségügyi végzettség, és nem kell korábbi önkéntes tapasztalat. Amit hozol: a heti két órát, és hogy tartod a szavad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="utvonal" data-screen-label="Út a kórteremig" style="position:relative;background:#FFFFFF;border-top:1px solid #DDE3D5;border-bottom:1px solid #DDE3D5;padding:clamp(88px,12vw,160px) 0;overflow:hidden;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(40px,6vw,72px);">
+      <div data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Az út</span>
+          <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">A jelentkezéstől a kórteremig</h2>
+        </div>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:#3A4433;">Négy lépés, jellemzően hat-nyolc hét. Egyik sem szűrő: mindegyik arról szól, hogy biztonságban érezd magad az első alkalommal.</p>
+      </div>
+
+      <div style="position:relative;">
+        <svg data-m="kotes" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:28px;overflow:visible;pointer-events:none;z-index:0;opacity:0;">
+          <path data-m="kotespath" fill="none" stroke="#437613" stroke-width="2"></path>
+        </svg>
+        <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,3vw,40px);">
+          <div data-step="" style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;">
+            <span style="width:28px;height:28px;border-radius:50%;background:#437613;display:block;"></span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">01</span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Jelentkezés</span>
+            <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Online űrlap, pár perc. Öt munkanapon belül válaszolunk.</span>
+          </div>
+          <div data-step="" style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;">
+            <span style="width:28px;height:28px;border-radius:50%;background:#437613;display:block;"></span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">02</span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Amigos felvételi</span>
+            <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">45 perces beszélgetés a városod Amigo-felelősével.</span>
+          </div>
+          <div data-step="" style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;">
+            <span style="width:28px;height:28px;border-radius:50%;background:#437613;display:block;"></span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">03</span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Amigos Akadémia</span>
+            <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Hétvégi képzés: kórházi protokoll, kommunikáció, határok.</span>
+          </div>
+          <div data-step="" style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;">
+            <span style="width:28px;height:28px;border-radius:50%;background:#437613;display:block;"></span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">04</span>
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Első látogatás</span>
+            <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">Senior Amigóval mész be először. Utána is marad kíséret.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Városok" style="position:relative;background:#437613;color:#FFFFFF;overflow:hidden;padding:clamp(88px,12vw,160px) 0;">
+    <div data-m="cities" aria-hidden="true" style="position:absolute;left:0;top:clamp(20px,5vw,64px);display:flex;gap:0.4em;font-family:var(--font-display);font-weight:600;font-size:clamp(130px,18vw,300px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">
+      <span>BUDAPEST</span><span>DEBRECEN</span><span>SZEGED</span><span>PÉCS</span><span>MISKOLC</span><span>GYŐR</span>
+    </div>
+    <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:6fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:26px;">
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Hol lehetsz Amigo</span>
+        <h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); max-width: 15ch; text-wrap: pretty; color: var(--bg-surface)">Hat város, húsz kórházi osztály</h2>
+        <div style="display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,0.3);">
+          <button data-city="Budapest" data-hospitals="8 osztály" data-amigos="120" data-img="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52020108215_3c7ba49607_o-3-scaled.jpg" type="button" style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:20px;align-items:baseline;padding:16px 0;border:0;border-bottom:1px solid rgba(255,255,255,0.3);background:transparent;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Budapest</span><span style="font-size:15px;color:#DCE6D2;">8 osztály</span><span style="font-size:15px;color:#DCE6D2;font-variant-numeric:tabular-nums;">120 Amigo</span>
+          </button>
+          <button data-city="Debrecen" data-hospitals="3 osztály" data-amigos="48" data-img="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52019587606_3d3e56e560_o-scaled.jpg" type="button" style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:20px;align-items:baseline;padding:16px 0;border:0;border-bottom:1px solid rgba(255,255,255,0.3);background:transparent;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Debrecen</span><span style="font-size:15px;color:#DCE6D2;">3 osztály</span><span style="font-size:15px;color:#DCE6D2;font-variant-numeric:tabular-nums;">48 Amigo</span>
+          </button>
+          <button data-city="Szeged" data-hospitals="3 osztály" data-amigos="44" data-img="https://amigos-20546.kxcdn.com/wp-content/uploads/2024/09/Baratokkal-baratkent-a-gyerekekert-scaled.jpg" type="button" style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:20px;align-items:baseline;padding:16px 0;border:0;border-bottom:1px solid rgba(255,255,255,0.3);background:transparent;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Szeged</span><span style="font-size:15px;color:#DCE6D2;">3 osztály</span><span style="font-size:15px;color:#DCE6D2;font-variant-numeric:tabular-nums;">44 Amigo</span>
+          </button>
+          <button data-city="Pécs" data-hospitals="2 osztály" data-amigos="36" data-img="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52020108215_3c7ba49607_o-3-scaled.jpg" type="button" style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:20px;align-items:baseline;padding:16px 0;border:0;border-bottom:1px solid rgba(255,255,255,0.3);background:transparent;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Pécs</span><span style="font-size:15px;color:#DCE6D2;">2 osztály</span><span style="font-size:15px;color:#DCE6D2;font-variant-numeric:tabular-nums;">36 Amigo</span>
+          </button>
+          <button data-city="Miskolc" data-hospitals="2 osztály" data-amigos="28" data-img="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52019587606_3d3e56e560_o-scaled.jpg" type="button" style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:20px;align-items:baseline;padding:16px 0;border:0;border-bottom:1px solid rgba(255,255,255,0.3);background:transparent;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Miskolc</span><span style="font-size:15px;color:#DCE6D2;">2 osztály</span><span style="font-size:15px;color:#DCE6D2;font-variant-numeric:tabular-nums;">28 Amigo</span>
+          </button>
+          <button data-city="Győr" data-hospitals="2 osztály" data-amigos="24" data-img="https://amigos-20546.kxcdn.com/wp-content/uploads/2024/09/Baratokkal-baratkent-a-gyerekekert-scaled.jpg" type="button" style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:20px;align-items:baseline;padding:16px 0;border:0;border-bottom:1px solid rgba(255,255,255,0.3);background:transparent;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Győr</span><span style="font-size:15px;color:#DCE6D2;">2 osztály</span><span style="font-size:15px;color:#DCE6D2;font-variant-numeric:tabular-nums;">24 Amigo</span>
+          </button>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#365F0F;">
+          <img data-city-img="" src="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52020108215_3c7ba49607_o-3-scaled.jpg" alt="Amigók egy kórházi foglalkozáson" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 320ms cubic-bezier(0.2,0.7,0.2,1);">
+        </div>
+        <span data-city-label="" style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#DCE6D2;text-align:center;">Budapest — 8 osztály, 120 Amigo</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Mit kapsz" style="background:#FAFAF6;padding:clamp(88px,12vw,160px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,5vw,56px);">
+      <div data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Amit cserébe kapsz</h2>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:#3A4433;">Nem fizetés, és nem is csak egy sor az önéletrajzban. Egy közösség, egy képzés és egy heti két óra, ami másra sem hasonlít.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,4vw,48px);">
+        <article data-reveal="" style="display:flex;flex-direction:column;gap:18px;">
+          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#E7EEDF;"><img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52020108215_3c7ba49607_o-3-scaled.jpg" alt="Amigo közösség" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <h3 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-h4); line-height: 1.05; letter-spacing: -0.02em; text-align: center">Amigos Familia</h3>
+          <p style="margin: 0; font-size: var(--text-body); line-height: var(--lh-body); color: #3A4433; text-align: center">Háromszáz egyetemista hat városban, saját eseményekkel, félévnyitóval és Amigo Avatóval.</p>
+        </article>
+        <article data-reveal="" style="display:flex;flex-direction:column;gap:18px;">
+          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#E7EEDF;"><img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2024/09/Baratokkal-baratkent-a-gyerekekert-scaled.jpg" alt="Amigos Akadémia képzés" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <h3 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-h4); line-height: 1.05; letter-spacing: -0.02em; text-align: center">Képzés és kíséret</h3>
+          <p style="margin: 0; font-size: var(--text-body); line-height: var(--lh-body); color: #3A4433; text-align: center">Amigos Akadémia, havi esetmegbeszélés és Senior Amigo, akit bármikor hívhatsz.</p>
+        </article>
+        <article data-reveal="" style="display:flex;flex-direction:column;gap:18px;">
+          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#E7EEDF;"><img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2022/08/52019587606_3d3e56e560_o-scaled.jpg" alt="Amigo egy foglalkozáson" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <h3 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-h4); line-height: 1.05; letter-spacing: -0.02em; text-align: center">Igazolás és tapasztalat</h3>
+          <p style="margin: 0; font-size: var(--text-body); line-height: var(--lh-body); color: #3A4433; text-align: center">Önkéntes jogviszony, igazolás, és olyan gyakorlat, amit egészségügyi vagy pedagógus pályán senki nem tud pótolni.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Idézet" style="background:#B2C7A3;padding:clamp(72px,10vw,128px) 0;">
+    <div style="max-width:840px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:24px;">
+      <blockquote style="margin:0;font-family:var(--font-quote,'Instrument Serif',serif);font-style:italic;font-size:clamp(28px,4vw,48px);line-height:1.18;letter-spacing:-0.01em;color:#1E2B16;text-wrap:pretty;">„Az első héten alig szólt hozzám. A negyediken már a folyosón várt, hogy elmondja, mit épített.”</blockquote>
+      <span style="font-size:var(--text-body);color:#2A3A20;">Anna, Amigo · Szeged, második féléve</span>
+    </div>
+  </section>
+
+  <section data-screen-label="GYIK" style="background:#FAFAF6;padding:clamp(88px,12vw,160px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,104px);align-items:start;">
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Amit a legtöbben megkérdeznek</h2>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #DDE3D5;">
+        <div data-faq="" style="border-bottom:1px solid #DDE3D5;">
+          <button data-faq-q="" type="button" aria-expanded="false" style="width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:22px 0;border:0;background:transparent;font:inherit;text-align:left;cursor:pointer;color:#171C12;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Mi van, ha egy héten nem tudok menni?</span>
+            <span data-faq-icon="" aria-hidden="true" style="width:28px;height:28px;border-radius:50%;border:2px solid #437613;display:flex;align-items:center;justify-content:center;color:#437613;font-size:18px;line-height:1;flex:none;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">+</span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden;height:0;transition:height 240ms cubic-bezier(0.2,0.7,0.2,1);"><p style="margin:0 0 22px;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:56ch;">Szólsz a városod Amigo-felelősének, és helyettesítünk. Vizsgaidőszakban erre külön rendszerünk van — nem kell választanod a vizsga és a gyerek között.</p></div>
+        </div>
+        <div data-faq="" style="border-bottom:1px solid #DDE3D5;">
+          <button data-faq-q="" type="button" aria-expanded="false" style="width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:22px 0;border:0;background:transparent;font:inherit;text-align:left;cursor:pointer;color:#171C12;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Nehéz lelkileg?</span>
+            <span data-faq-icon="" aria-hidden="true" style="width:28px;height:28px;border-radius:50%;border:2px solid #437613;display:flex;align-items:center;justify-content:center;color:#437613;font-size:18px;line-height:1;flex:none;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">+</span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden;height:0;transition:height 240ms cubic-bezier(0.2,0.7,0.2,1);"><p style="margin:0 0 22px;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:56ch;">Van, hogy igen. Ezért van havi esetmegbeszélés, Senior Amigo-kíséret, és ezért nem mész be egyedül az első alkalmakkor. Senkit nem hagyunk magára egy nehéz látogatás után.</p></div>
+        </div>
+        <div data-faq="" style="border-bottom:1px solid #DDE3D5;">
+          <button data-faq-q="" type="button" aria-expanded="false" style="width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:22px 0;border:0;background:transparent;font:inherit;text-align:left;cursor:pointer;color:#171C12;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Kell hozzá egészségügyi tudás?</span>
+            <span data-faq-icon="" aria-hidden="true" style="width:28px;height:28px;border-radius:50%;border:2px solid #437613;display:flex;align-items:center;justify-content:center;color:#437613;font-size:18px;line-height:1;flex:none;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">+</span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden;height:0;transition:height 240ms cubic-bezier(0.2,0.7,0.2,1);"><p style="margin:0 0 22px;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:56ch;">Nem. Az Amigo nem lát el orvosi feladatot. A kórházi protokollt az Akadémián tanulod meg, a többi a játék és a beszélgetés.</p></div>
+        </div>
+        <div data-faq="" style="border-bottom:1px solid #DDE3D5;">
+          <button data-faq-q="" type="button" aria-expanded="false" style="width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:22px 0;border:0;background:transparent;font:inherit;text-align:left;cursor:pointer;color:#171C12;">
+            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Mikor indul a következő képzés?</span>
+            <span data-faq-icon="" aria-hidden="true" style="width:28px;height:28px;border-radius:50%;border:2px solid #437613;display:flex;align-items:center;justify-content:center;color:#437613;font-size:18px;line-height:1;flex:none;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">+</span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden;height:0;transition:height 240ms cubic-bezier(0.2,0.7,0.2,1);"><p style="margin:0 0 22px;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:56ch;">Minden szemeszter elején. Jelentkezni viszont folyamatosan lehet — a felvételi beszélgetés a jelentkezés után pár héttel van.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="jelentkezes" data-screen-label="Jelentkezés" style="background:#437613;color:#FFFFFF;padding:clamp(88px,12vw,160px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,88px);align-items:start;">
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Jelentkezés</span>
+        <h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); max-width: 14ch; text-wrap: pretty; color: var(--bg-surface)">Kezdjük egy űrlappal.</h2>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:40ch;">Öt munkanapon belül válaszolunk. A jelentkezés még nem kötelezettség — a beszélgetésen mindketten eldönthetitek.</p>
+      </div>
+      <form data-form="" style="display:flex;flex-direction:column;gap:22px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
+          <label style="display:flex;flex-direction:column;gap:8px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Teljes név</span>
+            <input type="text" placeholder="Kovács Anna" style="height:52px;padding:0 16px;border:2px solid #FFFFFF;border-radius:12px;background:transparent;color:#FFFFFF;font:inherit;font-size:16px;min-width:0;">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">E-mail</span>
+            <input type="email" placeholder="anna@pelda.hu" style="height:52px;padding:0 16px;border:2px solid #FFFFFF;border-radius:12px;background:transparent;color:#FFFFFF;font:inherit;font-size:16px;min-width:0;">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Egyetem</span>
+            <input type="text" placeholder="SZTE" style="height:52px;padding:0 16px;border:2px solid #FFFFFF;border-radius:12px;background:transparent;color:#FFFFFF;font:inherit;font-size:16px;min-width:0;">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Szak, évfolyam</span>
+            <input type="text" placeholder="pszichológia, 2." style="height:52px;padding:0 16px;border:2px solid #FFFFFF;border-radius:12px;background:transparent;color:#FFFFFF;font:inherit;font-size:16px;min-width:0;">
+          </label>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Melyik városban?</span>
+          <div role="radiogroup" aria-label="Város" style="display:flex;flex-wrap:wrap;gap:10px;">
+            <button data-pick="Budapest" type="button" role="radio" aria-checked="true" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #FFFFFF;background:#FFFFFF;color:#437613;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Budapest</button>
+            <button data-pick="Debrecen" type="button" role="radio" aria-checked="false" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #FFFFFF;background:transparent;color:#FFFFFF;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Debrecen</button>
+            <button data-pick="Szeged" type="button" role="radio" aria-checked="false" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #FFFFFF;background:transparent;color:#FFFFFF;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Szeged</button>
+            <button data-pick="Pécs" type="button" role="radio" aria-checked="false" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #FFFFFF;background:transparent;color:#FFFFFF;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Pécs</button>
+            <button data-pick="Miskolc" type="button" role="radio" aria-checked="false" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #FFFFFF;background:transparent;color:#FFFFFF;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Miskolc</button>
+            <button data-pick="Győr" type="button" role="radio" aria-checked="false" style="height:44px;padding:0 20px;border-radius:999px;border:2px solid #FFFFFF;background:transparent;color:#FFFFFF;font:inherit;font-weight:600;font-size:15px;cursor:pointer;">Győr</button>
+          </div>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:8px;">
+          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Miért szeretnél Amigo lenni?</span>
+          <textarea rows="4" placeholder="Pár mondat elég." style="padding:14px 16px;border:2px solid #FFFFFF;border-radius:12px;background:transparent;color:#FFFFFF;font:inherit;font-size:16px;resize:vertical;min-width:0;"></textarea>
+        </label>
+        <label style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;">
+          <input type="checkbox" style="width:22px;height:22px;margin-top:2px;accent-color:#FFFFFF;flex:none;">
+          <span>Elolvastam és elfogadom az <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:#FFFFFF;">adatkezelési tájékoztatót</a>.</span>
+        </label>
+        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="Amigos Aloldalak.dc.html#legyel-koszonjuk" hint-size="auto,52px">Jelentkezés elküldése</x-import>
+          <span style="font-size:14px;color:#DCE6D2;">Kb. 4 perc · bármikor félbehagyható</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer style="background:#171C12;color:#FFFFFF;padding:clamp(48px,7vw,80px) 0 32px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+      <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 67px; width: 67px; display: block">
+          <span style="font-size:15px;line-height:1.5;color:#C7CFC0;max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:#C7CFC0;">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">Ügyintézés</span>
+            <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Dokumentumok</a>
+            <a href="Blog.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Blog</a>
+            <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Átláthatóság</a>
+            <a href="Amigos Aloldalak.dc.html#gyik" style="color:#FFFFFF;text-decoration:none;font-size:15px;">GYIK</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">Támogatás</span>
+            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Ado 1 szazalek.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <a href="Adomanybolt.dc.html" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Adománybolt</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">Jogi</span>
+            <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="Amigos Aloldalak.dc.html#aszf" style="color:#FFFFFF;text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="Amigos Aloldalak.dc.html#sitemap" style="color:#FFFFFF;text-decoration:none;font-size:15px;">Oldaltérkép</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:#C7CFC0;">
+        <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const bind = () => {
+      this.pattern = document.querySelector('[data-m="pattern"]');
+      this.cities = document.querySelector('[data-m="cities"]');
+      this.path = document.querySelector('[data-m="kotespath"]');
+      if (!this.pattern) return false;
+      this.intro(); this.bindCities(); this.bindFaq(); this.bindPicks(); this.reveal();
+      this.layoutKotes();
+      window.addEventListener('resize', () => this.layoutKotes());
+      this.alive = true; this.last = -1;
+      const loop = () => {
+        if (!this.alive) return;
+        requestAnimationFrame(loop);
+        const k = window.scrollY + ':' + window.innerWidth;
+        if (k !== this.last) { this.last = k; try { this.apply(); } catch (e) {} }
+      };
+      requestAnimationFrame(loop);
+      return true;
+    };
+    if (!bind()) { const iv = setInterval(() => { if (bind()) clearInterval(iv); }, 100); }
+  }
+  componentWillUnmount() { this.alive = false; }
+  layoutKotes() {
+    // the arc is drawn between the actual dot centres, and only while they share one row
+    const svg = document.querySelector('[data-m="kotes"]');
+    if (!svg || !this.path) return;
+    const host = svg.parentElement;
+    const dots = Array.from(host.querySelectorAll('[data-step] > span:first-child'));
+    if (dots.length < 2) return;
+    const hb = host.getBoundingClientRect();
+    const pts = dots.map(d => { const r = d.getBoundingClientRect(); return { x: r.left - hb.left + r.width / 2, y: r.top - hb.top + r.height / 2 }; });
+    const oneRow = pts.every(p => Math.abs(p.y - pts[0].y) < 6);
+    if (!oneRow) { svg.style.opacity = '0'; this.pathLen = 0; return; }
+    const y = pts[0].y;
+    let d = `M ${pts[0].x} ${y}`;
+    for (let i = 1; i < pts.length; i++) {
+      const a = pts[i - 1], b = pts[i];
+      const lift = (i % 2 ? -1 : 1) * 10; // shallow swing, stays inside the dot band
+      d += ` C ${a.x + (b.x - a.x) * 0.35} ${y + lift}, ${a.x + (b.x - a.x) * 0.65} ${y - lift}, ${b.x} ${y}`;
+    }
+    this.path.setAttribute('d', d);
+    svg.style.opacity = '1';
+    const len = this.path.getTotalLength();
+    this.pathLen = len;
+    this.path.style.strokeDasharray = len;
+    this.path.style.strokeDashoffset = this.reduced ? 0 : len;
+  }
+  intro() {
+    if (this.reduced) return;
+    document.querySelectorAll('[data-m="wi"]').forEach((w, i) => {
+      w.style.transform = 'translateY(105%)';
+      w.style.transition = `transform 620ms cubic-bezier(0.2,0.7,0.2,1) ${100 + i * 80}ms`;
+      void w.offsetHeight;
+      w.style.transform = 'translateY(0)';
+      setTimeout(() => { w.style.transition = ''; w.style.transform = ''; }, 900 + i * 80);
+    });
+  }
+  bindCities() {
+    const btns = Array.from(document.querySelectorAll('[data-city]'));
+    const img = document.querySelector('[data-city-img]');
+    const label = document.querySelector('[data-city-label]');
+    const set = b => {
+      btns.forEach(o => { o.style.opacity = o === b ? '1' : '0.62'; });
+      if (label) label.textContent = `${b.dataset.city} — ${b.dataset.hospitals}, ${b.dataset.amigos} Amigo`;
+      const src = b.dataset.img;
+      if (img && src && img.getAttribute('src') !== src) {
+        img.style.opacity = '0';
+        setTimeout(() => { img.src = src; img.style.opacity = '1'; }, 160);
+      }
+    };
+    btns.forEach(b => { b.onmouseenter = () => set(b); b.onfocus = () => set(b); b.onclick = () => set(b); });
+    if (btns[0]) set(btns[0]);
+  }
+  bindFaq() {
+    document.querySelectorAll('[data-faq]').forEach(item => {
+      const q = item.querySelector('[data-faq-q]');
+      const a = item.querySelector('[data-faq-a]');
+      const icon = item.querySelector('[data-faq-icon]');
+      if (!q || !a) return;
+      q.onclick = () => {
+        const open = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', String(!open));
+        a.style.height = open ? '0px' : a.scrollHeight + 'px';
+        if (icon) { icon.style.transform = open ? 'rotate(0deg)' : 'rotate(45deg)'; }
+      };
+    });
+  }
+  bindPicks() {
+    const picks = Array.from(document.querySelectorAll('[data-pick]'));
+    picks.forEach(b => b.onclick = () => picks.forEach(o => {
+      const on = o === b;
+      o.setAttribute('aria-checked', String(on));
+      o.style.background = on ? '#FFFFFF' : 'transparent';
+      o.style.color = on ? '#437613' : '#FFFFFF';
+    }));
+  }
+  reveal() {
+    if (this.reduced || !('IntersectionObserver' in window)) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach((el, i) => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
+      el.style.transition = `opacity 400ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 3) * 80}ms, transform 400ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 3) * 80}ms`;
+    });
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1'; e.target.style.transform = 'none';
+      io.unobserve(e.target);
+    }), { rootMargin: '0px 0px -10% 0px' });
+    els.forEach(el => io.observe(el));
+
+    const steps = Array.from(document.querySelectorAll('[data-step]'));
+    steps.forEach((el, i) => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(16px)';
+      el.style.transition = `opacity 420ms cubic-bezier(0.2,0.7,0.2,1) ${i * 110}ms, transform 420ms cubic-bezier(0.2,0.7,0.2,1) ${i * 110}ms`;
+    });
+    const io2 = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1'; e.target.style.transform = 'none';
+      io2.unobserve(e.target);
+    }), { rootMargin: '0px 0px -15% 0px' });
+    steps.forEach(el => io2.observe(el));
+  }
+  apply() {
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const clamp = t => Math.max(0, Math.min(1, t));
+    if (!this.reduced) {
+      if (this.pattern) {
+        const r = this.pattern.parentElement.getBoundingClientRect();
+        this.pattern.style.transform = `translate3d(${-(vh - r.top) * 0.18}px,0,0)`;
+      }
+      if (this.cities) {
+        const r = this.cities.parentElement.getBoundingClientRect();
+        const t = clamp((vh - r.top) / (vh + r.height));
+        this.cities.style.transform = `translate3d(${-t * Math.max(0, this.cities.scrollWidth - vw) * 0.9}px,0,0)`;
+      }
+      if (this.path && this.pathLen) {
+        const r = this.path.closest('section').getBoundingClientRect();
+        const t = clamp((vh * 0.8 - r.top) / (vh * 0.55));
+        this.path.style.strokeDashoffset = String(this.pathLen * (1 - t));
+      }
+    }
+    document.querySelectorAll('[data-stat][data-count]').forEach(el => {
+      const target = +el.dataset.count;
+      const t = clamp((vh * 0.92 - el.getBoundingClientRect().top) / (vh * 0.22));
+      const v = String(Math.round(target * (1 - Math.pow(1 - t, 3)))).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      if (el.textContent !== v) el.textContent = v;
+    });
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

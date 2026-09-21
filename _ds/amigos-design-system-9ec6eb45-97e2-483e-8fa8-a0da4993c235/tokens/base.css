@@ -1,0 +1,13 @@
+/* Minimal base: type defaults, links, focus. Consumers may skip this file if they own their reset. */
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font-body);font-size:var(--text-body);line-height:var(--lh-body);color:var(--text-primary);background:var(--bg-page);-webkit-font-smoothing:antialiased;font-feature-settings:"kern","liga"}
+h1,h2,h3,h4,h5{font-family:var(--font-display);font-weight:var(--weight-semibold);margin:0;text-wrap:pretty;color:var(--text-primary)}
+p{margin:0;text-wrap:pretty}
+a{color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:0.18em;transition:color var(--dur-fast) var(--ease-out)}
+a:hover{color:var(--text-link-hover);text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+img,video{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:var(--am-green-200);color:var(--am-green-900)}
+.am-eyebrow{font-family:var(--font-body);font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:var(--weight-semibold);color:var(--text-brand)}
+.am-quote{font-family:var(--font-editorial);font-style:italic;font-weight:400;font-size:var(--text-quote);line-height:var(--lh-quote);letter-spacing:0}

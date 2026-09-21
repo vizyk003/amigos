@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;background:#FAFAF6;}
+    a{color:#437613;} a:hover{color:#2A4A0B;}
+    @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} }
+  </style>
+</helmet>
+
+<div style="font-family:var(--font-body);color:#171C12;min-height:100vh;display:flex;flex-direction:column;">
+
+  <header style="position:sticky;top:0;z-index:20;background:#FAFAF6;border-bottom:1px solid #DDE3D5;">
+    <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
+      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;"></a>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+        <a href="#legyel-amigo" style="color:#171C12;text-decoration:none;">Legyél Amigo</a>
+        <a href="Munkank es hatasunk.dc.html" style="color:#171C12;text-decoration:none;">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:#171C12;text-decoration:none;">Gyerekek &amp; Szülők</a>
+        <a href="Adomanybolt.dc.html" style="color:#171C12;text-decoration:none;">Adománybolt</a>
+      </nav>
+      <div style="display:flex;justify-content:flex-end;">
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+      </div>
+    </div>
+  </header>
+
+  <div style="background:#F1F4EC;border-bottom:1px solid #DDE3D5;font-size:13px;color:#5A6650;">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1280px;margin:0 auto;padding:8px clamp(20px,4vw,48px);">
+      <span>Low-fidelity wireframe — {{ pageUrl }}</span>
+      <span style="display:flex;gap:20px;"><a href="#sitemap" style="text-decoration:none;">Oldaltérkép</a><a href="Amigos Fooldal v2.dc.html" style="text-decoration:none;">Főoldal (kész design)</a></span>
+    </div>
+  </div>
+
+  <main style="flex:1;">
+    <sc-if value="{{ isSitemap }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:1280px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,5vw,56px);">
+        <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:20ch;">Oldaltérkép</h1>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,4vw,48px);">
+          <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
+            <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #171C12;padding-top:14px;">
+              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">{{ g.title }}</span>
+              <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="5">
+                <a href="{{ i.href }}" style="text-decoration:none;color:#171C12;font-size:15px;padding:3px 0;">{{ i.title }}</a>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPage }}" hint-placeholder-val="{{ true }}">
+      <article data-screen-label="{{ page.title }}">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="4">
+
+          <sc-if value="{{ s.isHero }}" hint-placeholder-val="{{ true }}">
+            <section style="background:{{ s.bg }};color:{{ s.fg }};padding:clamp(56px,8vw,104px) 0;">
+              <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,72px);align-items:center;">
+                <div style="display:flex;flex-direction:column;gap:20px;">
+                  <span style="font-size:13px;color:{{ s.crumbColor }};">{{ s.crumb }}</span>
+                  <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:{{ s.eyebrowColor }};">{{ s.eyebrow }}</span>
+                  <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h1);line-height:1.02;letter-spacing:-0.02em;max-width:17ch;text-wrap:pretty;">{{ s.title }}</h1>
+                  <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;">{{ s.text }}</p>
+                  <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:4px;">
+                    <sc-for list="{{ s.ctas }}" as="c" hint-placeholder-count="2">
+                      <a href="{{ c.href }}" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:12px;border:2px solid {{ c.border }};background:{{ c.bg }};color:{{ c.fg }};font-weight:600;font-size:16px;text-decoration:none;">{{ c.label }}</a>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="aspect-ratio:1/1;border-radius:{{ s.mediaRadius }};border:1px dashed #A8BA98;background:{{ s.mediaBg }};display:flex;align-items:center;justify-content:center;padding:14%;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:{{ s.mediaFg }};">{{ s.media }}</div>
+              </div>
+            </section>
+          </sc-if>
+
+          <sc-if value="{{ s.isSplit }}" hint-placeholder-val="{{ false }}">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+              <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,72px);align-items:start;">
+                <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:16ch;text-wrap:pretty;">{{ s.title }}</h2>
+                <div style="display:flex;flex-direction:column;gap:18px;">
+                  <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:56ch;color:#3A4433;">{{ s.text }}</p>
+                  <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
+                    <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;border-top:1px solid #DDE3D5;padding-top:14px;">
+                      <span style="width:10px;height:10px;border-radius:50%;background:#437613;margin-top:8px;"></span>
+                      <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#171C12;">{{ i.text }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </section>
+          </sc-if>
+
+          <sc-if value="{{ s.isCards }}" hint-placeholder-val="{{ false }}">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+              <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+                <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;">{{ s.title }}</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(20px,3vw,32px);">
+                  <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                      <div style="aspect-ratio:{{ i.ratio }};border-radius:12px;border:1px dashed #A8BA98;background:#EEF3E8;display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#5A6650;">{{ i.media }}</div>
+                      <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">{{ i.title }}</h3>
+                      <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">{{ i.text }}</p>
+                      <a href="{{ i.href }}" style="font-size:15px;font-weight:600;text-decoration:none;">{{ i.link }}</a>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </section>
+          </sc-if>
+
+          <sc-if value="{{ s.isList }}" hint-placeholder-val="{{ false }}">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+              <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:24px;">
+                <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;">{{ s.title }}</h2>
+                <div style="display:flex;flex-direction:column;border-top:1px solid #DDE3D5;">
+                  <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="4">
+                    <a href="{{ i.href }}" data-split="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #DDE3D5;text-decoration:none;color:#171C12;">
+                      <span style="display:flex;flex-direction:column;gap:5px;">
+                        <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">{{ i.title }}</span>
+                        <span style="font-size:15px;color:#3A4433;">{{ i.text }}</span>
+                      </span>
+                      <span style="font-size:14px;color:#5A6650;white-space:nowrap;">{{ i.meta }}</span>
+                    </a>
+                  </sc-for>
+                </div>
+              </div>
+            </section>
+          </sc-if>
+
+          <sc-if value="{{ s.isSteps }}" hint-placeholder-val="{{ false }}">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+              <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+                <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;">{{ s.title }}</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,3vw,40px);">
+                  <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
+                    <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #437613;padding-top:16px;">
+                      <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">{{ i.n }}</span>
+                      <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">{{ i.title }}</span>
+                      <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">{{ i.text }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </section>
+          </sc-if>
+
+          <sc-if value="{{ s.isStats }}" hint-placeholder-val="{{ false }}">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+              <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:clamp(20px,3vw,40px);">
+                <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="4">
+                  <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #DDE3D5;padding-top:16px;">
+                    <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-0.03em;color:#437613;font-variant-numeric:tabular-nums;">{{ i.n }}</span>
+                    <span style="font-size:var(--text-body);color:#3A4433;">{{ i.label }}</span>
+                    <span style="font-size:13px;color:#5A6650;">{{ i.note }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </section>
+          </sc-if>
+
+          <sc-if value="{{ s.isForm }}" hint-placeholder-val="{{ false }}">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+              <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:4fr 7fr;gap:clamp(32px,5vw,72px);align-items:start;">
+                <div style="display:flex;flex-direction:column;gap:14px;">
+                  <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:16ch;">{{ s.title }}</h2>
+                  <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:40ch;">{{ s.text }}</p>
+                  <span style="font-size:13px;color:#5A6650;">{{ s.progress }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:18px;">
+                  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+                    <sc-for list="{{ s.fields }}" as="f" hint-placeholder-count="4">
+                      <label style="display:flex;flex-direction:column;gap:7px;">
+                        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#5A6650;">{{ f.label }}</span>
+                        <span style="height:{{ f.h }};border:2px solid #DDE3D5;border-radius:12px;background:#FFFFFF;display:flex;align-items:center;padding:0 16px;font-size:15px;color:#5A6650;">{{ f.hint }}</span>
+                      </label>
+                    </sc-for>
+                  </div>
+                  <span style="display:flex;gap:12px;align-items:center;font-size:15px;color:#3A4433;"><span style="width:20px;height:20px;border:2px solid #437613;border-radius:4px;display:block;flex:none;"></span>{{ s.consent }}</span>
+                  <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+                    <a href="{{ s.submitHref }}" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:12px;background:{{ s.submitBg }};color:#FFFFFF;font-weight:600;font-size:16px;text-decoration:none;">{{ s.submit }}</a>
+                    <a href="{{ s.altHref }}" style="font-size:15px;font-weight:600;text-decoration:none;">{{ s.alt }}</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </sc-if>
+
+          <sc-if value="{{ s.isLegal }}" hint-placeholder-val="{{ false }}">
+            <section style="background:#FAFAF6;padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+              <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:4fr 8fr;gap:clamp(32px,5vw,72px);align-items:start;">
+                <nav style="position:sticky;top:96px;display:flex;flex-direction:column;gap:8px;font-size:15px;">
+                  <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Tartalom</span>
+                  <sc-for list="{{ s.toc }}" as="t" hint-placeholder-count="5">
+                    <span style="color:#3A4433;">{{ t.label }}</span>
+                  </sc-for>
+                </nav>
+                <div style="display:flex;flex-direction:column;gap:24px;max-width:64ch;">
+                  <sc-for list="{{ s.blocks }}" as="b" hint-placeholder-count="5">
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                      <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">{{ b.title }}</h3>
+                      <span style="display:block;height:{{ b.h }};border-radius:6px;background:#EEF1EA;"></span>
+                    </div>
+                  </sc-for>
+                  <span style="font-size:13px;color:#5A6650;">{{ s.updated }}</span>
+                </div>
+              </div>
+            </section>
+          </sc-if>
+
+          <sc-if value="{{ s.isCta }}" hint-placeholder-val="{{ false }}">
+            <section style="background:{{ s.bg }};color:{{ s.fg }};padding:clamp(48px,7vw,88px) 0;">
+              <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,56px);align-items:center;">
+                <div style="display:flex;flex-direction:column;gap:12px;">
+                  <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:18ch;text-wrap:pretty;">{{ s.title }}</h2>
+                  <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;">{{ s.text }}</p>
+                </div>
+                <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;">
+                  <sc-for list="{{ s.ctas }}" as="c" hint-placeholder-count="2">
+                    <a href="{{ c.href }}" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:12px;border:2px solid {{ c.border }};background:{{ c.bg }};color:{{ c.fg }};font-weight:600;font-size:16px;text-decoration:none;">{{ c.label }}</a>
+                  </sc-for>
+                </div>
+              </div>
+            </section>
+          </sc-if>
+
+        </sc-for>
+      </article>
+    </sc-if>
+  </main>
+
+  <footer style="background:#171C12;color:#FFFFFF;padding:clamp(40px,6vw,72px) 0 32px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+      <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 67px; display: block; width: 67px">
+          <span style="font-size:15px;line-height:1.5;color:#C7CFC0;max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:#C7CFC0;">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
+          <sc-for list="{{ footerColumns }}" as="c" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:9px;">
+              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">{{ c.title }}</span>
+              <sc-for list="{{ c.links }}" as="l" hint-placeholder-count="4">
+                <a href="{{ l.href }}" style="color:#FFFFFF;text-decoration:none;font-size:15px;">{{ l.label }}</a>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:#C7CFC0;">
+        <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  state = { route: '' };
+  componentDidMount() {
+    const read = () => {
+      const r = (location.hash || '#legyel-amigo').slice(1);
+      this.setState({ route: r });
+      window.scrollTo(0, 0);
+    };
+    read();
+    window.addEventListener('hashchange', read);
+  }
+
+  pages() {
+    const G = '#437613', P = '#993166', W = '#FFFFFF', PAPER = '#FAFAF6';
+    const ctaG = (label, href) => ({ label, href, bg: G, fg: W, border: G });
+    const ctaP = (label, href) => ({ label, href, bg: P, fg: W, border: P });
+    const ctaO = (label, href) => ({ label, href, bg: 'transparent', fg: '#171C12', border: '#171C12' });
+    const ctaI = (label, href) => ({ label, href, bg: W, fg: G, border: W });
+    const ctaIO = (label, href) => ({ label, href, bg: 'transparent', fg: W, border: W });
+
+    const hero = (o) => Object.assign({
+      t: 'hero', bg: PAPER, fg: '#171C12', eyebrowColor: G, crumbColor: '#5A6650',
+      mediaRadius: '50%', mediaBg: '#EEF3E8', mediaFg: '#5A6650', media: 'FOTÓ – kör kivágás', ctas: []
+    }, o);
+    const heroGreen = (o) => hero(Object.assign({ bg: G, fg: W, eyebrowColor: '#DCE6D2', crumbColor: '#DCE6D2', mediaBg: '#365F0F', mediaFg: '#DCE6D2' }, o));
+    const heroPurple = (o) => hero(Object.assign({ bg: P, fg: W, eyebrowColor: '#F2DCE8', crumbColor: '#F2DCE8', mediaBg: '#7B2752', mediaFg: '#F2DCE8' }, o));
+    const split = (title, text, items) => ({ t: 'split', bg: PAPER, title, text, items: (items || []).map(text => ({ text })) });
+    const cards = (title, items) => ({ t: 'cards', bg: PAPER, title, items: items.map(i => Object.assign({ ratio: '4/5', media: 'FOTÓ', link: 'Tovább', href: '#' }, i)) });
+    const list = (title, items) => ({ t: 'list', bg: PAPER, title, items: items.map(i => Object.assign({ href: '#', meta: '', text: '' }, i)) });
+    const steps = (title, items) => ({ t: 'steps', bg: PAPER, title, items });
+    const stats = (items) => ({ t: 'stats', bg: PAPER, items });
+    const form = (o) => Object.assign({ t: 'form', bg: PAPER, consent: 'Elfogadom az adatkezelési tájékoztatót.', submitBg: G, alt: 'Adatkezelési tájékoztató', altHref: '#adatkezeles', progress: '', text: '' }, o, { fields: o.fields.map(f => Object.assign({ h: '48px', hint: '' }, f)) });
+    const legal = (o) => Object.assign({ t: 'legal', updated: 'Utolsó módosítás: 2026. szeptember' }, o);
+    const cta = (o) => Object.assign({ t: 'cta', bg: G, fg: W, ctas: [] }, o);
+
+    return {
+      'legyel-amigo': { title: 'Legyél Amigo!', url: '/legyel-amigo', sections: [
+        heroGreen({ crumb: 'Főoldal / Legyél Amigo!', eyebrow: 'Önkéntesség', title: 'Heti két óra. Egy gyereknek az egész hete.', text: 'Egyetemistaként heti egy alkalommal ugyanahhoz a gyerekhez jársz vissza a kórházba. Nem animátor vagy: barát.', media: 'FOTÓ – Amigo és gyerek', ctas: [ctaI('Jelentkezem', '#jelentkezes'), ctaIO('Mit csinál egy Amigo?', '#programok')] }),
+        split('Kinek szól', 'A jelentkezés komoly vállalás, és pont ezért működik: a gyerekek számíthatnak arra, hogy jövő héten is jössz.', ['Aktív egyetemista hallgatói jogviszony', 'Hat városunk egyikében: Budapest, Debrecen, Szeged, Pécs, Miskolc, Győr', 'Egy tanév vállalás, heti egy látogatás', 'Részvétel az Amigos Akadémia képzésen']),
+        steps('Így lesz valakiből Amigo', [
+          { n: '01', title: 'Jelentkezés', text: 'Online űrlap, néhány perc. Öt munkanapon belül válaszolunk.' },
+          { n: '02', title: 'Amigos felvételi', text: 'Személyes beszélgetés a városod Amigo-felelősével.' },
+          { n: '03', title: 'Amigos Akadémia', text: 'Képzés kórházi szabályokról, kommunikációról, gyerekekkel való munkáról.' },
+          { n: '04', title: 'Első látogatás', text: 'Senior Amigo kíséretében mész be először az osztályra.' }
+        ]),
+        cards('Mit kapsz cserébe', [
+          { title: 'Amigos Familia', text: 'Egy 300 fős közösség, saját eseményekkel és Amigo Avatóval.', media: 'FOTÓ – közösségi esemény', link: 'Történetek', href: '#tortenetek' },
+          { title: 'Képzés és kíséret', text: 'Folyamatos szakmai támogatás, esetmegbeszélés, Senior Amigo.', media: 'FOTÓ – képzés', link: 'Programjaink', href: '#programok' },
+          { title: 'Igazolás', text: 'Önkéntes jogviszony és igazolás a közösségi szolgálathoz.', media: 'FOTÓ – Amigo portré', link: 'Gyakori kérdések', href: '#gyik' }
+        ]),
+        cta({ title: 'Nyitva a jelentkezés a következő félévre.', text: 'A képzés minden szemeszter elején indul.', ctas: [ctaI('Jelentkezem Amigónak', '#jelentkezes')] })
+      ] },
+
+      'jelentkezes': { title: 'Jelentkezési űrlap', url: '/legyel-amigo/jelentkezes', sections: [
+        hero({ crumb: 'Főoldal / Legyél Amigo! / Jelentkezés', eyebrow: '1. lépés a 4-ből', title: 'Jelentkezés Amigónak', text: 'Négy rövid lépés. Bármikor félbehagyhatod, a kitöltött adatokat megőrizzük.', media: 'FOTÓ – Amigo portré', ctas: [] }),
+        form({ title: 'Rólad', text: 'Alapadatok és elérhetőség.', progress: '1. Rólad · 2. Egyetem · 3. Város · 4. Motiváció', fields: [
+          { label: 'Teljes név', hint: 'Kovács Anna' }, { label: 'E-mail', hint: 'anna@pelda.hu' },
+          { label: 'Telefonszám', hint: '+36 30 123 4567' }, { label: 'Születési év', hint: '2004' },
+          { label: 'Egyetem', hint: 'Válassz a listából' }, { label: 'Szak és évfolyam', hint: 'pszichológia, 2. évfolyam' },
+          { label: 'Város', hint: 'Budapest / Debrecen / Szeged / Pécs / Miskolc / Győr' },
+          { label: 'Motiváció', hint: 'Miért szeretnél Amigo lenni? (max 800 karakter)', h: '120px' }
+        ], submit: 'Jelentkezés elküldése', submitHref: '#legyel-koszonjuk' }),
+        split('Mi történik az elküldés után', 'Az űrlap nem kötelezettség: a felvételi beszélgetésen mindketten eldönthetitek, hogy jó-e ez így.', ['Öt munkanapon belül e-mailben válaszolunk', 'Felvételi beszélgetés a városod Amigo-felelősével', 'Az Akadémia a szemeszter elején indul'])
+      ] },
+
+      'legyel-koszonjuk': { title: 'Köszönjük a jelentkezést', url: '/legyel-amigo/koszonjuk', sections: [
+        heroGreen({ crumb: 'Főoldal / Legyél Amigo! / Köszönjük', eyebrow: 'Megkaptuk', title: 'Köszönjük a jelentkezésed!', text: 'Öt munkanapon belül e-mailben keresünk a felvételi beszélgetés időpontjával.', media: 'KÖR – megerősítés', ctas: [ctaIO('Vissza a főoldalra', 'Amigos Fooldal v2.dc.html')] }),
+        steps('Mi történik ezután', [
+          { n: '01', title: 'Válasz e-mail', text: 'Öt munkanapon belül, a megadott címre.' },
+          { n: '02', title: 'Felvételi beszélgetés', text: 'Kb. 45 perc, személyesen vagy online.' },
+          { n: '03', title: 'Amigos Akadémia', text: 'A szemeszter elején, hétvégi képzés.' }
+        ]),
+        cta({ title: 'Addig is nézz körül', text: 'Történetek Amigóktól, és hogy mi történik egy foglalkozáson.', ctas: [ctaI('Történetek', '#tortenetek'), ctaIO('Programjaink', '#programok')] })
+      ] },
+
+      'munkank': { title: 'Munkánk és hatásunk', url: '/munkank', sections: [
+        hero({ crumb: 'Főoldal / Munkánk és hatásunk', eyebrow: 'Mit csinálunk', title: 'Nem szórakoztatunk. Barátkozunk, hétről hétre.', text: 'Képzett egyetemista önkéntesek, saját fejlesztésű eszközök és rögzített heti ritmus — hat városban, húsz kórházi osztályon.', media: 'FOTÓ – kórházi foglalkozás', ctas: [ctaG('Programjaink', '#programok'), ctaO('Átláthatóság', '#atlathatosag')] }),
+        stats([
+          { n: '300', label: 'egyetemista Amigo önkéntes', note: '[ADAT: forrás, dátum]' },
+          { n: '20', label: 'kórházi osztály', note: '[ADAT: forrás, dátum]' },
+          { n: '6', label: 'város', note: '[ADAT: forrás, dátum]' },
+          { n: '20 770', label: 'gyerek egy évben', note: '[ADAT: forrás, dátum]' }
+        ]),
+        cards('Három pillér', [
+          { title: 'Heti kórházi foglalkozások', text: 'Ugyanaz az Amigo, ugyanabban az időpontban, minden héten.', media: 'FOTÓ – foglalkozás', link: 'Programjaink', href: '#programok' },
+          { title: 'Saját fejlesztésű eszközök', text: 'TanulTablet, Amigos Mini, Kalandozz — kórházi használatra tervezve.', media: 'FOTÓ – eszköz', link: 'Eszközeink', href: '#programok' },
+          { title: 'Képzett Amigók', text: 'Felvételi, Akadémia, Senior Amigo-kíséret.', media: 'FOTÓ – képzés', link: 'Legyél Amigo!', href: '#legyel-amigo' }
+        ]),
+        list('Hol vagyunk jelen', [
+          { title: 'Budapest', text: '8 kórházi osztály', meta: '120 Amigo' },
+          { title: 'Debrecen', text: '3 kórházi osztály', meta: '48 Amigo' },
+          { title: 'Szeged', text: '3 kórházi osztály', meta: '44 Amigo' },
+          { title: 'Pécs', text: '2 kórházi osztály', meta: '36 Amigo' },
+          { title: 'Miskolc', text: '2 kórházi osztály', meta: '28 Amigo' },
+          { title: 'Győr', text: '2 kórházi osztály', meta: '24 Amigo' }
+        ]),
+        cta({ title: 'Minden számunk mögött ott a forrás.', text: 'Éves beszámolók, közhasznúsági jelentés, etikus adománygyűjtő tanúsítvány.', ctas: [ctaI('Átláthatóság', '#atlathatosag'), ctaIO('Dokumentumok', '#dokumentumok')] })
+      ] },
+
+      'programok': { title: 'Programjaink és eszközeink', url: '/munkank/programok', sections: [
+        hero({ crumb: 'Főoldal / Munkánk / Programjaink', eyebrow: 'Programok', title: 'Amit beviszünk a kórterembe', text: 'Négy program, mind kórházi körülményekre tervezve: fertőtleníthető, ágy mellett is működik, egy gyerekkel és csoporttal is használható.', media: 'FOTÓ – eszköz részlet', ctas: [] }),
+        cards('Programjaink', [
+          { title: 'Heti foglalkozás', text: 'Játék, beszélgetés, közös alkotás — a gyerek választ.', media: 'FOTÓ – foglalkozás' },
+          { title: 'TanulTablet', text: 'Digitális tananyag, hogy a kórházi hetek ne essenek ki az iskolából.', media: 'FOTÓ – tablet' },
+          { title: 'Amigos Mini', text: 'A legkisebbeknek szóló játékcsomag.', media: 'ILLUSZTRÁCIÓ – sub-brand' },
+          { title: 'Kalandozz!', text: 'Online kalandok azoknak a napoknak, amikor nem lehet felkelni.', media: 'ILLUSZTRÁCIÓ – Kalandozz', link: 'Kalandozz!', href: '#kalandozz' }
+        ]),
+        split('Hogyan kerül be egy eszköz', 'Minden fejlesztést kórházi szakemberekkel közösen tesztelünk, mielőtt bármelyik osztályra bevinnénk.', ['Ötlet Amigóktól vagy ápolóktól', 'Prototípus és tesztelés egy osztályon', 'Higiéniai jóváhagyás', 'Bevezetés minden városban']),
+        cta({ title: 'Egy eszköz egy osztálynak: 240 000 Ft / év.', text: 'A vállalati támogatás és a kórházi örökbefogadás ezt fedezi.', ctas: [ctaI('Kórházi örökbefogadás', '#orokbefogadas'), ctaIO('Vállalati támogatás', '#vallalati')] })
+      ] },
+
+      'hatas': { title: 'Hatásunk számokban', url: '/munkank/hatas', sections: [
+        hero({ crumb: 'Főoldal / Munkánk / Hatásunk', eyebrow: 'Adatok', title: 'Hatásunk számokban', text: 'Éves adatok, forrásmegjelöléssel. Ez az oldal a sajtó és az intézményi partnerek hivatkozási alapja.', media: 'DIAGRAM – éves trend', ctas: [ctaO('Éves beszámoló (PDF)', '#dokumentumok')] }),
+        stats([
+          { n: '300', label: 'Amigo önkéntes', note: '2026. szeptember' },
+          { n: '20 770', label: 'gyerek 2025-ben', note: 'kórházi nyilvántartás' },
+          { n: '12', label: 'év 2014 óta', note: 'alapítás: 2014' },
+          { n: '94%', label: 'visszatérő Amigo a félév végén', note: 'belső felmérés' }
+        ]),
+        list('Évenkénti bontás', [
+          { title: '2025', text: 'Amigók: 300 · osztályok: 20 · gyerekek: 20 770', meta: 'Beszámoló →' },
+          { title: '2024', text: 'Amigók: 268 · osztályok: 18 · gyerekek: 18 240', meta: 'Beszámoló →' },
+          { title: '2023', text: 'Amigók: 240 · osztályok: 17 · gyerekek: 16 900', meta: 'Beszámoló →' }
+        ]),
+        split('Módszertan', 'Minden adat mögött megnevezzük a forrást és a felvétel időpontját. A gyerekek számát a kórházi osztályok nyilvántartása alapján összesítjük, azonosításra alkalmas adat nélkül.', ['Nem közlünk becsült számot forrásmegjelölés nélkül', 'A gyerekekről semmilyen személyes adatot nem tárolunk', 'A beszámolók auditáltak'])
+      ] },
+
+      'atlathatosag': { title: 'Átláthatóság', url: '/munkank/atlathatosag', sections: [
+        hero({ crumb: 'Főoldal / Munkánk / Átláthatóság', eyebrow: 'Átláthatóság', title: 'Mire megy az adományod', text: 'Minden forint útja követhető: éves pénzügyi beszámoló, közhasznúsági jelentés és etikus adománygyűjtő tanúsítvány.', media: 'EMBLÉMA – tanúsítvány', ctas: [ctaO('Dokumentumok', '#dokumentumok')] }),
+        stats([
+          { n: '78%', label: 'közvetlen programköltség', note: '2025-ös beszámoló' },
+          { n: '14%', label: 'képzés és önkéntes-támogatás', note: '2025-ös beszámoló' },
+          { n: '8%', label: 'működés', note: '2025-ös beszámoló' }
+        ]),
+        list('Letölthető dokumentumok', [
+          { title: 'Éves beszámoló 2025', text: 'Pénzügyi beszámoló és közhasznúsági melléklet', meta: 'PDF · 1,4 MB' },
+          { title: 'Közhasznúsági jelentés 2025', text: 'Tevékenységi beszámoló', meta: 'PDF · 820 KB' },
+          { title: 'Alapító okirat', text: 'Hatályos, egységes szerkezetben', meta: 'PDF · 340 KB' },
+          { title: 'Etikus adománygyűjtő tanúsítvány', text: 'Érvényes 2027-ig', meta: 'PDF · 210 KB' }
+        ]),
+        cta({ title: 'Kérdésed van egy tételről?', text: 'Írj a gazdasági vezetőnknek, és megmutatjuk a hátterét.', ctas: [ctaI('Kapcsolat', '#kapcsolat')] })
+      ] },
+
+      'partnerek': { title: 'Partnereink', url: '/munkank/partnerek', sections: [
+        hero({ crumb: 'Főoldal / Munkánk / Partnereink', eyebrow: 'Partnerek', title: 'Akikkel együtt dolgozunk', text: 'Kórházak, egyetemek és cégek, akik nélkül a heti látogatás nem működne.', media: 'LOGÓRÁCS', ctas: [ctaG('Vállalati támogatás', '#vallalati')] }),
+        cards('Együttműködési formák', [
+          { title: 'Kórházak', text: 'Húsz osztály, mindegyikkel írásos együttműködés.', media: 'LOGÓ – kórház' },
+          { title: 'Egyetemek', text: 'Toborzás, kreditált önkéntes program.', media: 'LOGÓ – egyetem' },
+          { title: 'Cégek', text: 'Pénzbeli és eszköztámogatás, céges önkéntesnapok.', media: 'LOGÓ – cég', link: 'Vállalati támogatás', href: '#vallalati' }
+        ]),
+        split('Esettanulmány', 'Egy partner egy teljes osztályt fogadott örökbe: eszközök, képzés és útiköltség egy évre.', ['Örökbefogadott osztály: gyermekonkológia', 'Támogatás: 2,4 M Ft / év', 'Céges önkéntesnap: évi két alkalom'])
+      ] },
+
+      'tortenetek': { title: 'Történetek', url: '/munkank/tortenetek', sections: [
+        hero({ crumb: 'Főoldal / Munkánk / Történetek', eyebrow: 'Történetek', title: 'Amigók és szülők mesélik', text: 'Gyerek soha nem azonosítható. Minden történet szülői hozzájárulással jelenik meg.', media: 'FOTÓ – Amigo portré', ctas: [] }),
+        list('Legutóbbi történetek', [
+          { title: 'Az első félévem Amigóként', text: 'Anna, Szeged', meta: '2026. szeptember' },
+          { title: 'Amikor a gyerek kérdez rá, hogy jövő héten is jössz-e', text: 'Máté, Budapest', meta: '2026. augusztus' },
+          { title: 'Szülőként az osztályon', text: 'Egy édesanya beszámolója', meta: '2026. július' },
+          { title: 'Hat év, három város', text: 'Senior Amigo visszatekintés', meta: '2026. június' }
+        ]),
+        cta({ title: 'Te is Amigo lennél?', text: 'A következő Akadémia a szemeszter elején indul.', ctas: [ctaI('Jelentkezem', '#jelentkezes')] })
+      ] },
+
+      'csaladoknak': { title: 'Gyerekek és szülők', url: '/csaladoknak', sections: [
+        hero({ crumb: 'Főoldal / Gyerekek és szülők', eyebrow: 'Családoknak', title: 'Mi történik, amikor bekopog egy Amigo?', text: 'Röviden: semmi kötelező. A gyerek dönti el, hogy van-e kedve, és hogy mihez.', media: 'FOTÓ – közös játék', ctas: [ctaG('Szülőknek', '#szuloknek'), ctaO('Kalandozz!', '#kalandozz')] }),
+        cards('Két út', [
+          { title: 'Szülőknek', text: 'Mi történik egy foglalkozáson, hogyan kezeljük a képeket, kihez fordulhatsz.', media: 'FOTÓ – szülő és gyerek', link: 'Szülőknek', href: '#szuloknek' },
+          { title: 'Kalandozz!', text: 'Online játékok és feladatok kórházban töltött napokra.', media: 'ILLUSZTRÁCIÓ – Kalandozz', link: 'Kalandozz!', href: '#kalandozz' }
+        ]),
+        list('Gyakori kérdések', [
+          { title: 'Kötelező részt venni?', text: 'Nem. A gyerek bármikor nemet mondhat.', meta: '', href: '#csaladoknak-gyik' },
+          { title: 'Készítenek fényképet?', text: 'Csak írásos szülői hozzájárulással, arc nélkül.', meta: '', href: '#csaladoknak-gyik' },
+          { title: 'Ki az az Amigo?', text: 'Képzett egyetemista önkéntes, nem egészségügyi dolgozó.', meta: '', href: '#csaladoknak-gyik' }
+        ])
+      ] },
+
+      'szuloknek': { title: 'Szülőknek', url: '/csaladoknak/szuloknek', sections: [
+        hero({ crumb: 'Főoldal / Gyerekek és szülők / Szülőknek', eyebrow: 'Szülőknek', title: 'Egy foglalkozás, lépésről lépésre', text: 'Heti egy alkalom, kb. két óra. Az Amigo mindig ugyanaz a személy, és mindig bemutatkozik.', media: 'FOTÓ – foglalkozás', ctas: [] }),
+        steps('Hogyan zajlik', [
+          { n: '01', title: 'Bejelentkezés', text: 'Az Amigo az osztályon jelentkezik be, az ápolókkal egyeztet.' },
+          { n: '02', title: 'Kopogás', text: 'Megkérdezi a gyereket, van-e kedve. A nem is válasz.' },
+          { n: '03', title: 'Együtt töltött idő', text: 'Játék, beszélgetés, tanulás — amit a gyerek választ.' },
+          { n: '04', title: 'Elköszönés', text: 'Megbeszélik, mikor jön legközelebb.' }
+        ]),
+        split('Fotók és adatok', 'Gyerekről csak írásos szülői hozzájárulással készül kép, és soha nem azonosítható módon. Nevet nem közlünk.', ['A hozzájárulás bármikor visszavonható', 'Az Amigók nem kérnek és nem tárolnak egészségügyi adatot', 'Kérdés esetén az Amigo-felelős elérhető']),
+        cta({ title: 'Kérdésed vagy visszajelzésed van?', text: 'Az osztályod Amigo-felelősének írhatsz közvetlenül.', ctas: [ctaI('Kapcsolat', '#kapcsolat'), ctaIO('Gyakori kérdések', '#csaladoknak-gyik')] })
+      ] },
+
+      'kalandozz': { title: 'Kalandozz!', url: '/kalandozz', sections: [
+        heroPurple({ crumb: 'Főoldal / Kalandozz!', eyebrow: 'Gyerekeknek', title: 'Kalandozz!', text: 'Játékok és feladatok azokra a napokra, amikor nem lehet felkelni az ágyból.', media: 'ILLUSZTRÁCIÓ – karakterek', ctas: [{ label: 'Kezdjük!', href: '#', bg: '#FFFFFF', fg: '#993166', border: '#FFFFFF' }] }),
+        cards('Kalandok', [
+          { title: 'Űrutazás', text: 'Négy feladat, kb. 20 perc.', media: 'ILLUSZTRÁCIÓ – rakéta' },
+          { title: 'Állatkert', text: 'Rajzolós kaland kicsiknek.', media: 'ILLUSZTRÁCIÓ – állatok' },
+          { title: 'Nyelvkaland', text: 'Angol szavak játékkal.', media: 'ILLUSZTRÁCIÓ – betűk' }
+        ]),
+        split('Felnőtteknek', 'A Kalandozz böngészőben fut, nem kér regisztrációt, és nem gyűjt adatot a gyerekekről.', ['Nincs regisztráció', 'Offline is használható letöltött feladatokkal', 'Minden kaland 10-25 perc'])
+      ] },
+
+      'csaladoknak-gyik': { title: 'Gyakori kérdések (családoknak)', url: '/csaladoknak/gyik', sections: [
+        hero({ crumb: 'Főoldal / Gyerekek és szülők / GYIK', eyebrow: 'GYIK', title: 'Amit a szülők leggyakrabban kérdeznek', text: 'Ha nem találod a választ, írj az Amigo-felelősnek — 48 órán belül válaszolunk.', media: 'KÖR – kérdőjel', ctas: [] }),
+        list('Kérdések', [
+          { title: 'Kötelező részt venni a foglalkozáson?', text: 'Nem. A gyerek bármikor nemet mondhat, és ez nem befolyásol semmit.', meta: '+' },
+          { title: 'Egészségügyi dolgozók az Amigók?', text: 'Nem. Képzett egyetemista önkéntesek, orvosi feladatot nem látnak el.', meta: '+' },
+          { title: 'Készülnek fényképek?', text: 'Csak írásos hozzájárulással, azonosításra alkalmatlan módon.', meta: '+' },
+          { title: 'Mi van, ha a gyerekem rosszul van aznap?', text: 'Az Amigo az ápolókkal egyeztet, és kihagyja az alkalmat.', meta: '+' },
+          { title: 'Hogyan jelezhetek vissza?', text: 'A visszajelző űrlapon vagy közvetlenül az Amigo-felelősnek.', meta: '+' }
+        ]),
+        cta({ title: 'Jelezz vissza egy foglalkozásról', text: 'Két perc, névtelenül is kitölthető.', ctas: [ctaI('Visszajelző űrlap', '#'), ctaIO('Kapcsolat', '#kapcsolat')] })
+      ] },
+
+      'tamogatom': { title: 'Adományozok', url: '/tamogatom', sections: [
+        heroPurple({ crumb: 'Főoldal / Adományozok', eyebrow: 'Támogatás', title: 'Egy gyerek barátsága nem egyszeri alkalom.', text: 'A heti látogatás akkor működik, ha jövő héten is ott tudunk lenni. Válassz összeget és gyakoriságot.', media: 'KÖR – 5 000 Ft', ctas: [{ label: 'Rendszeresen támogatom', href: '#tamogatom-checkout', bg: '#FFFFFF', fg: '#993166', border: '#FFFFFF' }, ctaIO('Egyszeri támogatás', '#tamogatom-checkout')] }),
+        split('Mit fedez', 'Minden összeghez konkrét tétel tartozik, a belső költségbecslésünk alapján.', ['3 000 Ft — egy foglalkozás kreatív alapanyaga', '5 000 Ft — egy Amigo havi útiköltsége, négy látogatásra', '10 000 Ft — egy TanulTablet havi tartalomfrissítése', 'Egyedi összeg — szabadon választható']),
+        cards('Támogatás más formában', [
+          { title: 'Kórházi örökbefogadás', text: 'Egy teljes osztály éves támogatása.', media: 'DIAGRAM – osztály', link: 'Részletek', href: '#orokbefogadas' },
+          { title: 'Vállalati támogatás', text: 'Céges partnerség, önkéntesnap, eszköztámogatás.', media: 'LOGÓ – partner', link: 'Részletek', href: '#vallalati' },
+          { title: 'Adó 1%', text: 'Nem kerül semmibe, mégis sokat számít.', media: 'SZÁM – adószám', link: 'Adószám', href: '#ado-1-szazalek' },
+          { title: 'Támogatás más módon', text: 'Tárgyi felajánlás és nem egyetemista önkéntesség.', media: 'DOBOZ – felajánlás', link: 'Részletek', href: '#egyeb' }
+        ]),
+        split('Bizalom', 'Etikus adománygyűjtő tanúsítvánnyal rendelkezünk, és minden évben nyilvános beszámolóban számolunk el.', ['Bankszámla: 10700024-04616002-51100005', 'Adószám: 18516378-1-42', 'A rendszeres támogatás bármikor módosítható vagy leállítható'])
+      ] },
+
+      'orokbefogadas': { title: 'Kórházi örökbefogadás', url: '/tamogatom/orokbefogadas', sections: [
+        hero({ crumb: 'Főoldal / Adományozok / Kórházi örökbefogadás', eyebrow: 'Örökbefogadás', title: 'Fogadj örökbe egy kórházi osztályt', text: 'Egy osztály éves működése: Amigók útiköltsége, eszközök, képzés. Névre szóló beszámolóval.', media: 'DIAGRAM – osztály', ctas: [ctaP('Érdeklődöm', '#kapcsolat')] }),
+        list('Elérhető osztályok', [
+          { title: 'Gyermekonkológia — Budapest', text: 'Heti 2 látogatás, 12 Amigo', meta: '2 400 000 Ft / év' },
+          { title: 'Gyermeksebészet — Debrecen', text: 'Heti 1 látogatás, 8 Amigo', meta: '1 600 000 Ft / év' },
+          { title: 'Gyermekpszichiátria — Szeged', text: 'Heti 1 látogatás, 6 Amigo', meta: '1 200 000 Ft / év' }
+        ]),
+        split('Mit tartalmaz', 'Az örökbefogadás egy teljes évre szól, és minden félévben írásos beszámolót kapsz.', ['Amigók útiköltsége és képzése', 'Eszközök és alapanyagok az osztályra', 'Féléves beszámoló és éves látogatás', 'Megjelenés a partnerek között (opcionális)'])
+      ] },
+
+      'vallalati': { title: 'Vállalati támogatás', url: '/tamogatom/vallalati', sections: [
+        hero({ crumb: 'Főoldal / Adományozok / Vállalati támogatás', eyebrow: 'Cégeknek', title: 'Vállalati partnerség', text: 'Pénzbeli támogatás, eszköz, céges önkéntesnap vagy osztály-örökbefogadás — számlával, beszámolóval.', media: 'LOGÓRÁCS', ctas: [ctaP('Ajánlatot kérek', '#kapcsolat')] }),
+        cards('Együttműködési formák', [
+          { title: 'Pénzbeli támogatás', text: 'Egyszeri vagy éves keret, számlával.', media: 'DIAGRAM' },
+          { title: 'Eszköztámogatás', text: 'TanulTablet, alapanyag, IT eszköz.', media: 'FOTÓ – eszköz' },
+          { title: 'Céges önkéntesnap', text: 'Csapatépítés, ami tényleg segít.', media: 'FOTÓ – csapat' },
+          { title: 'Osztály-örökbefogadás', text: 'Egy osztály teljes éves háttere.', media: 'DIAGRAM – osztály', link: 'Részletek', href: '#orokbefogadas' }
+        ]),
+        form({ title: 'Ajánlatkérés', text: 'Két munkanapon belül válaszolunk.', fields: [
+          { label: 'Cégnév', hint: 'Példa Kft.' }, { label: 'Kapcsolattartó', hint: 'Név' },
+          { label: 'E-mail', hint: 'kapcsolat@pelda.hu' }, { label: 'Érdeklődési kör', hint: 'Válassz formát' },
+          { label: 'Üzenet', hint: 'Mit szeretnétek támogatni?', h: '120px' }
+        ], submit: 'Ajánlatkérés elküldése', submitHref: '#kapcsolat', submitBg: '#993166' })
+      ] },
+
+      'egyeb': { title: 'Támogatás más módon', url: '/tamogatom/egyeb', sections: [
+        hero({ crumb: 'Főoldal / Adományozok / Más módon', eyebrow: 'Tárgyi és önkéntes', title: 'Nem csak pénzzel lehet segíteni', text: 'Tárgyi felajánlás, szakmai önkéntesség, vagy egyszerűen az, hogy továbbadod.', media: 'DOBOZ – felajánlás', ctas: [] }),
+        list('Amire éppen szükség van', [
+          { title: 'Társasjátékok', text: 'Új vagy alig használt, fertőtleníthető', meta: 'Folyamatos' },
+          { title: 'Rajzeszközök', text: 'Filc, gyurma, papír', meta: 'Folyamatos' },
+          { title: 'Tabletek', text: 'TanulTablet programhoz, min. 2020-as modell', meta: '4 db' },
+          { title: 'Nyomdai szolgáltatás', text: 'Éves beszámoló és szülői tájékoztató', meta: 'Évente' }
+        ]),
+        form({ title: 'Felajánlás bejelentése', text: 'Írd le, mit ajánlanál fel, és felvesszük veled a kapcsolatot.', fields: [
+          { label: 'Név', hint: '' }, { label: 'E-mail', hint: '' },
+          { label: 'Mit ajánlasz fel?', hint: 'Rövid leírás', h: '96px' }
+        ], submit: 'Felajánlás elküldése', submitHref: '#kapcsolat' })
+      ] },
+
+      'ado-1-szazalek': { title: 'Adó 1%', url: '/tamogatom/ado-1-szazalek', sections: [
+        hero({ crumb: 'Főoldal / Adományozok / Adó 1%', eyebrow: 'Adó 1%', title: 'Neked nem kerül semmibe.', text: 'Az adód egy százaléka egy teljes félévnyi látogatást fedezhet egy osztályon.', media: '18516378-1-42', ctas: [ctaG('Rendelkezem', '#')] }),
+        steps('Három lépés', [
+          { n: '01', title: 'Add meg az adószámot', text: '18516378-1-42 — Amigos a gyerekekért Alapítvány' },
+          { n: '02', title: 'Töltsd ki a nyilatkozatot', text: 'Online az eSZJA felületen, vagy papíron.' },
+          { n: '03', title: 'Határidő', text: 'Minden év május 20.' }
+        ]),
+        split('Mire ment az előző évi 1%', 'A teljes összeget a kórházi programokra fordítottuk.', ['4,2 M Ft — Amigók útiköltsége', '2,8 M Ft — eszközök és alapanyagok', '1,1 M Ft — Amigos Akadémia képzés'])
+      ] },
+
+      'tamogatom-checkout': { title: 'Adományozás — checkout', url: '/tamogatom/checkout', sections: [
+        hero({ crumb: 'Főoldal / Adományozok / Fizetés', eyebrow: 'Utolsó lépés', title: 'Támogatás véglegesítése', text: 'Havi 5 000 Ft — bármikor módosítható vagy leállítható.', media: 'KÖR – 5 000 Ft / hó', ctas: [] }),
+        form({ title: 'Adataid', text: 'A visszaigazolást és a számlát erre a címre küldjük.', progress: 'Összeg → Adatok → Fizetés', fields: [
+          { label: 'Név', hint: '' }, { label: 'E-mail', hint: '' },
+          { label: 'Irányítószám', hint: '' }, { label: 'Város', hint: '' },
+          { label: 'Utca, házszám', hint: '' }, { label: 'Fizetési mód', hint: 'Bankkártya / átutalás' }
+        ], consent: 'Elfogadom az ÁSZF-et és az adatkezelési tájékoztatót.', submit: 'Támogatás véglegesítése', submitHref: '#tamogatom-koszonjuk', submitBg: '#993166', alt: 'ÁSZF', altHref: '#aszf' }),
+        split('Biztonság', 'A kártyaadatokat a fizetési szolgáltató kezeli, hozzájuk nem férünk hozzá.', ['Biztonságos bankkártyás fizetés', 'A rendszeres támogatás egy kattintással leállítható', 'Minden hónapban visszaigazolást küldünk'])
+      ] },
+
+      'tamogatom-koszonjuk': { title: 'Köszönjük a támogatást', url: '/tamogatom/koszonjuk', sections: [
+        heroPurple({ crumb: 'Főoldal / Adományozok / Köszönjük', eyebrow: 'Sikeres', title: 'Köszönjük!', text: 'Havi 5 000 Ft-os támogatásod elindult. A visszaigazolást e-mailben küldtük.', media: 'KÖR – pipa', ctas: [{ label: 'Támogatás kezelése', href: '#', bg: '#FFFFFF', fg: '#993166', border: '#FFFFFF' }, ctaIO('Főoldal', 'Amigos Fooldal v2.dc.html')] }),
+        split('Mi történik ezután', 'Minden hónapban visszaigazolást kapsz, évente pedig beszámolót arról, mire ment az összeg.', ['Havi visszaigazolás e-mailben', 'Éves beszámoló minden támogatónak', 'Módosítás és leállítás bármikor, egy linkkel']),
+        cta({ title: 'Kövesd, mi történik a kórházakban', text: 'Havonta egy levél, se több.', ctas: [ctaI('Feliratkozom a hírlevélre', '#'), ctaIO('Történetek', '#tortenetek')] })
+      ] },
+
+      'bolt': { title: 'Adománybolt', url: '/bolt', sections: [
+        hero({ crumb: 'Főoldal / Adománybolt', eyebrow: 'Bolt', title: 'Vásárolj, és a bevétel a kórházakba megy.', text: 'Pólók, bögrék, képeslapok. A teljes nyereség a heti kórházi programokat fedezi.', media: 'FOTÓ – termék', ctas: [ctaG('Terméklista', '#bolt-termekek')] }),
+        cards('Kategóriák', [
+          { title: 'Pólók', text: '4 500 Ft-tól', media: 'FOTÓ – póló', ratio: '1/1', link: 'Megnézem', href: '#bolt-termekek' },
+          { title: 'Bögrék', text: '2 900 Ft', media: 'FOTÓ – bögre', ratio: '1/1', link: 'Megnézem', href: '#bolt-termekek' },
+          { title: 'Képeslapok', text: '600 Ft-tól', media: 'FOTÓ – képeslap', ratio: '1/1', link: 'Megnézem', href: '#bolt-termekek' },
+          { title: 'Ajándékutalvány', text: '5 000 Ft-tól', media: 'GRAFIKA – utalvány', ratio: '1/1', link: 'Megnézem', href: '#bolt-termekek' }
+        ]),
+        split('Hova megy a bevétel', 'A bolt önfenntartó: az árból az előállítás költsége térül meg, a nyereség teljes egésze a programokra megy.', ['Egy póló ára ≈ egy Amigo havi útiköltsége', 'A termékeket hazai nyomdában készítjük', 'Szállítás 1 490 Ft, 20 000 Ft felett ingyenes'])
+      ] },
+
+      'bolt-termekek': { title: 'Terméklista', url: '/bolt/termekek', sections: [
+        hero({ crumb: 'Főoldal / Adománybolt / Termékek', eyebrow: '12 termék', title: 'Minden termék', text: 'Szűrj kategóriára, méretre vagy árra.', media: 'FOTÓ – termékek', ctas: [] }),
+        cards('Termékek', [
+          { title: 'Amigos póló — zöld', text: '4 900 Ft', media: 'FOTÓ – póló', link: 'Részletek', href: '#bolt-termek' },
+          { title: 'Amigos póló — fehér', text: '4 900 Ft', media: 'FOTÓ – póló', link: 'Részletek', href: '#bolt-termek' },
+          { title: 'Bögre', text: '2 900 Ft', media: 'FOTÓ – bögre', link: 'Részletek', href: '#bolt-termek' },
+          { title: 'Képeslapcsomag', text: '1 800 Ft', media: 'FOTÓ – képeslap', link: 'Részletek', href: '#bolt-termek' },
+          { title: 'Vászontáska', text: '3 400 Ft', media: 'FOTÓ – táska', link: 'Részletek', href: '#bolt-termek' },
+          { title: 'Ajándékutalvány', text: '5 000 Ft-tól', media: 'GRAFIKA – utalvány', link: 'Részletek', href: '#bolt-termek' }
+        ])
+      ] },
+
+      'bolt-termek': { title: 'Amigos póló — zöld', url: '/bolt/termek/{slug}', sections: [
+        hero({ crumb: 'Főoldal / Adománybolt / Termékek / Amigos póló', eyebrow: '4 900 Ft', title: 'Amigos póló — zöld', text: '100% biopamut, hazai nyomdában készül. S-től XXL-ig.', media: 'FOTÓ – póló, 4:5', mediaRadius: '12px', ctas: [ctaG('Kosárba teszem', '#kosar'), ctaO('Terméklista', '#bolt-termekek')] }),
+        split('Részletek', 'A méretezés normál fazon. Kérdés esetén írj, és segítünk választani.', ['Anyag: 100% biopamut, 180 g/m²', 'Méretek: S, M, L, XL, XXL', 'Szállítás: 2-4 munkanap', 'A nyereség a kórházi programokra megy']),
+        cards('Ezeket is szokták venni', [
+          { title: 'Bögre', text: '2 900 Ft', media: 'FOTÓ – bögre', ratio: '1/1', link: 'Részletek', href: '#bolt-termek' },
+          { title: 'Vászontáska', text: '3 400 Ft', media: 'FOTÓ – táska', ratio: '1/1', link: 'Részletek', href: '#bolt-termek' },
+          { title: 'Képeslapcsomag', text: '1 800 Ft', media: 'FOTÓ – képeslap', ratio: '1/1', link: 'Részletek', href: '#bolt-termek' }
+        ])
+      ] },
+
+      'kosar': { title: 'Kosár', url: '/kosar', sections: [
+        hero({ crumb: 'Főoldal / Adománybolt / Kosár', eyebrow: '2 tétel', title: 'A kosarad', text: 'Módosítsd a mennyiséget, vagy tegyél hozzá egy kerekítést adományként.', media: 'KÖR – 2 tétel', ctas: [ctaG('Tovább a pénztárhoz', '#penztar')] }),
+        list('Tételek', [
+          { title: 'Amigos póló — zöld, M', text: '1 db', meta: '4 900 Ft' },
+          { title: 'Bögre', text: '2 db', meta: '5 800 Ft' },
+          { title: 'Kerekítés adományként', text: 'Opcionális, bármikor levehető', meta: '+ 300 Ft' },
+          { title: 'Szállítás', text: 'Házhozszállítás, 2-4 munkanap', meta: '1 490 Ft' },
+          { title: 'Összesen', text: '', meta: '12 490 Ft' }
+        ]),
+        cta({ title: 'Kérdés a rendeléssel kapcsolatban?', text: 'A boltot ugyanaz a csapat viszi, aki a kórházakba jár.', ctas: [ctaI('Kapcsolat', '#kapcsolat')] })
+      ] },
+
+      'penztar': { title: 'Pénztár', url: '/penztar', sections: [
+        hero({ crumb: 'Főoldal / Adománybolt / Pénztár', eyebrow: 'Utolsó lépés', title: 'Pénztár', text: 'Összesen 12 490 Ft, 3 tétel.', media: 'KÖR – 12 490 Ft', ctas: [] }),
+        form({ title: 'Szállítás és fizetés', text: 'A számlát e-mailben küldjük.', progress: 'Kosár → Adatok → Fizetés', fields: [
+          { label: 'Név', hint: '' }, { label: 'E-mail', hint: '' },
+          { label: 'Telefon', hint: '' }, { label: 'Irányítószám', hint: '' },
+          { label: 'Város', hint: '' }, { label: 'Utca, házszám', hint: '' },
+          { label: 'Szállítás', hint: 'Házhozszállítás / átvételi pont' }, { label: 'Fizetés', hint: 'Bankkártya / utánvét' }
+        ], consent: 'Elfogadom az ÁSZF-et és az adatkezelési tájékoztatót.', submit: 'Megrendelés elküldése', submitHref: '#bolt-koszonjuk', alt: 'ÁSZF', altHref: '#aszf' })
+      ] },
+
+      'bolt-koszonjuk': { title: 'Köszönjük a rendelést', url: '/bolt/koszonjuk', sections: [
+        heroGreen({ crumb: 'Főoldal / Adománybolt / Köszönjük', eyebrow: 'Sikeres rendelés', title: 'Köszönjük a rendelést!', text: 'Rendelésszám: AMG-20260921-0042. A csomagot 2-4 munkanapon belül küldjük.', media: 'KÖR – pipa', ctas: [ctaIO('Vissza a boltba', '#bolt')] }),
+        cta({ title: 'Egy póló egy hónap. Egy rendszeres támogatás egy egész év.', text: 'Havi 5 000 Ft-tal egy Amigo útiköltségét fedezed.', ctas: [ctaI('Rendszeres támogatás', '#tamogatom')] })
+      ] },
+
+      'kapcsolat': { title: 'Kapcsolat', url: '/kapcsolat', sections: [
+        hero({ crumb: 'Főoldal / Kapcsolat', eyebrow: 'Kapcsolat', title: 'Írj nekünk', text: 'Munkanapokon 48 órán belül válaszolunk. Sajtómegkeresésre aznap.', media: 'TÉRKÉP – iroda', mediaRadius: '12px', ctas: [] }),
+        list('Elérhetőségek', [
+          { title: 'Iroda', text: '1085 Budapest, Példa utca 1.', meta: 'info@amigos.hu' },
+          { title: 'Sajtó', text: 'Sajtókapcsolat és logócsomag', meta: 'sajto@amigos.hu' },
+          { title: 'Önkéntesség', text: 'Jelentkezéssel kapcsolatos kérdések', meta: 'amigo@amigos.hu' },
+          { title: 'Adományozás', text: 'Számlázás, rendszeres támogatás', meta: 'tamogatas@amigos.hu' }
+        ]),
+        form({ title: 'Üzenet', text: 'Ha nem tudod, kihez fordulj, írj ide.', fields: [
+          { label: 'Név', hint: '' }, { label: 'E-mail', hint: '' },
+          { label: 'Téma', hint: 'Válassz témát' }, { label: 'Üzenet', hint: '', h: '120px' }
+        ], submit: 'Üzenet küldése', submitHref: '#kapcsolat' })
+      ] },
+
+      'gyik': { title: 'GYIK', url: '/gyik', sections: [
+        hero({ crumb: 'Főoldal / GYIK', eyebrow: 'GYIK', title: 'Gyakori kérdések', text: 'Önkéntesség, adományozás és bolt — a leggyakoribb kérdések egy helyen.', media: 'KÖR – kérdőjel', ctas: [] }),
+        list('Önkéntesség', [
+          { title: 'Ki lehet Amigo?', text: 'Aktív egyetemista hallgató a hat városunk egyikében.', meta: '+', href: '#legyel-amigo' },
+          { title: 'Mennyi időt vesz el?', text: 'Heti kb. két óra, plusz a képzés a félév elején.', meta: '+' },
+          { title: 'Mikor lehet jelentkezni?', text: 'Folyamatosan, a képzés szemeszterenként indul.', meta: '+', href: '#jelentkezes' }
+        ]),
+        list('Adományozás és bolt', [
+          { title: 'Leállítható a rendszeres támogatás?', text: 'Igen, bármikor, egy kattintással.', meta: '+', href: '#tamogatom' },
+          { title: 'Kapok számlát?', text: 'Igen, minden támogatásról és rendelésről.', meta: '+' },
+          { title: 'Mennyi a szállítási idő?', text: '2-4 munkanap, házhozszállítással.', meta: '+', href: '#bolt' }
+        ])
+      ] },
+
+      'dokumentumok': { title: 'Dokumentumok', url: '/dokumentumok', sections: [
+        hero({ crumb: 'Főoldal / Dokumentumok', eyebrow: 'Letöltés', title: 'Dokumentumok', text: 'Beszámolók, alapító okirat, tanúsítványok — évenként rendezve.', media: 'IKON – PDF', mediaRadius: '12px', ctas: [] }),
+        list('2025', [
+          { title: 'Éves beszámoló 2025', text: 'Pénzügyi beszámoló és közhasznúsági melléklet', meta: 'PDF · 1,4 MB' },
+          { title: 'Közhasznúsági jelentés 2025', text: 'Tevékenységi beszámoló', meta: 'PDF · 820 KB' }
+        ]),
+        list('Állandó dokumentumok', [
+          { title: 'Alapító okirat', text: 'Hatályos, egységes szerkezetben', meta: 'PDF · 340 KB' },
+          { title: 'Etikus adománygyűjtő tanúsítvány', text: 'Érvényes 2027-ig', meta: 'PDF · 210 KB' },
+          { title: 'Szülői tájékoztató', text: 'Kórházi foglalkozásokról', meta: 'PDF · 180 KB' },
+          { title: 'Logócsomag sajtónak', text: 'PNG és SVG', meta: 'ZIP · 4,2 MB' }
+        ])
+      ] },
+
+      'adatkezeles': { title: 'Adatkezelési tájékoztató', url: '/adatkezeles', sections: [
+        hero({ crumb: 'Főoldal / Adatkezelési tájékoztató', eyebrow: 'Jogi', title: 'Adatkezelési tájékoztató', text: 'Milyen adatot kezelünk, meddig, és kinek adjuk át. Gyerekekről személyes adatot nem tárolunk.', media: 'IKON – dokumentum', mediaRadius: '12px', ctas: [] }),
+        legal({ toc: [{ label: '1. Az adatkezelő' }, { label: '2. Kezelt adatok köre' }, { label: '3. Az adatkezelés célja' }, { label: '4. Megőrzési idő' }, { label: '5. Adatfeldolgozók' }, { label: '6. Jogaid' }, { label: '7. Jogorvoslat' }],
+          blocks: [
+            { title: '1. Az adatkezelő', h: '72px' }, { title: '2. Kezelt adatok köre', h: '120px' },
+            { title: '3. Az adatkezelés célja', h: '96px' }, { title: '4. Megőrzési idő', h: '72px' },
+            { title: '5. Adatfeldolgozók', h: '96px' }, { title: '6. Jogaid', h: '120px' }, { title: '7. Jogorvoslat', h: '72px' }
+          ] })
+      ] },
+
+      'aszf': { title: 'ÁSZF', url: '/aszf', sections: [
+        hero({ crumb: 'Főoldal / ÁSZF', eyebrow: 'Jogi', title: 'Általános szerződési feltételek', text: 'Az adománybolt és az online adományozás feltételei.', media: 'IKON – dokumentum', mediaRadius: '12px', ctas: [] }),
+        legal({ toc: [{ label: '1. Szolgáltató adatai' }, { label: '2. Megrendelés' }, { label: '3. Fizetés' }, { label: '4. Szállítás' }, { label: '5. Elállás' }, { label: '6. Adományozás' }, { label: '7. Panaszkezelés' }],
+          blocks: [
+            { title: '1. Szolgáltató adatai', h: '72px' }, { title: '2. Megrendelés menete', h: '96px' },
+            { title: '3. Fizetési feltételek', h: '96px' }, { title: '4. Szállítás', h: '72px' },
+            { title: '5. Elállási jog', h: '120px' }, { title: '6. Adományozás feltételei', h: '96px' }, { title: '7. Panaszkezelés', h: '72px' }
+          ] })
+      ] }
+    };
+  }
+
+  renderVals() {
+    const pages = this.pages();
+    const route = this.state.route || 'legyel-amigo';
+    const isSitemap = route === 'sitemap';
+    const page = pages[route] || pages['legyel-amigo'];
+
+    const sections = (page.sections || []).map(s => Object.assign({
+      isHero: s.t === 'hero', isSplit: s.t === 'split', isCards: s.t === 'cards',
+      isList: s.t === 'list', isSteps: s.t === 'steps', isStats: s.t === 'stats',
+      isForm: s.t === 'form', isLegal: s.t === 'legal', isCta: s.t === 'cta'
+    }, s));
+
+    const g = (title, items) => ({ title, items: items.map(id => ({ title: pages[id].title, href: '#' + id })) });
+    const groups = [
+      g('Legyél Amigo!', ['legyel-amigo', 'jelentkezes', 'legyel-koszonjuk']),
+      g('Munkánk és hatásunk', ['munkank', 'programok', 'hatas', 'atlathatosag', 'partnerek', 'tortenetek']),
+      g('Gyerekek és szülők', ['csaladoknak', 'szuloknek', 'kalandozz', 'csaladoknak-gyik']),
+      g('Adományozás', ['tamogatom', 'orokbefogadas', 'vallalati', 'egyeb', 'ado-1-szazalek', 'tamogatom-checkout', 'tamogatom-koszonjuk']),
+      g('Adománybolt', ['bolt', 'bolt-termekek', 'bolt-termek', 'kosar', 'penztar', 'bolt-koszonjuk']),
+      g('Ügyintézés', ['kapcsolat', 'gyik', 'dokumentumok', 'adatkezeles', 'aszf'])
+    ];
+
+    return {
+      isSitemap, isPage: !isSitemap, page, sections, groups,
+      pageUrl: isSitemap ? '/oldalterkep' : page.url,
+      footerColumns: [
+        { title: 'Ügyintézés', links: [{ label: 'Kapcsolat', href: '#kapcsolat' }, { label: 'Dokumentumok', href: '#dokumentumok' }, { label: 'Átláthatóság', href: '#atlathatosag' }, { label: 'GYIK', href: '#gyik' }] },
+        { title: 'Támogatás', links: [{ label: 'Rendszeres támogatás', href: '#tamogatom' }, { label: 'Adó 1%', href: '#ado-1-szazalek' }, { label: 'Vállalati támogatás', href: '#vallalati' }, { label: 'Adománybolt', href: '#bolt' }] },
+        { title: 'Jogi', links: [{ label: 'Adatkezelési tájékoztató', href: '#adatkezeles' }, { label: 'ÁSZF', href: '#aszf' }, { label: 'Oldaltérkép', href: '#sitemap' }] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

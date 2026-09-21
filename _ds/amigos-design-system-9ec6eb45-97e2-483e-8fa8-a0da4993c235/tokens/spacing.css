@@ -1,0 +1,23 @@
+/* Spacing, layout, radius, shadow, motion */
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;--space-11:160px;
+--section-y:clamp(64px,9vw,128px);/* @kind other */      /* vertical rhythm between sections */
+--section-y-tight:clamp(40px,6vw,80px);/* @kind other */
+--container-max:1280px;/* @kind other */--container-narrow:840px;/* @kind other */--container-wide:1440px;/* @kind other */
+--gutter:clamp(20px,4vw,48px);/* @kind other */
+--grid-cols:12;/* @kind other */--grid-gap:clamp(16px,2vw,32px);/* @kind other */
+--bp-sm:640px;/* @kind other */--bp-md:840px;/* @kind other */--bp-lg:1120px;/* @kind other */--bp-xl:1440px;/* @kind other */
+/* radius — intentional, not everywhere */
+--radius-none:0;--radius-sm:4px;--radius-md:12px;--radius-lg:24px;--radius-full:999px;
+--radius-button:12px;--radius-input:12px;--radius-card:12px;--radius-image:12px;--radius-tag:999px;--radius-dialog:24px;
+/* shadow — used only for floating layers (dialog, dropdown), never on cards */
+--shadow-float:0 12px 40px rgba(23,28,18,0.14),0 2px 6px rgba(23,28,18,0.08);
+--shadow-none:none;
+/* borders */
+--border-w:1px;/* @kind other */--border-w-strong:2px;/* @kind other */
+/* motion */
+--ease-out:cubic-bezier(0.2,0.7,0.2,1);/* @kind other */--ease-in-out:cubic-bezier(0.65,0,0.35,1);/* @kind other */
+--dur-fast:120ms;/* @kind other */--dur-base:200ms;/* @kind other */--dur-slow:400ms;/* @kind other */
+/* control heights */
+--control-sm:36px;/* @kind other */--control-md:44px;/* @kind other */--control-lg:56px;/* @kind other */
+}

@@ -1,0 +1,15 @@
+# The site root serves the homepage (Főoldal v2) in place, so the canonical file
+# stays the single source of truth — no duplicated copy at index.html to go stale.
+# force = true so this wins even if an index.html is ever added to the repo again.
+[[redirects]]
+  from = "/"
+  to = "/Amigos%20Fooldal%20v2.dc.html"
+  status = 200
+  force = true
+
+# Convenience alias.
+[[redirects]]
+  from = "/home"
+  to = "/Amigos%20Fooldal%20v2.dc.html"
+  status = 200
+  force = true
