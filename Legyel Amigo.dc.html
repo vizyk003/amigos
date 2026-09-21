@@ -26,6 +26,8 @@
     @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
     #jelentkezes input::placeholder, #jelentkezes textarea::placeholder{color:#DCE6D2;opacity:1;}
   </style>
+  <link rel="stylesheet" href="assets/responsive.css">
+  <script src="assets/responsive.js" defer></script>
 </helmet>
 
 <div style="font-family:var(--font-body);color:#171C12;">
@@ -50,7 +52,7 @@
     <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
       <div style="display:flex;flex-direction:column;gap:28px;">
         <span style="font-size:13px;color:#DCE6D2;">Főoldal / Legyél Amigo</span>
-        <span style="font-size: var(--text-label); letter-spacing: var(--ls-label); text-transform: uppercase; font-weight: 600; color: #DCE6D2; width: 693px; height: 8px">Önkéntesség egyetemistáknak</span>
+        <span style="font-size: var(--text-label); letter-spacing: var(--ls-label); text-transform: uppercase; font-weight: 600; color: #DCE6D2">Önkéntesség egyetemistáknak</span>
         <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);max-width:13ch;text-wrap:pretty;">
           <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--am-green-200)">Heti két óra.</span></span>
           <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--bg-page)">Egy gyereknek</span></span>
@@ -468,7 +470,7 @@ class Component extends DCLogic {
     const els = Array.from(document.querySelectorAll('[data-reveal]'));
     els.forEach((el, i) => {
       el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
-      el.style.transition = `opacity 400ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 3) * 80}ms, transform 400ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 3) * 80}ms`;
+      el.style.transition = `opacity 420ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 80}ms, transform 420ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 80}ms`;
     });
     const io = new IntersectionObserver(es => es.forEach(e => {
       if (!e.isIntersecting) return;
@@ -479,14 +481,14 @@ class Component extends DCLogic {
 
     const steps = Array.from(document.querySelectorAll('[data-step]'));
     steps.forEach((el, i) => {
-      el.style.opacity = '0'; el.style.transform = 'translateY(16px)';
-      el.style.transition = `opacity 420ms cubic-bezier(0.2,0.7,0.2,1) ${i * 110}ms, transform 420ms cubic-bezier(0.2,0.7,0.2,1) ${i * 110}ms`;
+      el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
+      el.style.transition = `opacity 420ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 80}ms, transform 420ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 80}ms`;
     });
     const io2 = new IntersectionObserver(es => es.forEach(e => {
       if (!e.isIntersecting) return;
       e.target.style.opacity = '1'; e.target.style.transform = 'none';
       io2.unobserve(e.target);
-    }), { rootMargin: '0px 0px -15% 0px' });
+    }), { rootMargin: '0px 0px -10% 0px' });
     steps.forEach(el => io2.observe(el));
   }
   apply() {

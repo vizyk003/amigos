@@ -21,6 +21,8 @@
     @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
     @media (max-height: 640px){ [data-m="hint"]{display:none !important;} [data-m="caption"]{display:none !important;} }
   </style>
+  <link rel="stylesheet" href="assets/responsive.css">
+  <script src="assets/responsive.js" defer></script>
 </helmet>
 
 <div style="font-family:var(--font-body);color:#171C12;">
@@ -29,9 +31,9 @@
 
       <div data-m="pattern" aria-hidden="true" style="position:absolute;left:-0.04em;bottom:-0.16em;font-family:var(--font-display);font-weight:600;font-size:clamp(220px,34vw,560px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">BARÁTSÁG</div>
 
-      <div data-m="frame" style="position:absolute;inset:0;clip-path:inset(28% 34% 28% 34%);will-change:clip-path;">
+      <div data-m="frame" style="position:absolute;inset:0;clip-path:inset(var(--am-hero-inset-y,28%) var(--am-hero-inset-x,34%));will-change:clip-path;">
         <video data-m="video" poster="assets/lens-friendship.png" muted="" playsinline="" loop="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:transform;"></video>
-        <div data-m="scrim" style="position:absolute;inset:0;background:#24410A;opacity:0.18;will-change:opacity;"></div>
+        <div data-m="scrim" style="position:absolute;inset:0;background:#24410A;opacity:var(--am-scrim,0.18);will-change:opacity;"></div>
       </div>
 
       <header style="position:relative;display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,48px);z-index:3;">
@@ -47,8 +49,8 @@
         <div style="grid-column:1 / span 8;display:flex;flex-direction:column;gap:32px;">
           <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Amigos a gyerekekért</div>
           <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);color:#FFFFFF;max-width:13ch;text-wrap:pretty;">
-            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block; width: 610px; height: 96px">A barátság</span></span>
-            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block; width: 615px; height: 91px">csodákra képes.</span></span>
+            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block">A barátság</span></span>
+            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block">csodákra képes.</span></span>
           </h1>
           <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:40ch;color:#FFFFFF;text-wrap:pretty;">300 egyetemista Amigo jár hetente kórházban fekvő gyerekekhez játszani, tanulni, barátkozni.</p>
           <div style="display:flex;gap:16px;flex-wrap:wrap;">
@@ -150,9 +152,14 @@ class Component extends DCLogic {
         setTimeout(() => { w.style.transition = ''; w.style.transform = ''; }, 900 + i * 90);
       });
       if (this.frame) {
+        // 34% off each side of a 360px phone leaves a 115px sliver, so the
+        // window opens to a portrait shape on narrow screens instead.
+        const narrow = window.innerWidth <= 840;
+        const shut = narrow ? 'inset(26% 14% 26% 14%)' : 'inset(34% 40% 34% 40%)';
+        const open = narrow ? 'inset(20% 8% 20% 8%)' : 'inset(28% 34% 28% 34%)';
         this.frame.style.transition = 'clip-path 900ms cubic-bezier(0.2,0.7,0.2,1)';
-        this.frame.style.clipPath = 'inset(34% 40% 34% 40%)';
-        requestAnimationFrame(() => { this.frame.style.clipPath = 'inset(28% 34% 28% 34%)'; setTimeout(() => { this.frame.style.transition = ''; }, 950); });
+        this.frame.style.clipPath = shut;
+        requestAnimationFrame(() => { this.frame.style.clipPath = open; setTimeout(() => { this.frame.style.transition = ''; }, 950); });
       }
     }
     // the opening stretch (p 0 → FULL) is binary: the page rests only at the start or at full bleed
@@ -231,7 +238,13 @@ class Component extends DCLogic {
       if (this.video) this.video.style.transform = `scale(${1.12 - 0.12 * open})`;
       // 2 · scrim deepens only as much as the copy over it needs
       // scrim stays clear through the full-bleed pose; it only deepens for the film lines
-      if (this.scrim) this.scrim.style.opacity = String(0.18 * (1 - seg(0.3, 0.42)) + 0.52 * seg(0.44, 0.56));
+      if (this.scrim) {
+        // On phones the hero copy sits over the picture rather than beside
+        // it, so the resting scrim has to carry the white text on its own.
+        // It still clears as the film opens to full bleed.
+        const base = window.innerWidth <= 840 ? 0.5 : 0.18;
+        this.scrim.style.opacity = String(base * (1 - seg(0.3, 0.42)) + 0.52 * seg(0.44, 0.56));
+      }
       if (this.pattern) this.pattern.style.transform = `translate3d(${-window.innerWidth * 0.5 * seg(0, 0.5)}px,0,0)`;
       // 3 · hero copy hands over to the two film lines
       const out = seg(0.18, 0.34);

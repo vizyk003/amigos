@@ -31,6 +31,8 @@
     @media (max-width: 840px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-hero-copy]>div{grid-column:1 / -1 !important;} [data-utility]{display:none !important;} }
     @media (max-height: 640px){ [data-m="hint"]{display:none !important;} }
   </style>
+  <link rel="stylesheet" href="assets/responsive.css">
+  <script src="assets/responsive.js" defer></script>
 </helmet>
 
 <div style="font-family:var(--font-body);color:#171C12;">
@@ -42,10 +44,10 @@
       <div aria-hidden="true" style="position:absolute;inset:0;background:#437613;z-index:0;"></div>
       <div data-m="pattern" style="position:absolute;left:-0.04em;bottom:-0.16em;font-family:var(--font-display);font-weight:600;font-size:clamp(220px,34vw,560px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">BARÁTSÁG</div>
 
-      <div data-m="frame" style="position:absolute;inset:0;z-index:1;background:#437613;clip-path:inset(28% 34% 28% 34%);will-change:clip-path;cursor:pointer;">
+      <div data-m="frame" style="position:absolute;inset:0;z-index:1;background:#437613;clip-path:inset(var(--am-hero-inset-y,28%) var(--am-hero-inset-x,34%));will-change:clip-path;cursor:pointer;">
         <img data-m="poster" src="assets/brandfilm-poster.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;display:block;opacity:1;transition:opacity 320ms cubic-bezier(0.2,0.7,0.2,1);">
         <video data-m="video" muted="" playsinline="" loop="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:transform;"></video>
-        <div data-m="scrim" style="position:absolute;inset:0;background:#24410A;opacity:0.18;will-change:opacity;"></div>
+        <div data-m="scrim" style="position:absolute;inset:0;background:#24410A;opacity:var(--am-scrim,0.18);will-change:opacity;"></div>
       </div>
 
       <header data-split="" style="position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:22px clamp(20px,4vw,48px) 20px;z-index:6;">
@@ -63,9 +65,9 @@
 
       <div data-m="copy" data-hero-copy="" style="position:relative;z-index:6;max-width:1280px;margin:0 auto;padding:clamp(32px,6vh,88px) clamp(20px,4vw,48px) clamp(88px,15vh,150px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,4vw,48px);will-change:transform,opacity;">
         <div style="grid-column:1 / span 8;display:flex;flex-direction:column;gap:32px;">
-          <div style="font-size: var(--text-label); letter-spacing: var(--ls-label); text-transform: uppercase; font-weight: 600; color: #DCE6D2; width: 771px; height: 8px">Amigos a gyerekekért</div>
+          <div style="font-size: var(--text-label); letter-spacing: var(--ls-label); text-transform: uppercase; font-weight: 600; color: #DCE6D2">Amigos a gyerekekért</div>
           <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);color:#FFFFFF;max-width:13ch;text-wrap:pretty;">
-            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block; padding-bottom: 0.14em; margin-bottom: -0.14em; width: 618px; height: 92px">A barátság</span></span>
+            <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block; padding-bottom: 0.14em; margin-bottom: -0.14em">A barátság</span></span>
             <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display:block;padding-bottom:0.14em;margin-bottom:-0.14em;">csodákra képes.</span></span>
           </h1>
           <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:40ch;color:#FFFFFF;text-wrap:pretty;">Egyetemista Amigóink minden héten ugyanahhoz a gyerekhez térnek vissza a kórházba: játszani, tanulni, barátkozni.</p>
@@ -586,7 +588,11 @@ class Component extends DCLogic {
     const open = seg(0, 0.40), close = seg(0.62, 1);
     if (this.frame) {
       if (close <= 0) {
-        const insetY = 28 * (1 - open), insetX = 34 * (1 - open);
+        // The closed slit is 28%/34% of the viewport on desktop. Taking 34%
+        // off each side of a 360px phone leaves a 115px sliver, so narrow
+        // screens start from a portrait window instead.
+        const startY = vw <= 840 ? 20 : 28, startX = vw <= 840 ? 8 : 34;
+        const insetY = startY * (1 - open), insetX = startX * (1 - open);
         this.frame.style.clipPath = `inset(${insetY}% ${insetX}% ${insetY}% ${insetX}%)`;
       } else {
         // full bleed → a centred circle, then the disc shrinks and rises behind the secondary header
@@ -602,7 +608,13 @@ class Component extends DCLogic {
 
     if (this.video) this.video.style.transform = `scale(${1.12 - 0.12 * open})`;
     if (this.yt) this.yt.style.transform = `translate(-50%,-50%) scale(${1.12 - 0.12 * open})`;
-    if (this.scrim) this.scrim.style.opacity = String(0.18 * (1 - seg(0.28, 0.40)) + 0.52 * seg(0.42, 0.54));
+    if (this.scrim) {
+        // On phones the hero copy sits over the picture rather than beside
+        // it, so the resting scrim has to carry the white text on its own.
+        // It still clears as the film opens to full bleed.
+        const base = window.innerWidth <= 840 ? 0.5 : 0.18;
+        this.scrim.style.opacity = String(base * (1 - seg(0.28, 0.40)) + 0.52 * seg(0.42, 0.54));
+      }
     // scroll hint leaves with the first gesture; the film controls leave as the disc forms
     const hint = document.querySelector('[data-m="hint"]');
     if (hint) { const o = 1 - seg(0, 0.06); hint.style.opacity = String(o); hint.style.visibility = o > 0.02 ? 'visible' : 'hidden'; }

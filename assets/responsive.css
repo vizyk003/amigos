@@ -1,0 +1,453 @@
+/* =====================================================================
+   Amigos — shared responsive layer
+   ---------------------------------------------------------------------
+   The pages are design-canvas exports: their layout lives in inline
+   style attributes, so ordinary class-based CSS cannot reach it. The
+   rules below therefore match on substrings of the inline style text
+   and use !important, which is the only specificity that beats an
+   inline declaration.
+
+   Matching is on the *value* only (e.g. "5fr 7fr"), never on the
+   property name, so a rule works whether the page author wrote
+   `grid-template-columns:5fr 7fr` by hand or React serialised it as
+   `grid-template-columns: 5fr 7fr`.
+
+   Breakpoints follow the design-system tokens in tokens/spacing.css:
+     --bp-sm 640px   --bp-md 840px   --bp-lg 1120px
+   Nothing here applies above 1120px, so the desktop design is untouched.
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   1. Safety net — applies at every width
+   ------------------------------------------------------------------ */
+
+/* The oversized decorative wordmarks (BARÁTSÁG, HETENTE, 2014 ÓTA …)
+   are meant to bleed out of their section, and at 320px one of them
+   reached 1px past the viewport. `clip` rather than `hidden`: hidden
+   would make <html> a scroll container and break the sticky headers. */
+@media (max-width: 840px) {
+  /* `overflow: clip` deliberately does not propagate from the root to
+     the viewport, so the clip has to sit on <body>. `clip` rather than
+     `hidden` because hidden would make body a scroll container and
+     break every position:sticky header on the site. */
+  body { overflow-x: clip; }
+}
+
+/* Long Hungarian compounds ("Adatkezelési tájékoztató", "Etikus
+   adománygyűjtő tanúsítvány") in narrow footer/nav columns. Wrapping
+   only ever engages when the column is too narrow for the word, so
+   this is inert at desktop widths. */
+footer a,
+footer li,
+footer p,
+nav a { overflow-wrap: break-word; }
+
+/* Grid and flex children default to min-width:auto, which makes a long
+   unbreakable word push a track wider than its share. The canvas grids
+   pass minmax(0,1fr) in most places; this covers the rest. Held below
+   the desktop breakpoint so the designed layout is never second-guessed
+   at the widths it was drawn for. */
+@media (max-width: 1120px) {
+  [style*="display:grid"] > *,
+  [style*="display: grid"] > *,
+  [style*="display:flex"] > *,
+  [style*="display: flex"] > * { min-width: 0; }
+}
+
+
+/* ---------------------------------------------------------------------
+   2. Mobile navigation
+   ------------------------------------------------------------------ */
+
+/* assets/responsive.js marks the row holding the logo + nav + CTA with
+   data-am-navbar and flips data-am-open on it; the <nav> itself is
+   never moved, because React owns it. With JS off none of these hooks
+   appear and the bar keeps its previous wrapped layout — usable, just
+   tall — so nothing is lost. */
+
+.am-navtoggle {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: clamp(16px, 4vw, 48px);
+  transform: translateY(-50%);
+  z-index: 70;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  color: #171C12;
+}
+[data-am-tone="inverse"] > .am-navtoggle { color: #FFFFFF; }
+.am-navtoggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+.am-navtoggle span {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: background 120ms linear;
+}
+.am-navtoggle span::before,
+.am-navtoggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 200ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.am-navtoggle span::before { top: -7px; }
+.am-navtoggle span::after  { top:  7px; }
+
+.am-navtoggle[aria-expanded="true"] span { background: transparent; }
+.am-navtoggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.am-navtoggle[aria-expanded="true"] span::after  { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 840px) {
+  [data-am-navbar] .am-navtoggle { display: flex; }
+
+  /* Put the bar back on one line. The pages' own breakpoint collapses
+     [data-split] to a single column, which is what produced the tall
+     stacked bar; a flex row with the nav lifted out of flow replaces it. */
+  [data-am-navbar] {
+    display: flex !important;
+    grid-template-columns: none !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    /* room for the absolutely positioned toggle */
+    padding-right: calc(clamp(16px, 4vw, 48px) + 52px) !important;
+  }
+  [data-am-navbar] > * { flex: 0 1 auto; min-width: 0; }
+  [data-am-navbar] > .am-navtoggle { flex: none; }
+
+  [data-am-navbar] img[alt="Amigos"] { height: 44px !important; }
+
+  /* The nav becomes a disclosure panel anchored under the bar. It stays
+     exactly where it is in the DOM — only out of flow. */
+  [data-am-navbar] > [data-am-nav-list] {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 60;
+    display: none !important;
+    flex: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    flex-wrap: nowrap !important;
+    margin: 0 !important;
+    padding: 4px clamp(20px, 4vw, 48px) 16px !important;
+    font-size: 17px !important;
+    background: #FAFAF6;
+    border-bottom: 1px solid #DDE3D5;
+    box-shadow: 0 12px 40px rgba(23, 28, 18, 0.14);
+  }
+  [data-am-navbar][data-am-open="true"] > [data-am-nav-list] { display: flex !important; }
+
+  [data-am-tone="inverse"] > [data-am-nav-list] {
+    background: #3A650F;
+    border-bottom-color: rgba(255, 255, 255, 0.18);
+  }
+
+  [data-am-navbar] > [data-am-nav-list] > a {
+    display: flex !important;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 4px;
+    border-bottom: 1px solid rgba(23, 28, 18, 0.10);
+    font-size: 17px;
+    text-decoration: none;
+  }
+  [data-am-tone="inverse"] > [data-am-nav-list] > a {
+    border-bottom-color: rgba(255, 255, 255, 0.16);
+  }
+  [data-am-navbar] > [data-am-nav-list] > a:last-child { border-bottom: 0; }
+
+  /* The hand-drawn wave marks the current page. Centred under a
+     full-width row it would land in empty space; pin it to the text. */
+  [data-am-navbar] > [data-am-nav-list] > a [data-wave] {
+    left: 4px !important;
+    transform: none !important;
+    bottom: 10px !important;
+  }
+}
+
+/* Mobile affordance only — never leak it onto desktop. */
+@media (min-width: 841px) {
+  .am-navtoggle { display: none !important; }
+}
+
+
+/* ---------------------------------------------------------------------
+   3. Layout — collapse the canvas grids
+   ------------------------------------------------------------------ */
+
+@media (max-width: 1120px) {
+  /* Editorial splits are readable a little wider than the hard
+     breakpoint; loosen the widest ones first. */
+  [style*="grid-template-columns:4fr 8fr"],
+  [style*="grid-template-columns: 4fr 8fr"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr) !important;
+  }
+}
+
+@media (max-width: 840px) {
+  /* Every two-column proportional split used across the pages. The
+     existing [data-split] hook covers most of these already; these
+     rules catch the ones that were never tagged (Aloldalak has nine
+     splits and no breakpoint at all) and the component-rendered grids
+     that have no hook to tag. */
+  [style*="5fr 7fr"],
+  [style*="7fr 5fr"],
+  [style*="4fr 8fr"],
+  [style*="6fr 5fr"],
+  [style*="5fr 6fr"],
+  [style*="4fr 7fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="repeat(2,minmax(0,1fr))"],
+  [style*="repeat(2, minmax(0, 1fr))"],
+  [style*="repeat(3,minmax(0,1fr))"],
+  [style*="repeat(3, minmax(0, 1fr))"],
+  [style*="repeat(12,minmax(0,1fr))"],
+  [style*="repeat(12, minmax(0, 1fr))"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* 12-column hero copy: let every placed child span the single track. */
+  [style*="grid-column:1 / span"],
+  [style*="grid-column: 1 / span"],
+  [style*="grid-column:7 / span"],
+  [style*="grid-column: 7 / span"] {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* SiteFooter renders "1.4fr repeat(N, 1fr)" inline and has no hook. */
+  [style*="1.4fr repeat"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: var(--space-6) !important;
+  }
+
+  /* Three-up rows that centre something between two columns. */
+  [style*="minmax(0,1fr) auto minmax(0,1fr)"],
+  [style*="minmax(0, 1fr) auto minmax(0, 1fr)"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* auto-fit floors above ~200px overflow a 360px viewport once the
+     page gutter is taken off. Drop the floor; the tracks still grow. */
+  [style*="minmax(260px,1fr)"], [style*="minmax(260px, 1fr)"],
+  [style*="minmax(240px,1fr)"], [style*="minmax(240px, 1fr)"],
+  [style*="minmax(230px,1fr)"], [style*="minmax(230px, 1fr)"],
+  [style*="minmax(220px,1fr)"], [style*="minmax(220px, 1fr)"],
+  [style*="minmax(210px,1fr)"], [style*="minmax(210px, 1fr)"] {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)) !important;
+  }
+
+  /* Sticky side rails have nothing to stick beside once stacked. */
+  [data-sticky],
+  [style*="position:sticky"][style*="top:110px"] {
+    position: static !important;
+  }
+}
+
+@media (max-width: 640px) {
+  [style*="1.4fr repeat"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  [style*="repeat(auto-fit,minmax(170px,1fr))"],
+  [style*="repeat(auto-fit, minmax(170px, 1fr))"],
+  [style*="repeat(auto-fit,minmax(180px,1fr))"],
+  [style*="repeat(auto-fit, minmax(180px, 1fr))"],
+  [style*="repeat(auto-fit,minmax(200px,1fr))"],
+  [style*="repeat(auto-fit, minmax(200px, 1fr))"] {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)) !important;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   4. Viewport-height heroes
+   ------------------------------------------------------------------ */
+
+/* 100vh on a phone is the *large* viewport: with the browser chrome
+   showing, the bottom of a 100vh hero sits under the address bar. svh
+   is the small viewport and always fits. Desktop is unaffected — the
+   two are identical where there is no retracting chrome. */
+@media (max-width: 840px) {
+  [style*="height:100vh"],
+  [style*="height: 100vh"] { height: 100svh !important; }
+
+  [style*="min-height:100vh"],
+  [style*="min-height: 100vh"] { min-height: 100svh !important; }
+
+  [style*="height:78vh"],
+  [style*="height: 78vh"] { height: 78svh !important; }
+}
+
+
+/* ---------------------------------------------------------------------
+   5. Page-specific corrections
+   ------------------------------------------------------------------ */
+
+@media (max-width: 840px) {
+  /* Főoldal v2 hero — the frame's clip-path is driven by the page's own
+     scroll choreography, so it cannot be overridden here without freezing
+     the reveal. These feed the custom properties the markup starts from;
+     the matching start values live in that page's apply(). */
+  :root { --am-hero-inset-y: 20%; --am-hero-inset-x: 8%; }
+
+  /* The resting scrim before the first scroll frame runs. Once the hero
+     choreography starts it writes opacity inline and takes over, so this
+     only sets the value the page opens with. The matching baseline for
+     the animated value lives in each hero page's own apply(). */
+  :root { --am-scrim: 0.5; }
+
+  /* The sound/pause pills sat on top of the hero CTAs at 360px. */
+  [data-m="controls"] {
+    right: auto !important;
+    left: clamp(20px, 4vw, 48px) !important;
+    bottom: 14px !important;
+    gap: 8px !important;
+  }
+  [data-m="controls"] button { padding: 7px 12px !important; font-size: 11px !important; }
+
+  /* Munkánk & hatásunk — the city map. Labels are pinned 52px to the
+     left or right of their dot, so the ones at left:80%/84% ran off the
+     screen (the only real horizontal page scroll in the site). Centre
+     every label under its dot instead. */
+  [data-node] > span:last-child {
+    left: 50% !important;
+    right: auto !important;
+    top: 100% !important;
+    transform: translateX(-50%) !important;
+    font-size: 12px !important;
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Gyerekek & szülők — the cut-out character art is anchored to the
+     right edge and hangs past it once the column is full width. */
+  [style*="right: clamp(-40px, 2vw, 60px)"],
+  [style*="right:clamp(-40px,2vw,60px)"] {
+    right: 0 !important;
+    height: clamp(180px, 40vw, 260px) !important;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   6. Touch targets and controls
+   ------------------------------------------------------------------ */
+
+@media (max-width: 840px) {
+  /* Footer link lists render 20–23px tall, well under the 44px touch
+     guidance. SiteFooter emits plain <a> in nested divs, so there is no
+     class or list element to hook — match every link in the footer and
+     grow it with padding, which leaves the visual rhythm intact. */
+  footer a { display: inline-block; padding: 10px 0; }
+  footer a[style*="--radius-button"] { padding: 10px 22px; }
+
+  /* Standalone "Tovább →" links in the body sit at 23–25px. They are the
+     600-weight or small undecorated links the canvas emits; design-system
+     buttons carry --radius-button and are already tall enough, and card
+     links carry their own background or border and must keep their box. */
+  a[style*="font-weight:600"]:not([style*="--radius-button"]):not([data-navlink]),
+  a[style*="font-weight: 600"]:not([style*="--radius-button"]):not([data-navlink]),
+  section a[style*="font-size:15px"]:not([style*="background"]):not([style*="border"]),
+  section a[style*="font-size: 15px"]:not([style*="background"]):not([style*="border"]) {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* The homepage city picker is a row of underlined text buttons. */
+  [data-city] { min-height: 44px; padding-bottom: 10px !important; }
+
+  /* The shop's cart control in the bar. */
+  header button, [data-am-navbar] button:not(.am-navtoggle) { min-height: 44px; }
+
+  /* Design-system buttons keep white-space:nowrap; a long Hungarian
+     label then pushes past the viewport. */
+  a[style*="--radius-button"],
+  button[style*="--radius-button"] {
+    white-space: normal !important;
+    height: auto !important;
+    min-height: var(--control-md) !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    text-align: center;
+  }
+
+  /* Form controls at 16px or larger stop iOS Safari zooming on focus,
+     and a 44px box is the minimum comfortable target. */
+  input, select, textarea { font-size: max(16px, 1em) !important; }
+  input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+  select, textarea { min-height: 44px; }
+
+  /* Filter/choice chips (the city picker, amount pickers) sit at ~31px. */
+  [role="radiogroup"] button,
+  [role="radiogroup"] label,
+  [data-node] { min-height: 44px; }
+
+  /* Checkboxes/radios render at 22px. The box itself is left alone —
+     scaling it would break the custom tick art — but the label wrapping
+     it becomes the hit area instead. */
+  label:has(input[type="checkbox"]),
+  label:has(input[type="radio"]) { min-height: 44px; }
+  input[type="checkbox"], input[type="radio"] { min-width: 24px; min-height: 24px; }
+}
+
+
+/* Tablets in landscape report 1024px but are still driven by a finger,
+   so the touch-target sizing is keyed to the pointer as well as to the
+   width. Mouse users above 840px keep the designed link boxes. */
+@media (pointer: coarse) and (min-width: 841px) {
+  footer a { display: inline-block; padding: 10px 0; }
+  footer a[style*="--radius-button"] { padding: 10px 22px; }
+  a[style*="font-weight:600"]:not([style*="--radius-button"]):not([data-navlink]),
+  a[style*="font-weight: 600"]:not([style*="--radius-button"]):not([data-navlink]) {
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  [data-city] { min-height: 44px; }
+  input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+  select, textarea { min-height: 44px; }
+  label:has(input[type="checkbox"]),
+  label:has(input[type="radio"]) { min-height: 44px; }
+}
+
+
+/* ---------------------------------------------------------------------
+   7. Typography
+   ------------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  /* The tokens are already fluid; these are the hand-written fixed
+     sizes the canvas emitted that the scale never reaches. */
+  [style*="font-size:33px"],
+  [style*="font-size: 33px"] { font-size: clamp(22px, 6vw, 30px) !important; }
+
+  :root {
+    --text-body-lg: var(--text-body-lg-m);
+    --text-body: var(--text-body-m);
+    --text-h4: var(--text-h4-m);
+  }
+}

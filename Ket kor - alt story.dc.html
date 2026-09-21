@@ -21,6 +21,8 @@
     a{color:#437613;} a:hover{color:#2A4A0B;}
     @media (prefers-reduced-motion: reduce){ [data-motion]{transform:none !important;transition:none !important;opacity:1 !important;} }
   </style>
+  <link rel="stylesheet" href="assets/responsive.css">
+  <script src="assets/responsive.js" defer></script>
 </helmet>
 
 <div style="font-family:var(--font-body);color:#171C12;">
@@ -68,7 +70,7 @@
     </div>
 
     <div data-motion="pre" style="position:absolute;left:0;right:0;top:clamp(40px,8vh,96px);padding:0 clamp(20px,4vw,48px);text-align:center;opacity:0;pointer-events:none;z-index:2;will-change:opacity,transform;">
-      <p style="margin: 0 auto; font-family: var(--font-display); font-weight: 600; font-size: 33px; line-height: var(--lh-h3); letter-spacing: var(--ls-h3); color: #FFFFFF; max-width: 24.4ch; text-wrap: balance; width: 415px; height: 67px">Egy kórházban élő gyermek.</p>
+      <p style="margin: 0 auto; font-family: var(--font-display); font-weight: 600; font-size: 33px; line-height: var(--lh-h3); letter-spacing: var(--ls-h3); color: #FFFFFF; max-width: 24.4ch; text-wrap: balance">Egy kórházban élő gyermek.</p>
     </div>
 
     <div data-motion="split" ref="{{ splitRef }}" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 clamp(20px,4vw,48px);text-align:center;opacity:0;pointer-events:none;z-index:2;will-change:opacity,transform;">
