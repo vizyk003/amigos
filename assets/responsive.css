@@ -134,6 +134,9 @@ nav a { overflow-wrap: break-word; }
   [data-am-navbar] > .am-navtoggle { flex: none; }
 
   [data-am-navbar] img[alt="Amigos"] { height: 44px !important; }
+  /* 22px of padding above and below the logo made the hero bar 110px of
+     a 667px screen. */
+  [data-am-navbar] { padding-top: 12px !important; padding-bottom: 12px !important; }
 
   /* The nav becomes a disclosure panel anchored under the bar. It stays
      exactly where it is in the DOM — only out of flow. */
@@ -158,6 +161,12 @@ nav a { overflow-wrap: break-word; }
     box-shadow: 0 12px 40px rgba(23, 28, 18, 0.14);
   }
   [data-am-navbar][data-am-open="true"] > [data-am-nav-list] { display: flex !important; }
+
+  /* An open panel has to out-rank everything its own section paints
+     after it. On the hero pages the bar IS the <header> at z-index 6 and
+     [data-m="copy"] is also 6 but later in the DOM, so the hero text
+     painted over the open menu and swallowed every tap on it. */
+  [data-am-navbar][data-am-open="true"] { z-index: 90 !important; }
 
   [data-am-tone="inverse"] > [data-am-nav-list] {
     background: #3A650F;
@@ -259,10 +268,33 @@ nav a { overflow-wrap: break-word; }
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)) !important;
   }
 
-  /* Sticky side rails have nothing to stick beside once stacked. */
+  /* Sticky side rails have nothing to stick beside once the split they
+     sit in is stacked: the rail pins itself and rides over the column
+     that used to be next to it. Targeting direct children of a split
+     keeps the site headers — which are [data-split] themselves, not
+     children of one — sticky as designed. */
   [data-sticky],
-  [style*="position:sticky"][style*="top:110px"] {
+  [data-split] > [style*="position:sticky"],
+  [data-split] > [style*="position: sticky"] {
     position: static !important;
+    max-height: none !important;
+    top: auto !important;
+  }
+
+  /* The rail's image orb is sized against viewport height for a tall
+     desktop column; stacked on a phone it wants a share of the width. */
+  [data-orb-slot] { width: min(58vw, 230px) !important; align-self: center; }
+
+  /* Each pillar row is 78vh tall so the desktop rail has something to
+     scroll past while it swaps the orb behind it. With the rail static
+     that height is just a screenful of empty paper between rows. */
+  article[data-row] {
+    min-height: 0 !important;
+    height: auto !important;
+    flex: none !important;
+    align-self: stretch;
+    justify-content: flex-start !important;
+    padding: 28px 0 !important;
   }
 }
 
@@ -306,26 +338,59 @@ nav a { overflow-wrap: break-word; }
    ------------------------------------------------------------------ */
 
 @media (max-width: 840px) {
-  /* Főoldal v2 hero — the frame's clip-path is driven by the page's own
-     scroll choreography, so it cannot be overridden here without freezing
-     the reveal. These feed the custom properties the markup starts from;
-     the matching start values live in that page's apply(). */
-  :root { --am-hero-inset-y: 20%; --am-hero-inset-x: 8%; }
+  /* ---- Hero: stack the copy and the film instead of overlapping them.
+     The desktop hero reveals the video through a centred slit that sits
+     in the empty green beside the copy. A phone has no space beside the
+     copy, so widening that slit only pushed the picture under the text,
+     with the window's edges cutting through it. Here the copy keeps the
+     top of the screen on solid green and the film becomes a window
+     underneath. The clip-path itself is animated from each page's own
+     JS; this is only the value the markup opens with, before the first
+     frame runs. --------------------------------------------------- */
+  :root { --am-hero-clip: inset(62% 5% 6% 5%); }
 
-  /* The resting scrim before the first scroll frame runs. Once the hero
-     choreography starts it writes opacity inline and takes over, so this
-     only sets the value the page opens with. The matching baseline for
-     the animated value lives in each hero page's own apply(). */
-  :root { --am-scrim: 0.5; }
+  /* Buy back the vertical space the stack needs. An iPhone SE is 667px
+     tall and the header alone was 110px of it. */
+  [data-m="copy"] {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  [data-m="copy"] > div { gap: 20px !important; }
 
-  /* The sound/pause pills sat on top of the hero CTAs at 360px. */
+  /* The lead paragraph at 20px ran to three lines on a 375px screen. */
+  [data-m="copy"] p { font-size: 17px !important; line-height: 1.45 !important; }
+
+  /* Two large CTAs stacked took 152px. At this size they sit side by
+     side on one row and take 44px. */
+  [data-m="copy"] a[style*="--radius-button"] {
+    height: 44px !important;
+    font-size: 15px !important;
+    padding: 0 16px !important;
+  }
+  [data-m="copy"] a[style*="--radius-button"] + a[style*="--radius-button"] { margin: 0; }
+
+  /* Sound/pause pills ride the bottom edge of the window. */
   [data-m="controls"] {
     right: auto !important;
     left: clamp(20px, 4vw, 48px) !important;
-    bottom: 14px !important;
+    bottom: calc(6% + 10px) !important;
     gap: 8px !important;
   }
   [data-m="controls"] button { padding: 7px 12px !important; font-size: 11px !important; }
+
+  /* The scroll-hint rule ran straight through the pills, and the window
+     itself is the affordance now. */
+  [data-m="hint"] { display: none !important; }
+
+  /* The oversized background words are Amigos values, so they are meant
+     to be read, not just seen as texture — which means the word has to
+     start on screen. Two of them are right-anchored for the desktop
+     composition; on a phone that cut the beginning off, leaving
+     "BÍZHATÓSÁG". Desktop placement is left alone. */
+  [data-value-word][style*="right:"] {
+    right: auto !important;
+    left: -0.04em !important;
+  }
 
   /* Munkánk & hatásunk — the city map. Labels are pinned 52px to the
      left or right of their dot, so the ones at left:80%/84% ran off the
@@ -362,7 +427,7 @@ nav a { overflow-wrap: break-word; }
      class or list element to hook — match every link in the footer and
      grow it with padding, which leaves the visual rhythm intact. */
   footer a { display: inline-block; padding: 10px 0; }
-  footer a[style*="--radius-button"] { padding: 10px 22px; }
+  footer a[style*="--radius-button"] { padding: 0 22px; }
 
   /* Standalone "Tovább →" links in the body sit at 23–25px. They are the
      600-weight or small undecorated links the canvas emits; design-system
@@ -387,12 +452,14 @@ nav a { overflow-wrap: break-word; }
      label then pushes past the viewport. */
   a[style*="--radius-button"],
   button[style*="--radius-button"] {
+    /* Only let the label wrap. The component's own height stays: the
+       buttons are content-box, so swapping height for min-height plus
+       padding inflated every one of them from 48px to 68px. Two lines
+       still fit inside the sm/md/lg heights at this line-height. */
     white-space: normal !important;
-    height: auto !important;
-    min-height: var(--control-md) !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    line-height: 1.15 !important;
     text-align: center;
+    max-width: 100%;
   }
 
   /* Form controls at 16px or larger stop iOS Safari zooming on focus,
@@ -420,7 +487,7 @@ nav a { overflow-wrap: break-word; }
    width. Mouse users above 840px keep the designed link boxes. */
 @media (pointer: coarse) and (min-width: 841px) {
   footer a { display: inline-block; padding: 10px 0; }
-  footer a[style*="--radius-button"] { padding: 10px 22px; }
+  footer a[style*="--radius-button"] { padding: 0 22px; }
   a[style*="font-weight:600"]:not([style*="--radius-button"]):not([data-navlink]),
   a[style*="font-weight: 600"]:not([style*="--radius-button"]):not([data-navlink]) {
     display: inline-block;

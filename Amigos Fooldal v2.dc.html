@@ -42,9 +42,9 @@
     <section data-screen-label="Video hero" style="position:sticky;top:0;height:100vh;overflow:hidden;background:#437613;z-index:5;">
 
       <div aria-hidden="true" style="position:absolute;inset:0;background:#437613;z-index:0;"></div>
-      <div data-m="pattern" style="position:absolute;left:-0.04em;bottom:-0.16em;font-family:var(--font-display);font-weight:600;font-size:clamp(220px,34vw,560px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">BARÁTSÁG</div>
+      <div data-value-word="" data-m="pattern" style="position:absolute;left:-0.04em;bottom:-0.16em;font-family:var(--font-display);font-weight:600;font-size:clamp(48px,31.2vw,515px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">BARÁTSÁG</div>
 
-      <div data-m="frame" style="position:absolute;inset:0;z-index:1;background:#437613;clip-path:inset(var(--am-hero-inset-y,28%) var(--am-hero-inset-x,34%));will-change:clip-path;cursor:pointer;">
+      <div data-m="frame" style="position:absolute;inset:0;z-index:1;background:#437613;clip-path:var(--am-hero-clip,inset(28% 34% 28% 34%));will-change:clip-path;cursor:pointer;">
         <img data-m="poster" src="assets/brandfilm-poster.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;display:block;opacity:1;transition:opacity 320ms cubic-bezier(0.2,0.7,0.2,1);">
         <video data-m="video" muted="" playsinline="" loop="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:transform;"></video>
         <div data-m="scrim" style="position:absolute;inset:0;background:#24410A;opacity:var(--am-scrim,0.18);will-change:opacity;"></div>
@@ -165,7 +165,7 @@
 
   <div data-m="statsrunway" data-screen-label="Számok" style="position:relative;z-index:6;height:300vh;background:#FAFAF6;">
     <div style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;">
-      <div data-m="statspattern" style="position:absolute;left:0;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-weight:600;font-size:clamp(200px,30vw,520px);line-height:1;letter-spacing:-0.03em;color:#EEF3E8;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">HETENTE HETENTE</div>
+      <div data-value-word="" data-m="statspattern" style="position:absolute;left:0;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-weight:600;font-size:clamp(48px,19.2vw,317px);line-height:1;letter-spacing:-0.03em;color:#EEF3E8;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">MEGBÍZHATÓSÁG</div>
       <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);">
         <div data-pane="0" style="display:flex;flex-direction:column;gap:12px;">
           <span data-count="300" style="font-family:var(--font-display);font-weight:600;font-size:min(clamp(96px,18vw,320px),34vh);line-height:0.86;letter-spacing:-0.04em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
@@ -536,7 +536,12 @@ class Component extends DCLogic {
       this.pulse();
     };
     requestAnimationFrame(loop);
+    // The window is cut to the film's own aspect, but videoWidth is 0 until
+    // metadata lands — recompute once it does, or the resting frame keeps
+    // the 16:9 fallback shape.
+    if (this.video) this.video.addEventListener('loadedmetadata', () => this.apply());
   }
+
   componentWillUnmount() { this.alive = false; }
   span() { return this.runway.offsetHeight - window.innerHeight + window.innerHeight * 0.6; }
   scrollToFull() { this.flyTo(this.FULL || 0.40); }
@@ -573,6 +578,39 @@ class Component extends DCLogic {
     this.hintfill.style.transform = `translateY(${(e - 1) * 100}%)`;
     this.hintfill.style.opacity = t > 0.85 ? String(1 - (t - 0.85) / 0.15) : '1';
   }
+  // The resting hero window on a phone: the film's own aspect ratio, as wide
+  // as the gutters allow, centred in whatever room is left under the copy.
+  heroWindow(vw, vh, copyBottom) {
+    const v = this.video;
+    const ar = (v && v.videoWidth && v.videoHeight) ? v.videoWidth / v.videoHeight : 16 / 9;
+    const left = Math.round(vw * 0.05);
+    let w = vw - left * 2;
+    let h = w / ar;
+    const top0 = copyBottom + 28;
+    const room = vh - top0 - 24;
+    if (h > room) { h = room; w = h * ar; }
+    return { left: Math.round((vw - w) / 2), top: Math.round(top0 + Math.max(0, (room - h) / 2)),
+             w: Math.round(w), h: Math.round(h) };
+  }
+
+  // Size the film to a rectangle, or hand it back to the frame with null.
+  fitFilm(left, top, w, h) {
+    const poster = this.frame && this.frame.querySelector('[data-m="poster"]');
+    [this.video, poster].forEach(el => {
+      if (!el) return;
+      if (left === null) {
+        // Restore rather than clear: el.style IS the markup's own style
+        // attribute, so blanking these would drop the inset:0/100% sizing
+        // the frame relies on at desktop widths.
+        el.style.left = '0px'; el.style.top = '0px';
+        el.style.width = '100%'; el.style.height = '100%';
+        return;
+      }
+      el.style.left = left + 'px'; el.style.top = top + 'px';
+      el.style.width = w + 'px'; el.style.height = h + 'px';
+    });
+  }
+
   apply() {
     const vw = window.innerWidth, vh = window.innerHeight;
     const ease = t => 1 - Math.pow(1 - t, 3);
@@ -588,12 +626,39 @@ class Component extends DCLogic {
     const open = seg(0, 0.40), close = seg(0.62, 1);
     if (this.frame) {
       if (close <= 0) {
-        // The closed slit is 28%/34% of the viewport on desktop. Taking 34%
-        // off each side of a 360px phone leaves a 115px sliver, so narrow
-        // screens start from a portrait window instead.
-        const startY = vw <= 840 ? 20 : 28, startX = vw <= 840 ? 8 : 34;
-        const insetY = startY * (1 - open), insetX = startX * (1 - open);
-        this.frame.style.clipPath = `inset(${insetY}% ${insetX}% ${insetY}% ${insetX}%)`;
+        // Desktop opens a centred slit that sits in the empty green beside
+        // the copy. A phone has no such space, so there the window starts
+        // below the copy instead and the four insets differ — they are
+        // lerped independently and still reach inset(0) at full bleed.
+        // Where the window starts: just under the copy. offsetTop/offsetHeight
+        // rather than a rect, because the copy carries a parallax transform
+        // during the scroll and layout offsets ignore it. The copy is
+        // content-height, so this adapts to each page's own wording and to
+        // however the lines happen to wrap at this width.
+        const inner = this.copy && this.copy.firstElementChild;
+        const copyBottom = inner
+          ? this.copy.offsetTop + inner.offsetTop + inner.offsetHeight
+          : vh * 0.6;
+        const t = 1 - open;
+        let s0;
+        if (vw <= 840) {
+          // Give the window the film's own aspect so the resting view is the
+          // whole frame. The video box is 375x667 here and the source is
+          // 16:9, so object-fit:cover was throwing away most of each side.
+          const r = this.heroWindow(vw, vh, copyBottom);
+          s0 = [r.top / vh * 100, r.left / vw * 100,
+                (vh - r.top - r.h) / vh * 100, r.left / vw * 100];
+          // …and grow the picture itself from that rectangle out to the full
+          // section as the frame opens, so nothing is cropped until it is
+          // meant to be full bleed.
+          this.fitFilm(lerp(0, r.left, t), lerp(0, r.top, t),
+                       lerp(vw, r.w, t), lerp(vh, r.h, t));
+        } else {
+          s0 = [28, 34, 28, 34];
+          this.fitFilm(null);
+        }
+        this.frame.style.clipPath =
+          `inset(${s0[0] * t}% ${s0[1] * t}% ${s0[2] * t}% ${s0[3] * t}%)`;
       } else {
         // full bleed → a centred circle, then the disc shrinks and rises behind the secondary header
         const form = seg(0.62, 0.74), leave = clamp((p - 0.74) / 0.26);
@@ -606,13 +671,15 @@ class Component extends DCLogic {
       }
     }
 
-    if (this.video) this.video.style.transform = `scale(${1.12 - 0.12 * open})`;
+    // The 1.12 zoom is a crop; on a phone the resting frame has to stay whole,
+    // so it only eases in as the film reaches full bleed.
+    if (this.video) this.video.style.transform =
+      window.innerWidth <= 840 ? `scale(${1 + 0.12 * open})` : `scale(${1.12 - 0.12 * open})`;
     if (this.yt) this.yt.style.transform = `translate(-50%,-50%) scale(${1.12 - 0.12 * open})`;
     if (this.scrim) {
-        // On phones the hero copy sits over the picture rather than beside
-        // it, so the resting scrim has to carry the white text on its own.
-        // It still clears as the film opens to full bleed.
-        const base = window.innerWidth <= 840 ? 0.5 : 0.18;
+        // The copy sits on solid green at every width now, so the scrim is
+        // back to the designed weight and only has to serve the footage.
+        const base = 0.18;
         this.scrim.style.opacity = String(base * (1 - seg(0.28, 0.40)) + 0.52 * seg(0.42, 0.54));
       }
     // scroll hint leaves with the first gesture; the film controls leave as the disc forms
