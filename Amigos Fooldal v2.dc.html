@@ -38,7 +38,7 @@
 <div style="font-family:var(--font-body);color:#171C12;">
 
 
-  <div data-m="runway" style="position:relative;height:240vh;">
+  <div data-m="runway" style="position:relative;height:340vh;">
     <section data-screen-label="Video hero" style="position:sticky;top:0;height:100vh;overflow:hidden;background:#437613;z-index:5;">
 
       <div aria-hidden="true" style="position:absolute;inset:0;background:#437613;z-index:0;"></div>
@@ -478,6 +478,13 @@ class Component extends DCLogic {
       });
     }
     this.FULL = 0.40;
+    // The hero is a list of stops, never an in-between state — the same rule
+    // the numbers section already follows. A phone flick carries far more
+    // momentum than any runway length can absorb (one swipe passed both
+    // captions), so touch and wheel both advance exactly one stop: the
+    // opening, each caption at the middle of its hold, then out. The p values
+    // match the segments in apply().
+    this.STOPS = [0, this.FULL, 0.52, 0.725, 0.81];
     const geo = () => { const top = this.runway.getBoundingClientRect().top + window.scrollY; const span = this.span(); return { top, span, p: (window.scrollY - top) / span }; };
     const gesture = e => {
       if (this.reduced || !this.runway) return;
@@ -485,8 +492,18 @@ class Component extends DCLogic {
       const { p } = geo();
       const dy = e.type === 'wheel' ? e.deltaY : (this.touchY != null ? this.touchY - e.touches[0].clientY : 0);
       if (Math.abs(dy) < 2) return;
-      if (dy > 0 && p > -0.01 && p < this.FULL - 0.005) { e.preventDefault(); this.flyTo(this.FULL); return; }
-      if (dy < 0 && p > 0.005 && p <= this.FULL + 0.005) { e.preventDefault(); this.flyTo(0); return; }
+      const last = this.STOPS[this.STOPS.length - 1];
+      const at = this.STOPS.findIndex(st => Math.abs(p - st) < 0.006);
+      if (dy > 0 && p > -0.01 && p < last - 0.005) {
+        e.preventDefault();
+        this.flyTo(at >= 0 ? this.STOPS[at + 1] : this.STOPS.find(st => st > p + 0.005));
+        return;
+      }
+      if (dy < 0 && p > 0.005 && p <= last + 0.005) {
+        e.preventDefault();
+        this.flyTo(at >= 0 ? this.STOPS[Math.max(at - 1, 0)] : [...this.STOPS].reverse().find(st => st < p - 0.005));
+        return;
+      }
       // numbers: the section is a set of stops, never an in-between state
       const stops = this.statStops();
       if (stops.length) {
@@ -516,6 +533,11 @@ class Component extends DCLogic {
         if (this.snapping) return;
         const { p } = geo();
         if (p > 0.005 && p < this.FULL - 0.005) { this.flyTo(p < this.FULL * 0.3 ? 0 : this.FULL); return; }
+        const hLast = this.STOPS[this.STOPS.length - 1];
+        if (p >= this.FULL && p < hLast - 0.005 && !this.STOPS.some(st => Math.abs(st - p) < 0.006)) {
+          this.flyTo(this.STOPS.reduce((a, st) => Math.abs(st - p) < Math.abs(a - p) ? st : a));
+          return;
+        }
         const stops = this.statStops();
         if (stops.length) {
           const y = window.scrollY, vh = window.innerHeight;
@@ -623,7 +645,7 @@ class Component extends DCLogic {
     this.inHero = p < 0.99;
 
     // the frame opens from a slit to full bleed, then closes back to a slit
-    const open = seg(0, 0.40), close = seg(0.62, 1);
+    const open = seg(0, 0.40), close = seg(0.81, 1);
     if (this.frame) {
       if (close <= 0) {
         // Desktop opens a centred slit that sits in the empty green beside
@@ -661,7 +683,7 @@ class Component extends DCLogic {
           `inset(${s0[0] * t}% ${s0[1] * t}% ${s0[2] * t}% ${s0[3] * t}%)`;
       } else {
         // full bleed → a centred circle, then the disc shrinks and rises behind the secondary header
-        const form = seg(0.62, 0.74), leave = clamp((p - 0.74) / 0.26);
+        const form = seg(0.81, 0.87), leave = clamp((p - 0.87) / 0.13);
         const rFull = Math.hypot(vw, vh) / 2;
         const rDisc = Math.min(vw, vh) * 0.27;
         const r = lerp(lerp(rFull, rDisc, form), 28, leave);
@@ -686,14 +708,17 @@ class Component extends DCLogic {
     const hint = document.querySelector('[data-m="hint"]');
     if (hint) { const o = 1 - seg(0, 0.06); hint.style.opacity = String(o); hint.style.visibility = o > 0.02 ? 'visible' : 'hidden'; }
     const controls = document.querySelector('[data-m="controls"]');
-    if (controls) { const o = 1 - seg(0.60, 0.66); controls.style.opacity = String(o); controls.style.pointerEvents = o > 0.5 ? 'auto' : 'none'; controls.style.visibility = o > 0.02 ? 'visible' : 'hidden'; }
+    if (controls) { const o = 1 - seg(0.75, 0.81); controls.style.opacity = String(o); controls.style.pointerEvents = o > 0.5 ? 'auto' : 'none'; controls.style.visibility = o > 0.02 ? 'visible' : 'hidden'; }
 
     // hero chrome
     if (this.pattern) this.pattern.style.transform = `translate3d(${-vw * 0.5 * seg(0, 0.5)}px,0,0)`;
     const out = seg(0.16, 0.32);
     if (this.copy) { this.copy.style.opacity = String(1 - out); this.copy.style.transform = `translate3d(0,${-48 * out}px,0)`; }
-    const a1 = seg(0.40, 0.47) * (1 - seg(0.50, 0.54));
-    const a2 = seg(0.54, 0.59) * (1 - seg(0.62, 0.66));
+    // Each line has to survive a couple of wheel notches: a 6% fade in, a
+    // hold of 12% (≈36vh of scroll) and a 5% fade out. The first line lands
+    // right where the opening snap drops the reader, so it gets the most.
+    const a1 = seg(0.40, 0.46) * (1 - seg(0.58, 0.63));
+    const a2 = seg(0.63, 0.68) * (1 - seg(0.77, 0.81));
     if (this.line) { this.line.style.opacity = String(a1); this.line.style.transform = `translate3d(0,calc(-50% + ${(1 - a1) * 24}px),0)`; }
     if (this.line2) { this.line2.style.opacity = String(a2); this.line2.style.transform = `translate3d(0,calc(-50% + ${(1 - a2) * 24}px),0)`; }
 

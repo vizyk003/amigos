@@ -366,6 +366,7 @@ class Component extends DCLogic {
     }
     // the opening stretch (p 0 → FULL) is binary: the page rests only at the start or at full bleed
     this.FULL = 0.42;
+    this.STOPS = [0, this.FULL, 0.585, 0.90, 1];
     const geo = () => { const top = this.runway.getBoundingClientRect().top + window.scrollY; const span = this.runway.offsetHeight - window.innerHeight; return { top, span, p: (window.scrollY - top) / span }; };
     const gesture = e => {
       if (this.reduced || !this.runway) return;
@@ -373,8 +374,20 @@ class Component extends DCLogic {
       const { p } = geo();
       const dy = e.type === 'wheel' ? e.deltaY : (this.touchY != null ? this.touchY - e.touches[0].clientY : 0);
       if (Math.abs(dy) < 2) return;
-      if (dy > 0 && p > -0.01 && p < this.FULL - 0.005) { e.preventDefault(); this.flyTo(this.FULL); }
-      else if (dy < 0 && p > 0.005 && p <= this.FULL + 0.005) { e.preventDefault(); this.flyTo(0); }
+      // One stop per gesture — opening, each caption, then out — so a flick
+      // can never carry the reader past a caption. p values match apply().
+      const last = this.STOPS[this.STOPS.length - 1];
+      const at = this.STOPS.findIndex(st => Math.abs(p - st) < 0.006);
+      if (dy > 0 && p > -0.01 && p < last - 0.005) {
+        e.preventDefault();
+        this.flyTo(at >= 0 ? this.STOPS[at + 1] : this.STOPS.find(st => st > p + 0.005));
+        return;
+      }
+      if (dy < 0 && p > 0.005 && p <= last + 0.005) {
+        e.preventDefault();
+        this.flyTo(at >= 0 ? this.STOPS[Math.max(at - 1, 0)] : [...this.STOPS].reverse().find(st => st < p - 0.005));
+        return;
+      }
     };
     window.addEventListener('wheel', gesture, { passive: false });
     window.addEventListener('touchstart', e => { this.touchY = e.touches[0].clientY; }, { passive: true });
