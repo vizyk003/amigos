@@ -366,7 +366,7 @@ class Component extends DCLogic {
     }
     // the opening stretch (p 0 → FULL) is binary: the page rests only at the start or at full bleed
     this.FULL = 0.42;
-    this.STOPS = [0, this.FULL, 0.585, 0.90, 1];
+    this.STOPS = [0, this.FULL, 0.585, 0.90];
     const geo = () => { const top = this.runway.getBoundingClientRect().top + window.scrollY; const span = this.runway.offsetHeight - window.innerHeight; return { top, span, p: (window.scrollY - top) / span }; };
     const gesture = e => {
       if (this.reduced || !this.runway) return;
@@ -374,7 +374,7 @@ class Component extends DCLogic {
       const { p } = geo();
       const dy = e.type === 'wheel' ? e.deltaY : (this.touchY != null ? this.touchY - e.touches[0].clientY : 0);
       if (Math.abs(dy) < 2) return;
-      // One stop per gesture — opening, each caption, then out — so a flick
+      // One stop per gesture — opening, then each caption — so a flick
       // can never carry the reader past a caption. p values match apply().
       const last = this.STOPS[this.STOPS.length - 1];
       const at = this.STOPS.findIndex(st => Math.abs(p - st) < 0.006);

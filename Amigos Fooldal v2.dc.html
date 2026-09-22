@@ -482,9 +482,10 @@ class Component extends DCLogic {
     // the numbers section already follows. A phone flick carries far more
     // momentum than any runway length can absorb (one swipe passed both
     // captions), so touch and wheel both advance exactly one stop: the
-    // opening, each caption at the middle of its hold, then out. The p values
+    // opening, then each caption at the middle of its hold. After the second
+    // caption the page scrolls freely and the hero falls behind. The p values
     // match the segments in apply().
-    this.STOPS = [0, this.FULL, 0.52, 0.725, 0.81];
+    this.STOPS = [0, this.FULL, 0.52, 0.725];
     const geo = () => { const top = this.runway.getBoundingClientRect().top + window.scrollY; const span = this.span(); return { top, span, p: (window.scrollY - top) / span }; };
     const gesture = e => {
       if (this.reduced || !this.runway) return;
