@@ -44,6 +44,31 @@
     @keyframes am-stitch{to{stroke-dashoffset:-26;}}
     [data-m="ring2"] circle{animation:am-stitch 9s linear infinite;}
     @media (prefers-reduced-motion: reduce){ [data-m="ring2"] circle{animation:none;} }
+    /* The circle is the play/pause target, so it should answer the pointer:
+       the picture leans in under the clip, and the stitched ring steps a
+       little further off its edge. Hover-capable pointers only — on touch a
+       hover state sticks after the tap. */
+    [data-m="frame"]{cursor:pointer;}
+    @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference){
+      [data-m="frame"] [data-m="poster"],
+      [data-m="frame"] [data-m="video"]{transition:opacity 200ms cubic-bezier(0.2,0.7,0.2,1), transform 600ms cubic-bezier(0.2,0.7,0.2,1) !important;}
+      [data-m="frame"]:hover [data-m="poster"],
+      [data-m="frame"]:hover [data-m="video"]{transform:scale(1.05);}
+      [data-m="ring2"]{transition:transform 400ms cubic-bezier(0.2,0.7,0.2,1);}
+      :has(> [data-m="frame"]:hover) > [data-m="ring2"]{transform:translate(5%,4%) !important;}
+      [data-m="frame"]:active [data-m="poster"],
+      [data-m="frame"]:active [data-m="video"]{transform:scale(1.02);}
+    }
+    /* The hint is information, not motion, so it shows under reduced motion
+       too — only its easing is dropped there. */
+    [data-m="frame"][data-playing="true"] [data-glyph="play"]{display:none !important;}
+    [data-m="frame"][data-playing="true"] [data-glyph="pause"]{display:block !important;}
+    @media (hover: hover) and (pointer: fine){
+      [data-m="frame"]:hover [data-m="playhint"]{opacity:0.7 !important;transform:translate(-50%,-50%) scale(1) !important;}
+    }
+    @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference){
+      [data-m="frame"] [data-m="playhint"]{transition:opacity 200ms cubic-bezier(0.2,0.7,0.2,1), transform 400ms cubic-bezier(0.2,0.7,0.2,1) !important;}
+    }
     @media (max-width: 840px){
       /* Stacked, the circle no longer sits beside the copy; keep it from
          eating the whole screen and pull the cetli back inside the gutter. */
@@ -137,7 +162,7 @@
             <circle cx="100" cy="100" r="99" fill="none" stroke="var(--amigos-sun)" stroke-width="2" stroke-dasharray="6 7" stroke-linecap="round" vector-effect="non-scaling-stroke"></circle>
           </svg>
 
-          <div data-m="frame" style="position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--amigos-green);box-shadow:0 0 0 2px var(--amigos-green);">
+          <div data-m="frame" style="position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--amigos-green);">
             <img data-m="poster" src="assets/community/web/21-web-hero.jpg" alt="Amigo és gyerek közös társasjátéka a kórházi játszószobában" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block;opacity:1;transition:opacity 200ms cubic-bezier(0.2,0.7,0.2,1);" width="1254" height="1254">
             <video data-m="video" muted="" playsinline="" loop="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>
             <!-- Illustration layer — csillanás, the winning move. Hand-drawn,
@@ -152,11 +177,18 @@
                 <path d="M43.8 74.4 C 42.7 75.4, 42.1 75.9, 41.6 76.4"></path>
               </g>
             </svg>
+            <!-- What a click on the circle will do, shown on hover: play until
+                 the film is running, pause while it is. Paper disc, green
+                 glyph; the frame's data-playing picks which one shows. -->
+            <span data-m="playhint" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:clamp(56px,22%,84px);aspect-ratio:1/1;margin:0;border-radius:50%;background:var(--amigos-paper);color:var(--amigos-green);display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(0.86);">
+              <svg data-glyph="play" viewBox="0 0 24 24" width="42%" height="42%" fill="currentColor" style="display:block;margin-left:8%;"><path d="M7 4.5v15a1 1 0 0 0 1.53.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5z"></path></svg>
+              <svg data-glyph="pause" viewBox="0 0 24 24" width="42%" height="42%" fill="currentColor" style="display:none;"><rect x="5" y="4" width="5" height="16" rx="1.2"></rect><rect x="14" y="4" width="5" height="16" rx="1.2"></rect></svg>
+            </span>
           </div>
 
           <!-- Sticker: a napsárga disc — a dot, never a field. Ink on sun is
                12:1; white on sun is forbidden. -->
-          <div data-m="cetli" style="position:absolute;top:-16px;right:-10px;width:116px;height:116px;border-radius:50%;transform:rotate(6deg);background:var(--amigos-sun);color:var(--amigos-ink);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--font-hand);font-weight:700;font-size:30px;line-height:0.92;letter-spacing:0.01em;box-shadow:var(--shadow-sticker);">Csütörtökön<br>jövünk.</div>
+          <div data-m="cetli" style="position:absolute;top:-16px;right:-10px;width:116px;height:116px;border-radius:50%;transform:rotate(6deg);background:var(--amigos-sun);color:var(--amigos-ink);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--font-hand);font-weight:700;font-size:25px;line-height:0.92;letter-spacing:0.01em;box-shadow:var(--shadow-sticker);">Csütörtökön<br>jövünk.</div>
         </div>
 
         <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;">
@@ -455,7 +487,7 @@ class Component extends DCLogic {
       // Sound is only a choice once there is something playing.
       if (snd && this.video) { snd.style.display = 'none'; snd.textContent = 'Hang be'; snd.onclick = () => { this.video.muted = !this.video.muted; snd.textContent = this.video.muted ? 'Hang be' : 'Hang ki'; }; }
       if (tog && this.video) {
-        const sync = () => { tog.textContent = !this.filmStarted ? 'Film lejátszása' : this.video.paused ? 'Lejátszás' : 'Szünet'; };
+        const sync = () => { tog.textContent = !this.filmStarted ? 'Film lejátszása' : this.video.paused ? 'Lejátszás' : 'Szünet'; if (this.frame) this.frame.setAttribute('data-playing', this.filmStarted && !this.video.paused ? 'true' : 'false'); };
         this.video.addEventListener('play', sync); this.video.addEventListener('pause', sync); sync();
         tog.onclick = () => {
           if (!this.filmStarted) { this.startFilm(); if (snd) snd.style.display = ''; this.video.play().catch(() => {}); sync(); return; }
