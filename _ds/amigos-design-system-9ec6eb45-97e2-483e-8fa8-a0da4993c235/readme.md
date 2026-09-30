@@ -1,3 +1,54 @@
+# Amigos Design System — local copy
+
+**Refreshed to the 2026 brandbook (Arculati kézikönyv, 2. verzió) — „Barátként
+kísérünk a gyógyulás útján."** Upstream:
+https://claude.ai/design/p/8c42e9a0-fb0f-44fb-a112-1a201df05438
+
+What v2 changed, and how this copy carries it
+---------------------------------------------
+* **Palette** is named after the brandbook's own words — `--amigos-green`
+  (pulcsizöld), `-green-deep` (mélyzöld), `-green-pale` (fakózöld),
+  `--amigos-sun` (napsárga), `--amigos-plum` (lila), `-paper`, `-ink` — and the
+  v1 numeric ramp (`--am-green-700` …) is gone upstream.
+* **Ratio per surface: 52 papír · 20 zöld · 10 tinta · 6 mély · 6 fakó · 3
+  sárga · 3 lila.** One green field per surface. Napsárga is a dot, never a
+  field, and never carries white text. Lila appears only where money is asked.
+  Mélyzöld is never a large background — footer, caption band, patch, small
+  card only.
+* **Type:** Amatic SC Bold for campaign/display titles only, Familjen Grotesk
+  600 for editorial headings and numbers, Instrument Sans for all body and UI,
+  and **Caveat for quotes** (v2 moves these off Instrument Serif italic).
+* **Corners:** buttons are pills, cards 16px, UI 8px; the circle is the
+  signature shape. Cards stay flat; only stickers/cetli and floating layers
+  get a lift.
+
+### The compat layer
+The thirteen exported pages and `_ds_bundle.js` were written against the v1
+token names (`--am-*`, `--color-*`, `--bg-*`, `--text-*`, `--radius-button`,
+`--font-display` …). Rather than rewrite several thousand inline styles, each
+file in `tokens/` publishes the v2 names *and* a COMPAT block repointing the
+v1 names at the refreshed values — so the whole site inherits the refresh.
+New work should use the v2 names; delete a compat alias only once nothing
+references it.
+
+Two deliberate departures from the upstream tokens:
+* `--color-accent` stays **plum**, not sun. It is what the bundle's `accent`
+  Button paints, every accent Button on the site points at `#tamogatom`, and
+  its foreground is white — which v2 forbids on napsárga.
+* The display sizes are a notch above v1 rather than the brandbook's 128/72.
+  Those figures are drawn in condensed Amatic VERSAL; the pages set their
+  headings in Familjen Grotesk, which runs far wider at the same size. The
+  leading tightens to the v2 ratios, which is where most of the "bigger"
+  actually reads. See the note in `tokens/typography.css`.
+
+Fonts are loaded from Google Fonts (`tokens/fonts.css`). Upstream self-hosts
+the same five families as woff2 under `fonts/`; switch to those if the site
+ever needs to drop the third-party request.
+
+---
+
+<!-- The v1 notes below are kept for reference. -->
+
 # Amigos Design System
 
 Digital design system for **Amigos a gyerekekért Alapítvány** (amigos.hu) — the "Amigos grew up" evolution of the existing identity. Not a rebrand: same logo, same green, same characters; a more editorial, typographic and spacious digital expression with a distinctive graphic signature.

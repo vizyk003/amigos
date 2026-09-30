@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
 <body>
 <x-dc>
 <helmet>
+  <title>Oldaltérkép és wireframe-ek — Amigos a gyerekekért Alapítvány</title>
+  <meta name="description" content="Belső munkaanyag: oldaltérkép és alacsony felépítésű wireframe-ek a még készülő aloldalakhoz.">
+  <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
@@ -16,24 +19,24 @@
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
   <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
   <style>
-    html,body{margin:0;background:#FAFAF6;}
-    a{color:#437613;} a:hover{color:#2A4A0B;}
+    html,body{margin:0;background:var(--amigos-paper);}
+    a{color:var(--amigos-green);} a:hover{color:var(--amigos-green-deep);}
     @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
   <script src="assets/responsive.js" defer></script>
 </helmet>
 
-<div style="font-family:var(--font-body);color:#171C12;min-height:100vh;display:flex;flex-direction:column;">
+<div style="font-family:var(--font-body);color:var(--amigos-ink);min-height:100vh;display:flex;flex-direction:column;">
 
-  <header style="position:sticky;top:0;z-index:20;background:#FAFAF6;border-bottom:1px solid #DDE3D5;">
+  <header style="position:sticky;top:0;z-index:20;background:var(--amigos-paper);border-bottom:1px solid var(--amigos-line);">
     <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
-      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;"></a>
+      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
       <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
-        <a href="#legyel-amigo" style="color:#171C12;text-decoration:none;">Legyél Amigo</a>
-        <a href="Munkank es hatasunk.dc.html" style="color:#171C12;text-decoration:none;">Munkánk &amp; Hatásunk</a>
-        <a href="Gyerekek es szulok.dc.html" style="color:#171C12;text-decoration:none;">Gyerekek &amp; Szülők</a>
-        <a href="Adomanybolt.dc.html" style="color:#171C12;text-decoration:none;">Adománybolt</a>
+        <a href="#legyel-amigo" style="color:var(--amigos-ink);text-decoration:none;">Legyél Amigo</a>
+        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Gyerekek &amp; Szülők</a>
+        <a href="Adomanybolt.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Adománybolt</a>
       </nav>
       <div style="display:flex;justify-content:flex-end;">
         <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
@@ -41,7 +44,7 @@
     </div>
   </header>
 
-  <div style="background:#F1F4EC;border-bottom:1px solid #DDE3D5;font-size:13px;color:#5A6650;">
+  <div style="background:#F1F4EC;border-bottom:1px solid var(--amigos-line);font-size:13px;color:var(--amigos-ink-3);">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1280px;margin:0 auto;padding:8px clamp(20px,4vw,48px);">
       <span>Low-fidelity wireframe — {{ pageUrl }}</span>
       <span style="display:flex;gap:20px;"><a href="#sitemap" style="text-decoration:none;">Oldaltérkép</a><a href="Amigos Fooldal v2.dc.html" style="text-decoration:none;">Főoldal (kész design)</a></span>
@@ -51,13 +54,13 @@
   <main style="flex:1;">
     <sc-if value="{{ isSitemap }}" hint-placeholder-val="{{ false }}">
       <section style="max-width:1280px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,5vw,56px);">
-        <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:20ch;">Oldaltérkép</h1>
+        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:20ch;">Oldaltérkép</h1>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,4vw,48px);">
           <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
-            <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #171C12;padding-top:14px;">
-              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">{{ g.title }}</span>
+            <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--amigos-ink);padding-top:14px;">
+              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">{{ g.title }}</span>
               <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="5">
-                <a href="{{ i.href }}" style="text-decoration:none;color:#171C12;font-size:15px;padding:3px 0;">{{ i.title }}</a>
+                <a href="{{ i.href }}" style="text-decoration:none;color:var(--amigos-ink);font-size:15px;padding:3px 0;">{{ i.title }}</a>
               </sc-for>
             </div>
           </sc-for>
@@ -75,11 +78,11 @@
                 <div style="display:flex;flex-direction:column;gap:20px;">
                   <span style="font-size:13px;color:{{ s.crumbColor }};">{{ s.crumb }}</span>
                   <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:{{ s.eyebrowColor }};">{{ s.eyebrow }}</span>
-                  <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h1);line-height:1.02;letter-spacing:-0.02em;max-width:17ch;text-wrap:pretty;">{{ s.title }}</h1>
+                  <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:1.02;letter-spacing:-0.02em;max-width:17ch;text-wrap:pretty;">{{ s.title }}</h1>
                   <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;">{{ s.text }}</p>
                   <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:4px;">
                     <sc-for list="{{ s.ctas }}" as="c" hint-placeholder-count="2">
-                      <a href="{{ c.href }}" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:12px;border:2px solid {{ c.border }};background:{{ c.bg }};color:{{ c.fg }};font-weight:600;font-size:16px;text-decoration:none;">{{ c.label }}</a>
+                      <a href="{{ c.href }}" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:var(--radius-pill);border:2px solid {{ c.border }};background:{{ c.bg }};color:{{ c.fg }};font-weight:600;font-size:16px;text-decoration:none;">{{ c.label }}</a>
                     </sc-for>
                   </div>
                 </div>
@@ -89,15 +92,15 @@
           </sc-if>
 
           <sc-if value="{{ s.isSplit }}" hint-placeholder-val="{{ false }}">
-            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--amigos-line);">
               <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,72px);align-items:start;">
                 <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:16ch;text-wrap:pretty;">{{ s.title }}</h2>
                 <div style="display:flex;flex-direction:column;gap:18px;">
-                  <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:56ch;color:#3A4433;">{{ s.text }}</p>
+                  <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:56ch;color:var(--amigos-ink-2);">{{ s.text }}</p>
                   <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
-                    <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;border-top:1px solid #DDE3D5;padding-top:14px;">
-                      <span style="width:10px;height:10px;border-radius:50%;background:#437613;margin-top:8px;"></span>
-                      <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#171C12;">{{ i.text }}</span>
+                    <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;border-top:1px solid var(--amigos-line);padding-top:14px;">
+                      <span style="width:10px;height:10px;border-radius:50%;background:var(--amigos-green);margin-top:8px;"></span>
+                      <span style="font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink);">{{ i.text }}</span>
                     </div>
                   </sc-for>
                 </div>
@@ -106,15 +109,15 @@
           </sc-if>
 
           <sc-if value="{{ s.isCards }}" hint-placeholder-val="{{ false }}">
-            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--amigos-line);">
               <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
                 <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;">{{ s.title }}</h2>
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(20px,3vw,32px);">
                   <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
                     <div style="display:flex;flex-direction:column;gap:14px;">
-                      <div style="aspect-ratio:{{ i.ratio }};border-radius:12px;border:1px dashed #A8BA98;background:#EEF3E8;display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#5A6650;">{{ i.media }}</div>
+                      <div style="aspect-ratio:{{ i.ratio }};border-radius:var(--radius-card);border:1px dashed #A8BA98;background:var(--surface-tint-paper);display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--amigos-ink-3);">{{ i.media }}</div>
                       <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">{{ i.title }}</h3>
-                      <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">{{ i.text }}</p>
+                      <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">{{ i.text }}</p>
                       <a href="{{ i.href }}" style="font-size:15px;font-weight:600;text-decoration:none;">{{ i.link }}</a>
                     </div>
                   </sc-for>
@@ -124,17 +127,17 @@
           </sc-if>
 
           <sc-if value="{{ s.isList }}" hint-placeholder-val="{{ false }}">
-            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--amigos-line);">
               <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:24px;">
                 <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;">{{ s.title }}</h2>
-                <div style="display:flex;flex-direction:column;border-top:1px solid #DDE3D5;">
+                <div style="display:flex;flex-direction:column;border-top:1px solid var(--amigos-line);">
                   <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="4">
-                    <a href="{{ i.href }}" data-split="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid #DDE3D5;text-decoration:none;color:#171C12;">
+                    <a href="{{ i.href }}" data-split="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--amigos-line);text-decoration:none;color:var(--amigos-ink);">
                       <span style="display:flex;flex-direction:column;gap:5px;">
                         <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">{{ i.title }}</span>
-                        <span style="font-size:15px;color:#3A4433;">{{ i.text }}</span>
+                        <span style="font-size:15px;color:var(--amigos-ink-2);">{{ i.text }}</span>
                       </span>
-                      <span style="font-size:14px;color:#5A6650;white-space:nowrap;">{{ i.meta }}</span>
+                      <span style="font-size:14px;color:var(--amigos-ink-3);white-space:nowrap;">{{ i.meta }}</span>
                     </a>
                   </sc-for>
                 </div>
@@ -143,15 +146,15 @@
           </sc-if>
 
           <sc-if value="{{ s.isSteps }}" hint-placeholder-val="{{ false }}">
-            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--amigos-line);">
               <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
                 <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;">{{ s.title }}</h2>
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,3vw,40px);">
                   <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
-                    <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #437613;padding-top:16px;">
-                      <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:#437613;">{{ i.n }}</span>
+                    <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--amigos-green);padding-top:16px;">
+                      <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:var(--amigos-green);">{{ i.n }}</span>
                       <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">{{ i.title }}</span>
-                      <span style="font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;">{{ i.text }}</span>
+                      <span style="font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">{{ i.text }}</span>
                     </div>
                   </sc-for>
                 </div>
@@ -160,13 +163,13 @@
           </sc-if>
 
           <sc-if value="{{ s.isStats }}" hint-placeholder-val="{{ false }}">
-            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--amigos-line);">
               <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:clamp(20px,3vw,40px);">
                 <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="4">
-                  <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #DDE3D5;padding-top:16px;">
-                    <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-0.03em;color:#437613;font-variant-numeric:tabular-nums;">{{ i.n }}</span>
-                    <span style="font-size:var(--text-body);color:#3A4433;">{{ i.label }}</span>
-                    <span style="font-size:13px;color:#5A6650;">{{ i.note }}</span>
+                  <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--amigos-line);padding-top:16px;">
+                    <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green);font-variant-numeric:tabular-nums;">{{ i.n }}</span>
+                    <span style="font-size:var(--text-body);color:var(--amigos-ink-2);">{{ i.label }}</span>
+                    <span style="font-size:13px;color:var(--amigos-ink-3);">{{ i.note }}</span>
                   </div>
                 </sc-for>
               </div>
@@ -174,25 +177,25 @@
           </sc-if>
 
           <sc-if value="{{ s.isForm }}" hint-placeholder-val="{{ false }}">
-            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+            <section style="background:{{ s.bg }};padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--amigos-line);">
               <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:4fr 7fr;gap:clamp(32px,5vw,72px);align-items:start;">
                 <div style="display:flex;flex-direction:column;gap:14px;">
                   <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:16ch;">{{ s.title }}</h2>
-                  <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:#3A4433;max-width:40ch;">{{ s.text }}</p>
-                  <span style="font-size:13px;color:#5A6650;">{{ s.progress }}</span>
+                  <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);max-width:40ch;">{{ s.text }}</p>
+                  <span style="font-size:13px;color:var(--amigos-ink-3);">{{ s.progress }}</span>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:18px;">
                   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
                     <sc-for list="{{ s.fields }}" as="f" hint-placeholder-count="4">
                       <label style="display:flex;flex-direction:column;gap:7px;">
-                        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#5A6650;">{{ f.label }}</span>
-                        <span style="height:{{ f.h }};border:2px solid #DDE3D5;border-radius:12px;background:#FFFFFF;display:flex;align-items:center;padding:0 16px;font-size:15px;color:#5A6650;">{{ f.hint }}</span>
+                        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-ink-3);">{{ f.label }}</span>
+                        <span style="height:{{ f.h }};border:2px solid var(--amigos-line);border-radius:var(--radius-pill);background:var(--amigos-white);display:flex;align-items:center;padding:0 16px;font-size:15px;color:var(--amigos-ink-3);">{{ f.hint }}</span>
                       </label>
                     </sc-for>
                   </div>
-                  <span style="display:flex;gap:12px;align-items:center;font-size:15px;color:#3A4433;"><span style="width:20px;height:20px;border:2px solid #437613;border-radius:4px;display:block;flex:none;"></span>{{ s.consent }}</span>
+                  <span style="display:flex;gap:12px;align-items:center;font-size:15px;color:var(--amigos-ink-2);"><span style="width:20px;height:20px;border:2px solid var(--amigos-green);border-radius:4px;display:block;flex:none;"></span>{{ s.consent }}</span>
                   <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
-                    <a href="{{ s.submitHref }}" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:12px;background:{{ s.submitBg }};color:#FFFFFF;font-weight:600;font-size:16px;text-decoration:none;">{{ s.submit }}</a>
+                    <a href="{{ s.submitHref }}" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:var(--radius-pill);background:{{ s.submitBg }};color:var(--amigos-white);font-weight:600;font-size:16px;text-decoration:none;">{{ s.submit }}</a>
                     <a href="{{ s.altHref }}" style="font-size:15px;font-weight:600;text-decoration:none;">{{ s.alt }}</a>
                   </div>
                 </div>
@@ -201,12 +204,12 @@
           </sc-if>
 
           <sc-if value="{{ s.isLegal }}" hint-placeholder-val="{{ false }}">
-            <section style="background:#FAFAF6;padding:clamp(48px,7vw,96px) 0;border-top:1px solid #DDE3D5;">
+            <section style="background:var(--amigos-paper);padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--amigos-line);">
               <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:4fr 8fr;gap:clamp(32px,5vw,72px);align-items:start;">
                 <nav style="position:sticky;top:96px;display:flex;flex-direction:column;gap:8px;font-size:15px;">
-                  <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Tartalom</span>
+                  <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Tartalom</span>
                   <sc-for list="{{ s.toc }}" as="t" hint-placeholder-count="5">
-                    <span style="color:#3A4433;">{{ t.label }}</span>
+                    <span style="color:var(--amigos-ink-2);">{{ t.label }}</span>
                   </sc-for>
                 </nav>
                 <div style="display:flex;flex-direction:column;gap:24px;max-width:64ch;">
@@ -216,7 +219,7 @@
                       <span style="display:block;height:{{ b.h }};border-radius:6px;background:#EEF1EA;"></span>
                     </div>
                   </sc-for>
-                  <span style="font-size:13px;color:#5A6650;">{{ s.updated }}</span>
+                  <span style="font-size:13px;color:var(--amigos-ink-3);">{{ s.updated }}</span>
                 </div>
               </div>
             </section>
@@ -231,7 +234,7 @@
                 </div>
                 <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;">
                   <sc-for list="{{ s.ctas }}" as="c" hint-placeholder-count="2">
-                    <a href="{{ c.href }}" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:12px;border:2px solid {{ c.border }};background:{{ c.bg }};color:{{ c.fg }};font-weight:600;font-size:16px;text-decoration:none;">{{ c.label }}</a>
+                    <a href="{{ c.href }}" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:var(--radius-pill);border:2px solid {{ c.border }};background:{{ c.bg }};color:{{ c.fg }};font-weight:600;font-size:16px;text-decoration:none;">{{ c.label }}</a>
                   </sc-for>
                 </div>
               </div>
@@ -243,26 +246,26 @@
     </sc-if>
   </main>
 
-  <footer style="background:#171C12;color:#FFFFFF;padding:clamp(40px,6vw,72px) 0 32px;">
+  <footer style="background:var(--amigos-ink);color:var(--amigos-white);padding:clamp(40px,6vw,72px) 0 32px;">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
-          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 67px; display: block; width: 67px">
-          <span style="font-size:15px;line-height:1.5;color:#C7CFC0;max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
-          <span style="font-size:14px;color:#C7CFC0;">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 67px; display: block; width: 67px" width="500" height="500">
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:var(--text-on-ink);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
           <sc-for list="{{ footerColumns }}" as="c" hint-placeholder-count="3">
             <div style="display:flex;flex-direction:column;gap:9px;">
-              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#8FA582;">{{ c.title }}</span>
+              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">{{ c.title }}</span>
               <sc-for list="{{ c.links }}" as="l" hint-placeholder-count="4">
-                <a href="{{ l.href }}" style="color:#FFFFFF;text-decoration:none;font-size:15px;">{{ l.label }}</a>
+                <a href="{{ l.href }}" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">{{ l.label }}</a>
               </sc-for>
             </div>
           </sc-for>
         </div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:#C7CFC0;">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:var(--text-on-ink);">
         <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
       </div>
     </div>
@@ -294,7 +297,7 @@ class Component extends DCLogic {
       t: 'hero', bg: PAPER, fg: '#171C12', eyebrowColor: G, crumbColor: '#5A6650',
       mediaRadius: '50%', mediaBg: '#EEF3E8', mediaFg: '#5A6650', media: 'FOTÓ – kör kivágás', ctas: []
     }, o);
-    const heroGreen = (o) => hero(Object.assign({ bg: G, fg: W, eyebrowColor: '#DCE6D2', crumbColor: '#DCE6D2', mediaBg: '#365F0F', mediaFg: '#DCE6D2' }, o));
+    const heroGreen = (o) => hero(Object.assign({ bg: G, fg: W, eyebrowColor: '#FFFFFF', crumbColor: '#FFFFFF', mediaBg: '#365F0F', mediaFg: '#DCE6D2' }, o));
     const heroPurple = (o) => hero(Object.assign({ bg: P, fg: W, eyebrowColor: '#F2DCE8', crumbColor: '#F2DCE8', mediaBg: '#7B2752', mediaFg: '#F2DCE8' }, o));
     const split = (title, text, items) => ({ t: 'split', bg: PAPER, title, text, items: (items || []).map(text => ({ text })) });
     const cards = (title, items) => ({ t: 'cards', bg: PAPER, title, items: items.map(i => Object.assign({ ratio: '4/5', media: 'FOTÓ', link: 'Tovább', href: '#' }, i)) });
@@ -348,10 +351,10 @@ class Component extends DCLogic {
       'munkank': { title: 'Munkánk és hatásunk', url: '/munkank', sections: [
         hero({ crumb: 'Főoldal / Munkánk és hatásunk', eyebrow: 'Mit csinálunk', title: 'Nem szórakoztatunk. Barátkozunk, hétről hétre.', text: 'Képzett egyetemista önkéntesek, saját fejlesztésű eszközök és rögzített heti ritmus — hat városban, húsz kórházi osztályon.', media: 'FOTÓ – kórházi foglalkozás', ctas: [ctaG('Programjaink', '#programok'), ctaO('Átláthatóság', '#atlathatosag')] }),
         stats([
-          { n: '300', label: 'egyetemista Amigo önkéntes', note: '[ADAT: forrás, dátum]' },
-          { n: '20', label: 'kórházi osztály', note: '[ADAT: forrás, dátum]' },
-          { n: '6', label: 'város', note: '[ADAT: forrás, dátum]' },
-          { n: '20 770', label: 'gyerek egy évben', note: '[ADAT: forrás, dátum]' }
+          { n: '300', label: 'egyetemista Amigo önkéntes', note: '' },
+          { n: '20', label: 'kórházi osztály', note: '' },
+          { n: '6', label: 'város', note: '' },
+          { n: '20 770', label: 'gyerek egy évben', note: '' }
         ]),
         cards('Három pillér', [
           { title: 'Heti kórházi foglalkozások', text: 'Ugyanaz az Amigo, ugyanabban az időpontban, minden héten.', media: 'FOTÓ – foglalkozás', link: 'Programjaink', href: '#programok' },

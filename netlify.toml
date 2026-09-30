@@ -13,3 +13,80 @@
   to = "/Amigos%20Fooldal%20v2.dc.html"
   status = 200
   force = true
+
+# ---------------------------------------------------------------------------
+# Clean URLs.
+#
+# The exported filenames carry spaces and a `.dc.html` extension that mean
+# nothing outside the export tool, and they leak into every shared link, QR
+# code and analytics report. These rewrites (status 200) serve the same files
+# under readable paths without renaming anything, so the export can be
+# regenerated freely. Use these paths in print, email and social.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/legyel-amigo"
+  to = "/Legyel%20Amigo.dc.html"
+  status = 200
+
+[[redirects]]
+  from = "/munkank-es-hatasunk"
+  to = "/Munkank%20es%20hatasunk.dc.html"
+  status = 200
+
+[[redirects]]
+  from = "/gyerekek-es-szulok"
+  to = "/Gyerekek%20es%20szulok.dc.html"
+  status = 200
+
+[[redirects]]
+  from = "/adomanybolt"
+  to = "/Adomanybolt.dc.html"
+  status = 200
+
+[[redirects]]
+  from = "/ado-1-szazalek"
+  to = "/Ado%201%20szazalek.dc.html"
+  status = 200
+
+[[redirects]]
+  from = "/vallalati-tamogatas"
+  to = "/Vallalati%20tamogatas.dc.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/Blog.dc.html"
+  status = 200
+
+# ---------------------------------------------------------------------------
+# Superseded explorations and the internal wireframe deck.
+#
+# These are still deployed so the team can open them, but they must not be
+# indexed or land on a visitor: each also carries <meta name="robots"
+# content="noindex, nofollow">. Remove the files (and these rules) once the
+# real subpages exist.
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/Amigos Aloldalak.dc.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/Amigos Fooldal.dc.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/Ket kor - Hero.dc.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/Ket kor - Video hero.dc.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/Ket kor - alt story.dc.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

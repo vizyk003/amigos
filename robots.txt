@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Internal wireframe deck and superseded design explorations.
+Disallow: /Amigos%20Aloldalak.dc.html
+Disallow: /Amigos%20Fooldal.dc.html
+Disallow: /Ket%20kor%20-%20Hero.dc.html
+Disallow: /Ket%20kor%20-%20Video%20hero.dc.html
+Disallow: /Ket%20kor%20-%20alt%20story.dc.html

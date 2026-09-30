@@ -1,71 +1,147 @@
-/* Amigos color tokens. Brand values from "2025 Amigos Brandbook Kisokos" (p.9). Tints/shades derived tonally from them. */
+/* =====================================================================
+   Amigos colour tokens — Arculati kézikönyv 2. verzió (2026)
+   ---------------------------------------------------------------------
+   v2 renames the palette around the brandbook's own words (pulcsizöld,
+   mélyzöld, fakózöld, napsárga, lila, papír, tinta) and drops the
+   numeric ramp. The canonical names below are the ones new work should
+   use; the COMPAT block at the bottom keeps the v1 names alive so the
+   component bundle and the thirteen exported pages resolve against the
+   refreshed values instead of being rewritten one inline style at a
+   time. Delete a compat alias only once nothing references it.
+   ===================================================================== */
 :root{
-/* Brand — source of truth */
---am-green-700:#437613; /* "zöld alap" primary brand green */
---am-green-500:#6DA834; /* "zöld világosabb" */
---am-green-200:#B2C7A3; /* "fakó zöld" */
---am-purple-600:#993166; /* "lila" */
-/* Derived brand ramp (tonal, same hue as brand green) */
---am-green-900:#2A4A0B;
---am-green-800:#365F0F;
---am-green-600:#528F1E;
---am-green-300:#9DBE86;
---am-green-100:#E6EEDC;
---am-green-50:#F3F7EC;
---am-purple-700:#7A2751;
---am-purple-100:#F3E3EB;
---am-purple-50:#FAF2F6;
-/* Sub-brand only (Amigos Mini brush red, TanulTablet yellow) — never on master brand UI */
+/* --- Base palette (brandbook ch. 4) ------------------------------- */
+--amigos-green:#437613;      /* Pulcsizöld — primary, the hoodie */
+--amigos-green-deep:#2A4A0B; /* Mélyzöld — footer, caption band, patch, small card only */
+--amigos-green-pale:#B2C7A3; /* Fakózöld — warm/family surfaces */
+--amigos-sun:#F2B400;        /* Napsárga — accent dot, never a large field, never white text */
+--amigos-plum:#993166;       /* Lila — donation only */
+--amigos-paper:#FAFAF6;      /* Papír — default base */
+--amigos-ink:#171C12;        /* Tinta — text */
+--amigos-white:#FFFFFF;
+
+/* --- Derived tints (UI states; not in the brandbook) --------------- */
+--amigos-green-hover:#3A6810;
+--amigos-green-press:#325A0E;
+--amigos-plum-hover:#852A59;
+--amigos-ink-2:#3A4433;      /* secondary text on paper */
+--amigos-ink-3:#5A6650;      /* tertiary / meta on paper */
+--amigos-line:#DDE3D5;       /* hairlines on paper */
+--amigos-paper-2:#F1F2EA;    /* sunken paper */
+
+/* --- Semantic ------------------------------------------------------ */
+--surface-page:var(--amigos-paper);
+--surface-card:var(--amigos-white);
+--surface-sunken:var(--amigos-paper-2);
+--surface-loud:var(--amigos-green);
+--surface-warm:var(--amigos-green-pale);
+--surface-quiet:var(--amigos-green-deep);
+--surface-donate:var(--amigos-plum);
+
+--text-body-color:var(--amigos-ink);
+--text-secondary:var(--amigos-ink-2);
+--text-meta:var(--amigos-ink-3);
+--text-on-green:var(--amigos-white);
+--text-on-sun:var(--amigos-ink);
+--text-on-plum:var(--amigos-white);
+--text-brand:var(--amigos-green);
+
+/* --- Surfaces the pages already used, now named --------------------
+   These were inline literals repeated across the exported pages. The
+   values are unchanged; only the name is new. */
+--amigos-ink-surface:#171C12;   /* the near-black footer field */
+--text-on-ink:#C7CFC0;          /* body text on that field */
+--text-on-ink-muted:#8FA582;    /* column headings on that field, 6.5:1 */
+--text-on-plum-muted:#F2DCE8;   /* secondary text on the donation field */
+--type-pattern-on-green:#365F0F;/* the tonal oversized display type */
+--surface-tint-paper:#EEF3E8;   /* the pale letterform bleed on paper */
+
+--accent:var(--amigos-sun);
+--action-primary:var(--amigos-green);
+--action-primary-hover:var(--amigos-green-hover);
+--action-primary-press:var(--amigos-green-press);
+--action-donate:var(--amigos-plum);
+--action-donate-hover:var(--amigos-plum-hover);
+
+--border-hairline:var(--amigos-line);
+/* Interactive controls need 3:1 against their surface (WCAG 1.4.11);
+   the decorative hairline (--amigos-line, 1.25:1 on paper) does not
+   qualify. Inputs, selects and steppers use this instead. */
+--border-control:#8A9182;
+--border-strong:var(--amigos-ink);
+--focus-color:var(--amigos-sun);
+
+/* --- Functional (always paired with an icon or a label) ----------- */
+--am-error:#B3261E;   --am-error-bg:#FBECEA;
+--am-warning:#8A5A00; --am-warning-bg:#FFF3D6;
+--am-info:#2C5D8F;    --am-info-bg:#E7EFF7;
+--am-success:var(--amigos-green); --am-success-bg:#E6EEDC;
+
+/* --- Sub-brand only (Amigos Mini, TanulTablet) — never master UI -- */
 --am-mini-red:#C8222B;
 --am-tablet-yellow:#E4B21C;
-/* Neutrals — warm, faintly green-cast */
---am-white:#FFFFFF;
---am-paper:#FAFAF6;
---am-mist:#EEF0EA;
---am-line:#D9DDD2;
+
+/* =====================================================================
+   COMPAT — v1 names, repointed at the v2 palette.
+   ===================================================================== */
+--am-white:var(--amigos-white);
+--am-paper:var(--amigos-paper);
+--am-mist:var(--amigos-paper-2);
+--am-line:var(--amigos-line);
 --am-line-strong:#B9BFB0;
---am-ink-3:#5F6858;
---am-ink-2:#3E4638;
---am-ink:#171C12;
-/* Functional / semantic — NOT brand colors. Always paired with an icon or label. */
---am-error:#B3261E;
---am-error-bg:#FBECEA;
---am-warning:#8A5A00;
---am-warning-bg:#FFF3D6;
---am-info:#2C5D8F;
---am-info-bg:#E7EFF7;
---am-success:#437613;
---am-success-bg:#E6EEDC;
-/* Semantic aliases */
---color-primary:var(--am-green-700);
---color-primary-hover:var(--am-green-800);
---color-primary-active:var(--am-green-900);
+--am-ink:var(--amigos-ink);
+--am-ink-2:var(--amigos-ink-2);
+--am-ink-3:var(--amigos-ink-3);
+
+--am-green-900:var(--amigos-green-deep);
+--am-green-800:var(--amigos-green-hover);
+--am-green-700:var(--amigos-green);
+--am-green-600:#528F1E;
+--am-green-500:#6DA834;
+--am-green-300:#9DBE86;
+--am-green-200:var(--amigos-green-pale);
+--am-green-100:#E7EEDF;
+--am-green-50:#F3F7EC;
+--am-purple-700:var(--amigos-plum-hover);
+--am-purple-600:var(--amigos-plum);
+--am-purple-100:#F3E3EB;
+--am-purple-50:#FAF2F6;
+
+--color-primary:var(--amigos-green);
+--color-primary-hover:var(--amigos-green-hover);
+--color-primary-active:var(--amigos-green-press);
 --color-primary-soft:var(--am-green-100);
 --color-primary-softer:var(--am-green-50);
 --color-secondary:var(--am-green-500);
---color-accent:var(--am-purple-600);
---color-accent-hover:var(--am-purple-700);
+/* v1's "accent" is the donate colour, and every accent Button on the site
+   points at #tamogatom — which is exactly what v2 reserves lila for. It
+   stays plum; napsárga is --accent and is a dot, never a filled control
+   (white on sun is forbidden, and --text-on-accent is white). */
+--color-accent:var(--amigos-plum);
+--color-accent-hover:var(--amigos-plum-hover);
 --color-accent-soft:var(--am-purple-100);
---bg-page:var(--am-paper);
---bg-surface:var(--am-white);
---bg-surface-muted:var(--am-mist);
---bg-field:var(--am-green-700);        /* large controlled color field (hero, CTA, footer) */
---bg-field-deep:var(--am-green-900);
---bg-field-pale:var(--am-green-200);   /* tonal field: green-200 with green-900 text */
---bg-field-accent:var(--am-purple-600);
---text-primary:var(--am-ink);
---text-secondary:var(--am-ink-2);
---text-tertiary:var(--am-ink-3);
---text-brand:var(--am-green-700);
---text-on-field:var(--am-white);
---text-on-field-muted:var(--am-green-200);
---text-on-pale:var(--am-green-900);
---text-on-accent:var(--am-white);
---text-link:var(--am-green-700);
---text-link-hover:var(--am-green-900);
---border-default:var(--am-line);
---border-strong:var(--am-line-strong);
---border-brand:var(--am-green-700);
---border-focus:var(--am-green-700);
---focus-ring:0 0 0 3px var(--am-green-200);/* @kind shadow */
+
+--bg-page:var(--amigos-paper);
+--bg-surface:var(--amigos-white);
+--bg-surface-muted:var(--amigos-paper-2);
+--bg-field:var(--amigos-green);
+--bg-field-deep:var(--amigos-green-deep);
+--bg-field-pale:var(--amigos-green-pale);
+--bg-field-accent:var(--amigos-plum);
+
+--text-primary:var(--amigos-ink);
+--text-tertiary:var(--amigos-ink-3);
+--text-on-field:var(--amigos-white);
+--text-on-field-muted:var(--amigos-green-pale);
+--text-on-pale:var(--amigos-green-deep);
+--text-on-accent:var(--amigos-white);
+--text-link:var(--amigos-green);
+--text-link-hover:var(--amigos-green-deep);
+
+--border-default:var(--amigos-line);
+--border-brand:var(--amigos-green);
+--border-focus:var(--amigos-green);
+/* The bundle consumes --focus-ring as a box-shadow value, so it stays a
+   shadow here; v2's sun-coloured ring is carried in the tint. */
+--focus-ring:0 0 0 3px rgba(242,180,0,.55);
 }

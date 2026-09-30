@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
 <body>
 <x-dc>
 <helmet>
+  <title>Két kör — videós hero variáns</title>
+  <meta name="description" content="Tervezői variáns, nem a jelenlegi oldal.">
+  <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
@@ -16,8 +19,8 @@
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
   <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
   <style>
-    html,body{margin:0;background:#FAFAF6;}
-    a{color:#437613;} a:hover{color:#2A4A0B;}
+    html,body{margin:0;background:var(--amigos-paper);}
+    a{color:var(--amigos-green);} a:hover{color:var(--amigos-green-deep);}
     @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
     @media (max-height: 640px){ [data-m="hint"]{display:none !important;} [data-m="caption"]{display:none !important;} }
   </style>
@@ -25,11 +28,11 @@
   <script src="assets/responsive.js" defer></script>
 </helmet>
 
-<div style="font-family:var(--font-body);color:#171C12;">
+<div style="font-family:var(--font-body);color:var(--amigos-ink);">
   <div data-m="runway" style="position:relative;height:340vh;">
-    <section data-screen-label="Video hero" style="position:sticky;top:0;height:100vh;overflow:hidden;background:#437613;">
+    <section data-screen-label="Video hero" style="position:sticky;top:0;height:100vh;overflow:hidden;background:var(--amigos-green);">
 
-      <div data-value-word="" data-m="pattern" aria-hidden="true" style="position:absolute;left:-0.04em;bottom:-0.16em;font-family:var(--font-display);font-weight:600;font-size:clamp(48px,31.2vw,515px);line-height:1;letter-spacing:-0.03em;color:#365F0F;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">BARÁTSÁG</div>
+      <div data-value-word="" data-m="pattern" aria-hidden="true" style="position:absolute;left:-0.04em;bottom:-0.16em;font-family:var(--font-hand);font-weight:700;font-size:clamp(64px,42.1vw,695px);line-height:1;letter-spacing:0.01em;color:var(--type-pattern-on-green);white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">BARÁTSÁG</div>
 
       <div data-m="frame" style="position:absolute;inset:0;clip-path:var(--am-hero-clip,inset(28% 34% 28% 34%));will-change:clip-path;">
         <video data-m="video" poster="assets/lens-friendship.png" muted="" playsinline="" loop="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:transform;"></video>
@@ -37,22 +40,22 @@
       </div>
 
       <header style="position:relative;display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,48px);z-index:3;">
-        <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 65px; width: auto; display: block">
+        <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 65px; width: auto; display: block" width="500" height="500">
         <nav style="display:flex;gap:32px;font-size:var(--text-nav);font-weight:500;">
-          <a href="#" style="color:#FFFFFF;text-decoration:none;">Rólunk</a>
-          <a href="#" style="color:#FFFFFF;text-decoration:none;">Legyél Amigo</a>
-          <a href="#" style="color:#FFFFFF;text-decoration:none;">Támogass</a>
+          <a href="#" style="color:var(--amigos-white);text-decoration:none;">Rólunk</a>
+          <a href="#" style="color:var(--amigos-white);text-decoration:none;">Legyél Amigo</a>
+          <a href="#" style="color:var(--amigos-white);text-decoration:none;">Támogass</a>
         </nav>
       </header>
 
       <div data-m="copy" style="position:relative;z-index:3;max-width:1280px;margin:0 auto;padding:clamp(40px,8vh,110px) clamp(20px,4vw,48px) clamp(88px,15vh,150px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,4vw,48px);will-change:transform,opacity;">
         <div style="grid-column:1 / span 8;display:flex;flex-direction:column;gap:32px;">
-          <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#DCE6D2;">Amigos a gyerekekért</div>
-          <h1 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);color:#FFFFFF;max-width:13ch;text-wrap:pretty;">
+          <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-white);">Amigos a gyerekekért</div>
+          <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);color:var(--amigos-white);max-width:13ch;text-wrap:pretty;">
             <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block">A barátság</span></span>
             <span data-m="w" style="display:block;overflow:hidden;"><span data-m="wi" style="display: block">csodákra képes.</span></span>
           </h1>
-          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:40ch;color:#FFFFFF;text-wrap:pretty;">300 egyetemista Amigo jár hetente kórházban fekvő gyerekekhez játszani, tanulni, barátkozni.</p>
+          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:40ch;color:var(--amigos-white);text-wrap:pretty;">300 egyetemista Amigo jár hetente kórházban fekvő gyerekekhez játszani, tanulni, barátkozni.</p>
           <div style="display:flex;gap:16px;flex-wrap:wrap;">
             <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="#" hint-size="auto,52px">Legyél Te is Amigo</x-import>
             <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverseOutline" size="lg" href="#" hint-size="auto,52px">Támogasd a munkánkat</x-import>
@@ -61,45 +64,45 @@
       </div>
 
       <div data-m="line" style="position:absolute;z-index:3;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 clamp(20px,4vw,48px);text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;">
-        <p style="margin:0 auto;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:#FFFFFF;max-width:20ch;text-wrap:balance;">Minden barátság egy találkozással kezdődik.</p>
+        <p style="margin:0 auto;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:var(--amigos-white);max-width:20ch;text-wrap:balance;">Minden barátság egy találkozással kezdődik.</p>
       </div>
 
       <div data-m="line2" style="position:absolute;z-index:3;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 clamp(20px,4vw,48px);text-align:center;opacity:0;pointer-events:none;will-change:opacity,transform;">
-        <p style="margin:0 auto;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:#FFFFFF;max-width:20ch;text-wrap:balance;">Egy közös játékkal, egy közös nevetéssel.</p>
+        <p style="margin:0 auto;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:var(--amigos-white);max-width:20ch;text-wrap:balance;">Egy közös játékkal, egy közös nevetéssel.</p>
       </div>
 
       
 
       <div style="position:absolute;z-index:4;right:clamp(20px,4vw,48px);bottom:28px;display:flex;gap:10px;">
-        <button data-m="sound" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF;background:transparent;border:2px solid #FFFFFF;border-radius:999px;padding:9px 18px;cursor:pointer;" style-hover="background:rgba(255,255,255,0.12)">Hang be</button>
-        <button data-m="toggle" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF;background:transparent;border:2px solid #FFFFFF;border-radius:999px;padding:9px 18px;cursor:pointer;" style-hover="background:rgba(255,255,255,0.12)">Szünet</button>
+        <button data-m="sound" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;color:var(--amigos-white);background:transparent;border:2px solid var(--amigos-white);border-radius:999px;padding:9px 18px;cursor:pointer;" style-hover="background:rgba(255,255,255,0.12)">Hang be</button>
+        <button data-m="toggle" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;color:var(--amigos-white);background:transparent;border:2px solid var(--amigos-white);border-radius:999px;padding:9px 18px;cursor:pointer;" style-hover="background:rgba(255,255,255,0.12)">Szünet</button>
       </div>
 
       <div data-m="hint" style="position:absolute;z-index:4;left:50%;bottom:24px;width:2px;height:min(56px,6vh);display:var(--hint-display,block);background:rgba(255,255,255,0.35);overflow:hidden;pointer-events:none;">
-        <span data-m="hintfill" style="position:absolute;left:0;top:0;width:2px;height:100%;background:#FFFFFF;display:block;transform:translateY(-100%);"></span>
+        <span data-m="hintfill" style="position:absolute;left:0;top:0;width:2px;height:100%;background:var(--amigos-white);display:block;transform:translateY(-100%);"></span>
       </div>
     </section>
   </div>
 
-  <section data-screen-label="Numbers" data-m="numbers" style="position:relative;background:#FAFAF6;overflow:hidden;padding:clamp(120px,18vh,220px) 0 clamp(96px,14vh,180px);">
-    <div data-value-word="" data-m="pattern2" aria-hidden="true" style="position:absolute;left:-0.04em;top:-0.12em;font-family:var(--font-display);font-weight:600;font-size:clamp(48px,19.2vw,317px);line-height:1;letter-spacing:-0.03em;color:#EEF3E8;white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">MEGBÍZHATÓSÁG</div>
+  <section data-screen-label="Numbers" data-m="numbers" style="position:relative;background:var(--amigos-paper);overflow:hidden;padding:clamp(120px,18vh,220px) 0 clamp(96px,14vh,180px);">
+    <div data-value-word="" data-m="pattern2" aria-hidden="true" style="position:absolute;left:-0.04em;top:-0.12em;font-family:var(--font-hand);font-weight:700;font-size:clamp(64px,25.9vw,427px);line-height:1;letter-spacing:0.01em;color:var(--surface-tint-paper);white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">MEGBÍZHATÓSÁG</div>
     <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,4vw,48px);">
       <div style="grid-column:1 / span 5;display:flex;flex-direction:column;gap:20px;">
-        <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:#437613;">Hat városban</div>
-        <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:#171C12;max-width:16ch;text-wrap:pretty;">Egyetemista Amigók, akik minden héten visszajönnek.</h2>
+        <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Hat városban</div>
+        <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);color:var(--amigos-ink);max-width:16ch;text-wrap:pretty;">Egyetemista Amigók, akik minden héten visszajönnek.</h2>
       </div>
-      <div style="grid-column:7 / span 6;display:grid;grid-template-columns:1fr;border-top:1px solid #DDE3D5;">
-        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid #DDE3D5;">
-          <span style="font-size:var(--text-body);color:#171C12;">Egyetemista Amigo önkéntes</span>
-          <span data-count="300" style="font-family:var(--font-display);font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.02em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+      <div style="grid-column:7 / span 6;display:grid;grid-template-columns:1fr;border-top:1px solid var(--amigos-line);">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid var(--amigos-line);">
+          <span style="font-size:var(--text-body);color:var(--amigos-ink);">Egyetemista Amigo önkéntes</span>
+          <span data-count="300" style="font-family:var(--font-display);font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.02em;color:var(--amigos-green);font-variant-numeric:tabular-nums;">0</span>
         </div>
-        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid #DDE3D5;">
-          <span style="font-size:var(--text-body);color:#171C12;">Amigo város</span>
-          <span data-count="6" style="font-family:var(--font-display);font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.02em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid var(--amigos-line);">
+          <span style="font-size:var(--text-body);color:var(--amigos-ink);">Amigo város</span>
+          <span data-count="6" style="font-family:var(--font-display);font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.02em;color:var(--amigos-green);font-variant-numeric:tabular-nums;">0</span>
         </div>
-        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid #DDE3D5;">
-          <span style="font-size:var(--text-body);color:#171C12;">Gyerek, akivel 2025-ben foglalkoztunk</span>
-          <span data-count="20770" style="font-family:var(--font-display);font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.02em;color:#437613;font-variant-numeric:tabular-nums;">0</span>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid var(--amigos-line);">
+          <span style="font-size:var(--text-body);color:var(--amigos-ink);">Gyerek, akivel 2025-ben foglalkoztunk</span>
+          <span data-count="20770" style="font-family:var(--font-display);font-weight:600;font-size:72px;line-height:1;letter-spacing:-0.02em;color:var(--amigos-green);font-variant-numeric:tabular-nums;">0</span>
         </div>
       </div>
     </div>
@@ -146,7 +149,7 @@ class Component extends DCLogic {
     if (!this.reduced) {
       this.words.forEach((w, i) => {
         w.style.transform = 'translateY(105%)';
-        w.style.transition = `transform 620ms cubic-bezier(0.2,0.7,0.2,1) ${120 + i * 90}ms`;
+        w.style.transition = `transform 200ms cubic-bezier(0.2,0.7,0.2,1) ${120 + i * 90}ms`;
         void w.offsetHeight; // same-frame reflow so the end pose always lands
         w.style.transform = 'translateY(0)';
         setTimeout(() => { w.style.transition = ''; w.style.transform = ''; }, 900 + i * 90);
@@ -165,7 +168,7 @@ class Component extends DCLogic {
         const ins = `inset(${rI.top / vhI * 100}% ${rI.left / vwI * 100}% ${(vhI - rI.top - rI.h) / vhI * 100}%)`;
         const shut = narrow ? `inset(${(rI.top + rI.h * 0.2) / vhI * 100}% ${(rI.left + rI.w * 0.12) / vwI * 100}% ${(vhI - rI.top - rI.h * 0.8) / vhI * 100}%)` : 'inset(34% 40% 34% 40%)';
         const open = narrow ? ins : 'inset(28% 34% 28% 34%)';
-        this.frame.style.transition = 'clip-path 900ms cubic-bezier(0.2,0.7,0.2,1)';
+        this.frame.style.transition = 'clip-path 200ms cubic-bezier(0.2,0.7,0.2,1)';
         this.frame.style.clipPath = shut;
         requestAnimationFrame(() => { this.frame.style.clipPath = open; setTimeout(() => { this.frame.style.transition = ''; }, 950); });
       }
