@@ -1752,9 +1752,11 @@ function Quote({
   }, /*#__PURE__*/React.createElement("p", {
     className: "am-quote",
     style: {
-      fontFamily: 'var(--font-editorial)',
-      fontStyle: 'italic',
+      fontFamily: 'var(--font-quote)',
+      fontWeight: 600,
+      fontStyle: 'normal',
       fontSize: 'var(--text-quote)',
+      letterSpacing: 0,
       lineHeight: 'var(--lh-quote)',
       color: tone === 'inverse' ? '#fff' : tone === 'accent' ? 'var(--color-accent)' : 'var(--text-primary)',
       margin: 0,

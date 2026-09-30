@@ -87,6 +87,7 @@
     }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/brush.css">
   <script src="assets/responsive.js" defer></script>
 </helmet>
 
@@ -189,6 +190,12 @@
           <!-- Sticker: a napsárga disc — a dot, never a field. Ink on sun is
                12:1; white on sun is forbidden. -->
           <div data-m="cetli" style="position:absolute;top:-16px;right:-10px;width:116px;height:116px;border-radius:50%;transform:rotate(6deg);background:var(--amigos-sun);color:var(--amigos-ink);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--font-hand);font-weight:700;font-size:25px;line-height:0.92;letter-spacing:0.01em;box-shadow:var(--shadow-sticker);">Csütörtökön<br>jövünk.</div>
+          <!-- Ecsetes háttér (BrushBackground): the brandbook's green brush as
+               a circle crop — the one number the hero does not already say in
+               words, set in white Amatic, which is the only type the texture
+               may carry. Bottom-left, mirroring the napsárga cetli top-right;
+               both float over the photo circle, so both take the sticker lift. -->
+          <div data-m="brushdot" class="am-brush" aria-hidden="true" style="position:absolute;left:-12px;bottom:-10px;width:clamp(104px,26vw,136px);transform:rotate(-5deg);font-family:var(--font-hand);font-weight:700;font-size:clamp(26px,6.5vw,34px);line-height:0.9;letter-spacing:0.01em;color:var(--amigos-white);box-shadow:var(--shadow-sticker);">300<br>AMIGO</div>
         </div>
 
         <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;">

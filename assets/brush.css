@@ -1,0 +1,54 @@
+/* =====================================================================
+   Amigos — ecsetes háttér (brush texture)
+   ---------------------------------------------------------------------
+   Port of the design system's components/brand/BrushBackground.jsx for
+   the static page exports, which cannot import JSX.
+
+   guidelines/brand-brush.html allows exactly two forms:
+     .am-brush        — a circle crop
+     .am-brush-band   — a strip on one edge of a position:relative parent
+   Never a full-page field, and no text over the texture except white
+   Amatic (var(--font-hand)).
+
+   The texture PNGs are opaque and average #578C26, a little lighter and
+   more saturated than --amigos-green (#437613); the background-color
+   below is a fallback, not a tint. A brushed surface therefore reads
+   slightly brighter than a flat pulcsizöld field next to it.
+   ===================================================================== */
+
+.am-brush,
+.am-brush-band{
+  background-color: var(--amigos-green);
+  background-image: url('backgrounds/brush-green.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Circle crop. Size it with width (height follows the aspect ratio), and
+   put white Amatic inside if it carries a line. */
+.am-brush{
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Edge band. Needs a position:relative parent; thickness comes from
+   --am-brush-band-w so it can be a clamp() at the call site. */
+.am-brush-band{
+  position: absolute;
+  background-image: url('backgrounds/brush-green-band.png');
+  pointer-events: none;
+}
+.am-brush-band[data-side="left"],
+.am-brush-band[data-side="right"]{ top:0; bottom:0; width: var(--am-brush-band-w, 96px); }
+.am-brush-band[data-side="left"]  { left:0; }
+.am-brush-band[data-side="right"] { right:0; }
+.am-brush-band[data-side="top"],
+.am-brush-band[data-side="bottom"]{ left:0; right:0; height: var(--am-brush-band-w, 96px); }
+.am-brush-band[data-side="top"]   { top:0; }
+.am-brush-band[data-side="bottom"]{ bottom:0; }
