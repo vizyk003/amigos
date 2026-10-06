@@ -5,7 +5,7 @@
      Amatic SC Bold      campaign + display titles only, never running text
      Familjen Grotesk    editorial headings and numbers
      Instrument Sans     all body and UI
-     Caveat              quotes (v2 replaces Instrument Serif italic here)
+     Shantell Sans       quotes (2026-10 revision; replaces Caveat)
 
    v1 exposed the scale as --text-x, --lh-x and --ls-x; v2 as --type-x. Both
    are published: --type-* is canonical, the --text-* block below is the
@@ -15,7 +15,7 @@
 --font-hand:'Amatic SC',cursive;
 --font-editorial:'Familjen Grotesk',system-ui,sans-serif;
 --font-body:'Instrument Sans',system-ui,-apple-system,sans-serif;
---font-quote:'Caveat','Instrument Serif',cursive;
+--font-quote:'Shantell Sans',system-ui,sans-serif;
 --font-mono:ui-monospace,'SF Mono',Menlo,monospace;
 
 /* v1 called the editorial face "display"; the pages still ask for it. */
@@ -66,7 +66,8 @@
 --text-button:16px;             --lh-button:1;   --ls-button:0;
 --text-stat:clamp(44px,5.6vw,80px); --lh-stat:1;  --ls-stat:-0.03em;
 --text-stat-sm:32px;
---text-quote:clamp(26px,2.6vw,40px); --lh-quote:1.15;
+--text-quote:clamp(24px,2.4vw,28px); --lh-quote:1.25;
+--text-quote-lg:clamp(28px,3.4vw,44px);
 
 /* mobile overrides for the fixed sizes (assets/responsive.css swaps these in) */
 --text-h4-m:20px;--text-body-lg-m:18px;--text-body-m:var(--type-body-m);
@@ -85,8 +86,14 @@
   font-family:var(--font-hand);font-weight:700;text-transform:uppercase;
   line-height:var(--lh-display);letter-spacing:var(--tracking-display);
 }
-/* v2 moves quotes from Instrument Serif italic to Caveat (handwriting). */
+/* Quotes are Shantell Sans 500 in Hungarian „…” marks, attributed "· Név". */
 .am-quote{
-  font-family:var(--font-quote);font-weight:600;font-style:normal;
+  font-family:var(--font-quote);font-weight:500;font-style:normal;
   font-size:var(--type-quote);line-height:var(--lh-quote);letter-spacing:0;
 }
+
+/* Eyebrows and meta labels are set in the editorial face (Familjen
+   Grotesk 600, 13px, +0.12em). The exported pages write them as inline
+   styles on the body face, so this reaches them through the label
+   tracking token they all share. */
+[style*="var(--ls-label)"]{font-family:var(--font-editorial);}

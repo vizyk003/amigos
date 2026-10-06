@@ -126,11 +126,11 @@ const variants = {
     hbd: 'var(--color-accent-hover)'
   },
   inverse: {
-    bg: 'var(--am-white)',
-    fg: 'var(--am-green-900)',
-    bd: 'var(--am-white)',
-    hbg: 'var(--am-green-100)',
-    hbd: 'var(--am-green-100)'
+    bg: 'var(--amigos-white)',
+    fg: 'var(--amigos-green)',
+    bd: 'var(--amigos-white)',
+    hbg: 'var(--amigos-paper-2)',
+    hbd: 'var(--amigos-paper-2)'
   },
   inverseOutline: {
     bg: 'transparent',

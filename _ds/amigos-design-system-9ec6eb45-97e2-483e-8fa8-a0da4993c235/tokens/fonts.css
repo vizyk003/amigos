@@ -1,4 +1,4 @@
 /* Webfonts via Google Fonts, Latin Extended for ő/ű.
-   v2 adds Caveat (quotes) and keeps Instrument Serif as the fallback for
-   the quote stack. Amatic SC is the campaign/display face. */
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap');
+   Shantell Sans sets quotes (2026-10 revision; replaces Caveat). Amatic SC
+   is the campaign/display face. */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Shantell+Sans:wght@300..800&display=swap');

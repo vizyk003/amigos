@@ -1,5 +1,5 @@
 /* =====================================================================
-   Amigos colour tokens — Arculati kézikönyv 2. verzió (2026)
+   Amigos colour tokens — Arculati kézikönyv 2026 (2026-10-05 revízió)
    ---------------------------------------------------------------------
    v2 renames the palette around the brandbook's own words (pulcsizöld,
    mélyzöld, fakózöld, napsárga, lila, papír, tinta) and drops the
@@ -24,10 +24,18 @@
 --amigos-green-hover:#3A6810;
 --amigos-green-press:#325A0E;
 --amigos-plum-hover:#852A59;
---amigos-ink-2:#3A4433;      /* secondary text on paper */
---amigos-ink-3:#5A6650;      /* tertiary / meta on paper */
---amigos-line:#DDE3D5;       /* hairlines on paper */
+--amigos-ink-2:#4A5143;      /* secondary text on paper */
+--amigos-ink-3:#6E7466;      /* tertiary / meta on paper */
+--amigos-line:#DEDFD6;       /* hairlines on paper */
 --amigos-paper-2:#F1F2EA;    /* sunken paper */
+
+/* --- Pasztell párok (brandbook p.20) ------------------------------
+   Every loud colour has a pastel partner: pastel = base, brand colour =
+   print. Merch, web and social surfaces. */
+--amigos-zsalya:#D5E0C8; /* + pulcsizöld: póló, pulcsi, vászontáska */
+--amigos-vaj:#F5E6B8;    /* + mélyzöld: sapka, matrica, kitűző */
+--amigos-malyva:#EBD3DC; /* + lila: adományozói ajándék, köszönőkártya */
+--amigos-kreta:#ECE8DE;  /* + tinta: jegyzetfüzet, bögre, irodai anyagok */
 
 /* --- Semantic ------------------------------------------------------ */
 --surface-page:var(--amigos-paper);
@@ -37,6 +45,10 @@
 --surface-warm:var(--amigos-green-pale);
 --surface-quiet:var(--amigos-green-deep);
 --surface-donate:var(--amigos-plum);
+--surface-merch-green:var(--amigos-zsalya);
+--surface-merch-sun:var(--amigos-vaj);
+--surface-merch-plum:var(--amigos-malyva);
+--surface-merch-ink:var(--amigos-kreta);
 
 --text-body-color:var(--amigos-ink);
 --text-secondary:var(--amigos-ink-2);

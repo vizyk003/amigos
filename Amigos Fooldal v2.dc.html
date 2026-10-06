@@ -53,28 +53,31 @@
     @keyframes am-stitch{to{stroke-dashoffset:-26;}}
     [data-m="ring2"] circle{animation:am-stitch 9s linear infinite;}
     @media (prefers-reduced-motion: reduce){ [data-m="ring2"] circle{animation:none;} }
-    /* The circle is the play/pause target, so it should answer the pointer:
+    /* The circle opens the brand film, so it should answer the pointer:
        the picture leans in under the clip, and the stitched ring steps a
        little further off its edge. Hover-capable pointers only — on touch a
        hover state sticks after the tap. */
     [data-m="frame"]{cursor:pointer;}
     @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference){
-      [data-m="frame"] [data-m="poster"],
-      [data-m="frame"] [data-m="video"]{transition:opacity 200ms cubic-bezier(0.2,0.7,0.2,1), transform 600ms cubic-bezier(0.2,0.7,0.2,1) !important;}
-      [data-m="frame"]:hover [data-m="poster"],
-      [data-m="frame"]:hover [data-m="video"]{transform:scale(1.05);}
+      [data-m="frame"] [data-m="poster"]{transition:opacity 200ms cubic-bezier(0.2,0.7,0.2,1), transform 600ms cubic-bezier(0.2,0.7,0.2,1) !important;}
+      [data-m="frame"]:hover [data-m="poster"]{transform:scale(1.05);}
       [data-m="ring2"]{transition:transform 400ms cubic-bezier(0.2,0.7,0.2,1);}
       :has(> [data-m="frame"]:hover) > [data-m="ring2"]{transform:translate(5%,4%) !important;}
-      [data-m="frame"]:active [data-m="poster"],
-      [data-m="frame"]:active [data-m="video"]{transform:scale(1.02);}
+      [data-m="frame"]:active [data-m="poster"]{transform:scale(1.02);}
     }
-    /* The hint is information, not motion, so it shows under reduced motion
-       too — only its easing is dropped there. */
-    [data-m="frame"][data-playing="true"] [data-glyph="play"]{display:none !important;}
-    [data-m="frame"][data-playing="true"] [data-glyph="pause"]{display:block !important;}
+    /* The play button always sits over the circle. The circle is only the
+       trigger: the film itself opens centred, at its own 16:9, in a dialog
+       with native controls and sound — a circle crop can't be watched. */
+    [data-m="frame"]:focus-visible{outline:3px solid var(--amigos-sun);outline-offset:4px;}
     @media (hover: hover) and (pointer: fine){
-      [data-m="frame"]:hover [data-m="playhint"]{opacity:0.7 !important;transform:translate(-50%,-50%) scale(1) !important;}
+      [data-m="frame"]:hover [data-m="playhint"]{transform:translate(-50%,-50%) scale(1.06) !important;}
     }
+    [data-m="film"]{width:min(92vw,calc((100vh - 120px) * 16 / 9),1280px);max-width:none;max-height:none;padding:0;border:0;background:transparent;overflow:visible;}
+    [data-m="film"]::backdrop{background:rgba(23,28,18,0.88);}
+    [data-m="film"] [data-film-stage]{position:relative;aspect-ratio:16/9;background:#000;border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-pop);}
+    [data-m="film"] video,[data-m="film"] iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#000;}
+    [data-m="film"] [data-film-close]{position:absolute;right:0;bottom:calc(100% + 12px);width:44px;height:44px;border-radius:50%;border:0;background:var(--amigos-paper);color:var(--amigos-ink);font:600 22px/1 var(--font-body);cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    [data-m="film"] [data-film-close]:focus-visible{outline:3px solid var(--amigos-sun);outline-offset:3px;}
     @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference){
       [data-m="frame"] [data-m="playhint"]{transition:opacity 200ms cubic-bezier(0.2,0.7,0.2,1), transform 400ms cubic-bezier(0.2,0.7,0.2,1) !important;}
     }
@@ -171,9 +174,8 @@
             <circle cx="100" cy="100" r="99" fill="none" stroke="var(--amigos-sun)" stroke-width="2" stroke-dasharray="6 7" stroke-linecap="round" vector-effect="non-scaling-stroke"></circle>
           </svg>
 
-          <div data-m="frame" style="position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--amigos-green);">
+          <div data-m="frame" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Az Amigos brandfilm lejátszása (44 mp)" style="position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--amigos-green);">
             <img data-m="poster" src="assets/community/web/21-web-hero.jpg" alt="Amigo és gyerek közös társasjátéka a kórházi játszószobában" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block;opacity:1;transition:opacity 200ms cubic-bezier(0.2,0.7,0.2,1);" width="1254" height="1254">
-            <video data-m="video" muted="" playsinline="" loop="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>
             <!-- Illustration layer — csillanás, the winning move. Hand-drawn,
                  one colour, sitting on the board the two of them are playing,
                  never over a face. Placeholder for the line style that will be
@@ -186,12 +188,9 @@
                 <path d="M43.8 74.4 C 42.7 75.4, 42.1 75.9, 41.6 76.4"></path>
               </g>
             </svg>
-            <!-- What a click on the circle will do, shown on hover: play until
-                 the film is running, pause while it is. Paper disc, green
-                 glyph; the frame's data-playing picks which one shows. -->
-            <span data-m="playhint" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:clamp(56px,22%,84px);aspect-ratio:1/1;margin:0;border-radius:50%;background:var(--amigos-paper);color:var(--amigos-green);display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(0.86);">
+            <!-- Play button: paper disc, green glyph, always shown. -->
+            <span data-m="playhint" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:clamp(56px,22%,84px);aspect-ratio:1/1;margin:0;border-radius:50%;background:var(--amigos-paper);color:var(--amigos-green);display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:1;transform:translate(-50%,-50%) scale(1);box-shadow:var(--shadow-sticker);">
               <svg data-glyph="play" viewBox="0 0 24 24" width="42%" height="42%" fill="currentColor" style="display:block;margin-left:8%;"><path d="M7 4.5v15a1 1 0 0 0 1.53.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5z"></path></svg>
-              <svg data-glyph="pause" viewBox="0 0 24 24" width="42%" height="42%" fill="currentColor" style="display:none;"><rect x="5" y="4" width="5" height="16" rx="1.2"></rect><rect x="14" y="4" width="5" height="16" rx="1.2"></rect></svg>
             </span>
           </div>
 
@@ -203,16 +202,16 @@
           <div data-m="cetli" class="am-brush" style="position:absolute;top:6px;right:10px;width:116px;transform:rotate(6deg);color:var(--amigos-white);font-family:var(--font-hand);font-weight:700;font-size:25px;line-height:0.92;letter-spacing:0.01em;box-shadow:var(--shadow-sticker);">Csütörtökön<br>jövünk.</div>
         </div>
 
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;">
-          <span style="font-size:var(--text-caption);letter-spacing:var(--ls-caption);color:var(--amigos-ink-3);">Amigos brandfilm · 44 mp</span>
-          <div data-m="filmctl" style="display:flex;gap:8px;">
-            <button data-m="sound" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--amigos-green);background:transparent;border:2px solid var(--amigos-green);border-radius:var(--radius-pill);padding:7px 14px;cursor:pointer;" style-hover="background:#E6EEDC">Hang be</button>
-            <button data-m="toggle" type="button" style="font-family:var(--font-body);font-size:var(--text-caption);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--amigos-green);background:transparent;border:2px solid var(--amigos-green);border-radius:var(--radius-pill);padding:7px 14px;cursor:pointer;" style-hover="background:#E6EEDC">Film lejátszása</button>
-          </div>
-        </div>
       </div>
     </div>
   </section>
+
+  <dialog data-m="film" aria-label="Amigos brandfilm">
+    <button data-film-close="" type="button" aria-label="Bezárás">✕</button>
+    <div data-film-stage="">
+      <video data-film-video="" controls="" playsinline="" preload="none"></video>
+    </div>
+  </dialog>
 
 
 <!-- Számok — four figures from the year. All four sit in one row on
@@ -483,82 +482,13 @@ class Component extends DCLogic {
     const bind = () => {
       this.hero = q('[data-m="hero"]'); if (!this.hero) return false;
       this.frame = q('[data-m="frame"]');
-      this.video = q('[data-m="video"]');
       this.layers = Array.from(document.querySelectorAll('[data-orb-layer]'));
       this.head = q('[data-m="stickyhead"]');
       this.pillars = q('[data-m="pillars"]'); this.stats = q('[data-m="stats"]');
       this.rows = Array.from(document.querySelectorAll('[data-row]'));
       this.counts = Array.from(document.querySelectorAll('[data-count]'));
       this.words = Array.from(document.querySelectorAll('[data-m="wi"]'));
-      const src = this.props.videoSrc || 'assets/amigos-brandfilm.mp4';
-      const YT_FALLBACK = 'Wr2K6diFiIA';
-      const ytMatch = src.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
-      this.yt = null;
-      this.mountYt = (id) => {
-        if (!this.video) return;
-        // YouTube brand film: an iframe behind the same clip-path, scaled to cover, driven via the IFrame API
-        const ifr = document.createElement('iframe');
-        ifr.setAttribute('data-m', 'yt');
-        ifr.src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&cc_load_policy=0&cc_lang_pref=hu&fs=0&showinfo=0&color=white&enablejsapi=1`;
-        ifr.allow = 'autoplay; encrypted-media; picture-in-picture';
-        ifr.referrerPolicy = 'origin-when-cross-origin';
-        ifr.title = 'Amigos brandfilm';
-        ifr.tabIndex = -1;
-        ifr.style.cssText = 'position:absolute;left:50%;top:50%;border:0;pointer-events:none;transform:translate(-50%,-50%);';
-        this.video.replaceWith(ifr);
-        this.video = null; this.yt = ifr;
-        this.ytCmd = (func, args) => { try { ifr.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args: args || [] }), '*'); } catch (e) {} };
-        this.ytMuted = true; this.ytPaused = false;
-        this.onYtMsg = e => {
-          if (!String(e.origin).includes('youtube.com')) return;
-          let d; try { d = JSON.parse(e.data); } catch (err) { return; }
-          if (d.event === 'onReady') this.ytCmd('playVideo');
-          if (d.event === 'onStateChange' && d.info === 0) { this.ytCmd('seekTo', [0, true]); this.ytCmd('playVideo'); }
-        };
-        window.addEventListener('message', this.onYtMsg);
-        const listen = () => { try { ifr.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 'amigos-hero' }), '*'); } catch (err) {} };
-        ifr.addEventListener('load', listen); setTimeout(listen, 600); setTimeout(listen, 1800);
-        this.fitYt = () => { const w = ifr.parentElement.clientWidth, h = ifr.parentElement.clientHeight; const k = 1.06; const iw = Math.max(w, h * 16 / 9) * k, ih = Math.max(h, w * 9 / 16) * k; ifr.style.width = iw + 'px'; ifr.style.height = ih + 'px'; };
-        this.fitYt(); window.addEventListener('resize', this.fitYt);
-        ifr.addEventListener('load', () => this.ytCmd('playVideo'));
-        setTimeout(() => { this.ytCmd('playVideo'); this.ytCmd('setOption', ['captions', 'track', {}]); this.ytCmd('unloadModule', ['captions']); this.ytCmd('unloadModule', ['cc']); }, 1200);
-        const snd = q('[data-m="sound"]'), tog = q('[data-m="toggle"]');
-        if (snd) snd.onclick = () => { this.ytMuted = !this.ytMuted; this.ytCmd(this.ytMuted ? 'mute' : 'unMute'); snd.textContent = this.ytMuted ? 'Hang be' : 'Hang ki'; };
-        if (tog) tog.onclick = () => { this.ytPaused = !this.ytPaused; this.ytCmd(this.ytPaused ? 'pauseVideo' : 'playVideo'); tog.textContent = this.ytPaused ? 'Lejátszás' : 'Szünet'; };
-      };
-      const list = [ytMatch ? 'assets/amigos-brandfilm.mp4' : src];
-      if (this.video) {
-        // The circle rests on the photograph; the film is loaded on the first
-        // press of the play control, so the hero costs one 170KB JPEG rather
-        // than an 11MB autoplaying video.
-        this.video.muted = true; this.video.defaultMuted = true;
-        this.video.loop = true; this.video.setAttribute('loop', '');
-        this.video.addEventListener('ended', () => { this.video.currentTime = 0; this.video.play().catch(() => {}); });
-        // the video paints its own black box before metadata arrives — keep the green frame until then
-        this.video.style.opacity = '0';
-        this.video.style.transition = 'opacity 200ms cubic-bezier(0.2,0.7,0.2,1)';
-        this.video.addEventListener('loadedmetadata', () => { this.video.style.opacity = '1'; const ph = this.video.parentElement && this.video.parentElement.querySelector('[data-m="poster"]'); if (ph) ph.style.opacity = '0'; });
-        let i = 0;
-        // native file first (works wherever the project files are served); YouTube only if the file itself fails
-        const toYt = () => { clearTimeout(this.vT); if (!this.video) return; this.video.removeAttribute('src'); this.video.load(); this.video.style.display = 'none'; const ph = this.video.parentElement && this.video.parentElement.querySelector('[data-m="poster"]'); if (ph) ph.style.opacity = '1'; };
-        const tryNext = () => { if (i >= list.length) { toYt(); return; } this.video.src = list[i++]; this.video.load(); this.video.play().catch(() => {}); };
-        this.video.addEventListener('error', tryNext);
-        this.video.addEventListener('loadedmetadata', () => clearTimeout(this.vT));
-        this.startFilm = () => { if (this.filmStarted) return; this.filmStarted = true; tryNext(); };
-      }
-      const snd = q('[data-m="sound"]'), tog = q('[data-m="toggle"]');
-      // Sound is only a choice once there is something playing.
-      if (snd && this.video) { snd.style.display = 'none'; snd.textContent = 'Hang be'; snd.onclick = () => { this.video.muted = !this.video.muted; snd.textContent = this.video.muted ? 'Hang be' : 'Hang ki'; }; }
-      if (tog && this.video) {
-        const sync = () => { tog.textContent = !this.filmStarted ? 'Film lejátszása' : this.video.paused ? 'Lejátszás' : 'Szünet'; if (this.frame) this.frame.setAttribute('data-playing', this.filmStarted && !this.video.paused ? 'true' : 'false'); };
-        this.video.addEventListener('play', sync); this.video.addEventListener('pause', sync); sync();
-        tog.onclick = () => {
-          if (!this.filmStarted) { this.startFilm(); if (snd) snd.style.display = ''; this.video.play().catch(() => {}); sync(); return; }
-          if (this.video.paused) { this.video.play().catch(() => {}); } else { this.video.pause(); }
-        };
-      }
-      // the circle itself is the play/pause target
-      if (this.frame && tog) this.frame.onclick = () => tog.click();
+      this.bindFilm();
       this.bindDonate(); this.bindNewsletter();
       // arriving from another page with #tamogatom: the section only exists after mount
       if (location.hash) {
@@ -569,6 +499,61 @@ class Component extends DCLogic {
     };
     if (!bind()) { const iv = setInterval(() => { if (bind()) { clearInterval(iv); this.start(); } }, 100); return; }
     this.start();
+  }
+  // The circle is only the trigger. The film opens centred at 16:9 in a
+  // dialog with native controls and sound; it loads on the first open, so
+  // the hero still costs one JPEG rather than an 11MB video. The local file
+  // plays first; if it fails, the YouTube upload (videoSrc prop) takes over.
+
+  bindFilm() {
+    const dlg = document.querySelector('[data-m="film"]');
+    const stage = dlg && dlg.querySelector('[data-film-stage]');
+    let video = dlg && dlg.querySelector('[data-film-video]');
+    if (!dlg || !this.frame) return;
+    const src = this.props.videoSrc || '';
+    const yt = src.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+    const ytId = yt ? yt[1] : 'Wr2K6diFiIA';
+    const file = yt || !src ? 'assets/amigos-brandfilm.mp4' : src;
+    let iframe = null;
+    const toYt = () => {
+      if (iframe || !stage) return;
+      iframe = document.createElement('iframe');
+      iframe.title = 'Amigos brandfilm';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      iframe.allowFullscreen = true;
+      iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&cc_lang_pref=hu`;
+      if (video) { video.pause(); video.remove(); video = null; }
+      stage.appendChild(iframe);
+    };
+    if (video) {
+      // the page renderer drops an empty controls="" attribute, so set it here
+      video.controls = true; video.playsInline = true;
+      video.addEventListener('error', toYt);
+    }
+    const x = dlg.querySelector('[data-film-close]');
+    const open = () => {
+      if (dlg.open) return;
+      if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+      if (video) {
+        if (!video.getAttribute('src')) { video.src = file; video.load(); }
+        video.play().catch(() => {});
+        video.focus();
+      }
+    };
+    const close = () => { if (dlg.open && typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open'); };
+    dlg.addEventListener('close', () => {
+      if (video) video.pause();
+      // a YouTube player can't be paused from outside without its API; drop it and rebuild on the next open
+      if (iframe) { iframe.remove(); iframe = null; }
+      this.frame.focus();
+    });
+    // a click on the dimmed backdrop lands on the dialog element itself
+    dlg.addEventListener('click', e => { if (e.target === dlg) close(); });
+    if (x) x.onclick = close;
+    // once the file has failed, every later open goes straight to YouTube
+    this.openFilm = () => { if (!video) toYt(); open(); };
+    this.frame.onclick = () => this.openFilm();
+    this.frame.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.openFilm(); } };
   }
   bindDonate() {
     const freq = Array.from(document.querySelectorAll('[data-freq]'));
