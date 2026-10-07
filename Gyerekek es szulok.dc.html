@@ -40,7 +40,7 @@
     @keyframes am-bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
     #hirlevel input::placeholder{color:var(--am-green-100);opacity:1;}
     #hirlevel input:focus-visible{outline:2px solid var(--amigos-white);outline-offset:4px;}
-    @media (max-width: 960px){ [style*="repeat(3,minmax(0,1fr))"]{grid-template-columns:minmax(0,1fr) !important;} }
+    @media (max-width: 960px){ [style*="repeat(3,minmax(0,1fr))"],[style*="repeat(3, minmax(0px, 1fr))"]{grid-template-columns:minmax(0,1fr) !important;} }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
   <link rel="stylesheet" href="assets/brand.css">

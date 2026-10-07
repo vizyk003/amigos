@@ -234,7 +234,13 @@ nav a { overflow-wrap: break-word; }
   [style*="repeat(3,minmax(0,1fr))"],
   [style*="repeat(3, minmax(0, 1fr))"],
   [style*="repeat(12,minmax(0,1fr))"],
-  [style*="repeat(12, minmax(0, 1fr))"] {
+  [style*="repeat(12, minmax(0, 1fr))"],
+  /* support.js hands the styles to React, and the browser serialises a
+     unitless 0 inside minmax() back as "0px" — so the rendered attribute
+     reads minmax(0px, 1fr) and the two spellings above never match it. */
+  [style*="repeat(2, minmax(0px, 1fr))"],
+  [style*="repeat(3, minmax(0px, 1fr))"],
+  [style*="repeat(12, minmax(0px, 1fr))"] {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
@@ -254,7 +260,8 @@ nav a { overflow-wrap: break-word; }
 
   /* Three-up rows that centre something between two columns. */
   [style*="minmax(0,1fr) auto minmax(0,1fr)"],
-  [style*="minmax(0, 1fr) auto minmax(0, 1fr)"] {
+  [style*="minmax(0, 1fr) auto minmax(0, 1fr)"],
+  [style*="minmax(0px, 1fr) auto minmax(0px, 1fr)"] {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
@@ -404,6 +411,50 @@ nav a { overflow-wrap: break-word; }
     font-size: 12px !important;
     margin-top: 2px;
   }
+}
+
+@media (max-width: 1120px) {
+  /* Blog — the speech-bubble doodle hangs 30% past the right of the
+     "friss" sticker. Once the sticker column is no longer flush with a
+     wide margin, that tail ran off the screen (a real sideways scroll
+     at 320–1120px). Keep it tucked against the sticker. */
+  .am-ill[style*="right: -30%"],
+  .am-ill[style*="right:-30%"] {
+    right: 0 !important;
+    width: 96px !important;
+  }
+}
+
+@media (max-width: 840px) {
+  /* Stacked, the space these doodles reach into is no longer empty: the
+     Blog bubble sat on the intro paragraph and the Gyerekek bubble and
+     sparkle on the text and caption above their photo. Pull them down so
+     they straddle the edge of their own frame instead. */
+  .am-ill[style*="right: -30%"],
+  .am-ill[style*="right:-30%"] { top: -38% !important; width: 80px !important; }
+
+  figure > .am-ill[style*="bottom: calc(100%"],
+  figure > .am-ill[style*="bottom:calc(100%"] {
+    bottom: calc(100% - 36px) !important;
+    max-width: 76px !important;
+  }
+}
+
+@media (max-width: 840px) {
+  /* Munkánk & hatásunk — the calendar doodle sits 6% outside the photo,
+     and once the photo is full width that 6% is outside the viewport. */
+  .am-ill[style*="right: -6%; top: -9%"],
+  .am-ill[style*="right:-6%;top:-9%"] {
+    right: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Főoldal — the "Címkék" tag lines are nowrap spans joined by a dot
+     with no break opportunity between them, so "Saját fejlesztésű
+     eszközök" could not move to its own line and ran 44px off a 320px
+     screen. Let a tag break inside itself only when it has to. */
+  p[aria-label="Címkék"] > span[style*="nowrap"] { white-space: normal !important; }
 }
 
 @media (max-width: 760px) {
