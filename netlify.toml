@@ -43,6 +43,20 @@
   to = "/Adomanybolt.dc.html"
   status = 200
 
+# Product pages: one template, the product picked by ?p=<slug> (see
+# assets/shop/products.js). The short alias redirects rather than rewrites,
+# because the template's asset paths are relative to the site root.
+[[redirects]]
+  from = "/adomanybolt/:slug"
+  to = "/Termek.dc.html?p=:slug"
+  status = 301
+
+# Same path as WooCommerce's checkout on amigos.hu.
+[[redirects]]
+  from = "/penztar"
+  to = "/Penztar.dc.html"
+  status = 200
+
 [[redirects]]
   from = "/ado-1-szazalek"
   to = "/Ado%201%20szazalek.dc.html"
