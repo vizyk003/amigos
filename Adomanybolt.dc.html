@@ -66,7 +66,7 @@
   </header>
 <main id="tartalom">
 
-  <section data-screen-label="Hero" style="position:relative;background:var(--amigos-vaj);color:var(--amigos-ink);overflow:hidden;padding:clamp(48px,6vw,88px) 0 clamp(56px,7vw,96px);">
+  <section data-screen-label="Hero" style="position:relative;background:var(--amigos-white);color:var(--amigos-ink);overflow:hidden;padding:clamp(48px,6vw,88px) 0 clamp(56px,7vw,96px);">
     <div data-value-word="" data-m="pattern" aria-hidden="true" style="position:absolute;left:0;bottom:-0.18em;font-family:var(--font-hand);font-weight:700;font-size:clamp(64px,20.7vw,340px);line-height:1;letter-spacing:0.01em;color:rgba(42,74,11,0.07);white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">KÖZÖSSÉG</div>
     <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
       <div style="display:flex;flex-direction:column;gap:20px;">
@@ -75,7 +75,7 @@
         <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);text-wrap:pretty;color:var(--amigos-green-deep);">
           <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;color:var(--amigos-ink);">Veszel egy könyvet:</span></span>
           <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">két gyerekhez is</span></span>
-          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">eljut egy <span class="am-underline am-underline--kunkor-green">élmény</span>.</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">eljut egy <span class="am-underline am-underline--kunkor-yellow">élmény</span>.</span></span>
         </h1>
         <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:44ch;color:var(--amigos-ink-2);text-wrap:pretty;">Könyvek, munkafüzetek és játékok, amiket eredetileg kórházban gyógyuló gyerekeknek készítettünk. A befolyt adományból a heti foglalkozásainkat valósítjuk meg.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:4px;">
@@ -401,7 +401,7 @@
           </div>
         </div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:var(--text-on-ink);">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid var(--amigos-ink-2);padding-top:20px;font-size:14px;color:var(--text-on-ink);">
         <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
       </div>
     </div>
@@ -464,9 +464,9 @@ class Component extends DCLogic {
       btns.forEach(o => {
         const on = o === b;
         o.setAttribute('aria-selected', String(on));
-        o.style.background = on ? '#437613' : 'transparent';
-        o.style.borderColor = on ? '#437613' : '#DDE3D5';
-        o.style.color = on ? '#FFFFFF' : '#171C12';
+        o.style.background = on ? 'var(--amigos-green)' : 'transparent';
+        o.style.borderColor = on ? 'var(--amigos-green)' : 'var(--amigos-line)';
+        o.style.color = on ? 'var(--amigos-white)' : 'var(--amigos-ink)';
       });
       const f = b.dataset.filter;
       document.querySelectorAll('[data-product]').forEach(p => {

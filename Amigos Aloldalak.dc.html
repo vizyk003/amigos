@@ -44,7 +44,7 @@
     </div>
   </header>
 
-  <div style="background:#F1F4EC;border-bottom:1px solid var(--amigos-line);font-size:13px;color:var(--amigos-ink-3);">
+  <div style="background:var(--am-green-50);border-bottom:1px solid var(--amigos-line);font-size:13px;color:var(--amigos-ink-3);">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1280px;margin:0 auto;padding:8px clamp(20px,4vw,48px);">
       <span>Low-fidelity wireframe — {{ pageUrl }}</span>
       <span style="display:flex;gap:20px;"><a href="#sitemap" style="text-decoration:none;">Oldaltérkép</a><a href="Amigos Fooldal v2.dc.html" style="text-decoration:none;">Főoldal (kész design)</a></span>
@@ -86,7 +86,7 @@
                     </sc-for>
                   </div>
                 </div>
-                <div style="aspect-ratio:1/1;border-radius:{{ s.mediaRadius }};border:1px dashed #A8BA98;background:{{ s.mediaBg }};display:flex;align-items:center;justify-content:center;padding:14%;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:{{ s.mediaFg }};">{{ s.media }}</div>
+                <div style="aspect-ratio:1/1;border-radius:{{ s.mediaRadius }};border:1px dashed var(--am-green-300);background:{{ s.mediaBg }};display:flex;align-items:center;justify-content:center;padding:14%;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:{{ s.mediaFg }};">{{ s.media }}</div>
               </div>
             </section>
           </sc-if>
@@ -115,7 +115,7 @@
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(20px,3vw,32px);">
                   <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
                     <div style="display:flex;flex-direction:column;gap:14px;">
-                      <div style="aspect-ratio:{{ i.ratio }};border-radius:var(--radius-card);border:1px dashed #A8BA98;background:var(--surface-tint-paper);display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--amigos-ink-3);">{{ i.media }}</div>
+                      <div style="aspect-ratio:{{ i.ratio }};border-radius:var(--radius-card);border:1px dashed var(--am-green-300);background:var(--surface-tint-paper);display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--amigos-ink-3);">{{ i.media }}</div>
                       <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">{{ i.title }}</h3>
                       <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">{{ i.text }}</p>
                       <a href="{{ i.href }}" style="font-size:15px;font-weight:600;text-decoration:none;">{{ i.link }}</a>
@@ -216,7 +216,7 @@
                   <sc-for list="{{ s.blocks }}" as="b" hint-placeholder-count="5">
                     <div style="display:flex;flex-direction:column;gap:10px;">
                       <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">{{ b.title }}</h3>
-                      <span style="display:block;height:{{ b.h }};border-radius:6px;background:#EEF1EA;"></span>
+                      <span style="display:block;height:{{ b.h }};border-radius:6px;background:var(--amigos-paper-2);"></span>
                     </div>
                   </sc-for>
                   <span style="font-size:13px;color:var(--amigos-ink-3);">{{ s.updated }}</span>
@@ -278,7 +278,7 @@
           </div>
         </div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:var(--text-on-ink);">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid var(--amigos-ink-2);padding-top:20px;font-size:14px;color:var(--text-on-ink);">
         <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
       </div>
     </div>
@@ -299,19 +299,19 @@ class Component extends DCLogic {
   }
 
   pages() {
-    const G = '#437613', P = '#993166', W = '#FFFFFF', PAPER = '#FAFAF6';
+    const G = 'var(--amigos-green)', P = 'var(--amigos-plum)', W = 'var(--amigos-white)', PAPER = 'var(--amigos-paper)';
     const ctaG = (label, href) => ({ label, href, bg: G, fg: W, border: G });
     const ctaP = (label, href) => ({ label, href, bg: P, fg: W, border: P });
-    const ctaO = (label, href) => ({ label, href, bg: 'transparent', fg: '#171C12', border: '#171C12' });
+    const ctaO = (label, href) => ({ label, href, bg: 'transparent', fg: 'var(--amigos-ink)', border: 'var(--amigos-ink)' });
     const ctaI = (label, href) => ({ label, href, bg: W, fg: G, border: W });
     const ctaIO = (label, href) => ({ label, href, bg: 'transparent', fg: W, border: W });
 
     const hero = (o) => Object.assign({
-      t: 'hero', bg: PAPER, fg: '#171C12', eyebrowColor: G, crumbColor: '#5A6650',
-      mediaRadius: '50%', mediaBg: '#EEF3E8', mediaFg: '#5A6650', media: 'FOTÓ – kör kivágás', ctas: []
+      t: 'hero', bg: PAPER, fg: 'var(--amigos-ink)', eyebrowColor: G, crumbColor: 'var(--amigos-ink-3)',
+      mediaRadius: '50%', mediaBg: 'var(--surface-tint-paper)', mediaFg: 'var(--amigos-ink-3)', media: 'FOTÓ – kör kivágás', ctas: []
     }, o);
-    const heroGreen = (o) => hero(Object.assign({ bg: G, fg: W, eyebrowColor: '#FFFFFF', crumbColor: '#FFFFFF', mediaBg: '#365F0F', mediaFg: '#DCE6D2' }, o));
-    const heroPurple = (o) => hero(Object.assign({ bg: P, fg: W, eyebrowColor: '#F2DCE8', crumbColor: '#F2DCE8', mediaBg: '#7B2752', mediaFg: '#F2DCE8' }, o));
+    const heroGreen = (o) => hero(Object.assign({ bg: G, fg: W, eyebrowColor: 'var(--amigos-white)', crumbColor: 'var(--amigos-white)', mediaBg: 'var(--type-pattern-on-green)', mediaFg: 'var(--am-green-100)' }, o));
+    const heroPurple = (o) => hero(Object.assign({ bg: P, fg: W, eyebrowColor: 'var(--text-on-plum-muted)', crumbColor: 'var(--text-on-plum-muted)', mediaBg: 'var(--amigos-plum-hover)', mediaFg: 'var(--text-on-plum-muted)' }, o));
     const split = (title, text, items) => ({ t: 'split', bg: PAPER, title, text, items: (items || []).map(text => ({ text })) });
     const cards = (title, items) => ({ t: 'cards', bg: PAPER, title, items: items.map(i => Object.assign({ ratio: '4/5', media: 'FOTÓ', link: 'Tovább', href: '#' }, i)) });
     const list = (title, items) => ({ t: 'list', bg: PAPER, title, items: items.map(i => Object.assign({ href: '#', meta: '', text: '' }, i)) });
@@ -476,7 +476,7 @@ class Component extends DCLogic {
       ] },
 
       'kalandozz': { title: 'Kalandozz!', url: '/kalandozz', sections: [
-        heroPurple({ crumb: 'Főoldal / Kalandozz!', eyebrow: 'Gyerekeknek', title: 'Kalandozz!', text: 'Játékok és feladatok azokra a napokra, amikor nem lehet felkelni az ágyból.', media: 'ILLUSZTRÁCIÓ – karakterek', ctas: [{ label: 'Kezdjük!', href: '#', bg: '#FFFFFF', fg: '#993166', border: '#FFFFFF' }] }),
+        heroGreen({ crumb: 'Főoldal / Kalandozz!', eyebrow: 'Gyerekeknek', title: 'Kalandozz!', text: 'Játékok és feladatok azokra a napokra, amikor nem lehet felkelni az ágyból.', media: 'ILLUSZTRÁCIÓ – karakterek', ctas: [ctaI('Kezdjük!', '#')] }),
         cards('Kalandok', [
           { title: 'Űrutazás', text: 'Négy feladat, kb. 20 perc.', media: 'ILLUSZTRÁCIÓ – rakéta' },
           { title: 'Állatkert', text: 'Rajzolós kaland kicsiknek.', media: 'ILLUSZTRÁCIÓ – állatok' },
@@ -498,7 +498,7 @@ class Component extends DCLogic {
       ] },
 
       'tamogatom': { title: 'Adományozok', url: '/tamogatom', sections: [
-        heroPurple({ crumb: 'Főoldal / Adományozok', eyebrow: 'Támogatás', title: 'Egy gyerek barátsága nem egyszeri alkalom.', text: 'A heti látogatás akkor működik, ha jövő héten is ott tudunk lenni. Válassz összeget és gyakoriságot.', media: 'KÖR – 5 000 Ft', ctas: [{ label: 'Rendszeresen támogatom', href: '#tamogatom-checkout', bg: '#FFFFFF', fg: '#993166', border: '#FFFFFF' }, ctaIO('Egyszeri támogatás', '#tamogatom-checkout')] }),
+        heroPurple({ crumb: 'Főoldal / Adományozok', eyebrow: 'Támogatás', title: 'Egy gyerek barátsága nem egyszeri alkalom.', text: 'A heti látogatás akkor működik, ha jövő héten is ott tudunk lenni. Válassz összeget és gyakoriságot.', media: 'KÖR – 5 000 Ft', ctas: [{ label: 'Rendszeresen támogatom', href: '#tamogatom-checkout', bg: 'var(--amigos-white)', fg: 'var(--amigos-plum)', border: 'var(--amigos-white)' }, ctaIO('Egyszeri támogatás', '#tamogatom-checkout')] }),
         split('Mit fedez', 'Minden összeghez konkrét tétel tartozik, a belső költségbecslésünk alapján.', ['3 000 Ft — egy foglalkozás kreatív alapanyaga', '5 000 Ft — egy Amigo havi útiköltsége, négy látogatásra', '10 000 Ft — egy TanulTablet havi tartalomfrissítése', 'Egyedi összeg — szabadon választható']),
         cards('Támogatás más formában', [
           { title: 'Kórházi örökbefogadás', text: 'Egy teljes osztály éves támogatása.', media: 'DIAGRAM – osztály', link: 'Részletek', href: '#orokbefogadas' },
@@ -531,7 +531,7 @@ class Component extends DCLogic {
           { label: 'Cégnév', hint: 'Példa Kft.' }, { label: 'Kapcsolattartó', hint: 'Név' },
           { label: 'E-mail', hint: 'kapcsolat@pelda.hu' }, { label: 'Érdeklődési kör', hint: 'Válassz formát' },
           { label: 'Üzenet', hint: 'Mit szeretnétek támogatni?', h: '120px' }
-        ], submit: 'Ajánlatkérés elküldése', submitHref: '#kapcsolat', submitBg: '#993166' })
+        ], submit: 'Ajánlatkérés elküldése', submitHref: '#kapcsolat', submitBg: 'var(--amigos-plum)' })
       ] },
 
       'egyeb': { title: 'Támogatás más módon', url: '/tamogatom/egyeb', sections: [
@@ -564,12 +564,12 @@ class Component extends DCLogic {
           { label: 'Név', hint: '' }, { label: 'E-mail', hint: '' },
           { label: 'Irányítószám', hint: '' }, { label: 'Város', hint: '' },
           { label: 'Utca, házszám', hint: '' }, { label: 'Fizetési mód', hint: 'Bankkártya / átutalás' }
-        ], consent: 'Elfogadom az ÁSZF-et és az adatkezelési tájékoztatót.', submit: 'Támogatás véglegesítése', submitHref: '#tamogatom-koszonjuk', submitBg: '#993166', alt: 'ÁSZF', altHref: '#aszf' }),
+        ], consent: 'Elfogadom az ÁSZF-et és az adatkezelési tájékoztatót.', submit: 'Támogatás véglegesítése', submitHref: '#tamogatom-koszonjuk', submitBg: 'var(--amigos-plum)', alt: 'ÁSZF', altHref: '#aszf' }),
         split('Biztonság', 'A kártyaadatokat a fizetési szolgáltató kezeli, hozzájuk nem férünk hozzá.', ['Biztonságos bankkártyás fizetés', 'A rendszeres támogatás egy kattintással leállítható', 'Minden hónapban visszaigazolást küldünk'])
       ] },
 
       'tamogatom-koszonjuk': { title: 'Köszönjük a támogatást', url: '/tamogatom/koszonjuk', sections: [
-        heroPurple({ crumb: 'Főoldal / Adományozok / Köszönjük', eyebrow: 'Sikeres', title: 'Köszönjük!', text: 'Havi 5 000 Ft-os támogatásod elindult. A visszaigazolást e-mailben küldtük.', media: 'KÖR – pipa', ctas: [{ label: 'Támogatás kezelése', href: '#', bg: '#FFFFFF', fg: '#993166', border: '#FFFFFF' }, ctaIO('Főoldal', 'Amigos Fooldal v2.dc.html')] }),
+        heroPurple({ crumb: 'Főoldal / Adományozok / Köszönjük', eyebrow: 'Sikeres', title: 'Köszönjük!', text: 'Havi 5 000 Ft-os támogatásod elindult. A visszaigazolást e-mailben küldtük.', media: 'KÖR – pipa', ctas: [{ label: 'Támogatás kezelése', href: '#', bg: 'var(--amigos-white)', fg: 'var(--amigos-plum)', border: 'var(--amigos-white)' }, ctaIO('Főoldal', 'Amigos Fooldal v2.dc.html')] }),
         split('Mi történik ezután', 'Minden hónapban visszaigazolást kapsz, évente pedig beszámolót arról, mire ment az összeg.', ['Havi visszaigazolás e-mailben', 'Éves beszámoló minden támogatónak', 'Módosítás és leállítás bármikor, egy linkkel']),
         cta({ title: 'Kövesd, mi történik a kórházakban', text: 'Havonta egy levél, se több.', ctas: [ctaI('Feliratkozom a hírlevélre', '#'), ctaIO('Történetek', '#tortenetek')] })
       ] },
