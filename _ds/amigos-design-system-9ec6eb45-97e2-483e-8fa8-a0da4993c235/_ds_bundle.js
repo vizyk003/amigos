@@ -1605,7 +1605,7 @@ function SiteHeader({
         textDecoration: on ? 'underline' : 'none',
         textUnderlineOffset: '0.35em',
         textDecorationThickness: 2,
-        textDecorationColor: dark ? 'var(--am-green-200)' : 'var(--color-primary)',
+        textDecorationColor: dark ? 'var(--text-on-field-muted)' : 'var(--color-primary)',
         opacity: on ? 1 : 0.85,
         whiteSpace: 'nowrap'
       }

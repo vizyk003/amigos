@@ -1,5 +1,14 @@
 # Amigos Design System — local copy
 
+> **Branch `alt-green`:** colour tokens follow the *Amigos design system_alt
+> green* project (claude.ai/design, 46c91731-193d-4404-a48f-f6ca660e2266) —
+> pulcsizöld #38B285, mélyzöld #146247, fakózöld #ABDCC5, papír #F6FBF9,
+> tinta #111D18, plus `--amigos-green-text` #00875E for green type on light
+> surfaces. Type, spacing and radii are unchanged from v2. Brand-coloured text
+> (`--text-brand`, `--text-link`, and page-level `color:var(--amigos-green)`)
+> is routed to #00875E because #38B285 on paper is only ~2.5:1. Note that
+> white on #38B285 is ~2.6:1 — AA for large/bold text only.
+
 **Refreshed to the 2026 brandbook (Arculati kézikönyv, 2. verzió) — „Barátként
 kísérünk a gyógyulás útján."** Upstream:
 https://claude.ai/design/p/8c42e9a0-fb0f-44fb-a112-1a201df05438

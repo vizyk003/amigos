@@ -20,7 +20,7 @@
   <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
   <style>
     html,body{margin:0;background:var(--amigos-paper);}
-    a{color:var(--amigos-green);} a:hover{color:var(--amigos-green-deep);}
+    a{color:var(--amigos-green-text);} a:hover{color:var(--amigos-green-deep);}
     @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
@@ -44,7 +44,7 @@
     </div>
   </header>
 
-  <div style="background:#F1F4EC;border-bottom:1px solid var(--amigos-line);font-size:13px;color:var(--amigos-ink-3);">
+  <div style="background:#ECF4F1;border-bottom:1px solid var(--amigos-line);font-size:13px;color:var(--amigos-ink-3);">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1280px;margin:0 auto;padding:8px clamp(20px,4vw,48px);">
       <span>Low-fidelity wireframe — {{ pageUrl }}</span>
       <span style="display:flex;gap:20px;"><a href="#sitemap" style="text-decoration:none;">Oldaltérkép</a><a href="Amigos Fooldal v2.dc.html" style="text-decoration:none;">Főoldal (kész design)</a></span>
@@ -58,7 +58,7 @@
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,4vw,48px);">
           <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
             <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--amigos-ink);padding-top:14px;">
-              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">{{ g.title }}</span>
+              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">{{ g.title }}</span>
               <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="5">
                 <a href="{{ i.href }}" style="text-decoration:none;color:var(--amigos-ink);font-size:15px;padding:3px 0;">{{ i.title }}</a>
               </sc-for>
@@ -86,7 +86,7 @@
                     </sc-for>
                   </div>
                 </div>
-                <div style="aspect-ratio:1/1;border-radius:{{ s.mediaRadius }};border:1px dashed #A8BA98;background:{{ s.mediaBg }};display:flex;align-items:center;justify-content:center;padding:14%;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:{{ s.mediaFg }};">{{ s.media }}</div>
+                <div style="aspect-ratio:1/1;border-radius:{{ s.mediaRadius }};border:1px dashed #98BAAC;background:{{ s.mediaBg }};display:flex;align-items:center;justify-content:center;padding:14%;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:{{ s.mediaFg }};">{{ s.media }}</div>
               </div>
             </section>
           </sc-if>
@@ -115,7 +115,7 @@
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(20px,3vw,32px);">
                   <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
                     <div style="display:flex;flex-direction:column;gap:14px;">
-                      <div style="aspect-ratio:{{ i.ratio }};border-radius:var(--radius-card);border:1px dashed #A8BA98;background:var(--surface-tint-paper);display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--amigos-ink-3);">{{ i.media }}</div>
+                      <div style="aspect-ratio:{{ i.ratio }};border-radius:var(--radius-card);border:1px dashed #98BAAC;background:var(--surface-tint-paper);display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--amigos-ink-3);">{{ i.media }}</div>
                       <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">{{ i.title }}</h3>
                       <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">{{ i.text }}</p>
                       <a href="{{ i.href }}" style="font-size:15px;font-weight:600;text-decoration:none;">{{ i.link }}</a>
@@ -152,7 +152,7 @@
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,3vw,40px);">
                   <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
                     <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--amigos-green);padding-top:16px;">
-                      <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:var(--amigos-green);">{{ i.n }}</span>
+                      <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:var(--amigos-green-text);">{{ i.n }}</span>
                       <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">{{ i.title }}</span>
                       <span style="font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">{{ i.text }}</span>
                     </div>
@@ -167,7 +167,7 @@
               <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:clamp(20px,3vw,40px);">
                 <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="4">
                   <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--amigos-line);padding-top:16px;">
-                    <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green);font-variant-numeric:tabular-nums;">{{ i.n }}</span>
+                    <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green-text);font-variant-numeric:tabular-nums;">{{ i.n }}</span>
                     <span style="font-size:var(--text-body);color:var(--amigos-ink-2);">{{ i.label }}</span>
                     <span style="font-size:13px;color:var(--amigos-ink-3);">{{ i.note }}</span>
                   </div>
@@ -207,7 +207,7 @@
             <section style="background:var(--amigos-paper);padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--amigos-line);">
               <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:4fr 8fr;gap:clamp(32px,5vw,72px);align-items:start;">
                 <nav style="position:sticky;top:96px;display:flex;flex-direction:column;gap:8px;font-size:15px;">
-                  <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Tartalom</span>
+                  <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">Tartalom</span>
                   <sc-for list="{{ s.toc }}" as="t" hint-placeholder-count="5">
                     <span style="color:var(--amigos-ink-2);">{{ t.label }}</span>
                   </sc-for>
@@ -216,7 +216,7 @@
                   <sc-for list="{{ s.blocks }}" as="b" hint-placeholder-count="5">
                     <div style="display:flex;flex-direction:column;gap:10px;">
                       <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">{{ b.title }}</h3>
-                      <span style="display:block;height:{{ b.h }};border-radius:6px;background:#EEF1EA;"></span>
+                      <span style="display:block;height:{{ b.h }};border-radius:6px;background:#EAF1EE;"></span>
                     </div>
                   </sc-for>
                   <span style="font-size:13px;color:var(--amigos-ink-3);">{{ s.updated }}</span>
@@ -246,26 +246,39 @@
     </sc-if>
   </main>
 
-  <footer style="background:var(--amigos-ink);color:var(--amigos-white);padding:clamp(40px,6vw,72px) 0 32px;">
+  <footer style="background:var(--amigos-ink);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
-          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 67px; display: block; width: 67px" width="500" height="500">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
           <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
           <span style="font-size:14px;color:var(--text-on-ink);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
-          <sc-for list="{{ footerColumns }}" as="c" hint-placeholder-count="3">
-            <div style="display:flex;flex-direction:column;gap:9px;">
-              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">{{ c.title }}</span>
-              <sc-for list="{{ c.links }}" as="l" hint-placeholder-count="4">
-                <a href="{{ l.href }}" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">{{ l.label }}</a>
-              </sc-for>
-            </div>
-          </sc-for>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Ügyintézés</span>
+            <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
+            <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
+            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
+            <a href="Amigos Aloldalak.dc.html#gyik" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">GYIK</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Támogatás</span>
+            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Jogi</span>
+            <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="Amigos Aloldalak.dc.html#aszf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="Amigos Aloldalak.dc.html#sitemap" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Oldaltérkép</a>
+          </div>
         </div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:var(--text-on-ink);">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #2C4038;padding-top:20px;font-size:14px;color:var(--text-on-ink);">
         <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
       </div>
     </div>
@@ -286,18 +299,18 @@ class Component extends DCLogic {
   }
 
   pages() {
-    const G = '#437613', P = '#993166', W = '#FFFFFF', PAPER = '#FAFAF6';
+    const G = '#38B285', P = '#993166', W = '#FFFFFF', PAPER = '#F6FBF9';
     const ctaG = (label, href) => ({ label, href, bg: G, fg: W, border: G });
     const ctaP = (label, href) => ({ label, href, bg: P, fg: W, border: P });
-    const ctaO = (label, href) => ({ label, href, bg: 'transparent', fg: '#171C12', border: '#171C12' });
+    const ctaO = (label, href) => ({ label, href, bg: 'transparent', fg: '#111D18', border: '#111D18' });
     const ctaI = (label, href) => ({ label, href, bg: W, fg: G, border: W });
     const ctaIO = (label, href) => ({ label, href, bg: 'transparent', fg: W, border: W });
 
     const hero = (o) => Object.assign({
-      t: 'hero', bg: PAPER, fg: '#171C12', eyebrowColor: G, crumbColor: '#5A6650',
-      mediaRadius: '50%', mediaBg: '#EEF3E8', mediaFg: '#5A6650', media: 'FOTÓ – kör kivágás', ctas: []
+      t: 'hero', bg: PAPER, fg: '#111D18', eyebrowColor: G, crumbColor: '#50665D',
+      mediaRadius: '50%', mediaBg: '#E6F3ED', mediaFg: '#50665D', media: 'FOTÓ – kör kivágás', ctas: []
     }, o);
-    const heroGreen = (o) => hero(Object.assign({ bg: G, fg: W, eyebrowColor: '#FFFFFF', crumbColor: '#FFFFFF', mediaBg: '#365F0F', mediaFg: '#DCE6D2' }, o));
+    const heroGreen = (o) => hero(Object.assign({ bg: G, fg: W, eyebrowColor: '#FFFFFF', crumbColor: '#FFFFFF', mediaBg: '#31A47A', mediaFg: '#D2E6DE' }, o));
     const heroPurple = (o) => hero(Object.assign({ bg: P, fg: W, eyebrowColor: '#F2DCE8', crumbColor: '#F2DCE8', mediaBg: '#7B2752', mediaFg: '#F2DCE8' }, o));
     const split = (title, text, items) => ({ t: 'split', bg: PAPER, title, text, items: (items || []).map(text => ({ text })) });
     const cards = (title, items) => ({ t: 'cards', bg: PAPER, title, items: items.map(i => Object.assign({ ratio: '4/5', media: 'FOTÓ', link: 'Tovább', href: '#' }, i)) });
@@ -311,7 +324,7 @@ class Component extends DCLogic {
     return {
       'legyel-amigo': { title: 'Legyél Amigo!', url: '/legyel-amigo', sections: [
         heroGreen({ crumb: 'Főoldal / Legyél Amigo!', eyebrow: 'Önkéntesség', title: 'Heti két óra. Egy gyereknek az egész hete.', text: 'Egyetemistaként heti egy alkalommal ugyanahhoz a gyerekhez jársz vissza a kórházba. Nem animátor vagy: barát.', media: 'FOTÓ – Amigo és gyerek', ctas: [ctaI('Jelentkezem', '#jelentkezes'), ctaIO('Mit csinál egy Amigo?', '#programok')] }),
-        split('Kinek szól', 'A jelentkezés komoly vállalás, és pont ezért működik: a gyerekek számíthatnak arra, hogy jövő héten is jössz.', ['Aktív egyetemista hallgatói jogviszony', 'Hat városunk egyikében: Budapest, Debrecen, Szeged, Pécs, Miskolc, Győr', 'Egy tanév vállalás, heti egy látogatás', 'Részvétel az Amigos Akadémia képzésen']),
+        split('Kinek szól', 'A jelentkezés komoly vállalás, és pont ezért működik: a gyerekek számíthatnak arra, hogy jövő héten is jössz.', ['Aktív egyetemista hallgatói jogviszony', 'Hat városunk egyikében: Budapest, Debrecen, Szeged, Pécs, Miskolc, Szombathely', 'Egy tanév vállalás, heti egy látogatás', 'Részvétel az Amigos Akadémia képzésen']),
         steps('Így lesz valakiből Amigo', [
           { n: '01', title: 'Jelentkezés', text: 'Online űrlap, néhány perc. Öt munkanapon belül válaszolunk.' },
           { n: '02', title: 'Amigos felvételi', text: 'Személyes beszélgetés a városod Amigo-felelősével.' },
@@ -332,7 +345,7 @@ class Component extends DCLogic {
           { label: 'Teljes név', hint: 'Kovács Anna' }, { label: 'E-mail', hint: 'anna@pelda.hu' },
           { label: 'Telefonszám', hint: '+36 30 123 4567' }, { label: 'Születési év', hint: '2004' },
           { label: 'Egyetem', hint: 'Válassz a listából' }, { label: 'Szak és évfolyam', hint: 'pszichológia, 2. évfolyam' },
-          { label: 'Város', hint: 'Budapest / Debrecen / Szeged / Pécs / Miskolc / Győr' },
+          { label: 'Város', hint: 'Budapest / Debrecen / Szeged / Pécs / Miskolc / Szombathely' },
           { label: 'Motiváció', hint: 'Miért szeretnél Amigo lenni? (max 800 karakter)', h: '120px' }
         ], submit: 'Jelentkezés elküldése', submitHref: '#legyel-koszonjuk' }),
         split('Mi történik az elküldés után', 'Az űrlap nem kötelezettség: a felvételi beszélgetésen mindketten eldönthetitek, hogy jó-e ez így.', ['Öt munkanapon belül e-mailben válaszolunk', 'Felvételi beszélgetés a városod Amigo-felelősével', 'Az Akadémia a szemeszter elején indul'])
@@ -367,7 +380,7 @@ class Component extends DCLogic {
           { title: 'Szeged', text: '3 kórházi osztály', meta: '44 Amigo' },
           { title: 'Pécs', text: '2 kórházi osztály', meta: '36 Amigo' },
           { title: 'Miskolc', text: '2 kórházi osztály', meta: '28 Amigo' },
-          { title: 'Győr', text: '2 kórházi osztály', meta: '24 Amigo' }
+          { title: 'Szombathely', text: '2 kórházi osztály', meta: '24 Amigo' }
         ]),
         cta({ title: 'Minden számunk mögött ott a forrás.', text: 'Éves beszámolók, közhasznúsági jelentés, etikus adománygyűjtő tanúsítvány.', ctas: [ctaI('Átláthatóság', '#atlathatosag'), ctaIO('Dokumentumok', '#dokumentumok')] })
       ] },
@@ -709,12 +722,7 @@ class Component extends DCLogic {
 
     return {
       isSitemap, isPage: !isSitemap, page, sections, groups,
-      pageUrl: isSitemap ? '/oldalterkep' : page.url,
-      footerColumns: [
-        { title: 'Ügyintézés', links: [{ label: 'Kapcsolat', href: '#kapcsolat' }, { label: 'Dokumentumok', href: '#dokumentumok' }, { label: 'Átláthatóság', href: '#atlathatosag' }, { label: 'GYIK', href: '#gyik' }] },
-        { title: 'Támogatás', links: [{ label: 'Rendszeres támogatás', href: '#tamogatom' }, { label: 'Adó 1%', href: '#ado-1-szazalek' }, { label: 'Vállalati támogatás', href: '#vallalati' }, { label: 'Adománybolt', href: '#bolt' }] },
-        { title: 'Jogi', links: [{ label: 'Adatkezelési tájékoztató', href: '#adatkezeles' }, { label: 'ÁSZF', href: '#aszf' }, { label: 'Oldaltérkép', href: '#sitemap' }] }
-      ]
+      pageUrl: isSitemap ? '/oldalterkep' : page.url
     };
   }
 }

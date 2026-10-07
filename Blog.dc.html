@@ -26,7 +26,7 @@
   <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
   <style>
     html,body{margin:0;background:var(--amigos-paper);}
-    a{color:var(--amigos-green);} a:hover{color:var(--amigos-green-deep);}
+    a{color:var(--amigos-green-text);} a:hover{color:var(--amigos-green-deep);}
     [data-post-row]:hover [data-arrow]{transform:translateX(6px);}
     [data-post-row]:hover img{transform:scale(1.02);}
     @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-row]{grid-template-columns:minmax(0,1fr) !important;} }
@@ -44,10 +44,10 @@
     <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
       <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
       <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
-        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Legyél Amigo</a>
-        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Munkánk &amp; Hatásunk</a>
-        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Gyerekek &amp; Szülők</a>
-        <a href="Adomanybolt.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Adománybolt</a>
+        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#00875E;">Legyél Amigo</a>
+        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#00875E;">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#00875E;">Gyerekek &amp; Szülők</a>
+        <a href="Adomanybolt.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#00875E;">Adománybolt</a>
       </nav>
       <div style="display:flex;justify-content:flex-end;">
         <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
@@ -64,7 +64,7 @@
         <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:54ch;color:var(--amigos-ink-2);">Amit az Amigos csapata ír: kutatások, szervezeti hírek és mindaz, amit a kórházi látogatásokon látunk.</p>
       </div>
       <a href="#pulcsi" style="position:relative;justify-self:start;text-decoration:none;display:flex;flex-direction:column;gap:8px;"><img class="am-ill" src="assets/illustrations/amigos-ill-buborek-green.png" alt="" aria-hidden="true" style="right:-30%;top:-70%;width:118px;transform:rotate(8deg);">
-        <span class="am-note" style="--am-rot:-3deg;color:var(--amigos-green);">→ friss:</span>
+        <span class="am-note" style="--am-rot:-3deg;color:var(--amigos-green-text);">→ friss:</span>
         <span class="am-sticker am-sticker--note" style="--am-rot:2deg;max-width:300px;font-size:30px;">A zöld pulcsi az új szuperhős köpeny</span>
       </a>
     </div>
@@ -85,7 +85,7 @@
             </span>
             <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;text-wrap:pretty;">A zöld pulcsi az új szuperhős köpeny</h2>
             <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:56ch;color:var(--amigos-ink-2);">Mindenkinek van legalább egy kedvenc szuperhőse. Vannak viszont hősök, akikkel a kórházakban találkozol: a mi szupererőnk a barátság, a játék és a jelenlét.</p>
-            <span data-arrow="" style="font-size:16px;font-weight:600;color:var(--amigos-green);display:inline-block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">Elolvasom →</span>
+            <span data-arrow="" style="font-size:16px;font-weight:600;color:var(--amigos-green-text);display:inline-block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">Elolvasom →</span>
           </div>
         </div>
       </a>
@@ -99,7 +99,7 @@
             <span style="font-size:14px;color:var(--amigos-ink-3);">2026. augusztus 10. · Dongó Kristóf · 1 perc</span>
             <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;text-wrap:pretty;">A kórházi magány majdnem annyira fáj, mint a betegség maga</h2>
             <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:56ch;color:var(--amigos-ink-2);">A szülők 41%-a attól tart, hogy a gyerek kiszakad a megszokott életéből. Friss reprezentatív kutatás a barátságok szerepéről a gyógyulásban.</p>
-            <span data-arrow="" style="font-size:16px;font-weight:600;color:var(--amigos-green);display:inline-block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">Elolvasom →</span>
+            <span data-arrow="" style="font-size:16px;font-weight:600;color:var(--amigos-green-text);display:inline-block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">Elolvasom →</span>
           </div>
         </div>
       </a>
@@ -113,7 +113,7 @@
             <span style="font-size:14px;color:var(--amigos-ink-3);">2026. július 31. · Fórián Virág · 3 perc</span>
             <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;max-width:22ch;text-wrap:pretty;">Új fejezet kezdődik az Amigos történetében: Halász Erika az Alapítvány új ügyvezetője</h2>
             <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:56ch;color:var(--amigos-ink-2);">2026. július 22-től Erika felel az Alapítvány operatív vezetéséért, hosszú távú stratégiájáért és fenntartható működéséért.</p>
-            <span data-arrow="" style="font-size:16px;font-weight:600;color:var(--amigos-green);display:inline-block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">Elolvasom →</span>
+            <span data-arrow="" style="font-size:16px;font-weight:600;color:var(--amigos-green-text);display:inline-block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">Elolvasom →</span>
           </div>
         </div>
       </a>
@@ -123,7 +123,7 @@
 
   <article id="pulcsi" data-screen-label="Bejegyzés — zöld pulcsi" style="background:var(--amigos-paper);border-top:1px solid var(--amigos-line);padding:clamp(64px,9vw,120px) 0;">
     <div style="max-width:840px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:24px;">
-      <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Történet</span>
+      <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">Történet</span>
       <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);text-wrap:pretty;">A zöld pulcsi az új szuperhős köpeny</h2>
       <span style="font-size:15px;color:var(--amigos-ink-3);">Írta: Sólyom Diána · 2026. szeptember 12.</span>
       <div style="aspect-ratio:16/9;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
@@ -141,7 +141,7 @@
 
   <article id="magany" data-screen-label="Bejegyzés — kórházi magány" style="background:var(--amigos-white);border-top:1px solid var(--amigos-line);padding:clamp(64px,9vw,120px) 0;">
     <div style="max-width:840px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:24px;">
-      <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Kutatás</span>
+      <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">Kutatás</span>
       <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);text-wrap:pretty;">A kórházi magány majdnem annyira fáj, mint a betegség maga</h2>
       <span style="font-size:15px;color:var(--amigos-ink-3);">Dongó Kristóf · 2026. augusztus 10.</span>
       <div style="aspect-ratio:16/9;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
@@ -151,11 +151,11 @@
       <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);">A kórházban fekvő gyerekek esetében a gyógyulás nemcsak a kezelésekről és a fizikai fájdalomról szól. A szülők szerint a lelki teher — különösen a magány és a barátoktól való elszakadás — közel ugyanakkora megterhelést jelent, mint maga a betegség.</p>
       <div data-split="" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,40px);border-top:1px solid var(--amigos-line);border-bottom:1px solid var(--amigos-line);padding:clamp(24px,3vw,36px) 0;">
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green);font-variant-numeric:tabular-nums;">46%</span>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green-text);font-variant-numeric:tabular-nums;">46%</span>
           <span style="font-size:15px;line-height:1.5;color:var(--amigos-ink-2);max-width:32ch;">szerint a gyerekek leginkább a fájdalomtól és a kezelésektől tartanak.</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green);font-variant-numeric:tabular-nums;">41%</span>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green-text);font-variant-numeric:tabular-nums;">41%</span>
           <span style="font-size:15px;line-height:1.5;color:var(--amigos-ink-2);max-width:32ch;">attól fél, hogy a gyerek elszigetelődik, és nem találkozik a barátaival.</span>
         </div>
       </div>
@@ -167,7 +167,7 @@
 
   <article id="ugyvezeto" data-screen-label="Bejegyzés — új ügyvezető" style="background:var(--amigos-paper);border-top:1px solid var(--amigos-line);padding:clamp(64px,9vw,120px) 0;">
     <div style="max-width:840px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:24px;">
-      <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Szervezet</span>
+      <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">Szervezet</span>
       <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);text-wrap:pretty;">Új fejezet kezdődik az Amigos történetében: Halász Erika az Alapítvány új ügyvezetője</h2>
       <span style="font-size:15px;color:var(--amigos-ink-3);">Fórián Virág · 2026. július 31.</span>
       <div style="aspect-ratio:16/9;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
@@ -192,17 +192,18 @@
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
           <div style="display:flex;flex-direction:column;gap:9px;">
-            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Az Amigosról</span>
-            <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Munkánk &amp; Hatásunk</a>
-            <a href="Legyel Amigo.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Legyél Amigo</a>
-            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
-            <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Ügyintézés</span>
+            <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
             <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
+            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
+            <a href="Amigos Aloldalak.dc.html#gyik" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">GYIK</a>
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Támogatás</span>
             <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
             <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
             <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
@@ -213,7 +214,7 @@
           </div>
         </div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:var(--text-on-ink);">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #2C4038;padding-top:20px;font-size:14px;color:var(--text-on-ink);">
         <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
       </div>
     </div>
