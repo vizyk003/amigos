@@ -246,23 +246,36 @@
     </sc-if>
   </main>
 
-  <footer style="background:var(--amigos-ink);color:var(--amigos-white);padding:clamp(40px,6vw,72px) 0 32px;">
+  <footer style="background:var(--amigos-ink);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
-          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 67px; display: block; width: 67px" width="500" height="500">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
           <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
           <span style="font-size:14px;color:var(--text-on-ink);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
-          <sc-for list="{{ footerColumns }}" as="c" hint-placeholder-count="3">
-            <div style="display:flex;flex-direction:column;gap:9px;">
-              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">{{ c.title }}</span>
-              <sc-for list="{{ c.links }}" as="l" hint-placeholder-count="4">
-                <a href="{{ l.href }}" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">{{ l.label }}</a>
-              </sc-for>
-            </div>
-          </sc-for>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Ügyintézés</span>
+            <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
+            <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
+            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
+            <a href="Amigos Aloldalak.dc.html#gyik" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">GYIK</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Támogatás</span>
+            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Jogi</span>
+            <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="Amigos Aloldalak.dc.html#aszf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="Amigos Aloldalak.dc.html#sitemap" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Oldaltérkép</a>
+          </div>
         </div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:var(--text-on-ink);">
@@ -311,7 +324,7 @@ class Component extends DCLogic {
     return {
       'legyel-amigo': { title: 'Legyél Amigo!', url: '/legyel-amigo', sections: [
         heroGreen({ crumb: 'Főoldal / Legyél Amigo!', eyebrow: 'Önkéntesség', title: 'Heti két óra. Egy gyereknek az egész hete.', text: 'Egyetemistaként heti egy alkalommal ugyanahhoz a gyerekhez jársz vissza a kórházba. Nem animátor vagy: barát.', media: 'FOTÓ – Amigo és gyerek', ctas: [ctaI('Jelentkezem', '#jelentkezes'), ctaIO('Mit csinál egy Amigo?', '#programok')] }),
-        split('Kinek szól', 'A jelentkezés komoly vállalás, és pont ezért működik: a gyerekek számíthatnak arra, hogy jövő héten is jössz.', ['Aktív egyetemista hallgatói jogviszony', 'Hat városunk egyikében: Budapest, Debrecen, Szeged, Pécs, Miskolc, Győr', 'Egy tanév vállalás, heti egy látogatás', 'Részvétel az Amigos Akadémia képzésen']),
+        split('Kinek szól', 'A jelentkezés komoly vállalás, és pont ezért működik: a gyerekek számíthatnak arra, hogy jövő héten is jössz.', ['Aktív egyetemista hallgatói jogviszony', 'Hat városunk egyikében: Budapest, Debrecen, Szeged, Pécs, Miskolc, Szombathely', 'Egy tanév vállalás, heti egy látogatás', 'Részvétel az Amigos Akadémia képzésen']),
         steps('Így lesz valakiből Amigo', [
           { n: '01', title: 'Jelentkezés', text: 'Online űrlap, néhány perc. Öt munkanapon belül válaszolunk.' },
           { n: '02', title: 'Amigos felvételi', text: 'Személyes beszélgetés a városod Amigo-felelősével.' },
@@ -332,7 +345,7 @@ class Component extends DCLogic {
           { label: 'Teljes név', hint: 'Kovács Anna' }, { label: 'E-mail', hint: 'anna@pelda.hu' },
           { label: 'Telefonszám', hint: '+36 30 123 4567' }, { label: 'Születési év', hint: '2004' },
           { label: 'Egyetem', hint: 'Válassz a listából' }, { label: 'Szak és évfolyam', hint: 'pszichológia, 2. évfolyam' },
-          { label: 'Város', hint: 'Budapest / Debrecen / Szeged / Pécs / Miskolc / Győr' },
+          { label: 'Város', hint: 'Budapest / Debrecen / Szeged / Pécs / Miskolc / Szombathely' },
           { label: 'Motiváció', hint: 'Miért szeretnél Amigo lenni? (max 800 karakter)', h: '120px' }
         ], submit: 'Jelentkezés elküldése', submitHref: '#legyel-koszonjuk' }),
         split('Mi történik az elküldés után', 'Az űrlap nem kötelezettség: a felvételi beszélgetésen mindketten eldönthetitek, hogy jó-e ez így.', ['Öt munkanapon belül e-mailben válaszolunk', 'Felvételi beszélgetés a városod Amigo-felelősével', 'Az Akadémia a szemeszter elején indul'])
@@ -367,7 +380,7 @@ class Component extends DCLogic {
           { title: 'Szeged', text: '3 kórházi osztály', meta: '44 Amigo' },
           { title: 'Pécs', text: '2 kórházi osztály', meta: '36 Amigo' },
           { title: 'Miskolc', text: '2 kórházi osztály', meta: '28 Amigo' },
-          { title: 'Győr', text: '2 kórházi osztály', meta: '24 Amigo' }
+          { title: 'Szombathely', text: '2 kórházi osztály', meta: '24 Amigo' }
         ]),
         cta({ title: 'Minden számunk mögött ott a forrás.', text: 'Éves beszámolók, közhasznúsági jelentés, etikus adománygyűjtő tanúsítvány.', ctas: [ctaI('Átláthatóság', '#atlathatosag'), ctaIO('Dokumentumok', '#dokumentumok')] })
       ] },
@@ -709,12 +722,7 @@ class Component extends DCLogic {
 
     return {
       isSitemap, isPage: !isSitemap, page, sections, groups,
-      pageUrl: isSitemap ? '/oldalterkep' : page.url,
-      footerColumns: [
-        { title: 'Ügyintézés', links: [{ label: 'Kapcsolat', href: '#kapcsolat' }, { label: 'Dokumentumok', href: '#dokumentumok' }, { label: 'Átláthatóság', href: '#atlathatosag' }, { label: 'GYIK', href: '#gyik' }] },
-        { title: 'Támogatás', links: [{ label: 'Rendszeres támogatás', href: '#tamogatom' }, { label: 'Adó 1%', href: '#ado-1-szazalek' }, { label: 'Vállalati támogatás', href: '#vallalati' }, { label: 'Adománybolt', href: '#bolt' }] },
-        { title: 'Jogi', links: [{ label: 'Adatkezelési tájékoztató', href: '#adatkezeles' }, { label: 'ÁSZF', href: '#aszf' }, { label: 'Oldaltérkép', href: '#sitemap' }] }
-      ]
+      pageUrl: isSitemap ? '/oldalterkep' : page.url
     };
   }
 }

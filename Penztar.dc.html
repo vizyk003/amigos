@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Pénztár — Adománybolt — Amigos a gyerekekért Alapítvány</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Veszel egy könyvet: két gyerekhez is eljut egy élmény. Vásárlásoddal a kórházi foglalkozásainkat támogatod.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="Amigos a gyerekekért Alapítvány">
+  <meta property="og:title" content="Adománybolt — Amigos a gyerekekért Alapítvány">
+  <meta property="og:description" content="Veszel egy könyvet: két gyerekhez is eljut egy élmény. Vásárlásoddal a kórházi foglalkozásainkat támogatod.">
+  <meta property="og:image" content="assets/community/photos/lift-dobozzal.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;background:var(--amigos-paper);}
+    a{color:var(--amigos-green);} a:hover{color:var(--amigos-green-deep);}
+    @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
+    @keyframes am-wave-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}
+    @keyframes am-wave-drift{0%{transform:translate(-50%,0);}50%{transform:translate(-50%,1.5px);}100%{transform:translate(-50%,0);}}
+    @media (prefers-reduced-motion: reduce){ [data-wave]{animation:none !important;} [data-wave] path{animation:none !important;stroke-dashoffset:0 !important;} }
+
+    @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
+    [data-field] > label{display:block;margin-bottom:6px;font-size:14px;font-weight:600;color:var(--amigos-ink);}
+    [data-field] abbr{color:var(--am-error);text-decoration:none;border:0;}
+    [data-opt]{font-weight:400;color:var(--amigos-ink-3);}
+    [data-field] input:not([type="checkbox"]):not([type="radio"]),[data-field] select,[data-field] textarea{width:100%;min-width:0;height:52px;padding:0 14px;border:2px solid var(--border-control);border-radius:var(--radius-md);background:var(--amigos-white);color:var(--amigos-ink);font:inherit;font-size:16px;box-sizing:border-box;}
+    [data-field] textarea{height:auto;padding:12px 14px;resize:vertical;}
+    [data-field] input:focus,[data-field] select:focus,[data-field] textarea:focus{outline:3px solid var(--focus-color);outline-offset:1px;border-color:var(--amigos-ink);}
+    [data-field][data-invalid] input,[data-field][data-invalid] select{border-color:var(--am-error);}
+    [data-field] [data-err]{display:block;margin-top:6px;font-size:13px;color:var(--am-error);}
+    [data-co-submit]:hover{background:var(--action-primary-hover) !important;}
+    [data-co-submit][disabled]{opacity:0.6;cursor:progress !important;}
+    @media (max-width: 560px){ [data-co-row]{grid-template-columns:minmax(0,1fr) !important;} }
+    [data-add]:hover,[data-add][data-added]{background:var(--amigos-green) !important;color:var(--amigos-white) !important;}
+    [data-product-link]:focus-visible{outline:3px solid var(--focus-color);outline-offset:4px;border-radius:var(--radius-card);}
+  </style>
+  <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/brand.css">
+  <script src="assets/responsive.js" defer></script>
+  <script src="assets/shop/products.js"></script>
+  <script src="assets/shop/cart.js" defer></script>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--amigos-ink);">
+
+  <a href="#tartalom" style="position:absolute;left:-9999px;top:0;z-index:100;background:var(--amigos-white);color:var(--amigos-ink);padding:12px 20px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Ugrás a tartalomra</a>
+<header style="position:sticky;top:0;z-index:30;background:var(--amigos-paper);border-bottom:1px solid var(--amigos-line);">
+    <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
+      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Legyél Amigo</a>
+        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Gyerekek &amp; Szülők</a>
+        <a href="Adomanybolt.dc.html" aria-current="page" style="color:var(--amigos-green);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+      </nav>
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:16px;">
+        <button data-cart-open="" type="button" style="display:flex;align-items:center;gap:10px;background:transparent;border:0;font:inherit;font-size:var(--text-nav);font-weight:500;color:var(--amigos-ink);cursor:pointer;padding:0;">
+          Kosár
+          <span data-cart-count="" style="min-width:26px;height:26px;padding:0 7px;border-radius:999px;background:var(--amigos-green);color:var(--amigos-white);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;">0</span>
+        </button>
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+      </div>
+    </div>
+  </header>
+<main id="tartalom">
+
+  <!--
+    Pénztár — prototype of WooCommerce's checkout (amigos.hu/penztar/).
+
+    Field names, order, labels and required flags copy the live checkout
+    (checked 2026-10-07), so the WordPress theme can restyle
+    woocommerce/checkout/form-checkout.php to this layout one field at a
+    time. Inside WordPress this page is not used: assets/shop/cart.js hands
+    the cart to WooCommerce and sends the visitor to the real /penztar/.
+
+    Live checkout facts mirrored here:
+      · billing_* fields, Hungarian order (vezetéknév first); company,
+        address_2 optional. billing_state (Megye, optional) is left out.
+      · ship_to_different_address reveals the shipping_* fields.
+      · foxpost_woo_parcel_apt_id — Foxpost / Packeta point, from the
+        foxpost-woo-parcel plugin (~5 000 points live; a sample here).
+      · shipping is free; the only payment method is Stripe (card).
+  -->
+
+  <section data-screen-label="Pénztár" style="background:var(--amigos-paper);padding:clamp(32px,4vw,56px) 0 clamp(72px,10vw,120px);">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(24px,3vw,40px);">
+      <nav aria-label="Morzsamenü" style="font-size:13px;color:var(--amigos-ink-3);display:flex;gap:6px;flex-wrap:wrap;">
+        <a href="Amigos Fooldal v2.dc.html" style="color:var(--amigos-ink-3);text-decoration:none;">Főoldal</a><span aria-hidden="true">/</span>
+        <a href="Adomanybolt.dc.html" style="color:var(--amigos-ink-3);text-decoration:none;">Adománybolt</a><span aria-hidden="true">/</span>
+        <span aria-current="page" style="color:var(--amigos-ink-2);">Pénztár</span>
+      </nav>
+
+      <ol data-co-steps="" aria-label="Lépések" style="list-style:none;margin:0;padding:0;display:flex;gap:10px 24px;flex-wrap:wrap;font-size:14px;font-weight:600;">
+        <li style="color:var(--amigos-ink-3);">1 · Kosár</li>
+        <li data-step="adatok" aria-current="step" style="color:var(--amigos-green);">2 · Adatok és fizetés</li>
+        <li data-step="kesz" style="color:var(--amigos-ink-3);">3 · Kész</li>
+      </ol>
+
+      <!-- Empty cart -->
+      <div data-co-empty="" style="display:none;flex-direction:column;gap:16px;padding:clamp(24px,4vw,56px) 0;">
+        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);">A kosarad üres.</h1>
+        <p style="margin:0;font-size:var(--text-body-lg);color:var(--amigos-ink-2);">Válassz valamit az Adományboltból — minden vásárlás a heti kórházi programokat fedezi.</p>
+        <a href="Adomanybolt.dc.html#termekek" style="font-weight:600;">Vissza az Adományboltba →</a>
+      </div>
+
+      <!-- Thank you (WooCommerce: /penztar/order-received/<id>/) -->
+      <div data-co-done="" style="display:none;flex-direction:column;gap:20px;max-width:720px;">
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Sikeres rendelés</span>
+        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);">Köszönjük, <span data-co-done-name=""></span>!</h1>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);">A rendelésszámod <strong data-co-done-no="" style="color:var(--amigos-ink);"></strong>. A visszaigazolást elküldtük ide: <strong data-co-done-email="" style="color:var(--amigos-ink);"></strong>. A csomagot két héten belül feladjuk ide: <span data-co-done-point=""></span>.</p>
+        <div data-co-done-lines="" style="display:flex;flex-direction:column;background:var(--amigos-white);border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:8px clamp(20px,2.4vw,28px);"></div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="Adomanybolt.dc.html" style="display:inline-flex;align-items:center;height:52px;padding:0 28px;border-radius:var(--radius-pill);background:var(--amigos-green);color:var(--amigos-white);font-weight:600;text-decoration:none;">Vissza a boltba</a>
+          <a href="Amigos Fooldal v2.dc.html#tamogatom" style="display:inline-flex;align-items:center;height:52px;padding:0 28px;border-radius:var(--radius-pill);border:2px solid var(--amigos-plum);color:var(--amigos-plum);font-weight:600;text-decoration:none;">Rendszeres támogatás</a>
+        </div>
+      </div>
+
+      <div data-co-main="" data-split="" style="display:grid;grid-template-columns:7fr 5fr;gap:clamp(28px,5vw,72px);align-items:start;">
+
+        <form data-co-form="" class="checkout woocommerce-checkout" name="checkout" method="post" action="#" style="display:flex;flex-direction:column;gap:clamp(28px,3vw,40px);">
+          <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);">Pénztár</h1>
+
+          <div data-co-errors="" role="alert" tabindex="-1" style="display:none;padding:16px 20px;border-radius:var(--radius-md);background:var(--am-error-bg);color:var(--am-error);font-size:15px;line-height:1.5;"></div>
+
+          <fieldset style="border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:16px;">
+            <legend style="padding:0;margin-bottom:16px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;">Számlázási adatok</legend>
+            <div data-co-row="" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <p data-field="" style="margin:0;"><label for="billing_last_name">Vezetéknév <abbr title="kötelező">*</abbr></label><input id="billing_last_name" name="billing_last_name" autocomplete="family-name" data-required=""></p>
+              <p data-field="" style="margin:0;"><label for="billing_first_name">Keresztnév <abbr title="kötelező">*</abbr></label><input id="billing_first_name" name="billing_first_name" autocomplete="given-name" data-required=""></p>
+            </div>
+            <p data-field="" style="margin:0;"><label for="billing_company">Cégnév <span data-opt="">(nem kötelező)</span></label><input id="billing_company" name="billing_company" autocomplete="organization"></p>
+            <p data-field="" style="margin:0;"><label for="billing_country">Ország <abbr title="kötelező">*</abbr></label><select id="billing_country" name="billing_country" autocomplete="country" data-required=""><option value="HU" selected>Magyarország</option></select></p>
+            <div data-co-row="" style="display:grid;grid-template-columns:1fr 2fr;gap:16px;">
+              <p data-field="" style="margin:0;"><label for="billing_postcode">Irányítószám <abbr title="kötelező">*</abbr></label><input id="billing_postcode" name="billing_postcode" autocomplete="postal-code" inputmode="numeric" maxlength="4" data-required="" data-check="postcode"></p>
+              <p data-field="" style="margin:0;"><label for="billing_city">Város <abbr title="kötelező">*</abbr></label><input id="billing_city" name="billing_city" autocomplete="address-level2" data-required=""></p>
+            </div>
+            <p data-field="" style="margin:0;"><label for="billing_address_1">Utca, házszám <abbr title="kötelező">*</abbr></label><input id="billing_address_1" name="billing_address_1" autocomplete="address-line1" data-required=""></p>
+            <p data-field="" style="margin:0;"><label for="billing_address_2">Emelet, lépcsőház, lakás, stb. <span data-opt="">(nem kötelező)</span></label><input id="billing_address_2" name="billing_address_2" autocomplete="address-line2"></p>
+            <div data-co-row="" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <p data-field="" style="margin:0;"><label for="billing_phone">Telefonszám <abbr title="kötelező">*</abbr></label><input id="billing_phone" name="billing_phone" type="tel" autocomplete="tel" data-required="" data-check="phone"></p>
+              <p data-field="" style="margin:0;"><label for="billing_email">E-mail cím <abbr title="kötelező">*</abbr></label><input id="billing_email" name="billing_email" type="email" autocomplete="email" data-required="" data-check="email"></p>
+            </div>
+            <label style="display:flex;gap:12px;align-items:center;font-size:15px;color:var(--amigos-ink-2);cursor:pointer;">
+              <input id="ship-to-different-address-checkbox" name="ship_to_different_address" type="checkbox" value="1" data-co-ship-toggle="" style="width:20px;height:20px;margin:0;accent-color:var(--amigos-green);flex:none;">
+              Szállítás eltérő névre / címre
+            </label>
+          </fieldset>
+
+          <fieldset data-co-shipping="" style="display:none;border:0;margin:0;padding:0;min-width:0;flex-direction:column;gap:16px;">
+            <legend style="padding:0;margin-bottom:16px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;">Szállítási adatok</legend>
+            <div data-co-row="" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <p data-field="" style="margin:0;"><label for="shipping_last_name">Vezetéknév <abbr title="kötelező">*</abbr></label><input id="shipping_last_name" name="shipping_last_name" autocomplete="shipping family-name" data-required=""></p>
+              <p data-field="" style="margin:0;"><label for="shipping_first_name">Keresztnév <abbr title="kötelező">*</abbr></label><input id="shipping_first_name" name="shipping_first_name" autocomplete="shipping given-name" data-required=""></p>
+            </div>
+            <p data-field="" style="margin:0;"><label for="shipping_company">Cégnév <span data-opt="">(nem kötelező)</span></label><input id="shipping_company" name="shipping_company" autocomplete="shipping organization"></p>
+            <p data-field="" style="margin:0;"><label for="shipping_country">Ország <abbr title="kötelező">*</abbr></label><select id="shipping_country" name="shipping_country" autocomplete="shipping country" data-required=""><option value="HU" selected>Magyarország</option></select></p>
+            <div data-co-row="" style="display:grid;grid-template-columns:1fr 2fr;gap:16px;">
+              <p data-field="" style="margin:0;"><label for="shipping_postcode">Irányítószám <abbr title="kötelező">*</abbr></label><input id="shipping_postcode" name="shipping_postcode" autocomplete="shipping postal-code" inputmode="numeric" maxlength="4" data-required="" data-check="postcode"></p>
+              <p data-field="" style="margin:0;"><label for="shipping_city">Város <abbr title="kötelező">*</abbr></label><input id="shipping_city" name="shipping_city" autocomplete="shipping address-level2" data-required=""></p>
+            </div>
+            <p data-field="" style="margin:0;"><label for="shipping_address_1">Utca, házszám <abbr title="kötelező">*</abbr></label><input id="shipping_address_1" name="shipping_address_1" autocomplete="shipping address-line1" data-required=""></p>
+            <p data-field="" style="margin:0;"><label for="shipping_address_2">Emelet, lépcsőház, lakás, stb. <span data-opt="">(nem kötelező)</span></label><input id="shipping_address_2" name="shipping_address_2" autocomplete="shipping address-line2"></p>
+            <p data-field="" style="margin:0;"><label for="shipping_phone">Telefonszám <abbr title="kötelező">*</abbr></label><input id="shipping_phone" name="shipping_phone" type="tel" autocomplete="shipping tel" data-required="" data-check="phone"></p>
+          </fieldset>
+
+          <fieldset style="border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:16px;">
+            <legend style="padding:0;margin-bottom:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;">Átvételi pont</legend>
+            <p style="margin:0 0 4px;font-size:15px;line-height:1.5;color:var(--amigos-ink-2);">A csomagot ingyen küldjük a választott Foxpost automatába vagy Packeta pontra, két héten belül.</p>
+            <p data-field="" style="margin:0;"><label for="foxpost_woo_parcel_apt_id">Foxpost / Packeta pont <abbr title="kötelező">*</abbr></label>
+              <select id="foxpost_woo_parcel_apt_id" name="foxpost_woo_parcel_apt_id" data-required="">
+                <option value="">Válassz átvételi pontot…</option>
+                <option value="hu429">FOXPOST A-BOX Bp. 11. ker. Budapest One Irodaház</option>
+                <option value="hu1503">FOXPOST A-BOX Bp. 11. ker. Budapest One Parkolóház/OMV kút</option>
+                <option value="hu11628">FOXPOST Z-BOX Bp. 11. ker. Budapesti Műszaki Egyetem</option>
+                <option value="hu6003">FOXPOST A-BOX Dunaharaszti Csomagautomatapont Fő út</option>
+                <option value="hu10207">FOXPOST Z-BOX Szeged Pingvin Patika Budapesti körút</option>
+                <option value="hu975">FOXPOST A-BOX Veresegyház Nemzeti Dohánybolt Budapesti utca</option>
+                <option value="39481">Packeta Z-Pont Lottózó Budapest</option>
+                <option value="30182">Packeta Z-Pont 1001 cikk barkácsáruház</option>
+              </select>
+            </p>
+            <p data-field="" style="margin:0;"><label for="order_comments">Megjegyzés <span data-opt="">(nem kötelező)</span></label><textarea id="order_comments" name="order_comments" rows="3" placeholder="Például ha ajándékba kéred, vagy bármi, amit tudnunk kell."></textarea></p>
+          </fieldset>
+
+          <fieldset style="border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:14px;">
+            <legend style="padding:0;margin-bottom:12px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;">Fizetés</legend>
+            <label style="display:flex;gap:12px;align-items:center;padding:16px 20px;border:2px solid var(--amigos-green);border-radius:var(--radius-md);background:var(--amigos-white);font-weight:600;">
+              <input type="radio" name="payment_method" value="stripe" data-default-checked="" style="width:20px;height:20px;margin:0;accent-color:var(--amigos-green);flex:none;">
+              Bankkártya
+              <span style="margin-left:auto;font-size:13px;font-weight:500;color:var(--amigos-ink-3);">Stripe · biztonságos fizetés</span>
+            </label>
+            <div aria-hidden="true" style="display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:2px dashed var(--amigos-line);border-radius:var(--radius-md);color:var(--amigos-ink-3);font-size:14px;line-height:1.5;">
+              <strong style="color:var(--amigos-ink-2);">Ide kerül a Stripe kártyamezője.</strong>
+              A kártyaadatokat a Stripe kezeli, hozzánk nem jutnak el. A prototípusban nincs fizetés — a gomb csak a köszönőoldalt mutatja meg.
+            </div>
+          </fieldset>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <p data-field="" data-check-box="" style="margin:0;">
+              <label style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:var(--amigos-ink-2);cursor:pointer;">
+                <input id="terms" name="terms" type="checkbox" value="1" data-required="" style="width:20px;height:20px;margin:2px 0 0;accent-color:var(--amigos-green);flex:none;">
+                <span>Elolvastam és elfogadom az <a href="Amigos Aloldalak.dc.html#aszf">ÁSZF-et</a> és az <a href="Amigos Aloldalak.dc.html#adatkezeles">adatkezelési tájékoztatót</a>. <abbr title="kötelező">*</abbr></span>
+              </label>
+            </p>
+            <button data-co-submit="" type="submit" name="woocommerce_checkout_place_order" id="place_order" style="height:60px;padding:0 32px;border-radius:var(--radius-pill);border:0;background:var(--amigos-green);color:var(--amigos-white);font:inherit;font-weight:600;font-size:18px;cursor:pointer;">Megrendelés elküldése</button>
+            <p style="margin:0;font-size:13px;line-height:1.5;color:var(--amigos-ink-3);">A vételár adomány az Amigos a gyerekekért Alapítványnak. A számlát e-mailben küldjük.</p>
+          </div>
+        </form>
+
+        <aside data-sticky="" aria-label="Rendelésed" style="position:sticky;top:104px;display:flex;flex-direction:column;gap:16px;padding:clamp(20px,2.4vw,28px);background:var(--amigos-white);border:1px solid var(--amigos-line);border-radius:var(--radius-card);">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;">
+            <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;">Rendelésed</h2>
+            <button data-cart-open="" type="button" style="background:transparent;border:0;padding:0;font:inherit;font-size:14px;font-weight:600;color:var(--text-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer;">Kosár szerkesztése</button>
+          </div>
+          <div data-co-lines="" style="display:flex;flex-direction:column;"></div>
+          <label style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:var(--amigos-ink-2);">
+            <input data-round="" type="checkbox" style="width:20px;height:20px;margin-top:2px;accent-color:var(--amigos-green);flex:none;">
+            <span>Kiegészítem 500 Ft adománnyal</span>
+          </label>
+          <dl style="margin:0;display:grid;grid-template-columns:1fr auto;gap:8px 16px;font-size:15px;color:var(--amigos-ink-2);border-top:1px solid var(--amigos-line);padding-top:16px;">
+            <dt>Termékek</dt><dd data-co-items="" style="margin:0;text-align:right;font-variant-numeric:tabular-nums;"></dd>
+            <dt data-co-round-row="">Kiegészítő adomány</dt><dd data-co-round="" style="margin:0;text-align:right;font-variant-numeric:tabular-nums;"></dd>
+            <dt>Szállítás</dt><dd style="margin:0;text-align:right;">Ingyenes</dd>
+            <dt style="font-weight:600;color:var(--amigos-ink);font-size:17px;padding-top:8px;">Összesen</dt><dd data-co-total="" style="margin:0;text-align:right;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;color:var(--amigos-ink);font-variant-numeric:tabular-nums;padding-top:8px;"></dd>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div data-cart="" role="dialog" aria-label="Kosár" aria-hidden="true" style="position:fixed;inset:0;z-index:60;pointer-events:none;">
+    <div data-cart-scrim="" style="position:absolute;inset:0;background:rgba(23,28,18,0.5);opacity:0;transition:opacity 240ms cubic-bezier(0.2,0.7,0.2,1);"></div>
+    <aside data-cart-panel="" style="position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);background:var(--amigos-paper);border-left:1px solid var(--amigos-line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform 280ms cubic-bezier(0.2,0.7,0.2,1);">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,4vw,32px);border-bottom:1px solid var(--amigos-line);">
+        <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;">Kosár</span>
+        <button data-cart-close="" type="button" aria-label="Bezárás" style="width:40px;height:40px;border-radius:50%;border:2px solid var(--amigos-line);background:transparent;color:var(--amigos-ink);font:inherit;font-size:18px;line-height:1;cursor:pointer;">×</button>
+      </div>
+      <div data-cart-items="" style="flex:1;overflow:auto;padding:0 clamp(20px,4vw,32px);"></div>
+      <div style="border-top:1px solid var(--amigos-line);padding:20px clamp(20px,4vw,32px);display:flex;flex-direction:column;gap:14px;">
+        <label style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:var(--amigos-ink-2);">
+          <input data-round="" type="checkbox" style="width:20px;height:20px;margin-top:2px;accent-color:var(--amigos-green);flex:none;">
+          <span>Kiegészítem 500 Ft adománnyal</span>
+        </label>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;">
+          <span style="font-size:var(--text-body);color:var(--amigos-ink-2);">Adomány összesen</span>
+          <span data-cart-total="" style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;font-variant-numeric:tabular-nums;">0 Ft</span>
+        </div>
+        <span data-cart-ship="" style="font-size:13px;color:var(--amigos-ink-3);">Ingyenes kiszállítás Foxpost vagy Packeta pontra</span>
+        <p data-cart-error="" role="alert" style="margin:0;font-size:13px;line-height:1.5;color:var(--am-error);"></p>
+        <a data-checkout="" href="Penztar.dc.html" style="display:flex;align-items:center;justify-content:center;height:52px;border-radius:var(--radius-pill);background:var(--amigos-green);color:var(--amigos-white);font-weight:600;font-size:16px;text-decoration:none;">Tovább a pénztárhoz →</a>
+      </div>
+    </aside>
+  </div>
+
+  </main>
+<footer style="background:var(--amigos-ink);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+      <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:var(--text-on-ink);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Ügyintézés</span>
+            <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
+            <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
+            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
+            <a href="Amigos Aloldalak.dc.html#gyik" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">GYIK</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Támogatás</span>
+            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Jogi</span>
+            <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="Amigos Aloldalak.dc.html#aszf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="Amigos Aloldalak.dc.html#sitemap" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Oldaltérkép</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid #33402C;padding-top:20px;font-size:14px;color:var(--text-on-ink);">
+        <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const bind = () => {
+      if (!document.querySelector('[data-co-form]') || !window.AmigosCart) return false;
+      window.__amigosMounted = true; window.AmigosCart.mounted();
+      this.init();
+      return true;
+    };
+    if (!bind()) { const iv = setInterval(() => { if (bind()) clearInterval(iv); }, 100); }
+  }
+  init() {
+    const $ = s => document.querySelector(s);
+    this.form = $('[data-co-form]');
+    // The dc runtime drops boolean attributes (required, disabled, checked,
+    // novalidate) while rendering, so the markup carries data-* stand-ins
+    // and the real properties are set here.
+    this.form.noValidate = true;
+    this.form.querySelectorAll('[data-required]').forEach(el => { el.required = true; });
+    this.form.querySelectorAll('[data-default-checked]').forEach(el => { el.checked = true; });
+    const ship = $('[data-co-ship-toggle]');
+    const shipSet = $('[data-co-shipping]');
+    shipSet.disabled = true;
+    ship.onchange = () => { shipSet.disabled = !ship.checked; shipSet.style.display = ship.checked ? 'flex' : 'none'; };
+    this.form.addEventListener('submit', e => { e.preventDefault(); this.submit(); });
+    // Clear a field's error as soon as it is edited.
+    this.form.addEventListener('input', e => { const f = e.target.closest('[data-field]'); if (f) this.mark(f, ''); });
+    this.form.addEventListener('change', e => { const f = e.target.closest('[data-field]'); if (f) this.mark(f, ''); });
+    // The summary follows the cart (drawer edits, round-up, other tabs).
+    const refresh = () => setTimeout(() => this.summary(), 0);
+    document.addEventListener('click', e => { if (e.target.closest('[data-cart-items] button')) refresh(); });
+    document.addEventListener('change', e => { if (e.target.closest('[data-round]')) refresh(); });
+    window.addEventListener('storage', refresh);
+    this.summary();
+  }
+  summary() {
+    const C = window.AmigosCart, $ = s => document.querySelector(s);
+    const lines = C.lines(), t = C.totals();
+    if (this.done) return;
+    $('[data-co-empty]').style.display = lines.length ? 'none' : 'flex';
+    $('[data-co-main]').style.display = lines.length ? 'grid' : 'none';
+    const box = $('[data-co-lines]'); box.textContent = '';
+    lines.forEach(l => box.appendChild(this.row(l)));
+    $('[data-co-items]').textContent = C.fmt(t.items);
+    $('[data-co-round]').textContent = C.fmt(t.round);
+    $('[data-co-round]').style.display = $('[data-co-round-row]').style.display = t.round ? '' : 'none';
+    $('[data-co-total]').textContent = C.fmt(t.total);
+    $('[data-co-submit]').textContent = `Megrendelés elküldése · ${C.fmt(t.total)}`;
+  }
+  row(l) {
+    const C = window.AmigosCart;
+    const r = document.createElement('div');
+    r.style.cssText = 'display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--amigos-line);font-size:15px;';
+    const mid = document.createElement('span'); mid.style.cssText = 'display:flex;flex-direction:column;gap:4px;min-width:0;';
+    const n = document.createElement('span'); n.textContent = `${l.name} × ${l.qty}`; n.style.cssText = 'font-weight:600;color:var(--amigos-ink);';
+    mid.appendChild(n);
+    const meta = C.lineMeta(l);
+    if (meta) { const m = document.createElement('span'); m.textContent = meta; m.style.cssText = 'font-size:13px;color:var(--amigos-ink-3);'; mid.appendChild(m); }
+    const p = document.createElement('span'); p.textContent = C.fmt(l.qty * l.price); p.style.cssText = 'font-variant-numeric:tabular-nums;white-space:nowrap;';
+    r.appendChild(C.thumb(l, 48)); r.appendChild(mid); r.appendChild(p);
+    return r;
+  }
+  mark(field, msg) {
+    let e = field.querySelector('[data-err]');
+    if (!msg) { field.removeAttribute('data-invalid'); if (e) e.remove(); return; }
+    field.setAttribute('data-invalid', '');
+    if (!e) { e = document.createElement('span'); e.setAttribute('data-err', ''); field.appendChild(e); }
+    e.textContent = msg;
+    const input = field.querySelector('input,select,textarea');
+    if (input) { input.setAttribute('aria-invalid', 'true'); input.setAttribute('aria-describedby', input.id + '-err'); e.id = input.id + '-err'; }
+  }
+  validate() {
+    const errors = [];
+    this.form.querySelectorAll('[data-field]').forEach(f => {
+      const input = f.querySelector('input,select,textarea');
+      if (!input || input.closest('fieldset:disabled')) { this.mark(f, ''); return; }
+      input.removeAttribute('aria-invalid');
+      const v = input.type === 'checkbox' ? (input.checked ? '1' : '') : input.value.trim();
+      const label = (f.querySelector('label') || {}).textContent || '';
+      const name = label.replace(/\*|\(nem kötelező\)/g, '').trim();
+      let msg = '';
+      if (input.required && !v) msg = input.type === 'checkbox' ? 'A rendeléshez fogadd el az ÁSZF-et és az adatkezelési tájékoztatót.' : input.id === 'foxpost_woo_parcel_apt_id' ? 'Válassz átvételi pontot.' : `Add meg: ${name.toLowerCase()}.`;
+      else if (v && input.dataset.check === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) msg = 'Ez nem tűnik érvényes e-mail címnek.';
+      else if (v && input.dataset.check === 'postcode' && !/^\d{4}$/.test(v)) msg = 'Az irányítószám négy számjegy.';
+      else if (v && input.dataset.check === 'phone' && v.replace(/\D/g, '').length < 9) msg = 'Adj meg egy elérhető telefonszámot, pl. +36 30 123 4567.';
+      this.mark(f, msg);
+      if (msg) errors.push({ input, msg });
+    });
+    return errors;
+  }
+  submit() {
+    const box = document.querySelector('[data-co-errors]');
+    const errors = this.validate();
+    if (errors.length) {
+      box.textContent = '';
+      const h = document.createElement('strong'); h.textContent = errors.length === 1 ? 'Egy adat hiányzik vagy hibás:' : `${errors.length} adat hiányzik vagy hibás:`;
+      const ul = document.createElement('ul'); ul.style.cssText = 'margin:8px 0 0;padding-left:20px;';
+      errors.forEach(er => {
+        const li = document.createElement('li'); const a = document.createElement('a');
+        a.href = '#' + er.input.id; a.textContent = er.msg; a.style.color = 'inherit';
+        a.onclick = ev => { ev.preventDefault(); er.input.focus(); };
+        li.appendChild(a); ul.appendChild(li);
+      });
+      box.appendChild(h); box.appendChild(ul);
+      box.style.display = 'block';
+      box.focus(); box.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      return;
+    }
+    box.style.display = 'none';
+    // Prototype only: WooCommerce creates the order and Stripe takes the
+    // payment. Here we show what the order-received page will say.
+    const C = window.AmigosCart, data = new FormData(this.form);
+    const btn = document.querySelector('[data-co-submit]');
+    btn.disabled = true; btn.textContent = 'Rendelés küldése…';
+    const d = new Date(), pad = n => String(n).padStart(2, '0');
+    const no = `AMG-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${String(Math.floor(1000 + Math.random() * 9000))}`;
+    const lines = C.lines(), t = C.totals();
+    const point = this.form.querySelector('#foxpost_woo_parcel_apt_id');
+    setTimeout(() => {
+      this.done = true;
+      const $ = s => document.querySelector(s);
+      $('[data-co-main]').style.display = 'none';
+      $('[data-co-empty]').style.display = 'none';
+      $('[data-co-done]').style.display = 'flex';
+      $('[data-co-done-name]').textContent = data.get('billing_first_name');
+      $('[data-co-done-no]').textContent = no;
+      $('[data-co-done-email]').textContent = data.get('billing_email');
+      $('[data-co-done-point]').textContent = point.options[point.selectedIndex].text;
+      const box2 = $('[data-co-done-lines]'); box2.textContent = '';
+      lines.forEach(l => box2.appendChild(this.row(l)));
+      const tot = document.createElement('div');
+      tot.style.cssText = 'display:flex;justify-content:space-between;gap:16px;padding:14px 0 10px;font-weight:600;font-size:17px;';
+      tot.innerHTML = '<span>Összesen' + (t.round ? ' (kiegészítő adománnyal)' : '') + '</span><span style="font-variant-numeric:tabular-nums;"></span>';
+      tot.lastChild.textContent = C.fmt(t.total);
+      box2.appendChild(tot);
+      document.querySelectorAll('[data-co-steps] li').forEach(li => { li.removeAttribute('aria-current'); li.style.color = 'var(--amigos-ink-3)'; });
+      const k = $('[data-step="kesz"]'); k.setAttribute('aria-current', 'step'); k.style.color = 'var(--amigos-green)';
+      C.clear();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 600);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

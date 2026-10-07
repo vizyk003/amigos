@@ -42,6 +42,7 @@
       [data-testimonials]{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;}
       [data-testimonials] > *{scroll-snap-align:start;}
     }
+    select[name="varos"] option{color:var(--amigos-ink,#1d1d1b);background:var(--amigos-white);}
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
   <link rel="stylesheet" href="assets/brand.css">
@@ -96,8 +97,8 @@
     </div>
   </section>
 
-  <section id="kinek-szol" data-screen-label="Kinek szól" style="background:var(--amigos-paper);padding:clamp(88px,12vw,160px) 0;">
-    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,104px);align-items:start;">
+  <section id="kinek-szol" data-screen-label="Kinek szól" style="background:var(--amigos-paper);padding:clamp(72px,8vw,112px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,88px);align-items:start;">
       <div data-reveal="" data-sticky="" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:20px;">
         <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Kinek szól?</span>
         <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:15ch;text-wrap:pretty;">Kiből lesz jó Amigo?</h2>
@@ -124,8 +125,8 @@
     </div>
   </section>
 
-  <section id="miert-jo" data-screen-label="Ezért jó Amigónak lenni" style="background:var(--amigos-white);border-top:1px solid var(--amigos-line);border-bottom:1px solid var(--amigos-line);padding:clamp(88px,12vw,160px) 0;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,5vw,56px);">
+  <section id="miert-jo" data-screen-label="Ezért jó Amigónak lenni" style="background:var(--amigos-white);border-top:1px solid var(--amigos-line);border-bottom:1px solid var(--amigos-line);padding:clamp(72px,8vw,112px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px);">
       <div data-reveal="" data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
         <div style="display:flex;flex-direction:column;gap:16px;">
           <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Ezért jó Amigónak lenni</span>
@@ -161,8 +162,8 @@
     </div>
   </section>
 
-  <section id="amigok-mondjak" data-screen-label="Amigók mondják" style="background:var(--amigos-paper);padding:clamp(72px,10vw,128px) 0;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(28px,4vw,48px);">
+  <section id="amigok-mondjak" data-screen-label="Amigók mondják" style="background:var(--amigos-paper);padding:clamp(72px,8vw,112px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px);">
       <div data-reveal="" data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
         <div style="display:flex;flex-direction:column;gap:16px;">
           <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Amigók mondják</span>
@@ -192,7 +193,7 @@
        interest for the next round. The mode follows the calendar unless the
        "jelentkezesMod" prop pins it (auto | nyitott | zarva). Not wired to a
        backend yet — bindApply() validates and thanks the applicant. -->
-  <section id="jelentkezes" data-screen-label="Jelentkezés" data-apply-mode="zarva" style="background:var(--amigos-green);color:var(--amigos-white);padding:clamp(88px,12vw,160px) 0;">
+  <section id="jelentkezes" data-screen-label="Jelentkezés" data-apply-mode="zarva" style="background:var(--amigos-green);color:var(--amigos-white);padding:clamp(72px,8vw,112px) 0;">
     <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,88px);align-items:start;">
       <div data-reveal="" style="display:flex;flex-direction:column;gap:20px;">
         <span data-apply-eyebrow="" style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-white);">Előjelentkezés</span>
@@ -213,7 +214,7 @@
           </label>
           <label style="display:flex;flex-direction:column;gap:8px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-white);">A város, ahova jelentkezni szeretnél</span>
-            <select name="varos" required style="height:52px;padding:0 16px;border:2px solid var(--amigos-white);border-radius:var(--radius-pill);background:transparent;color:var(--amigos-white);font:inherit;font-size:16px;min-width:0;">
+            <select name="varos" required style="height:52px;padding:0 52px 0 20px;border:2px solid var(--amigos-white);border-radius:var(--radius-pill);background:transparent url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1.5 1.5L7 7l5.5-5.5' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E&quot;) no-repeat right 22px center / 14px 9px;-webkit-appearance:none;appearance:none;cursor:pointer;color:var(--amigos-white);font:inherit;font-size:16px;min-width:0;">
               <option value="" disabled selected>Válassz várost</option>
               <option>Budapest</option>
               <option>Debrecen</option>
@@ -244,8 +245,8 @@
     </div>
   </section>
 
-  <section id="gyik" data-screen-label="GYIK" style="background:var(--amigos-paper);padding:clamp(88px,12vw,160px) 0;">
-    <div data-reveal="" data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,104px);align-items:start;">
+  <section id="gyik" data-screen-label="GYIK" style="background:var(--amigos-paper);padding:clamp(72px,8vw,112px) 0;">
+    <div data-reveal="" data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,88px);align-items:start;">
       <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Gyakori kérdések</h2>
       <div style="display:flex;flex-direction:column;border-top:1px solid var(--amigos-line);">
         <div data-faq="" style="border-bottom:1px solid var(--amigos-line);">
@@ -308,8 +309,8 @@
     </div>
   </section>
 
-  <section id="hirlevel" data-m="newsletter" data-screen-label="Hírlevél" style="position:relative;z-index:6;background:var(--amigos-green);color:var(--amigos-white);overflow:hidden;padding:clamp(96px,12vw,160px) 0;">
-    <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 6fr;gap:clamp(48px,7vw,104px);align-items:center;">
+  <section id="hirlevel" data-m="newsletter" data-screen-label="Hírlevél" style="position:relative;z-index:6;background:var(--amigos-green);color:var(--amigos-white);overflow:hidden;padding:clamp(72px,8vw,112px) 0;">
+    <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,6vw,88px);align-items:center;">
       <div style="display:flex;flex-direction:column;gap:24px;">
         <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-white);">Hírlevél</div>
         <h2 style="margin: 0; font-family: var(--font-hand); font-weight:700; font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); max-width: 16ch; text-wrap: pretty; color: var(--amigos-white)">Kövesd az Amigos hétköznapjait!</h2>
@@ -349,7 +350,7 @@
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
-          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height: 67px; width: 67px; display: block" width="500" height="500">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
           <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
           <span style="font-size:14px;color:var(--text-on-ink);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
         </div>
@@ -358,8 +359,8 @@
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Ügyintézés</span>
             <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
             <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
-            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
             <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
+            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
             <a href="Amigos Aloldalak.dc.html#gyik" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">GYIK</a>
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
