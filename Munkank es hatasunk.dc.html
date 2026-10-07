@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="Amigos a gyerekekért Alapítvány">
   <meta property="og:title" content="Munkánk és hatásunk — Amigos a gyerekekért Alapítvány">
   <meta property="og:description" content="Nem szórakoztatunk — barátkozunk, hétről hétre. Hol vagyunk jelen, mit csinálunk, és mit jelent ez a kórházban fekvő gyerekeknek.">
-  <meta property="og:image" content="assets/community/web/21-web-hero.jpg">
+  <meta property="og:image" content="assets/community/photos/csapat-a-lepcson.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
@@ -35,6 +35,7 @@
     @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/brand.css">
   <script src="assets/responsive.js" defer></script>
 </helmet>
 
@@ -57,28 +58,28 @@
   </header>
 <main id="tartalom">
 
-  <section data-screen-label="Hero" style="position:relative;background:var(--amigos-paper);overflow:hidden;padding:clamp(72px,10vw,136px) 0 clamp(64px,9vw,120px);">
-    <div data-value-word="" data-m="pattern" aria-hidden="true" style="position:absolute;right:-0.05em;top:-0.14em;font-family:var(--font-hand);font-weight:700;font-size:clamp(64px,25.9vw,427px);line-height:1;letter-spacing:0.01em;color:var(--surface-tint-paper);white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">MEGBÍZHATÓSÁG</div>
+  <section data-screen-label="Hero" data-m="hero" style="position:relative;background:var(--amigos-paper);padding:clamp(56px,8vw,104px) 0 clamp(56px,8vw,96px);border-bottom:1px solid var(--amigos-line);">
     <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
-      <div style="display:flex;flex-direction:column;gap:28px;">
+      <div style="display:flex;flex-direction:column;gap:24px;">
         <span style="font-size:13px;color:var(--amigos-ink-3);">Főoldal / Munkánk és hatásunk</span>
         <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Mit csinálunk</span>
-        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);max-width:13ch;text-wrap:pretty;">
-          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--am-green-700)">Nem szórakoztatunk.</span></span>
-          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">Barátkozunk,</span></span>
-          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">hétről hétre.</span></span>
+        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);text-wrap:balance;">
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">Nem szórakoztatunk.</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;color:var(--amigos-green);">Barátkozunk,</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;color:var(--amigos-green);"><span class="am-underline am-underline--pup-green">hétről hétre</span>.</span></span>
         </h1>
-        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;color:var(--amigos-ink-2);text-wrap:pretty;">Képzett egyetemista önkéntesek, saját fejlesztésű eszközök és rögzített heti ritmus. Hat városban, húsz kórházi osztályon — 2014 óta.</p>
+        <p style="margin:8px 0 0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;color:var(--amigos-ink-2);text-wrap:pretty;">Képzett egyetemista önkéntesek, saját fejlesztésű eszközök és rögzített heti ritmus. Hat városban, húsz kórházi osztályon — 2014 óta.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:4px;">
           <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="primary" size="lg" href="#programok" hint-size="auto,52px">Programjaink</x-import>
           <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="secondary" size="lg" href="#atlathatosag" hint-size="auto,52px">Átláthatóság</x-import>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);">
-          <img src="assets/community/web/10-photo-dir-1.jpg" alt="Amigo és gyerek egy kórházi foglalkozáson" style="width:100%;height:100%;object-fit:cover;display:block;" width="1189" height="1323">
-        </div>
-        <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--amigos-ink-3);text-align:center;">Heti foglalkozás, Debrecen</span>
+      <div style="position:relative;">
+      <figure class="am-photo" style="aspect-ratio:1/1;">
+        <img src="assets/community/photos/kisvasut-jatek.jpg" alt="Amigo és egy kisgyerek kisvasutat építenek a kórházban" style="object-position:50% 35%;" width="1080" height="1350">
+        <figcaption>Heti foglalkozás a kórházban</figcaption>
+      </figure>
+      <img class="am-ill" src="assets/illustrations/amigos-ill-naptar-green.png" alt="" aria-hidden="true" style="right:-6%;top:-9%;width:27%;transform:rotate(6deg);">
       </div>
     </div>
   </section>
@@ -126,7 +127,7 @@
       <div style="display:flex;flex-direction:column;border-top:1px solid var(--amigos-line);">
         <article data-reveal="" data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(32px,4vw,48px) 0;border-bottom:1px solid var(--amigos-line);">
           <div style="display:flex;align-items:center;gap:clamp(20px,3vw,32px);">
-            <div style="width:clamp(120px,14vw,180px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);flex:none;"><img src="assets/community/web/21-web-hero.jpg" alt="Heti kórházi foglalkozás" style="width:100%;height:100%;object-fit:cover;display:block;" width="1254" height="1254"></div>
+            <div style="width:clamp(120px,14vw,180px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);flex:none;"><img src="assets/community/photos/kezmuves-foglalkozas.jpg" alt="Kézműves foglalkozás a kórházban" style="width:100%;height:100%;object-fit:cover;display:block;" width="1080" height="1350"></div>
             <div style="display:flex;flex-direction:column;gap:8px;">
               <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:var(--amigos-green);">01</span>
               <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;text-wrap:pretty;">Heti kórházi foglalkozások</h3>
@@ -139,7 +140,7 @@
         </article>
         <article data-reveal="" data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(32px,4vw,48px) 0;border-bottom:1px solid var(--amigos-line);">
           <div style="display:flex;align-items:center;gap:clamp(20px,3vw,32px);">
-            <div style="width:clamp(120px,14vw,180px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);flex:none;"><img src="assets/community/web/10-photo-dir-3.jpg" alt="Saját fejlesztésű eszközök" style="width:100%;height:100%;object-fit:cover;display:block;" width="1536" height="1024"></div>
+            <div style="width:clamp(120px,14vw,180px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);flex:none;"><img src="assets/community/photos/lego-es-szinezes.jpg" alt="Saját fejlesztésű színezők és játékok" style="width:100%;height:100%;object-fit:cover;display:block;" width="1080" height="1350"></div>
             <div style="display:flex;flex-direction:column;gap:8px;">
               <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:var(--amigos-green);">02</span>
               <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;text-wrap:pretty;">Saját fejlesztésű eszközök</h3>
@@ -152,7 +153,7 @@
         </article>
         <article data-reveal="" data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(32px,4vw,48px) 0;border-bottom:1px solid var(--amigos-line);">
           <div style="display:flex;align-items:center;gap:clamp(20px,3vw,32px);">
-            <div style="width:clamp(120px,14vw,180px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);flex:none;"><img src="assets/community/web/10-photo-dir-1.jpg" alt="Amigos Akadémia képzés" style="width:100%;height:100%;object-fit:cover;display:block;" width="1189" height="1323"></div>
+            <div style="width:clamp(120px,14vw,180px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);flex:none;"><video data-loop="" preload="metadata" playsinline="" poster="assets/community/video/tabor-poster.jpg" src="assets/community/web/igexport-Db-zc9pF7yG-11.mp4" aria-label="Közös munka az Amigos-táborban" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
             <div style="display:flex;flex-direction:column;gap:8px;">
               <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:var(--amigos-green);">03</span>
               <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;text-wrap:pretty;">Képzett egyetemista Amigók</h3>
@@ -350,7 +351,7 @@
           <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);line-height:1.05;letter-spacing:-0.02em;">Stratégiai partnereink</h3>
           <p style="margin:0;font-size:15px;line-height:1.55;max-width:38ch;color:var(--amigos-ink-2);">Szolgáltatással, szakértelemmel és logisztikával segítenek — folyamatosan.</p>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;"><span style="height:104px;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:16px 20px;background:var(--amigos-white);"><img src="assets/partners/foxpost.png" alt="Foxpost" style="max-height:68px;max-width:150px;width:auto;height:auto;display:block;object-fit:contain;" width="135" height="135"></span><span style="height:104px;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:16px 20px;background:var(--amigos-white);"><img src="assets/partners/maileon.png" alt="Maileon" style="max-height: 128px; max-width: 220px; width: auto; height: auto; display: block; object-fit: contain" width="173" height="173"></span><span style="height:104px;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:16px 20px;background:var(--amigos-white);"><img src="assets/partners/loc-more.png" alt="Loc&amp;More" style="max-height: 128px; max-width: 150px; width: auto; height: auto; display: block; object-fit: contain" width="177" height="177"></span><span style="height:104px;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:16px 20px;background:var(--amigos-white);"><img src="assets/partners/lego.png" alt="LEGO" style="max-height:68px;max-width:150px;width:auto;height:auto;display:block;object-fit:contain;" width="148" height="148"></span><span style="height:104px;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:16px 20px;background:var(--amigos-white);"><img src="assets/partners/andersen.png" alt="Andersen" style="max-height: 128px; max-width: 150px; width: auto; height: auto; display: block; object-fit: contain" width="135" height="135"></span><span style="height:104px;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:16px 20px;background:var(--amigos-white);"><img src="assets/partners/appyh.png" alt="appyh" style="max-height: 128px; max-width: 150px; width: auto; height: auto; display: block; object-fit: contain" width="172" height="172"></span><span style="height:104px;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:16px 20px;background:var(--amigos-white);"><img src="assets/partners/unicredit-foundation.png" alt="UniCredit Foundation" style="max-height: 78px; max-width: 150px; width: auto; height: auto; display: block; object-fit: contain" width="169" height="169"></span><span style="height:104px;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:16px 20px;background:var(--amigos-white);"><img src="assets/partners/wolt.png" alt="Wolt" style="max-height: 128px; max-width: 150px; width: auto; height: auto; display: block; object-fit: contain" width="140" height="140"></span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;"><span style="height:104px;min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:10px 16px;box-sizing:border-box;background:var(--amigos-white);"><img src="assets/partners/foxpost.png" alt="Foxpost" style="max-height:100%;max-width:100%;width:auto;height:auto;display:block;object-fit:contain;" width="135" height="135"></span><span style="height:104px;min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:10px 16px;box-sizing:border-box;background:var(--amigos-white);"><img src="assets/partners/maileon.png" alt="Maileon" style="max-height:100%;max-width:100%;width:auto;height:auto;display:block;object-fit:contain;" width="173" height="173"></span><span style="height:104px;min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:10px 16px;box-sizing:border-box;background:var(--amigos-white);"><img src="assets/partners/loc-more.png" alt="Loc&amp;More" style="max-height:100%;max-width:100%;width:auto;height:auto;display:block;object-fit:contain;" width="177" height="177"></span><span style="height:104px;min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:10px 16px;box-sizing:border-box;background:var(--amigos-white);"><img src="assets/partners/lego.png" alt="LEGO" style="max-height:100%;max-width:100%;width:auto;height:auto;display:block;object-fit:contain;" width="148" height="148"></span><span style="height:104px;min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:10px 16px;box-sizing:border-box;background:var(--amigos-white);"><img src="assets/partners/andersen.png" alt="Andersen" style="max-height:100%;max-width:100%;width:auto;height:auto;display:block;object-fit:contain;" width="135" height="135"></span><span style="height:104px;min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:10px 16px;box-sizing:border-box;background:var(--amigos-white);"><img src="assets/partners/appyh.png" alt="appyh" style="max-height:100%;max-width:100%;width:auto;height:auto;display:block;object-fit:contain;" width="172" height="172"></span><span style="height:104px;min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:10px 16px;box-sizing:border-box;background:var(--amigos-white);"><img src="assets/partners/unicredit-foundation.png" alt="UniCredit Foundation" style="max-height:100%;max-width:100%;width:auto;height:auto;display:block;object-fit:contain;" width="169" height="169"></span><span style="height:104px;min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--amigos-line);border-radius:var(--radius-card);padding:10px 16px;box-sizing:border-box;background:var(--amigos-white);"><img src="assets/partners/wolt.png" alt="Wolt" style="max-height:100%;max-width:100%;width:auto;height:auto;display:block;object-fit:contain;" width="140" height="140"></span></div>
       </div>
 
       <div data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:start;border-top:1px solid var(--amigos-line);padding-top:clamp(28px,4vw,40px);">
@@ -471,8 +472,11 @@ class Component extends DCLogic {
       this.pattern = document.querySelector('[data-m="pattern"]');
       this.pattern2 = document.querySelector('[data-m="pattern2"]');
       this.mapPath = document.querySelector('[data-m="mappath"]');
-      if (!this.pattern) return false;
+      if (!document.querySelector('[data-m="hero"]')) return false;
       this.intro(); this.bindNodes(); this.reveal(); this.bars();
+      // silent loops: the renderer drops boolean attributes, so set them here;
+      // under reduced motion the poster stays still
+      document.querySelectorAll('video[data-loop]').forEach(v => { v.muted = true; v.loop = true; v.playsInline = true; if (!this.reduced) v.play().catch(() => {}); });
       if (this.mapPath) { const len = this.mapPath.getTotalLength(); this.mapLen = len; this.mapPath.style.strokeDasharray = len; this.mapPath.style.strokeDashoffset = this.reduced ? 0 : len; }
       this.alive = true; this.last = -1;
       const loop = () => {

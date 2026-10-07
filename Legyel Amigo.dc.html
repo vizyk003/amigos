@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="Amigos a gyerekekért Alapítvány">
   <meta property="og:title" content="Legyél Amigo — Amigos a gyerekekért Alapítvány">
   <meta property="og:description" content="Legyen a barátság a szupererőd! Egyetemista önkéntesként rendszeresen látogatod a kórházban gyógyuló gyerekeket – felkészítéssel, eszközökkel és egy összetartó közösséggel.">
-  <meta property="og:image" content="assets/community/web/21-web-hero.jpg">
+  <meta property="og:image" content="assets/community/photos/toborzo-stand.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
@@ -37,8 +37,15 @@
     #hirlevel input::placeholder{color:#DCE6D2;opacity:1;}
     #hirlevel input:focus-visible,#jelentkezes input:focus-visible,#jelentkezes select:focus-visible{outline:2px solid var(--amigos-white);outline-offset:4px;}
     #jelentkezes option{color:#171C12;}
+      /* Testimonials: four in a row; a swipeable row on phones. */
+    @media (max-width: 840px){
+      [data-testimonials]{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;}
+      [data-testimonials] > *{scroll-snap-align:start;}
+    }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/brand.css">
+  <link rel="stylesheet" href="assets/brush.css">
   <script src="assets/responsive.js" defer></script>
 </helmet>
 
@@ -61,15 +68,15 @@
   </header>
 <main id="tartalom">
 
-  <section data-screen-label="Hero" style="position:relative;background:var(--amigos-green);color:var(--amigos-white);overflow:hidden;padding:clamp(72px,11vw,148px) 0 clamp(64px,9vw,120px);">
+  <section data-screen-label="Hero" style="position:relative;background:var(--amigos-green);color:var(--amigos-white);overflow:hidden;padding:clamp(48px,6vw,88px) 0 clamp(64px,8vw,104px);">
     <div data-value-word="" data-m="pattern" aria-hidden="true" style="position:absolute;left:0;bottom:-0.18em;font-family:var(--font-hand);font-weight:700;font-size:clamp(64px,23.6vw,390px);line-height:1;letter-spacing:0.01em;color:var(--type-pattern-on-green);white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">LELKES FIATALOK</div>
     <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
-      <div style="display:flex;flex-direction:column;gap:28px;">
+      <div style="display:flex;flex-direction:column;gap:20px;">
         <span style="font-size:13px;color:var(--amigos-white);">Főoldal / Legyél Amigo</span>
         <span style="font-size: var(--text-label); letter-spacing: var(--ls-label); text-transform: uppercase; font-weight: 600; color:var(--amigos-white)">Önkéntesség egyetemistáknak</span>
-        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:min(var(--text-hero),104px);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);text-wrap:pretty;">
+        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);text-wrap:pretty;">
           <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--am-green-200)">Legyen a barátság a szupererőd!</span></span>
-          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--bg-page)">Legyél te is Amigo!</span></span>
+          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--bg-page)">Legyél te is <span class="am-underline am-underline--hullam-white">Amigo</span>!</span></span>
         </h1>
         <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:48ch;text-wrap:pretty;">Az Amigók egyetemista önkéntesek, akik rendszeresen látogatják a kórházban gyógyuló gyerekeket. Játszanak, tanulnak, alkotnak és beszélgetnek velük – felkészülten, egymást támogatva, egy összetartó közösségként.</p>
         <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:48ch;text-wrap:pretty;">Nem az számít, mit tanulsz, hanem hogy nyitott, megbízható és figyelmes legyél. A felkészítést, az eszközöket és a támogatást mi adjuk.</p>
@@ -77,10 +84,14 @@
           <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="#jelentkezes" hint-size="auto,52px">Jelentkezem!</x-import>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="position:relative;justify-self:center;width:min(100%,460px);">
+        <div aria-hidden="true" class="am-brush" style="position:absolute;width:48%;left:-14%;bottom:-8%;"></div>
         <div style="position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--type-pattern-on-green);">
-          <img src="assets/community/web/21-web-hero.jpg" alt="Amigo és gyerek egy kórházi foglalkozáson" style="width:100%;height:100%;object-fit:cover;display:block;" width="1254" height="1254">
+          <img src="assets/community/photos/olelkezes-pulcsiban.jpg" alt="Két Amigo ölelkezik zöld pulcsiban" style="width:100%;height:100%;object-fit:cover;display:block;" width="1280" height="1600">
         </div>
+        <span class="am-sticker am-sticker--circle" style="position:absolute;top:-4%;right:-2%;--am-rot:8deg;">1 év<span style="font-size:22px;">Amigo</span></span>
+        <img class="am-ill" src="assets/illustrations/amigos-ill-ragyogas-yellow.png" alt="" aria-hidden="true" style="right:-15%;top:50%;width:34%;transform:scaleX(-1) rotate(-12deg);">
+        <span class="am-sticker am-sticker--patch am-sticker--paper" style="position:absolute;left:-6%;bottom:6%;--am-rot:-6deg;">Vedd fel a zöldet.</span>
       </div>
     </div>
   </section>
@@ -124,28 +135,54 @@
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,3vw,40px);">
         <article data-reveal="" style="display:flex;flex-direction:column;gap:16px;">
-          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);"><img src="assets/community/web/16-ig-1.jpg" alt="Amigo és gyerek közösen építenek a kórteremben" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1374" height="1145"></div>
+          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);"><img src="assets/community/photos/korhaz-toronyepites.jpg" alt="Amigo és egy gyerek közösen építenek tornyot a kórházi ágynál" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1600" height="1341"></div>
           <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);line-height:1.15;letter-spacing:-0.02em;">A gyerekekhez kapcsolódsz</h3>
           <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">A kórházi látogatásokon játszotok, tanultok, alkottok vagy egyszerűen beszélgettek: amihez az adott gyereknek éppen kedve és lehetősége van.</p>
         </article>
         <article data-reveal="" style="display:flex;flex-direction:column;gap:16px;">
-          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);"><img src="assets/community/web/16-ig-2.jpg" alt="Amigo önkéntesek zöld pulcsiban" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1374" height="1145"></div>
+          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);"><img src="assets/community/photos/csapat-csoportkep.jpg" alt="Az Amigók nagy csoportképe" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1600" height="1341"></div>
           <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);line-height:1.15;letter-spacing:-0.02em;">Egy közösséghez tartozol</h3>
           <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">A kórházi bevetések és online foglalkozások mellett az Amigosban új barátokat, közös programokat és támogató közeget is találhatsz.</p>
         </article>
         <article data-reveal="" style="display:flex;flex-direction:column;gap:16px;">
-          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);"><img src="assets/community/web/10-photo-dir-3.jpg" alt="Amigók egy képzésen" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1536" height="1024"></div>
+          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);"><img src="assets/community/photos/akademia-eloadas.jpg" alt="Előadás az Amigos Akadémián" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1283" height="1600"></div>
           <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);line-height:1.15;letter-spacing:-0.02em;">Hasznos tapasztalatokat szerzel, amik elkísérnek</h3>
           <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">Megtanulsz különböző emberekhez kapcsolódni, csapatban dolgozni, váratlan helyzetekhez alkalmazkodni és felelősséget vállalni. Ezek a tapasztalatok az egyetemen, a munkában és a hétköznapokban is hasznodra válnak.</p>
         </article>
         <article data-reveal="" style="display:flex;flex-direction:column;gap:16px;">
-          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);"><img src="assets/community/web/12-campaign-hero.jpg" alt="Amigo zöld pulcsiban" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;" width="1145" height="1374"></div>
+          <div style="aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);"><img src="assets/community/photos/erkezes-az-osztalyra.jpg" alt="Amigók érkeznek a gyermekosztályra" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;" width="1600" height="1202"></div>
           <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);line-height:1.15;letter-spacing:-0.02em;">Cserébe számítunk rád</h3>
           <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">Amigónak lenni nem alkalmi program. Részt kell venned a felkészítéseken és bevetéseken, be kell tartanod a kórházi és gyermekvédelmi szabályokat, és időben jelezni, ha segítségre van szükséged.</p>
         </article>
       </div>
       <div data-reveal="" style="display:flex;justify-content:center;">
         <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="primary" size="lg" href="#jelentkezes" hint-size="auto,52px">Jelentkezem!</x-import>
+      </div>
+    </div>
+  </section>
+
+  <section id="amigok-mondjak" data-screen-label="Amigók mondják" style="background:var(--amigos-paper);padding:clamp(72px,10vw,128px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(28px,4vw,48px);">
+      <div data-reveal="" data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Amigók mondják</span>
+          <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Hallgasd meg őket.</h2>
+        </div>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:var(--amigos-ink-2);">Négy Amigo arról, hogyan kezdték, mit kaptak a közösségtől, és milyen egy-egy kórházi délután.</p>
+      </div>
+      <div data-testimonials="" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,24px);">
+        <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green);aspect-ratio:9/16;">
+          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-1-poster.jpg" src="assets/community/web/igexport-DYU0z35Mrsr.mp4" aria-label="Amigo-vallomás 1" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+        </figure>
+        <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green);aspect-ratio:9/16;">
+          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-2-poster.jpg" src="assets/community/web/igexport-DYXdkexsUrY.mp4" aria-label="Amigo-vallomás 2" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+        </figure>
+        <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green);aspect-ratio:9/16;">
+          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-3-poster.jpg" src="assets/community/web/igexport-DYZ2NE4svcv.mp4" aria-label="Amigo-vallomás 3" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+        </figure>
+        <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green);aspect-ratio:9/16;">
+          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-4-poster.jpg" src="assets/community/web/igexport-DdrwEuuMZXa.mp4" aria-label="Amigo-vallomás 4" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+        </figure>
       </div>
     </div>
   </section>
@@ -355,6 +392,7 @@ class Component extends DCLogic {
       this.pattern = document.querySelector('[data-m="pattern"]');
       if (!this.pattern) return false;
       this.intro(); this.bindFaq(); this.bindApply(); this.bindNewsletter(); this.reveal();
+      this.bindTestimonials();
       this.alive = true; this.last = -1;
       const loop = () => {
         if (!this.alive) return;
@@ -420,6 +458,14 @@ class Component extends DCLogic {
         ? 'Köszönjük a jelentkezésed! Hamarosan e-mailben küldjük az írásbeli feladatot.'
         : 'Köszönjük! Szólunk, amikor indul a következő jelentkezési időszak.';
     };
+  }
+  bindTestimonials() {
+    const vids = Array.from(document.querySelectorAll('[data-testimonial]'));
+    vids.forEach(v => {
+      v.controls = true; v.playsInline = true;
+      // only one voice at a time
+      v.addEventListener('play', () => vids.forEach(o => { if (o !== v) o.pause(); }));
+    });
   }
   bindNewsletter() {
     const form = document.querySelector('[data-newsletter-form]');

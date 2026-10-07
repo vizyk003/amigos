@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="Amigos a gyerekekért Alapítvány">
   <meta property="og:title" content="Gyerekeknek és szülőknek — Amigos a gyerekekért Alapítvány">
   <meta property="og:description" content="Játék, tanulás és barátság: így zajlik egy Amigos-foglalkozás a kórházban, így vigyázunk a gyerekek biztonságára, és ezekkel a programokkal érünk el hozzájuk a kórházon túl is.">
-  <meta property="og:image" content="assets/community/web/21-web-hero.jpg">
+  <meta property="og:image" content="assets/community/photos/lego-es-szinezes.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
@@ -43,6 +43,7 @@
     @media (max-width: 960px){ [style*="repeat(3,minmax(0,1fr))"]{grid-template-columns:minmax(0,1fr) !important;} }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/brand.css">
   <script src="assets/responsive.js" defer></script>
 </helmet>
 
@@ -65,22 +66,27 @@
   </header>
 <main id="tartalom">
 
-  <section data-screen-label="Hero" style="background:var(--amigos-paper);padding:clamp(64px,9vw,120px) 0 clamp(56px,8vw,104px);">
-    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
-      <div style="display:flex;flex-direction:column;gap:28px;">
-        <span style="font-size:13px;color:var(--amigos-ink-3);">Főoldal / Szülőknek és gyerekeknek</span>
-        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Szülőknek és gyerekeknek</span>
-        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-hero);line-height:var(--lh-hero);letter-spacing:var(--ls-hero);max-width:14ch;text-wrap:pretty;">
-          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">Játék, tanulás</span></span>
-          <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display: block; color: var(--am-green-700)">és barátság</span></span>
-        </h1>
-        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:48ch;color:var(--amigos-ink-2);text-wrap:pretty;">Az Amigók felkészített egyetemista önkéntesek, akik rendszeresen látogatják a kórházban gyógyuló gyerekeket. A foglalkozás során játszunk, alkotunk, tanulunk és beszélgetünk – ahhoz alkalmazkodunk, amihez a gyereknek éppen kedve és lehetősége van.</p>
-        <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:48ch;color:var(--amigos-ink-2);text-wrap:pretty;">Ha személyesen nem tudunk találkozni, online programokkal, foglalkozásokkal, saját fejlesztésű játékokkal és ajándékokkal visszük tovább az Amigos-élményt.</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--am-green-100);">
-          <img src="assets/community/web/10-photo-dir-3.jpg" alt="Amigo és gyerek közös játék közben" style="width:100%;height:100%;object-fit:cover;display:block;" width="1536" height="1024">
+  <section data-screen-label="Hero" style="background:var(--amigos-green-pale);color:var(--amigos-ink);padding:clamp(48px,6vw,88px) 0 clamp(56px,7vw,96px);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);">
+      <div data-split="" style="display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,5vw,72px);align-items:end;">
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <span style="font-size:13px;color:var(--amigos-green-deep);">Főoldal / Szülőknek és gyerekeknek</span>
+          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-deep);">Szülőknek és gyerekeknek</span>
+          <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);text-wrap:pretty;">
+            <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">Játék, tanulás</span></span>
+            <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;color:var(--amigos-green-deep);">és <span class="am-underline am-underline--ugralas-green">barátság</span></span></span>
+          </h1>
         </div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:48ch;text-wrap:pretty;">Az Amigók felkészített egyetemista önkéntesek, akik rendszeresen látogatják a kórházban gyógyuló gyerekeket. A foglalkozás során játszunk, alkotunk, tanulunk és beszélgetünk – ahhoz alkalmazkodunk, amihez a gyereknek éppen kedve és lehetősége van.</p>
+          <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:48ch;text-wrap:pretty;">Ha személyesen nem tudunk találkozni, online programokkal, foglalkozásokkal, saját fejlesztésű játékokkal és ajándékokkal visszük tovább az Amigos-élményt.</p>
+        </div>
+      </div>
+      <!-- Story in three shots: opener · main · detail, time-stamped. -->
+      <div data-story="" style="display:grid;grid-template-columns:1fr 2fr 1fr;gap:clamp(12px,2vw,20px);align-items:end;">
+        <figure style="margin:0;position:relative;"><img class="am-ill" src="assets/illustrations/amigos-ill-buborek-ink.png" alt="" aria-hidden="true" style="right:2%;bottom:calc(100% + 14px);width:34%;max-width:110px;transform:rotate(-6deg);"><img src="assets/community/photos/erkezes-az-osztalyra.jpg" alt="Amigók érkeznek a gyermekosztályra" style="width:100%;height:clamp(160px,17vw,240px);object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="1600" height="1202"><figcaption class="am-story-caption"><b>15:40</b> · Megérkeztünk az osztályra.</figcaption></figure>
+        <figure style="margin:0;"><img src="assets/community/photos/korhaz-felolvasas-agynal.jpg" alt="Amigo felolvas a kórházi ágy mellett" style="width:100%;height:clamp(220px,25vw,340px);object-fit:cover;object-position:50% 50%;display:block;border-radius:var(--radius-lg);" width="1600" height="1341"><figcaption class="am-story-caption"><b>16:10</b> · Mesélünk, amíg van kedve.</figcaption></figure>
+        <figure style="margin:0;position:relative;"><img class="am-ill" src="assets/illustrations/amigos-ill-csillanas-ink.png" alt="" aria-hidden="true" style="left:38%;bottom:calc(100% + 10px);width:30%;max-width:100px;transform:rotate(6deg);"><img src="assets/community/photos/korhaz-toronyepites.jpg" alt="Közösen épített torony a kórházi ágynál" style="width:100%;height:clamp(160px,17vw,240px);object-fit:cover;display:block;border-radius:var(--radius-lg);" width="1600" height="1341"><figcaption class="am-story-caption"><b>17:30</b> · A torony marad.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -180,12 +186,12 @@
           <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);">A játékos nyelvtanulás mellett a gyerekeket pályaválasztást segítő videók támogatják, hogy könnyebben eligazodjanak a középiskolai továbbtanulás előtt.</p>
           <a href="https://kalandozz.amigos.hu" target="_blank" rel="noopener" style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;background:var(--amigos-white);color:#3F5638;font-weight:600;text-decoration:none;">Induljon a kaland! <span aria-hidden="true">→</span></a>
         </article>
-        <article data-kid-card="" style="display:flex;flex-direction:column;gap:16px;background:var(--amigos-plum);border-radius:var(--radius-card);padding:24px;color:var(--amigos-white);">
+        <article data-kid-card="" style="display:flex;flex-direction:column;gap:16px;background:var(--amigos-malyva);border-radius:var(--radius-card);padding:24px;color:var(--amigos-ink);">
           <span style="display:block;border-radius:16px;overflow:hidden;background:var(--amigos-white);"><img src="assets/kalandozz/szintlepo.png" alt="Amigos Extra – közös online tanulás" loading="lazy" style="width:100%;height:auto;display:block;" width="960" height="540"></span>
           <h4 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:44px;line-height:1;letter-spacing:0.02em;">Amigos Extra</h4>
           <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);">A program során 11–18 éves gyerekek tanulhatnak közösen az Amigókkal. Az online foglalkozások heti/kétheti rendszerességűek, az iskolások szintjének és céljainak megfelelően.</p>
           <!-- TODO: a jelentkezési űrlap linkje -->
-          <a href="Amigos Aloldalak.dc.html#kapcsolat" style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;background:var(--amigos-white);color:var(--amigos-plum);font-weight:600;text-decoration:none;">Jelentkezés <span aria-hidden="true">→</span></a>
+          <a href="Amigos Aloldalak.dc.html#kapcsolat" style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;background:var(--amigos-plum);color:var(--amigos-white);font-weight:600;text-decoration:none;">Jelentkezés <span aria-hidden="true">→</span></a>
         </article>
         <article data-kid-card="" style="display:flex;flex-direction:column;gap:16px;background:#8A5A20;border-radius:var(--radius-card);padding:24px;color:var(--amigos-white);">
           <span style="display:block;border-radius:16px;overflow:hidden;background:var(--amigos-white);"><img src="assets/kalandozz/kalandor.png" alt="Amigos Kalandor" loading="lazy" style="width:100%;height:auto;display:block;" width="960" height="540"></span>
@@ -228,12 +234,12 @@
     </div>
   </section>
 
-  <section id="visszajelzes" data-screen-label="Visszajelzés" style="position:relative;overflow:hidden;background:var(--amigos-plum);color:var(--amigos-white);padding:clamp(64px,9vw,112px) 0 0;">
+  <section id="visszajelzes" data-screen-label="Visszajelzés" style="position:relative;overflow:hidden;background:var(--amigos-malyva);color:var(--amigos-ink);padding:clamp(64px,9vw,112px) 0 0;">
     <div data-reveal="" style="max-width:840px;margin:0 auto;padding:0 clamp(20px,4vw,48px) clamp(32px,5vw,56px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;">
-      <h2 style="margin: 0; font-family: var(--font-hand); font-weight: 700; font-size: clamp(48px,7vw,88px); line-height: 1; letter-spacing: 0.02em; color: var(--bg-surface); text-wrap: balance;">Találkoztunk már? Mondd el, milyen volt!</h2>
-      <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--text-on-plum-muted);max-width:48ch;">Kíváncsiak vagyunk, hogyan éreztétek magatokat a foglalkozáson. Visszajelzésetek segít abban, hogy az Amigók még figyelmesebben kapcsolódjanak a gyerekekhez.</p>
+      <h2 style="margin: 0; font-family: var(--font-hand); font-weight: 700; font-size: clamp(48px,7vw,88px); line-height: 1; letter-spacing: 0.02em; color:var(--amigos-ink); text-wrap: balance;">Találkoztunk már? Mondd el, milyen volt!</h2>
+      <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);max-width:48ch;">Kíváncsiak vagyunk, hogyan éreztétek magatokat a foglalkozáson. Visszajelzésetek segít abban, hogy az Amigók még figyelmesebben kapcsolódjanak a gyerekekhez.</p>
       <!-- TODO: ha lesz külön visszajelző űrlap, ide kerüljön a linkje -->
-      <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" href="mailto:irjnekunk@amigos.hu?subject=Visszajelz%C3%A9s%20egy%20foglalkoz%C3%A1sr%C3%B3l" hint-size="auto,52px">Visszajelzek a foglalkozásról</x-import>
+      <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="lg" href="mailto:irjnekunk@amigos.hu?subject=Visszajelz%C3%A9s%20egy%20foglalkoz%C3%A1sr%C3%B3l" hint-size="auto,52px">Visszajelzek a foglalkozásról</x-import>
     </div>
     <div data-m="lineup" style="display:flex;justify-content:center;overflow:hidden;">
       <img src="assets/characters/amigos-lineup.png" alt="" style="width:min(100%,1100px);height:auto;display:block;transform:translateY(6%);" width="2026" height="480">

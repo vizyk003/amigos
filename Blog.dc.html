@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="Amigos a gyerekekért Alapítvány">
   <meta property="og:title" content="Hírek és történetek — Amigos a gyerekekért Alapítvány">
   <meta property="og:description" content="Mi történik az Amigosnál: hírek, történetek és beszámolók az önkénteseinktől.">
-  <meta property="og:image" content="assets/community/web/21-web-hero.jpg">
+  <meta property="og:image" content="assets/community/photos/amigok-paros-selfie.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
@@ -33,6 +33,7 @@
     @media (prefers-reduced-motion: reduce){ [data-arrow],[data-post-row] img{transition:none !important;} }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/brand.css">
   <script src="assets/responsive.js" defer></script>
 </helmet>
 
@@ -56,10 +57,16 @@
 <main id="tartalom">
 
   <section data-screen-label="Blog hero" style="background:var(--amigos-paper);border-bottom:1px solid var(--amigos-line);padding:clamp(56px,8vw,104px) 0 clamp(40px,5vw,64px);">
-    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:20px;">
-      <span style="font-size:13px;color:var(--amigos-ink-3);">Főoldal / Blog</span>
-      <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);max-width:18ch;text-wrap:pretty;">Hírek és történetek</h1>
-      <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:54ch;color:var(--amigos-ink-2);">Amit az Amigos csapata ír: kutatások, szervezeti hírek és mindaz, amit a kórházi látogatásokon látunk.</p>
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,64px);align-items:end;">
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <span style="font-size:13px;color:var(--amigos-ink-3);">Főoldal / Blog</span>
+        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);max-width:18ch;text-wrap:pretty;">Hírek és <span class="am-underline am-underline--hullam-yellow">történetek</span></h1>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:54ch;color:var(--amigos-ink-2);">Amit az Amigos csapata ír: kutatások, szervezeti hírek és mindaz, amit a kórházi látogatásokon látunk.</p>
+      </div>
+      <a href="#pulcsi" style="position:relative;justify-self:start;text-decoration:none;display:flex;flex-direction:column;gap:8px;"><img class="am-ill" src="assets/illustrations/amigos-ill-buborek-green.png" alt="" aria-hidden="true" style="right:-30%;top:-70%;width:118px;transform:rotate(8deg);">
+        <span class="am-note" style="--am-rot:-3deg;color:var(--amigos-green);">→ friss:</span>
+        <span class="am-sticker am-sticker--note" style="--am-rot:2deg;max-width:300px;font-size:30px;">A zöld pulcsi az új szuperhős köpeny</span>
+      </a>
     </div>
   </section>
 
@@ -69,7 +76,7 @@
       <a href="#pulcsi" data-post-row="" style="display:block;text-decoration:none;color:inherit;border-top:1px solid var(--amigos-line);padding:clamp(28px,4vw,44px) 0;">
         <div data-row="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,56px);align-items:center;">
           <div style="aspect-ratio:16/10;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
-            <img src="assets/community/web/01-cover-photo.jpg" alt="Amigók zöld pulcsiban" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" width="1254" height="1254">
+            <img src="assets/community/photos/amigok-paros-selfie.jpg" alt="Két Amigo zöld sálban" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" width="1600" height="1200">
           </div>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <span style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--amigos-ink-3);">
@@ -86,7 +93,7 @@
       <a href="#magany" data-post-row="" style="display:block;text-decoration:none;color:inherit;border-top:1px solid var(--amigos-line);padding:clamp(28px,4vw,44px) 0;">
         <div data-row="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,56px);align-items:center;">
           <div style="aspect-ratio:16/10;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
-            <img src="assets/community/web/17-donation-photo.jpg" alt="Kutatás a kórházi magányról" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" width="1122" height="1402">
+            <img src="assets/community/photos/korhaz-felolvasas-agynal.jpg" alt="Amigo felolvas a kórházi ágy mellett" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" width="1600" height="1341">
           </div>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <span style="font-size:14px;color:var(--amigos-ink-3);">2026. augusztus 10. · Dongó Kristóf · 1 perc</span>
@@ -100,7 +107,7 @@
       <a href="#ugyvezeto" data-post-row="" style="display:block;text-decoration:none;color:inherit;border-top:1px solid var(--amigos-line);border-bottom:1px solid var(--amigos-line);padding:clamp(28px,4vw,44px) 0;">
         <div data-row="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,56px);align-items:center;">
           <div style="aspect-ratio:16/10;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
-            <img src="assets/community/web/16-ig-1.jpg" alt="Halász Erika, az Amigos új ügyvezetője" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" width="1374" height="1145">
+            <img src="assets/community/photos/csapat-rollup.jpg" alt="Az Amigos csapata" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" width="1200" height="1600">
           </div>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <span style="font-size:14px;color:var(--amigos-ink-3);">2026. július 31. · Fórián Virág · 3 perc</span>
@@ -120,7 +127,7 @@
       <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);text-wrap:pretty;">A zöld pulcsi az új szuperhős köpeny</h2>
       <span style="font-size:15px;color:var(--amigos-ink-3);">Írta: Sólyom Diána · 2026. szeptember 12.</span>
       <div style="aspect-ratio:16/9;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
-        <img src="assets/community/web/01-cover-photo.jpg" alt="Amigók zöld pulcsiban" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1254" height="1254">
+        <img src="assets/community/photos/amigok-paros-selfie.jpg" alt="Két Amigo zöld sálban" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1600" height="1200">
       </div>
       <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);">Mindenkinek van legalább egy kedvenc szuperhőse. Valaki, akire gyerekként, de akár felnőttként is ámulattal néz fel. Van, aki az egész várost megmenti a gonosztevőktől, más a háttérből segíti a bajba jutottakat. Mindannyian szeretünk eljátszani a gondolattal, hogy mi mire használnánk a szupererőnket.</p>
       <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);">De vannak szuperhősök, akik kimaradnak a felsorolásokból, pedig nap mint nap találkozhatsz velük a való életben is, leginkább a kórházakban. Ezek a hősök nem mások, mint az Amigók. Az Amigos a gyerekekért Alapítványnál a szupererőnk nem a repülésben vagy a láthatatlanságban rejlik, hanem valami sokkal emberibben: a barátság, a játék, a nyelvtanulás és az a jelenlét, amivel a kórházban fekvő gyerekek mindennapjait szépítjük meg.</p>
@@ -138,7 +145,7 @@
       <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);text-wrap:pretty;">A kórházi magány majdnem annyira fáj, mint a betegség maga</h2>
       <span style="font-size:15px;color:var(--amigos-ink-3);">Dongó Kristóf · 2026. augusztus 10.</span>
       <div style="aspect-ratio:16/9;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
-        <img src="assets/community/web/17-donation-photo.jpg" alt="A kutatás vizuálja" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1122" height="1402">
+        <img src="assets/community/photos/korhaz-felolvasas-agynal.jpg" alt="Amigo felolvas a kórházi ágy mellett" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1600" height="1341">
       </div>
       <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);line-height:1.1;letter-spacing:-0.02em;">A barátok nélkül nehezebb a gyógyulás</h3>
       <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);">A kórházban fekvő gyerekek esetében a gyógyulás nemcsak a kezelésekről és a fizikai fájdalomról szól. A szülők szerint a lelki teher — különösen a magány és a barátoktól való elszakadás — közel ugyanakkora megterhelést jelent, mint maga a betegség.</p>
@@ -164,7 +171,7 @@
       <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);text-wrap:pretty;">Új fejezet kezdődik az Amigos történetében: Halász Erika az Alapítvány új ügyvezetője</h2>
       <span style="font-size:15px;color:var(--amigos-ink-3);">Fórián Virág · 2026. július 31.</span>
       <div style="aspect-ratio:16/9;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
-        <img src="assets/community/web/16-ig-1.jpg" alt="Halász Erika" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1374" height="1145">
+        <img src="assets/community/photos/csapat-rollup.jpg" alt="Az Amigos csapata" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="1200" height="1600">
       </div>
       <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);">Álmunk, hogy egy napon minden beteg gyerek mellett legyen egy Amigo. Mindez nem valósulhat meg elkötelezett Amigók, egyetemista önkéntesek és profi szervezés, vezetés nélkül. 2026. július 22-től Halász Erika felel az Alapítvány operatív vezetéséért, hosszú távú stratégiájának megvalósításáért és fenntartható működéséért.</p>
       <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);">Erika 2026 elején, a Fenntarthatóság csapat vezetőjeként csatlakozott az Amigoshoz. Közgazdászként a Budapesti Corvinus Egyetemen végzett, majd a CEMS nemzetközi mesterprogram mellett a Moholy-Nagy Művészeti Egyetem service design képzésén is tovább mélyítette tudását.</p>

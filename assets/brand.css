@@ -1,0 +1,192 @@
+/* =====================================================================
+   Amigos — recurring brand elements
+   ---------------------------------------------------------------------
+   Ports of the design system's brand components (Underline, the offset
+   circle line) for the static page exports. Every page hero uses the
+   same two marks in the same places, so they read as one system:
+
+     .am-underline   one brush stroke under one keyword of the hero title
+     .am-ring        the stitched offset line around the hero photo circle
+
+   Each page picks its own stroke from the set (one per surface); the
+   colour follows the surface. The strokes are the brandbook's PNGs in assets/underlines/; they are
+   set as backgrounds, so a missing file shows nothing rather than a
+   broken image.
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   Underline — ~⅓ of the word wide, centred, half a line below.
+   ------------------------------------------------------------------ */
+.am-underline{
+  position: relative;
+  display: inline-block;
+}
+.am-underline::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: max(34%, 1.1em);
+  aspect-ratio: 16 / 5; /* the stroke files are 320 × 100 */
+  transform: translate(-50%, -18%);
+  background: center / contain no-repeat;
+  pointer-events: none;
+}
+/* Stroke set (assets/underlines/amigos-alahuzas-<shape>-<colour>.png).
+   Short strokes (hullam, lendulet, ugralas) sit under ~⅓ of the word;
+   long ones (kunkor, pup) run the full word. Colour follows the
+   surface: yellow or green on paper, white on the green field, green
+   on pale and pastel fields. */
+.am-underline--sun::after{ background-image: url('underlines/mosoly.png'); }
+.am-underline--hullam-green::after{ background-image: url('underlines/amigos-alahuzas-hullam-green.png'); }
+.am-underline--hullam-purple::after{ background-image: url('underlines/amigos-alahuzas-hullam-purple.png'); }
+.am-underline--hullam-white::after{ background-image: url('underlines/amigos-alahuzas-hullam-white.png'); }
+.am-underline--hullam-yellow::after{ background-image: url('underlines/amigos-alahuzas-hullam-yellow.png'); }
+.am-underline--lendulet-green::after{ background-image: url('underlines/amigos-alahuzas-lendulet-green.png'); }
+.am-underline--lendulet-purple::after{ background-image: url('underlines/amigos-alahuzas-lendulet-purple.png'); }
+.am-underline--lendulet-white::after{ background-image: url('underlines/amigos-alahuzas-lendulet-white.png'); }
+.am-underline--lendulet-yellow::after{ background-image: url('underlines/amigos-alahuzas-lendulet-yellow.png'); }
+.am-underline--ugralas-green::after{ background-image: url('underlines/amigos-alahuzas-ugralas-green.png'); }
+.am-underline--ugralas-purple::after{ background-image: url('underlines/amigos-alahuzas-ugralas-purple.png'); }
+.am-underline--ugralas-white::after{ background-image: url('underlines/amigos-alahuzas-ugralas-white.png'); }
+.am-underline--ugralas-yellow::after{ background-image: url('underlines/amigos-alahuzas-ugralas-yellow.png'); }
+.am-underline--kunkor-green::after{ background-image: url('underlines/amigos-alahuzas-kunkor-green.png'); }
+.am-underline--kunkor-purple::after{ background-image: url('underlines/amigos-alahuzas-kunkor-purple.png'); }
+.am-underline--kunkor-white::after{ background-image: url('underlines/amigos-alahuzas-kunkor-white.png'); }
+.am-underline--kunkor-yellow::after{ background-image: url('underlines/amigos-alahuzas-kunkor-yellow.png'); }
+.am-underline--pup-green::after{ background-image: url('underlines/amigos-alahuzas-pup-green.png'); }
+.am-underline--pup-purple::after{ background-image: url('underlines/amigos-alahuzas-pup-purple.png'); }
+.am-underline--pup-white::after{ background-image: url('underlines/amigos-alahuzas-pup-white.png'); }
+.am-underline--pup-yellow::after{ background-image: url('underlines/amigos-alahuzas-pup-yellow.png'); }
+.am-underline[class*='--kunkor-']::after{ width: 100%; aspect-ratio: 1000 / 140; transform: translate(-50%, 0); }
+.am-underline[class*='--pup-']::after{ width: 92%; aspect-ratio: 1000 / 160; transform: translate(-50%, -18%); }
+/* The long strokes hang lower than the short ones; give their line a
+   little more room so they clear whatever follows the title. */
+[data-m="w"]:has(.am-underline[class*='--pup-'], .am-underline[class*='--kunkor-']){
+  margin-bottom: -0.16em !important;
+}
+
+/* The hero titles slide in line by line, each line its own clip box.
+   A line that carries the stroke needs a deeper box so the stroke isn't
+   cut off; the negative margin gives the space back to the layout. */
+[data-m="w"]:has(.am-underline){
+  padding-bottom: 0.46em !important;
+  margin-bottom: -0.46em !important;
+}
+/* When the stroked word isn't on the last line, open a little room so
+   the stroke doesn't run into the line below. */
+[data-m="w"]:has(.am-underline):not(:last-child){
+  margin-bottom: -0.26em !important;
+}
+h1 > span:has(> .am-underline):not(:last-child){
+  padding-bottom: 0.2em;
+}
+
+/* ---------------------------------------------------------------------
+   Offset circle line — the stitch (2px dashed sun) nudged off the
+   photo circle's edge. Wrap the circle in .am-ring and put the svg
+   first, so the photo paints over the overlapping arc.
+   ------------------------------------------------------------------ */
+.am-ring{
+  position: relative;
+}
+.am-ring > .am-ring-line{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform: translate(3.4%, 2.6%);
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------
+   Stickers / cetli (components/core/Sticker) — Amatic on a lifted,
+   slightly rotated shape. Sun is a dot, never a field: stickers are the
+   one place it may fill a shape, with ink text, never white.
+   ------------------------------------------------------------------ */
+.am-sticker{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  background: var(--amigos-sun);
+  color: var(--amigos-ink);
+  box-shadow: var(--shadow-sticker);
+  transform: rotate(var(--am-rot, -4deg));
+}
+.am-sticker--note{ padding: 10px 16px; font-size: 28px; border-radius: 2px; }
+.am-sticker--circle{ width: 112px; height: 112px; border-radius: 50%; font-size: 30px; }
+.am-sticker--patch{
+  padding: 12px 20px; font-size: 30px; border-radius: 8px;
+  outline: 2px dashed currentColor; outline-offset: -6px;
+}
+.am-sticker--green{ background: var(--amigos-green); color: var(--amigos-white); }
+.am-sticker--deep{ background: var(--amigos-green-deep); color: var(--amigos-white); }
+.am-sticker--paper{ background: var(--amigos-white); color: var(--amigos-ink); }
+
+/* Handwritten note — "→ 3. lecke". Amatic, ink, a little off-axis. */
+.am-note{
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--amigos-ink);
+  transform: rotate(var(--am-rot, -4deg));
+  display: inline-block;
+}
+
+/* Photo with a solid deep-green caption band — protection over a photo
+   is a band, never a gradient. Corners 16px. */
+.am-photo{
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--am-green-100);
+}
+.am-photo > img:not(.am-ill){ width: 100%; height: 100%; object-fit: cover; display: block; }
+.am-photo > figcaption{
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: var(--amigos-green-deep);
+  color: var(--amigos-white);
+  padding: 12px 20px;
+  font: 400 14px/1.4 var(--font-body);
+}
+
+/* Story caption — "15:40 · Felveszi a zöldet." */
+.am-story-caption{
+  margin-top: 10px;
+  font: 400 15px/1.4 var(--font-body);
+  color: var(--amigos-ink);
+}
+.am-story-caption b{ font-family: var(--font-editorial); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* Story strip (three shots) stacks on phones; stickers pulled in so
+   they don't hang off a narrow screen. */
+@media (max-width: 640px){
+  [data-story]{ grid-template-columns: minmax(0,1fr) !important; }
+  [data-story] img{ height: auto !important; aspect-ratio: 4 / 3; }
+}
+@media (max-width: 840px){
+  .am-sticker, .am-note{ max-width: calc(100vw - 48px); }
+}
+
+/* ---------------------------------------------------------------------
+   Illustration layer (components/brand/Illustration) — a hand-drawn
+   line drawn on the photo, reacting to something in it. One colour
+   (white, ink or sun), at most two per image, never over a face.
+   Position each one inline (left/top/width as % of its frame).
+   ------------------------------------------------------------------ */
+.am-ill{
+  position: absolute;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  z-index: 2;
+}
