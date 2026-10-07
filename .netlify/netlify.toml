@@ -1,6 +1,6 @@
+headersOrigin = "config"
 redirectsOrigin = "config"
 plugins = []
-headers = []
 
 [functions]
 
@@ -24,6 +24,36 @@ publishOrigin = "default"
 
 [build.services]
 
+[[headers]]
+for = "/Amigos Aloldalak.dc.html"
+
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+for = "/Amigos Fooldal.dc.html"
+
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+for = "/Ket kor - Hero.dc.html"
+
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+for = "/Ket kor - Video hero.dc.html"
+
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+for = "/Ket kor - alt story.dc.html"
+
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+
 [[redirects]]
 from = "/"
 to = "/Amigos%20Fooldal%20v2.dc.html"
@@ -41,6 +71,90 @@ from = "/home"
 to = "/Amigos%20Fooldal%20v2.dc.html"
 status = 200.0
 force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/legyel-amigo"
+to = "/Legyel%20Amigo.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/munkank-es-hatasunk"
+to = "/Munkank%20es%20hatasunk.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/gyerekek-es-szulok"
+to = "/Gyerekek%20es%20szulok.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/adomanybolt"
+to = "/Adomanybolt.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/ado-1-szazalek"
+to = "/Ado%201%20szazalek.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/vallalati-tamogatas"
+to = "/Vallalati%20tamogatas.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/blog"
+to = "/Blog.dc.html"
+status = 200.0
+force = false
 
 [redirects.query]
 
