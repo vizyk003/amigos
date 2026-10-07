@@ -362,6 +362,18 @@
 class Component extends DCLogic {
   componentDidMount() {
     this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const goHash = () => {
+      if (!location.hash || location.hash === '#') return true;
+      const t = document.querySelector(location.hash);
+      if (!t) return false;
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 88, behavior: 'auto' });
+      return true;
+    };
+    let hn = 0;
+    const hashTick = () => { if (goHash() || hn++ > 20) return; setTimeout(hashTick, 120); };
+    setTimeout(hashTick, 120);
+    this.onHash = () => goHash();
+    window.addEventListener('hashchange', this.onHash);
     const bind = () => {
       this.path = document.querySelector('[data-m="kotespath"]');
       if (!this.path) return false;
@@ -379,7 +391,7 @@ class Component extends DCLogic {
     };
     if (!bind()) { const iv = setInterval(() => { if (bind()) clearInterval(iv); }, 100); }
   }
-  componentWillUnmount() { this.alive = false; }
+  componentWillUnmount() { this.alive = false; window.removeEventListener('hashchange', this.onHash); }
   intro() {
     if (this.reduced) return;
     document.querySelectorAll('[data-m="wi"]').forEach((w, i) => {
