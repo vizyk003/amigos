@@ -141,6 +141,33 @@
     };
   }
 
+  /* Section illustrations ([data-ill-pop], styled in brand.css) spring in
+     the first time they reach the viewport. Only attributes are set, so
+     React's nodes stay untouched; drawings React mounts later are picked
+     up by the MutationObserver. */
+  function illustrationsPop() {
+    if (!('IntersectionObserver' in window)) return;
+    document.documentElement.setAttribute('data-ill-js', '');
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (!entries[i].isIntersecting) continue;
+        entries[i].target.setAttribute('data-ill-in', '');
+        io.unobserve(entries[i].target);
+      }
+    }, { rootMargin: '0px 0px -10% 0px' });
+    function scan() {
+      var els = document.querySelectorAll('[data-ill-pop]:not([data-ill-seen])');
+      for (var i = 0; i < els.length; i++) {
+        els[i].setAttribute('data-ill-seen', '');
+        io.observe(els[i]);
+      }
+    }
+    scan();
+    new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
+  }
+
+  ready(illustrationsPop);
+
   ready(function () {
     whenSettled(function () {
       var syncers = bars().map(enhance);

@@ -644,3 +644,9 @@ nav a { overflow-wrap: break-word; }
     --text-h4: var(--text-h4-m);
   }
 }
+
+/* Section illustrations: on phones only the first drawing of a section
+   stays; the second ([data-ill-secondary]) would crowd the single column. */
+@media (max-width: 840px) {
+  [data-ill-secondary] { display: none !important; }
+}

@@ -190,3 +190,20 @@ h1 > span:has(> .am-underline):not(:last-child){
   pointer-events: none;
   z-index: 2;
 }
+
+/* Pop-in for section illustrations: [data-ill-pop] drawings spring in
+   when they reach the viewport; ="wiggle" then sways a few degrees.
+   Uses the individual scale/rotate properties so the inline transform
+   (each drawing's own tilt) is left alone. Hidden only once
+   assets/responsive.js has marked <html data-ill-js>, so without the
+   script — or with reduced motion — the drawings simply sit in place. */
+@keyframes am-ill-wiggle{ 0%,100%{ rotate: -3deg; } 50%{ rotate: 3deg; } }
+@media (prefers-reduced-motion: no-preference){
+  html[data-ill-js] [data-ill-pop]{
+    transition: opacity 360ms ease-out, scale 560ms cubic-bezier(0.34,1.56,0.64,1);
+  }
+  html[data-ill-js] [data-ill-pop]:not([data-ill-in]){ opacity: 0; scale: 0.55; }
+  html[data-ill-js] [data-ill-pop="wiggle"][data-ill-in]{
+    animation: am-ill-wiggle 5s ease-in-out 700ms infinite;
+  }
+}
