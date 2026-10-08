@@ -427,15 +427,22 @@ nav a { overflow-wrap: break-word; }
 
 @media (max-width: 840px) {
   /* Stacked, the space these doodles reach into is no longer empty: the
-     Blog bubble sat on the intro paragraph and the Gyerekek bubble and
-     sparkle on the text and caption above their photo. Pull them down so
-     they straddle the edge of their own frame instead. */
+     Blog bubble sat on the intro paragraph, and the Gyerekek bubble and
+     sparkle on the text and caption above their photo. */
   .am-ill[style*="right: -30%"],
   .am-ill[style*="right:-30%"] { top: -38% !important; width: 80px !important; }
 
+  /* Gyerekek — moving the doodles onto the photo kept them off the text
+     but lost them in it (ink on a dark photo, yellow on a bright one).
+     Clear a strip of plain section background above each of these
+     photos instead, so the doodle sits on flat colour as on desktop. */
+  figure:has(> .am-ill[style*="bottom: calc(100%"]),
+  figure:has(> .am-ill[style*="bottom:calc(100%"]) {
+    margin-top: 64px !important;
+  }
   figure > .am-ill[style*="bottom: calc(100%"],
   figure > .am-ill[style*="bottom:calc(100%"] {
-    bottom: calc(100% - 36px) !important;
+    bottom: calc(100% + 6px) !important;
     max-width: 76px !important;
   }
 }
