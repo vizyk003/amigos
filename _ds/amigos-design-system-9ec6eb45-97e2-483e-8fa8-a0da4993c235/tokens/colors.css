@@ -11,33 +11,33 @@
    ===================================================================== */
 :root{
 /* --- Base palette (brandbook ch. 4) ------------------------------- */
---amigos-green:#38B285;      /* Pulcsizöld — primary, the hoodie */
---amigos-green-deep:#146247; /* Mélyzöld — footer, caption band, patch, small card only */
---amigos-green-pale:#ABDCC5; /* Fakózöld — warm/family surfaces */
+--amigos-green:#00A74A;      /* Pulcsizöld — primary, the hoodie */
+--amigos-green-deep:#05652C; /* Mélyzöld — footer, caption band, patch, small card only */
+--amigos-green-pale:#A8DFB2; /* Fakózöld — warm/family surfaces */
 --amigos-sun:#F2B400;        /* Napsárga — accent dot, never a large field, never white text */
 --amigos-plum:#993166;       /* Lila — donation only */
---amigos-paper:#F6FBF9;      /* Papír — default base */
---amigos-ink:#111D18;        /* Tinta — text */
+--amigos-paper:#F7FBF8;      /* Papír — default base */
+--amigos-ink:#131D15;        /* Tinta — text */
 --amigos-white:#FFFFFF;
 
---amigos-green-text:#00875E; /* green Amatic / brand text on white or light surfaces */
+--amigos-green-text:#028436; /* green Amatic / brand text on white or light surfaces */
 
 /* --- Derived tints (UI states; not in the brandbook) --------------- */
---amigos-green-hover:#2F9D74;
---amigos-green-press:#288A66;
+--amigos-green-hover:#009141;
+--amigos-green-press:#007D37;
 --amigos-plum-hover:#852A59;
---amigos-ink-2:#43524A;      /* secondary text on paper */
---amigos-ink-3:#66756D;      /* tertiary / meta on paper */
---amigos-line:#D5E3DC;       /* hairlines on paper */
---amigos-paper-2:#EAF3EF;    /* sunken paper */
+--amigos-ink-2:#465247;      /* secondary text on paper */
+--amigos-ink-3:#69756A;      /* tertiary / meta on paper */
+--amigos-line:#D7E3D9;       /* hairlines on paper */
+--amigos-paper-2:#EBF3ED;    /* sunken paper */
 
 /* --- Pasztell párok (brandbook p.20) ------------------------------
    Every loud colour has a pastel partner: pastel = base, brand colour =
    print. Merch, web and social surfaces. */
---amigos-zsalya:#D2F0E1; /* + pulcsizöld: póló, pulcsi, vászontáska */
+--amigos-zsalya:#D7EFDA; /* + pulcsizöld: póló, pulcsi, vászontáska */
 --amigos-vaj:#F5E6B8;    /* + mélyzöld: sapka, matrica, kitűző */
 --amigos-malyva:#EBD3DC; /* + lila: adományozói ajándék, köszönőkártya */
---amigos-kreta:#E0EBE5;  /* + tinta: jegyzetfüzet, bögre, irodai anyagok */
+--amigos-kreta:#E2EBE3;  /* + tinta: jegyzetfüzet, bögre, irodai anyagok */
 
 /* --- Semantic ------------------------------------------------------ */
 --surface-page:var(--amigos-paper);
@@ -58,8 +58,8 @@
 --text-on-green:var(--amigos-white);
 --text-on-sun:var(--amigos-ink);
 --text-on-plum:var(--amigos-white);
-/* Departure from upstream (which keeps pulcsizöld here): #38B285 on
-   paper is ~2.5:1, so brand-coloured *text* uses the DS's own
+/* Departure from upstream (which keeps pulcsizöld here): #00A74A on
+   paper is ~3:1, so brand-coloured *text* uses the DS's own
    --amigos-green-text, which upstream reserves for green Amatic on light. */
 --text-brand:var(--amigos-green-text);
 --text-hand-green:var(--amigos-green-text);
@@ -67,12 +67,12 @@
 /* --- Surfaces the pages already used, now named --------------------
    These were inline literals repeated across the exported pages. The
    values are unchanged; only the name is new. */
---amigos-ink-surface:#111D18;   /* the near-black footer field */
---text-on-ink:#C1D1C9;          /* body text on that field */
---text-on-ink-muted:#86A897;    /* column headings on that field, 6.5:1 */
+--amigos-ink-surface:#131D15;   /* the near-black footer field */
+--text-on-ink:#C4D1C6;          /* body text on that field */
+--text-on-ink-muted:#8CA790;    /* column headings on that field, 6.5:1 */
 --text-on-plum-muted:#F2DCE8;   /* secondary text on the donation field */
---type-pattern-on-green:#31A47A;/* the tonal oversized display type */
---surface-tint-paper:#E6F3ED;   /* the pale letterform bleed on paper */
+--type-pattern-on-green:#029943;/* the tonal oversized display type */
+--surface-tint-paper:#E8F3EA;   /* the pale letterform bleed on paper */
 
 --accent:var(--amigos-sun);
 --action-primary:var(--amigos-green);
@@ -85,7 +85,7 @@
 /* Interactive controls need 3:1 against their surface (WCAG 1.4.11);
    the decorative hairline (--amigos-line, 1.25:1 on paper) does not
    qualify. Inputs, selects and steppers use this instead. */
---border-control:#82958B;
+--border-control:#859487;
 --border-strong:var(--amigos-ink);
 --focus-color:var(--amigos-sun);
 
@@ -93,7 +93,7 @@
 --am-error:#B3261E;   --am-error-bg:#FBECEA;
 --am-warning:#8A5A00; --am-warning-bg:#FFF3D6;
 --am-info:#2C5D8F;    --am-info-bg:#E7EFF7;
---am-success:var(--amigos-green); --am-success-bg:#DDF1E7;
+--am-success:var(--amigos-green); --am-success-bg:#E0F0E3;
 
 /* --- Sub-brand only (Amigos Mini, TanulTablet) — never master UI -- */
 --am-mini-red:#C8222B;
@@ -106,7 +106,7 @@
 --am-paper:var(--amigos-paper);
 --am-mist:var(--amigos-paper-2);
 --am-line:var(--amigos-line);
---am-line-strong:#B3C6BC;
+--am-line-strong:#B6C5B8;
 --am-ink:var(--amigos-ink);
 --am-ink-2:var(--amigos-ink-2);
 --am-ink-3:var(--amigos-ink-3);
@@ -114,12 +114,12 @@
 --am-green-900:var(--amigos-green-deep);
 --am-green-800:var(--amigos-green-hover);
 --am-green-700:var(--amigos-green);
---am-green-600:#46BA8E;
---am-green-500:#5CC49C;
---am-green-300:#8ED0B2;
+--am-green-600:#39BF64;
+--am-green-500:#51C976;
+--am-green-300:#8AD498;
 --am-green-200:var(--amigos-green-pale);
---am-green-100:#DDF1E7;
---am-green-50:#EEF8F3;
+--am-green-100:#E0F0E3;
+--am-green-50:#F0F8F1;
 --am-purple-700:var(--amigos-plum-hover);
 --am-purple-600:var(--amigos-plum);
 --am-purple-100:#F3E3EB;
@@ -150,7 +150,7 @@
 --text-primary:var(--amigos-ink);
 --text-tertiary:var(--amigos-ink-3);
 --text-on-field:var(--amigos-white);
---text-on-field-muted:#E4F5EC; /* fakózöld on #38B285 is ~1.5:1 */
+--text-on-field-muted:#E7F4E8; /* fakózöld on #00A74A is ~2.1:1 */
 --text-on-pale:var(--amigos-green-deep);
 --text-on-accent:var(--amigos-white);
 --text-link:var(--amigos-green-text);
