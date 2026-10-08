@@ -9,7 +9,10 @@
      beside it. "Az egész oldalhoz" leaves a note on the page as a whole.
    - Screenshot: drag a rectangle; the browser's tab capture takes one
      frame, cropped to the rectangle, and attaches it to the note.
-   - List: the notes sent from this browser, across pages.
+   - List: the notes sent from this browser, across pages. A note can
+     be deleted from its bubble or from the list; that also deletes the
+     Netlify submission, through netlify/functions/review-delete.mjs,
+     matched by the random ref sent with it.
 
    Notes go to Netlify Forms as "design-feedback" (declared statically in
    feedback-form.html, which is how the deploy detects it; fields not
@@ -33,6 +36,7 @@
 
   var FORM = 'design-feedback';
   var ENDPOINT = '/feedback-form.html';
+  var DELETE_URL = '/api/review-delete';
   var NAME_KEY = 'am-review-name';
   var PINS_KEY = 'am-review-pins';
   var HIDDEN_KEY = 'am-review-hidden';
@@ -139,7 +143,10 @@
     '.pin.draft{background:' + INK + ';color:#fff;}',
     '.pin.on{outline:3px solid ' + INK + ';outline-offset:1px;}',
     '.bubble{position:absolute;width:260px;padding:12px 14px;border-radius:12px;background:#fff;color:' + INK + ';font-size:14px;line-height:1.45;white-space:pre-wrap;box-shadow:0 8px 28px rgba(19,29,21,.28);}',
-    '.bubble small{display:block;margin-top:6px;color:#51655D;font-size:12px;}',
+    '.bubble .foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:8px;color:#51655D;font-size:12px;white-space:normal;}',
+    '.bubble .foot .grow{flex:1;white-space:nowrap;}',
+    '.link{border:0;padding:0;background:none;color:#51655D;font-size:12px;font-weight:600;text-decoration:underline;}',
+    '.link.danger{color:#993166;}',
 
     /* composer */
     '.composer{position:absolute;width:' + COMPOSER_W + 'px;padding:14px;border-radius:12px;background:#fff;color:' + INK + ';font-size:14px;line-height:1.45;box-shadow:0 12px 40px rgba(19,29,21,.3);}',
@@ -177,11 +184,16 @@
     '.list ol{flex:1;overflow:auto;margin:0;padding:8px;list-style:none;}',
     '.list li a,.list li button.item{display:flex;gap:12px;width:100%;padding:12px;border:0;border-radius:12px;background:none;color:inherit;text-align:left;text-decoration:none;font-size:14px;line-height:1.4;}',
     '.list li a:hover,.list li button.item:hover{background:#F2F7F3;}',
+    '.list li{display:flex;flex-wrap:wrap;align-items:flex-start;}',
+    '.list li>a,.list li>button.item{flex:1;width:auto;min-width:0;}',
+    '.list .trash{flex:none;display:flex;width:32px;height:32px;margin:8px 4px 0 0;align-items:center;justify-content:center;border:0;border-radius:8px;background:none;color:#51655D;}',
+    '.list .trash:hover{background:#F2F7F3;color:#993166;}',
+    '.list .confirm{flex:1 0 100%;display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:0 12px 12px 48px;color:#51655D;font-size:12px;}',
     '.list .n{flex:none;width:24px;height:24px;border-radius:50% 50% 50% 4px;background:#F2B400;font-size:12px;font-weight:700;line-height:24px;text-align:center;}',
     '.list .n.gen{background:#D7EFDA;}',
     '.list .meta{display:block;margin-top:4px;color:#51655D;font-size:12px;}',
     '.list .empty{padding:24px 12px;color:#51655D;font-size:14px;}',
-    '.list footer{padding:12px 16px 20px;border-top:1px solid #D7E3D9;}',
+    '.list footer{padding:12px 16px 76px;border-top:1px solid #D7E3D9;}', // clears the toolbar
     '.list footer .btn{width:100%;background:' + INK + ';color:#fff;}',
 
     '.toast{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);padding:10px 16px;border-radius:12px;background:#007D37;color:#fff;font-size:14px;box-shadow:0 8px 28px rgba(19,29,21,.3);}'
@@ -196,6 +208,7 @@
     list: icon('<path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/>'),
     hide: icon('<path d="m6 9 6 6 6-6"/>'),
     close: icon('<path d="M18 6 6 18M6 6l12 12"/>'),
+    trash: icon('<path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v5M14 11v5"/>'),
     clip: icon('<path d="m21.4 11.6-9.2 9.2a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/>')
   };
 
@@ -251,6 +264,8 @@
   var spot = null;      // where the note being written points, or null for the whole page
   var shot = null;      // Blob attached to the note
   var openPin = null;   // id of the pin whose bubble is showing
+  var confirmDel = null; // id of the note asking "Biztosan törlöd?"
+  var deleting = null;   // id of the note being deleted
 
   var cursor = document.createElement('style');
   cursor.textContent = 'html.am-picking,html.am-picking *{cursor:crosshair !important;}';
@@ -489,6 +504,7 @@
     if (shot && shot.size > MAX_FILE) return fail('A kép legfeljebb 8 MB lehet.');
     save(NAME_KEY, name);
 
+    var ref = newRef();
     var data = new FormData();
     data.append('form-name', FORM);
     data.append('bot-field', f['bot-field'].value);
@@ -506,6 +522,7 @@
       ? 'area ' + spot.area
       : 'page ' + spot.x + ',' + spot.y + ' · in element ' + Math.round(spot.fx * 100) + '%,' + Math.round(spot.fy * 100) + '%');
     data.append('browser', navigator.userAgent);
+    data.append('ref', ref); // lets the reviewer delete this note later
 
     var send = composer.querySelector('[type=submit]');
     send.disabled = true;
@@ -515,7 +532,7 @@
     fetch(ENDPOINT, { method: 'POST', body: data })
       .then(function (res) {
         if (!res.ok) throw new Error(res.status);
-        addPin(spot, comment);
+        addPin(spot, comment, ref);
         closeComposer();
         say('Köszönjük, megkaptuk!');
       })
@@ -545,10 +562,17 @@
     return allPins().filter(function (p) { return p.page === location.pathname; });
   }
 
-  function addPin(s, comment) {
+  function newRef() {
+    var a = new Uint8Array(12);
+    crypto.getRandomValues(a);
+    return Array.prototype.map.call(a, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+  }
+
+  function addPin(s, comment, ref) {
     var pins = allPins();
     pins.push({
       id: Date.now().toString(36),
+      ref: ref,
       page: location.pathname,
       title: document.title,
       selector: s ? s.selector : '',
@@ -597,11 +621,17 @@
         var b = document.createElement('div');
         b.className = 'bubble';
         b.textContent = p.comment;
-        var meta = document.createElement('small');
-        meta.textContent = when(p.at);
-        b.appendChild(meta);
+        var foot = document.createElement('div');
+        foot.className = 'foot';
+        var t = document.createElement('span');
+        t.className = 'grow';
+        t.textContent = when(p.at);
+        foot.appendChild(t);
+        delControls(p, foot);
+        b.appendChild(foot);
         pinsEl.appendChild(b);
         place(b, { x: at.x, y: at.y }, 260);
+        b.style.top = (at.y + 8) + 'px'; // below the pin, so it never hides it
       }
     });
     if (spot && !spot.area) {
@@ -616,6 +646,59 @@
     countEl.hidden = !mine.length;
   }
 
+  /* --------------------------------------------------------------- delete
+     Ask once, inline (no browser dialog), then delete the Netlify
+     submission and the local pin. A 404 means the submission is already
+     gone, which is as good as deleted. Notes sent before refs existed
+     have no ref and are only removed from this browser. */
+
+  function delControls(p, into) {
+    function link(label, cls, fn) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'link' + (cls ? ' ' + cls : '');
+      b.textContent = label;
+      b.addEventListener('click', function (e) { e.stopPropagation(); fn(); });
+      into.appendChild(b);
+    }
+    if (deleting === p.id) {
+      into.appendChild(document.createTextNode('Törlés…'));
+    } else if (confirmDel === p.id) {
+      into.appendChild(document.createTextNode('Biztosan törlöd?'));
+      link('Törlés', 'danger', function () { removePin(p); });
+      link('Mégse', '', function () { confirmDel = null; refresh(); });
+    } else {
+      link('Törlés', '', function () { confirmDel = p.id; refresh(); });
+    }
+  }
+
+  function removePin(p) {
+    deleting = p.id;
+    refresh();
+    var gone = !p.ref ? Promise.resolve() : fetch(DELETE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ref: p.ref })
+    }).then(function (res) {
+      if (!res.ok && res.status !== 404) throw new Error(res.status);
+    });
+    gone.then(function () {
+      save(PINS_KEY, allPins().filter(function (q) { return q.id !== p.id; }));
+      if (openPin === p.id) openPin = null;
+      say('Megjegyzés törölve.');
+    }, function () {
+      say('Nem sikerült törölni. Próbáld újra később.');
+    }).then(function () {
+      deleting = confirmDel = null;
+      refresh();
+    });
+  }
+
+  function refresh() {
+    drawPins();
+    if (!list.hidden) renderList();
+  }
+
   function closeBubble() {
     if (openPin) { openPin = null; drawPins(); }
   }
@@ -626,6 +709,12 @@
     setMode(null);
     closeComposer();
     press('list');
+    renderList();
+    list.hidden = false;
+    list.querySelector('[data-close-list]').focus();
+  }
+
+  function renderList() {
     var ol = list.querySelector('ol');
     ol.textContent = '';
     var pins = allPins().slice().reverse();
@@ -653,10 +742,23 @@
       item.appendChild(body);
       if (here) item.addEventListener('click', function () { closeList(); focusPin(p.id); });
       li.appendChild(item);
+      if (confirmDel === p.id || deleting === p.id) {
+        var c = document.createElement('div');
+        c.className = 'confirm';
+        delControls(p, c);
+        li.appendChild(c);
+      } else {
+        var trash = document.createElement('button');
+        trash.type = 'button';
+        trash.className = 'trash';
+        trash.title = 'Törlés';
+        trash.setAttribute('aria-label', 'Megjegyzés törlése');
+        trash.innerHTML = I.trash;
+        trash.addEventListener('click', function () { confirmDel = p.id; renderList(); });
+        li.appendChild(trash);
+      }
       ol.appendChild(li);
     });
-    list.hidden = false;
-    list.querySelector('[data-close-list]').focus();
   }
 
   function closeList() {
