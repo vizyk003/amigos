@@ -34,7 +34,7 @@
   status = 200
 
 [[redirects]]
-  from = "/gyerekek-es-szulok"
+  from = "/gyermekek-es-szulok"
   to = "/Gyerekek%20es%20szulok.dc.html"
   status = 200
 
