@@ -452,19 +452,34 @@ nav a { overflow-wrap: break-word; }
 }
 
 @media (max-width: 640px) {
-  /* Story strip (Gyerekek): brand.css stacks it and crops each shot to
-     4:3, which made three full-width photos ~250px tall apiece. 16:9
-     keeps the sequence readable at roughly three quarters the height. */
-  [data-story] img:not(.am-ill) { aspect-ratio: 16 / 9 !important; }
+  /* Story strip (Gyerekek): brand.css stacks the three time-stamped
+     shots into full-width 4:3 photos, ~250px tall apiece. On a phone they
+     become a swipeable carousel instead — one shot at a time, cropped to
+     16:9, with the next peeking in, the same pattern as the photo-only
+     trios below. The div[...] selector outranks brand.css's own
+     !important stacking rule, which loads after this file.
 
-  /* The story doodles (Gyerekek) ride above their photo. Stacked, that
-     space is the previous shot's caption, and moving them onto the photo
-     lost them in it (ink on a dark photo, yellow on a bright one). Give
-     every shot the same clear strip above it — so the rhythm stays even
-     whether or not a shot carries a doodle — and fit the doodle into
-     that strip at its own proportions. brand.css's [data-story] img rule
-     would otherwise squash these square drawings to the photo crop. */
-  [data-story] > figure { margin-top: 52px !important; }
+     A scroller clips whatever pokes out of it and the doodles ride above
+     their photo, so the strip keeps a band of padding at the top for them
+     to sit in on the flat section colour. brand.css's [data-story] img
+     rule would otherwise squash these square drawings to the photo crop. */
+  [data-story] img:not(.am-ill) { aspect-ratio: 16 / 9 !important; }
+  div[data-story] {
+    grid-template-columns: none !important;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    align-items: start !important;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-top: 62px;
+  }
+  [data-story]::-webkit-scrollbar { display: none; }
+  [data-story] > figure { scroll-snap-align: start; }
+  /* A start-aligned last slide can never reach its snap point, so the
+     browser would snap back short of it; align it to the end instead. */
+  [data-story] > figure:last-child { scroll-snap-align: end; }
   [data-story] > figure > .am-ill {
     aspect-ratio: auto !important;
     width: auto !important;
@@ -497,6 +512,8 @@ nav a { overflow-wrap: break-word; }
   [style*="minmax(220px,1fr)"]:not(:has(> :not(img)))::-webkit-scrollbar { display: none; }
   [style*="minmax(220px, 1fr)"]:not(:has(> :not(img))) > img,
   [style*="minmax(220px,1fr)"]:not(:has(> :not(img))) > img { scroll-snap-align: start; }
+  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img))) > img:last-child,
+  [style*="minmax(220px,1fr)"]:not(:has(> :not(img))) > img:last-child { scroll-snap-align: end; }
 }
 
 @media (max-width: 760px) {
