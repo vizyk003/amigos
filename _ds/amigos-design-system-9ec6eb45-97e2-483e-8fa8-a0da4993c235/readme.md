@@ -122,7 +122,7 @@ blend — an overlay, not a colour cast); `.am-tint--soft` is a shorter,
 lighter fade. Use it on people/activity
 photos to take the clinical edge off — but only where nothing else from
 the brand sits on or beside the photo: no sticker/badge, drawing or caption
-band. Never on the hero, product shots, posters/app screenshots or video.
+band. Never on the hero, product shots, posters/app screenshots or a video with controls — a muted looping clip standing in for a photo in a row of tinted photos gets it too.
 
 Fonts are loaded from Google Fonts (`tokens/fonts.css`). Upstream self-hosts
 the same five families as woff2 under `fonts/`; switch to those if the site
