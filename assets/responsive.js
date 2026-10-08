@@ -207,4 +207,27 @@
       });
     });
   });
+
+  /* Design review: reviewers get a comment button (assets/feedback.js).
+     ?review switches it on for this browser, ?review=off switches it
+     off; ordinary visitors never download it. Rides on this file
+     because every exported page already loads it. */
+  (function reviewLoader() {
+    var KEY = 'am-review', on = false;
+    try {
+      var q = new URLSearchParams(location.search);
+      if (q.has('review')) {
+        if (q.get('review') === 'off') localStorage.removeItem(KEY);
+        else localStorage.setItem(KEY, '1');
+      }
+      on = localStorage.getItem(KEY) === '1';
+    } catch (e) {
+      on = /[?&]review(=|&|$)/.test(location.search) && !/[?&]review=off/.test(location.search);
+    }
+    if (!on) return;
+    var s = document.createElement('script');
+    s.src = 'assets/feedback.js';
+    s.defer = true;
+    document.head.appendChild(s);
+  })();
 })();

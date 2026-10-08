@@ -109,3 +109,10 @@
   for = "/Ket kor - alt story.dc.html"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+# Design review: the static declaration of the comment form that
+# assets/feedback.js posts to. Not a page anyone should land on.
+[[headers]]
+  for = "/feedback-form.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

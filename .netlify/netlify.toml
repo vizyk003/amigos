@@ -54,6 +54,12 @@ for = "/Ket kor - alt story.dc.html"
 [headers.values]
 X-Robots-Tag = "noindex, nofollow"
 
+[[headers]]
+for = "/feedback-form.html"
+
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+
 [[redirects]]
 from = "/"
 to = "/Amigos%20Fooldal%20v2.dc.html"
@@ -103,7 +109,7 @@ force = false
 [redirects.headers]
 
 [[redirects]]
-from = "/gyerekek-es-szulok"
+from = "/gyermekek-es-szulok"
 to = "/Gyerekek%20es%20szulok.dc.html"
 status = 200.0
 force = false
@@ -117,6 +123,30 @@ force = false
 [[redirects]]
 from = "/adomanybolt"
 to = "/Adomanybolt.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/adomanybolt/:slug"
+to = "/Termek.dc.html?p=:slug"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/penztar"
+to = "/Penztar.dc.html"
 status = 200.0
 force = false
 

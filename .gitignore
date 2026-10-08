@@ -3,3 +3,6 @@
 
 # local design preview, not part of the site
 _brush-preview.html
+
+# Python bytecode from tools/
+__pycache__/
