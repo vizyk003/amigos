@@ -108,8 +108,9 @@ runs into the next one. `_illustrations.html` shows them all.
 ### Green photo wash
 `.am-tint` on a photo's wrapper fades pulcsizöld up from the bottom
 (multiply); `.am-tint--soft` is an even light wash. Use it on people/activity
-photos to take the clinical edge off — never on the hero, product shots,
-posters/app screenshots or video.
+photos to take the clinical edge off — but only where nothing else from
+the brand sits on or beside the photo: no sticker/badge, drawing or caption
+band. Never on the hero, product shots, posters/app screenshots or video.
 
 Fonts are loaded from Google Fonts (`tokens/fonts.css`). Upstream self-hosts
 the same five families as woff2 under `fonts/`; switch to those if the site

@@ -248,8 +248,10 @@ h1 > span:has(> .am-underline):not(:last-child){
    fades up from the bottom and multiplies into the image. Put .am-tint on
    the photo's (positioned or not) wrapper; the wash sits under any .am-ill
    drawing (z-index 2) and follows the wrapper's corners. --soft is an even
-   light wash for small or busy crops. Never on the hero, product shots or
-   video. Hover lifts the wash on linked cards.
+   light wash for small or busy crops. Only on a photo that carries no
+   other brand element (sticker, drawing, caption band) — those already
+   do the work. Never on the hero, product shots or video. Hover lifts the
+   wash on linked cards.
    ------------------------------------------------------------------ */
 .am-tint{ position: relative; isolation: isolate; }
 .am-tint::after{
@@ -260,14 +262,14 @@ h1 > span:has(> .am-underline):not(:last-child){
   pointer-events: none;
   border-radius: inherit;
   background: linear-gradient(to top,
-    color-mix(in srgb, var(--amigos-green) 55%, transparent) 0%,
-    color-mix(in srgb, var(--amigos-green) 18%, transparent) 55%,
-    transparent 100%);
+    color-mix(in srgb, var(--amigos-green) 78%, transparent) 0%,
+    color-mix(in srgb, var(--amigos-green) 38%, transparent) 50%,
+    color-mix(in srgb, var(--amigos-green) 12%, transparent) 100%);
   mix-blend-mode: multiply;
   transition: opacity 240ms ease-out;
 }
 .am-tint--soft::after{
-  background: color-mix(in srgb, var(--amigos-green) 22%, transparent);
+  background: color-mix(in srgb, var(--amigos-green) 32%, transparent);
 }
-a:hover .am-tint::after, a:hover.am-tint::after{ opacity: 0.45; }
+a:hover .am-tint::after, a:hover.am-tint::after{ opacity: 0.55; }
 .am-tint > figcaption, .am-tint > .am-story-caption{ z-index: 2; }
