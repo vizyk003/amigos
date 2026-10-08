@@ -427,7 +427,7 @@ nav a { overflow-wrap: break-word; }
 
 @media (max-width: 840px) {
   /* Stacked, the space these doodles reach into is no longer empty: the
-     Blog bubble sat on the intro paragraph, and the Gyerekek bubble and
+     Blog bubble sat on the intro paragraph, and the Gyermekek bubble and
      sparkle on the text and caption above their photo. */
   .am-ill[style*="right: -30%"],
   .am-ill[style*="right:-30%"] { top: -38% !important; width: 80px !important; }
@@ -452,7 +452,7 @@ nav a { overflow-wrap: break-word; }
 }
 
 @media (max-width: 640px) {
-  /* Story strip (Gyerekek): brand.css stacks the three time-stamped
+  /* Story strip (Gyermekek): brand.css stacks the three time-stamped
      shots into full-width 4:3 photos, ~250px tall apiece. On a phone they
      become a swipeable carousel instead — one shot at a time, cropped to
      16:9, with the next peeking in, the same pattern as the photo-only
@@ -533,7 +533,7 @@ nav a { overflow-wrap: break-word; }
 }
 
 @media (max-width: 760px) {
-  /* Gyerekek & szülők — the cut-out character art is anchored to the
+  /* Gyermekek & szülők — the cut-out character art is anchored to the
      right edge and hangs past it once the column is full width. */
   [style*="right: clamp(-40px, 2vw, 60px)"],
   [style*="right:clamp(-40px,2vw,60px)"] {

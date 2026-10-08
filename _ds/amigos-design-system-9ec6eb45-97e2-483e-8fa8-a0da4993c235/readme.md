@@ -60,11 +60,11 @@ ever needs to drop the third-party request.
 
 # Amigos Design System
 
-Digital design system for **Amigos a gyerekekért Alapítvány** (amigos.hu) — the "Amigos grew up" evolution of the existing identity. Not a rebrand: same logo, same green, same characters; a more editorial, typographic and spacious digital expression with a distinctive graphic signature.
+Digital design system for **Amigos a gyermekekért Alapítvány** (amigos.hu) — the "Amigos grew up" evolution of the existing identity. Not a rebrand: same logo, same green, same characters; a more editorial, typographic and spacious digital expression with a distinctive graphic signature.
 
 ## Context
 
-Amigos is a Hungarian nonprofit founded in 2014 by 11 friends, now 300+ university-student volunteers ("Amigók") in 6 cities and 20 hospital units. Amigók visit hospitalised children weekly and play, learn languages and befriend them. Vision: *Legyen minden beteg gyerek mellett egy Amigo!* Slogan: *A barátság csodákra képes.* Secondary: *Legyen profi a nonprofit!*
+Amigos is a Hungarian nonprofit founded in 2014 by 11 friends, now 300+ university-student volunteers ("Amigók") in 6 cities and 20 hospital units. Amigók visit hospitalised children weekly and play, learn languages and befriend them. Vision: *Legyen minden beteg gyermek mellett egy Amigo!* Slogan: *A barátság csodákra képes.* Secondary: *Legyen profi a nonprofit!*
 
 Audiences of amigos.hu: prospective student volunteers (recruitment), private and corporate donors (donation, adó 1%), institutions and press (impact, transparency), children and parents (Kalandozz!, Amigos Mini, TanulTablet).
 
@@ -84,13 +84,13 @@ This is the visual foundation only (tokens, type, color, graphic language, core 
 ## Content fundamentals
 
 - **Language**: Hungarian first. Informal second person singular *Te* ("Legyél Te is Amigo", "Támogasd a munkánkat"), capital *Te* in CTAs. Organisation speaks as *mi* ("Célunk, hogy…", "vagyunk").
-- **Names**: *Amigos a gyerekekért Alapítvány* or short *Amigos*; avoid "Alapítvány" unless formal. Volunteers: *Amigo* / *Amigók* — always capitalised, long ó when inflected. Compounds hyphenated: *Amigo-felelős*. Special forms: *Amigos Akadémia, Amigos felvételi, Senior Amigo, Amigos Familia, Amigo Avató*. Never "gyermekekért".
+- **Names**: *Amigos a gyermekekért Alapítvány* or short *Amigos*; avoid "Alapítvány" unless formal. Volunteers: *Amigo* / *Amigók* — always capitalised, long ó when inflected. Compounds hyphenated: *Amigo-felelős*. Special forms: *Amigos Akadémia, Amigos felvételi, Senior Amigo, Amigos Familia, Amigo Avató*. Never "gyermekekért".
 - **LEGO**: always uppercase, never inflected ("LEGO kockákkal", not "legóztunk").
-- **Tone**: kedves, közvetlen, érzelmes, tömör. Storytelling, plain language (no internal acronyms). Every donation ask ends in a clear CTA ("Segíts te is a beteg gyerekeknek!") and shows the bank account.
+- **Tone**: kedves, közvetlen, érzelmes, tömör. Storytelling, plain language (no internal acronyms). Every donation ask ends in a clear CTA ("Segíts te is a beteg gyermekeknek!") and shows the bank account.
 - **Child dignity**: never name or identify children; photos only with parental consent; no pity framing. Emotional core: *a sick child should not be alone; children stay children in hospital*.
 - **Emoji**: brandbook sanctions emoji on social posts (💚 CÍM 💚). **Not used in the web UI** or master-brand digital design.
-- **Numbers**: Hungarian thousands with a space ("20 770"), Ft after the amount ("5 000 Ft"), dates "2026. szeptember". Prefer time-stable figures (hány Amigo, hány gyerek).
-- **Headline style**: sentence case, short, concrete ("Egy beteg gyerek se legyen egyedül."). Eyebrows in caps label style.
+- **Numbers**: Hungarian thousands with a space ("20 770"), Ft after the amount ("5 000 Ft"), dates "2026. szeptember". Prefer time-stable figures (hány Amigo, hány gyermek).
+- **Headline style**: sentence case, short, concrete ("Egy beteg gyermek se legyen egyedül."). Eyebrows in caps label style.
 
 ## Visual foundations
 

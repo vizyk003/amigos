@@ -8,7 +8,7 @@
 <body>
 <x-dc>
 <helmet>
-  <title>Oldaltérkép és wireframe-ek — Amigos a gyerekekért Alapítvány</title>
+  <title>Oldaltérkép és wireframe-ek — Amigos a gyermekekért Alapítvány</title>
   <meta name="description" content="Belső munkaanyag: oldaltérkép és alacsony felépítésű wireframe-ek a még készülő aloldalakhoz.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
@@ -35,7 +35,7 @@
       <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
         <a href="#legyel-amigo" style="color:var(--amigos-ink);text-decoration:none;">Legyél Amigo</a>
         <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Munkánk &amp; Hatásunk</a>
-        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Gyerekek &amp; Szülők</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Gyermekek &amp; Szülők</a>
         <a href="Adomanybolt.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Adománybolt</a>
       </nav>
       <div style="display:flex;justify-content:flex-end;">
@@ -251,7 +251,7 @@
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
           <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
-          <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyermekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyermekekért, 2014 óta.</span>
           <span style="font-size:14px;color:var(--text-on-ink);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
@@ -323,12 +323,12 @@ class Component extends DCLogic {
 
     return {
       'legyel-amigo': { title: 'Legyél Amigo!', url: '/legyel-amigo', sections: [
-        heroGreen({ crumb: 'Főoldal / Legyél Amigo!', eyebrow: 'Önkéntesség', title: 'Heti két óra. Egy gyereknek az egész hete.', text: 'Egyetemistaként heti egy alkalommal ugyanahhoz a gyerekhez jársz vissza a kórházba. Nem animátor vagy: barát.', media: 'FOTÓ – Amigo és gyerek', ctas: [ctaI('Jelentkezem', '#jelentkezes'), ctaIO('Mit csinál egy Amigo?', '#programok')] }),
-        split('Kinek szól', 'A jelentkezés komoly vállalás, és pont ezért működik: a gyerekek számíthatnak arra, hogy jövő héten is jössz.', ['Aktív egyetemista hallgatói jogviszony', 'Hat városunk egyikében: Budapest, Debrecen, Szeged, Pécs, Miskolc, Szombathely', 'Egy tanév vállalás, heti egy látogatás', 'Részvétel az Amigos Akadémia képzésen']),
+        heroGreen({ crumb: 'Főoldal / Legyél Amigo!', eyebrow: 'Önkéntesség', title: 'Heti két óra. Egy gyermeknek az egész hete.', text: 'Egyetemistaként heti egy alkalommal ugyanahhoz a gyermekhez jársz vissza a kórházba. Nem animátor vagy: barát.', media: 'FOTÓ – Amigo és gyermek', ctas: [ctaI('Jelentkezem', '#jelentkezes'), ctaIO('Mit csinál egy Amigo?', '#programok')] }),
+        split('Kinek szól', 'A jelentkezés komoly vállalás, és pont ezért működik: a gyermekek számíthatnak arra, hogy jövő héten is jössz.', ['Aktív egyetemista hallgatói jogviszony', 'Hat városunk egyikében: Budapest, Debrecen, Szeged, Pécs, Miskolc, Szombathely', 'Egy tanév vállalás, heti egy látogatás', 'Részvétel az Amigos Akadémia képzésen']),
         steps('Így lesz valakiből Amigo', [
           { n: '01', title: 'Jelentkezés', text: 'Online űrlap, néhány perc. Öt munkanapon belül válaszolunk.' },
           { n: '02', title: 'Amigos felvételi', text: 'Személyes beszélgetés a városod Amigo-felelősével.' },
-          { n: '03', title: 'Amigos Akadémia', text: 'Képzés kórházi szabályokról, kommunikációról, gyerekekkel való munkáról.' },
+          { n: '03', title: 'Amigos Akadémia', text: 'Képzés kórházi szabályokról, kommunikációról, gyermekekkel való munkáról.' },
           { n: '04', title: 'Első látogatás', text: 'Senior Amigo kíséretében mész be először az osztályra.' }
         ]),
         cards('Mit kapsz cserébe', [
@@ -367,7 +367,7 @@ class Component extends DCLogic {
           { n: '300', label: 'egyetemista Amigo önkéntes', note: '' },
           { n: '20', label: 'kórházi osztály', note: '' },
           { n: '6', label: 'város', note: '' },
-          { n: '20 770', label: 'gyerek egy évben', note: '' }
+          { n: '20 770', label: 'gyermek egy évben', note: '' }
         ]),
         cards('Három pillér', [
           { title: 'Heti kórházi foglalkozások', text: 'Ugyanaz az Amigo, ugyanabban az időpontban, minden héten.', media: 'FOTÓ – foglalkozás', link: 'Programjaink', href: '#programok' },
@@ -386,9 +386,9 @@ class Component extends DCLogic {
       ] },
 
       'programok': { title: 'Programjaink és eszközeink', url: '/munkank/programok', sections: [
-        hero({ crumb: 'Főoldal / Munkánk / Programjaink', eyebrow: 'Programok', title: 'Amit beviszünk a kórterembe', text: 'Négy program, mind kórházi körülményekre tervezve: fertőtleníthető, ágy mellett is működik, egy gyerekkel és csoporttal is használható.', media: 'FOTÓ – eszköz részlet', ctas: [] }),
+        hero({ crumb: 'Főoldal / Munkánk / Programjaink', eyebrow: 'Programok', title: 'Amit beviszünk a kórterembe', text: 'Négy program, mind kórházi körülményekre tervezve: fertőtleníthető, ágy mellett is működik, egy gyermekkel és csoporttal is használható.', media: 'FOTÓ – eszköz részlet', ctas: [] }),
         cards('Programjaink', [
-          { title: 'Heti foglalkozás', text: 'Játék, beszélgetés, közös alkotás — a gyerek választ.', media: 'FOTÓ – foglalkozás' },
+          { title: 'Heti foglalkozás', text: 'Játék, beszélgetés, közös alkotás — a gyermek választ.', media: 'FOTÓ – foglalkozás' },
           { title: 'TanulTablet', text: 'Digitális tananyag, hogy a kórházi hetek ne essenek ki az iskolából.', media: 'FOTÓ – tablet' },
           { title: 'Amigos Mini', text: 'A legkisebbeknek szóló játékcsomag.', media: 'ILLUSZTRÁCIÓ – sub-brand' },
           { title: 'Kalandozz!', text: 'Online kalandok azoknak a napoknak, amikor nem lehet felkelni.', media: 'ILLUSZTRÁCIÓ – Kalandozz', link: 'Kalandozz!', href: '#kalandozz' }
@@ -401,16 +401,16 @@ class Component extends DCLogic {
         hero({ crumb: 'Főoldal / Munkánk / Hatásunk', eyebrow: 'Adatok', title: 'Hatásunk számokban', text: 'Éves adatok, forrásmegjelöléssel. Ez az oldal a sajtó és az intézményi partnerek hivatkozási alapja.', media: 'DIAGRAM – éves trend', ctas: [ctaO('Éves beszámoló (PDF)', '#dokumentumok')] }),
         stats([
           { n: '300', label: 'Amigo önkéntes', note: '2026. szeptember' },
-          { n: '20 770', label: 'gyerek 2025-ben', note: 'kórházi nyilvántartás' },
+          { n: '20 770', label: 'gyermek 2025-ben', note: 'kórházi nyilvántartás' },
           { n: '12', label: 'év 2014 óta', note: 'alapítás: 2014' },
           { n: '94%', label: 'visszatérő Amigo a félév végén', note: 'belső felmérés' }
         ]),
         list('Évenkénti bontás', [
-          { title: '2025', text: 'Amigók: 300 · osztályok: 20 · gyerekek: 20 770', meta: 'Beszámoló →' },
-          { title: '2024', text: 'Amigók: 268 · osztályok: 18 · gyerekek: 18 240', meta: 'Beszámoló →' },
-          { title: '2023', text: 'Amigók: 240 · osztályok: 17 · gyerekek: 16 900', meta: 'Beszámoló →' }
+          { title: '2025', text: 'Amigók: 300 · osztályok: 20 · gyermekek: 20 770', meta: 'Beszámoló →' },
+          { title: '2024', text: 'Amigók: 268 · osztályok: 18 · gyermekek: 18 240', meta: 'Beszámoló →' },
+          { title: '2023', text: 'Amigók: 240 · osztályok: 17 · gyermekek: 16 900', meta: 'Beszámoló →' }
         ]),
-        split('Módszertan', 'Minden adat mögött megnevezzük a forrást és a felvétel időpontját. A gyerekek számát a kórházi osztályok nyilvántartása alapján összesítjük, azonosításra alkalmas adat nélkül.', ['Nem közlünk becsült számot forrásmegjelölés nélkül', 'A gyerekekről semmilyen személyes adatot nem tárolunk', 'A beszámolók auditáltak'])
+        split('Módszertan', 'Minden adat mögött megnevezzük a forrást és a felvétel időpontját. A gyermekek számát a kórházi osztályok nyilvántartása alapján összesítjük, azonosításra alkalmas adat nélkül.', ['Nem közlünk becsült számot forrásmegjelölés nélkül', 'A gyermekekről semmilyen személyes adatot nem tárolunk', 'A beszámolók auditáltak'])
       ] },
 
       'atlathatosag': { title: 'Átláthatóság', url: '/munkank/atlathatosag', sections: [
@@ -440,65 +440,65 @@ class Component extends DCLogic {
       ] },
 
       'tortenetek': { title: 'Történetek', url: '/munkank/tortenetek', sections: [
-        hero({ crumb: 'Főoldal / Munkánk / Történetek', eyebrow: 'Történetek', title: 'Amigók és szülők mesélik', text: 'Gyerek soha nem azonosítható. Minden történet szülői hozzájárulással jelenik meg.', media: 'FOTÓ – Amigo portré', ctas: [] }),
+        hero({ crumb: 'Főoldal / Munkánk / Történetek', eyebrow: 'Történetek', title: 'Amigók és szülők mesélik', text: 'Gyermek soha nem azonosítható. Minden történet szülői hozzájárulással jelenik meg.', media: 'FOTÓ – Amigo portré', ctas: [] }),
         list('Legutóbbi történetek', [
           { title: 'Az első félévem Amigóként', text: 'Anna, Szeged', meta: '2026. szeptember' },
-          { title: 'Amikor a gyerek kérdez rá, hogy jövő héten is jössz-e', text: 'Máté, Budapest', meta: '2026. augusztus' },
+          { title: 'Amikor a gyermek kérdez rá, hogy jövő héten is jössz-e', text: 'Máté, Budapest', meta: '2026. augusztus' },
           { title: 'Szülőként az osztályon', text: 'Egy édesanya beszámolója', meta: '2026. július' },
           { title: 'Hat év, három város', text: 'Senior Amigo visszatekintés', meta: '2026. június' }
         ]),
         cta({ title: 'Te is Amigo lennél?', text: 'A következő Akadémia a szemeszter elején indul.', ctas: [ctaI('Jelentkezem', '#jelentkezes')] })
       ] },
 
-      'csaladoknak': { title: 'Gyerekek és szülők', url: '/csaladoknak', sections: [
-        hero({ crumb: 'Főoldal / Gyerekek és szülők', eyebrow: 'Családoknak', title: 'Mi történik, amikor bekopog egy Amigo?', text: 'Röviden: semmi kötelező. A gyerek dönti el, hogy van-e kedve, és hogy mihez.', media: 'FOTÓ – közös játék', ctas: [ctaG('Szülőknek', '#szuloknek'), ctaO('Kalandozz!', '#kalandozz')] }),
+      'csaladoknak': { title: 'Gyermekek és szülők', url: '/csaladoknak', sections: [
+        hero({ crumb: 'Főoldal / Gyermekek és szülők', eyebrow: 'Családoknak', title: 'Mi történik, amikor bekopog egy Amigo?', text: 'Röviden: semmi kötelező. A gyermek dönti el, hogy van-e kedve, és hogy mihez.', media: 'FOTÓ – közös játék', ctas: [ctaG('Szülőknek', '#szuloknek'), ctaO('Kalandozz!', '#kalandozz')] }),
         cards('Két út', [
-          { title: 'Szülőknek', text: 'Mi történik egy foglalkozáson, hogyan kezeljük a képeket, kihez fordulhatsz.', media: 'FOTÓ – szülő és gyerek', link: 'Szülőknek', href: '#szuloknek' },
+          { title: 'Szülőknek', text: 'Mi történik egy foglalkozáson, hogyan kezeljük a képeket, kihez fordulhatsz.', media: 'FOTÓ – szülő és gyermek', link: 'Szülőknek', href: '#szuloknek' },
           { title: 'Kalandozz!', text: 'Online játékok és feladatok kórházban töltött napokra.', media: 'ILLUSZTRÁCIÓ – Kalandozz', link: 'Kalandozz!', href: '#kalandozz' }
         ]),
         list('Gyakori kérdések', [
-          { title: 'Kötelező részt venni?', text: 'Nem. A gyerek bármikor nemet mondhat.', meta: '', href: '#csaladoknak-gyik' },
+          { title: 'Kötelező részt venni?', text: 'Nem. A gyermek bármikor nemet mondhat.', meta: '', href: '#csaladoknak-gyik' },
           { title: 'Készítenek fényképet?', text: 'Csak írásos szülői hozzájárulással, arc nélkül.', meta: '', href: '#csaladoknak-gyik' },
           { title: 'Ki az az Amigo?', text: 'Képzett egyetemista önkéntes, nem egészségügyi dolgozó.', meta: '', href: '#csaladoknak-gyik' }
         ])
       ] },
 
       'szuloknek': { title: 'Szülőknek', url: '/csaladoknak/szuloknek', sections: [
-        hero({ crumb: 'Főoldal / Gyerekek és szülők / Szülőknek', eyebrow: 'Szülőknek', title: 'Egy foglalkozás, lépésről lépésre', text: 'Heti egy alkalom, kb. két óra. Az Amigo mindig ugyanaz a személy, és mindig bemutatkozik.', media: 'FOTÓ – foglalkozás', ctas: [] }),
+        hero({ crumb: 'Főoldal / Gyermekek és szülők / Szülőknek', eyebrow: 'Szülőknek', title: 'Egy foglalkozás, lépésről lépésre', text: 'Heti egy alkalom, kb. két óra. Az Amigo mindig ugyanaz a személy, és mindig bemutatkozik.', media: 'FOTÓ – foglalkozás', ctas: [] }),
         steps('Hogyan zajlik', [
           { n: '01', title: 'Bejelentkezés', text: 'Az Amigo az osztályon jelentkezik be, az ápolókkal egyeztet.' },
-          { n: '02', title: 'Kopogás', text: 'Megkérdezi a gyereket, van-e kedve. A nem is válasz.' },
-          { n: '03', title: 'Együtt töltött idő', text: 'Játék, beszélgetés, tanulás — amit a gyerek választ.' },
+          { n: '02', title: 'Kopogás', text: 'Megkérdezi a gyermeket, van-e kedve. A nem is válasz.' },
+          { n: '03', title: 'Együtt töltött idő', text: 'Játék, beszélgetés, tanulás — amit a gyermek választ.' },
           { n: '04', title: 'Elköszönés', text: 'Megbeszélik, mikor jön legközelebb.' }
         ]),
-        split('Fotók és adatok', 'Gyerekről csak írásos szülői hozzájárulással készül kép, és soha nem azonosítható módon. Nevet nem közlünk.', ['A hozzájárulás bármikor visszavonható', 'Az Amigók nem kérnek és nem tárolnak egészségügyi adatot', 'Kérdés esetén az Amigo-felelős elérhető']),
+        split('Fotók és adatok', 'Gyermekről csak írásos szülői hozzájárulással készül kép, és soha nem azonosítható módon. Nevet nem közlünk.', ['A hozzájárulás bármikor visszavonható', 'Az Amigók nem kérnek és nem tárolnak egészségügyi adatot', 'Kérdés esetén az Amigo-felelős elérhető']),
         cta({ title: 'Kérdésed vagy visszajelzésed van?', text: 'Az osztályod Amigo-felelősének írhatsz közvetlenül.', ctas: [ctaI('Kapcsolat', '#kapcsolat'), ctaIO('Gyakori kérdések', '#csaladoknak-gyik')] })
       ] },
 
       'kalandozz': { title: 'Kalandozz!', url: '/kalandozz', sections: [
-        heroGreen({ crumb: 'Főoldal / Kalandozz!', eyebrow: 'Gyerekeknek', title: 'Kalandozz!', text: 'Játékok és feladatok azokra a napokra, amikor nem lehet felkelni az ágyból.', media: 'ILLUSZTRÁCIÓ – karakterek', ctas: [ctaI('Kezdjük!', '#')] }),
+        heroGreen({ crumb: 'Főoldal / Kalandozz!', eyebrow: 'Gyermekeknek', title: 'Kalandozz!', text: 'Játékok és feladatok azokra a napokra, amikor nem lehet felkelni az ágyból.', media: 'ILLUSZTRÁCIÓ – karakterek', ctas: [ctaI('Kezdjük!', '#')] }),
         cards('Kalandok', [
           { title: 'Űrutazás', text: 'Négy feladat, kb. 20 perc.', media: 'ILLUSZTRÁCIÓ – rakéta' },
           { title: 'Állatkert', text: 'Rajzolós kaland kicsiknek.', media: 'ILLUSZTRÁCIÓ – állatok' },
           { title: 'Nyelvkaland', text: 'Angol szavak játékkal.', media: 'ILLUSZTRÁCIÓ – betűk' }
         ]),
-        split('Felnőtteknek', 'A Kalandozz böngészőben fut, nem kér regisztrációt, és nem gyűjt adatot a gyerekekről.', ['Nincs regisztráció', 'Offline is használható letöltött feladatokkal', 'Minden kaland 10-25 perc'])
+        split('Felnőtteknek', 'A Kalandozz böngészőben fut, nem kér regisztrációt, és nem gyűjt adatot a gyermekekről.', ['Nincs regisztráció', 'Offline is használható letöltött feladatokkal', 'Minden kaland 10-25 perc'])
       ] },
 
       'csaladoknak-gyik': { title: 'Gyakori kérdések (családoknak)', url: '/csaladoknak/gyik', sections: [
-        hero({ crumb: 'Főoldal / Gyerekek és szülők / GYIK', eyebrow: 'GYIK', title: 'Amit a szülők leggyakrabban kérdeznek', text: 'Ha nem találod a választ, írj az Amigo-felelősnek — 48 órán belül válaszolunk.', media: 'KÖR – kérdőjel', ctas: [] }),
+        hero({ crumb: 'Főoldal / Gyermekek és szülők / GYIK', eyebrow: 'GYIK', title: 'Amit a szülők leggyakrabban kérdeznek', text: 'Ha nem találod a választ, írj az Amigo-felelősnek — 48 órán belül válaszolunk.', media: 'KÖR – kérdőjel', ctas: [] }),
         list('Kérdések', [
-          { title: 'Kötelező részt venni a foglalkozáson?', text: 'Nem. A gyerek bármikor nemet mondhat, és ez nem befolyásol semmit.', meta: '+' },
+          { title: 'Kötelező részt venni a foglalkozáson?', text: 'Nem. A gyermek bármikor nemet mondhat, és ez nem befolyásol semmit.', meta: '+' },
           { title: 'Egészségügyi dolgozók az Amigók?', text: 'Nem. Képzett egyetemista önkéntesek, orvosi feladatot nem látnak el.', meta: '+' },
           { title: 'Készülnek fényképek?', text: 'Csak írásos hozzájárulással, azonosításra alkalmatlan módon.', meta: '+' },
-          { title: 'Mi van, ha a gyerekem rosszul van aznap?', text: 'Az Amigo az ápolókkal egyeztet, és kihagyja az alkalmat.', meta: '+' },
+          { title: 'Mi van, ha a gyermekem rosszul van aznap?', text: 'Az Amigo az ápolókkal egyeztet, és kihagyja az alkalmat.', meta: '+' },
           { title: 'Hogyan jelezhetek vissza?', text: 'A visszajelző űrlapon vagy közvetlenül az Amigo-felelősnek.', meta: '+' }
         ]),
         cta({ title: 'Jelezz vissza egy foglalkozásról', text: 'Két perc, névtelenül is kitölthető.', ctas: [ctaI('Visszajelző űrlap', '#'), ctaIO('Kapcsolat', '#kapcsolat')] })
       ] },
 
       'tamogatom': { title: 'Adományozok', url: '/tamogatom', sections: [
-        heroPurple({ crumb: 'Főoldal / Adományozok', eyebrow: 'Támogatás', title: 'Egy gyerek barátsága nem egyszeri alkalom.', text: 'A heti látogatás akkor működik, ha jövő héten is ott tudunk lenni. Válassz összeget és gyakoriságot.', media: 'KÖR – 5 000 Ft', ctas: [{ label: 'Rendszeresen támogatom', href: '#tamogatom-checkout', bg: 'var(--amigos-white)', fg: 'var(--amigos-plum)', border: 'var(--amigos-white)' }, ctaIO('Egyszeri támogatás', '#tamogatom-checkout')] }),
+        heroPurple({ crumb: 'Főoldal / Adományozok', eyebrow: 'Támogatás', title: 'Egy gyermek barátsága nem egyszeri alkalom.', text: 'A heti látogatás akkor működik, ha jövő héten is ott tudunk lenni. Válassz összeget és gyakoriságot.', media: 'KÖR – 5 000 Ft', ctas: [{ label: 'Rendszeresen támogatom', href: '#tamogatom-checkout', bg: 'var(--amigos-white)', fg: 'var(--amigos-plum)', border: 'var(--amigos-white)' }, ctaIO('Egyszeri támogatás', '#tamogatom-checkout')] }),
         split('Mit fedez', 'Minden összeghez konkrét tétel tartozik, a belső költségbecslésünk alapján.', ['3 000 Ft — egy foglalkozás kreatív alapanyaga', '5 000 Ft — egy Amigo havi útiköltsége, négy látogatásra', '10 000 Ft — egy TanulTablet havi tartalomfrissítése', 'Egyedi összeg — szabadon választható']),
         cards('Támogatás más formában', [
           { title: 'Kórházi örökbefogadás', text: 'Egy teljes osztály éves támogatása.', media: 'DIAGRAM – osztály', link: 'Részletek', href: '#orokbefogadas' },
@@ -551,7 +551,7 @@ class Component extends DCLogic {
       'ado-1-szazalek': { title: 'Adó 1%', url: '/tamogatom/ado-1-szazalek', sections: [
         hero({ crumb: 'Főoldal / Adományozok / Adó 1%', eyebrow: 'Adó 1%', title: 'Neked nem kerül semmibe.', text: 'Az adód egy százaléka egy teljes félévnyi látogatást fedezhet egy osztályon.', media: '18516378-1-42', ctas: [ctaG('Rendelkezem', '#')] }),
         steps('Három lépés', [
-          { n: '01', title: 'Add meg az adószámot', text: '18516378-1-42 — Amigos a gyerekekért Alapítvány' },
+          { n: '01', title: 'Add meg az adószámot', text: '18516378-1-42 — Amigos a gyermekekért Alapítvány' },
           { n: '02', title: 'Töltsd ki a nyilatkozatot', text: 'Online az eSZJA felületen, vagy papíron.' },
           { n: '03', title: 'Határidő', text: 'Minden év május 20.' }
         ]),
@@ -677,7 +677,7 @@ class Component extends DCLogic {
       ] },
 
       'adatkezeles': { title: 'Adatkezelési tájékoztató', url: '/adatkezeles', sections: [
-        hero({ crumb: 'Főoldal / Adatkezelési tájékoztató', eyebrow: 'Jogi', title: 'Adatkezelési tájékoztató', text: 'Milyen adatot kezelünk, meddig, és kinek adjuk át. Gyerekekről személyes adatot nem tárolunk.', media: 'IKON – dokumentum', mediaRadius: '12px', ctas: [] }),
+        hero({ crumb: 'Főoldal / Adatkezelési tájékoztató', eyebrow: 'Jogi', title: 'Adatkezelési tájékoztató', text: 'Milyen adatot kezelünk, meddig, és kinek adjuk át. Gyermekekről személyes adatot nem tárolunk.', media: 'IKON – dokumentum', mediaRadius: '12px', ctas: [] }),
         legal({ toc: [{ label: '1. Az adatkezelő' }, { label: '2. Kezelt adatok köre' }, { label: '3. Az adatkezelés célja' }, { label: '4. Megőrzési idő' }, { label: '5. Adatfeldolgozók' }, { label: '6. Jogaid' }, { label: '7. Jogorvoslat' }],
           blocks: [
             { title: '1. Az adatkezelő', h: '72px' }, { title: '2. Kezelt adatok köre', h: '120px' },
@@ -714,7 +714,7 @@ class Component extends DCLogic {
     const groups = [
       g('Legyél Amigo!', ['legyel-amigo', 'jelentkezes', 'legyel-koszonjuk']),
       g('Munkánk és hatásunk', ['munkank', 'programok', 'hatas', 'atlathatosag', 'partnerek', 'tortenetek']),
-      g('Gyerekek és szülők', ['csaladoknak', 'szuloknek', 'kalandozz', 'csaladoknak-gyik']),
+      g('Gyermekek és szülők', ['csaladoknak', 'szuloknek', 'kalandozz', 'csaladoknak-gyik']),
       g('Adományozás', ['tamogatom', 'orokbefogadas', 'vallalati', 'egyeb', 'ado-1-szazalek', 'tamogatom-checkout', 'tamogatom-koszonjuk']),
       g('Adománybolt', ['bolt', 'bolt-termekek', 'bolt-termek', 'kosar', 'penztar', 'bolt-koszonjuk']),
       g('Ügyintézés', ['kapcsolat', 'gyik', 'dokumentumok', 'adatkezeles', 'aszf'])
