@@ -31,7 +31,7 @@ window.AMIGOS_PRODUCTS = [
       "Készen állsz egy különleges kalandra? Ezzel a könyvvel bejárhatod a világot az Amigókkal, miközben izgalmas országokat, kultúrákat, nyelveket és szokásokat ismersz meg játékos, kreatív formában.",
       "Az utazás során olyan helyekre látogatsz el, mint Kanada, az Egyesült Királyság, Portugália, Hollandia, Ausztria, Olaszország, Jordánia és Ausztrália — felfedezheted a hagyományaikat, ételeiket és látványosságaikat, és a nyelveikbe is bepillantasz.",
       "Az útitársad Matyi Kalandor, aki végigvezet a felfedezésen. Rajzolhatsz, színezhetsz, alkothatsz, és a készségfejlesztő feladatokon keresztül még közelebb kerülsz az utazás élményéhez.",
-      "Eredetileg azért készítettük, hogy a kórházban gyógyuló gyermekekhez is elvigyük a felfedezés örömét. Az adományodból a programjainkat és a foglalkozásainkat valósítjuk meg."
+      "Eredetileg azért készítettük, hogy a kórházban gyógyuló gyerekekhez is elvigyük a felfedezés örömét. Az adományodból a programjainkat és a foglalkozásainkat valósítjuk meg."
     ],
     "stock": 20
   },
@@ -48,7 +48,7 @@ window.AMIGOS_PRODUCTS = [
     "badge": null,
     "badgeTone": null,
     "body": [
-      "A PárParádé egy pörgős kártyajáték, amely játékosan segíti az angol és a német nyelv gyakorlását. Az Egy világraszóló felfedezés könyv alapján készült, iskolás korú gyermekeknek.",
+      "A PárParádé egy pörgős kártyajáték, amely játékosan segíti az angol és a német nyelv gyakorlását. Az Egy világraszóló felfedezés könyv alapján készült, iskolás korú gyerekeknek.",
       "Gyorsasági játék, ami fejleszt is: miközben a figyelem, a reakcióidő és a koncentráció erősödik, új szavakkal és kifejezésekkel ismerkedtek meg két idegen nyelven.",
       "5 éves kor felett ajánljuk, és minimum 2 fő játszhatja — jó választás családi játékhoz, baráti összejövetelhez vagy tanulás mellé."
     ],
@@ -68,8 +68,8 @@ window.AMIGOS_PRODUCTS = [
     "badgeTone": null,
     "body": [
       "Ez a memóriajáték nemcsak szórakoztató, hanem tanulságos is: a kártyák segítségével megismerheted a világ országait, zászlóit és érdekességeit.",
-      "Tökéletes választás gyermekeknek és felnőtteknek egyaránt — közös családi játékhoz vagy ajándékba.",
-      "Az adományodból a programjainkat és a foglalkozásainkat valósítjuk meg, hogy még több élményt és tanulási lehetőséget adhassunk a gyermekeknek."
+      "Tökéletes választás gyerekeknek és felnőtteknek egyaránt — közös családi játékhoz vagy ajándékba.",
+      "Az adományodból a programjainkat és a foglalkozásainkat valósítjuk meg, hogy még több élményt és tanulási lehetőséget adhassunk a gyerekeknek."
     ],
     "stock": 55
   },
@@ -105,9 +105,9 @@ window.AMIGOS_PRODUCTS = [
     "badge": null,
     "badgeTone": null,
     "body": [
-      "Ez a munkafüzet azoknak a gyermekeknek készült, akik most kezdenek ismerkedni a német nyelvvel, és az első lépéseket játékos formában tennék meg.",
+      "Ez a munkafüzet azoknak a gyerekeknek készült, akik most kezdenek ismerkedni a német nyelvvel, és az első lépéseket játékos formában tennék meg.",
       "A feladatok segítenek az alapok elsajátításában, bővítik a szókincset, és megszerettetik a nyelvtanulást már egészen kicsi kortól.",
-      "Eredetileg kórházban lévő gyermekeknek készítettük, hogy vidámabbá tegyük a gyógyulás időszakát. Most szeretnénk, ha még több tanulni vágyó gyermekhez eljutna."
+      "Eredetileg kórházban lévő gyerekeknek készítettük, hogy vidámabbá tegyük a gyógyulás időszakát. Most szeretnénk, ha még több tanulni vágyó gyerekhez eljutna."
     ],
     "stock": 10
   },
@@ -124,7 +124,7 @@ window.AMIGOS_PRODUCTS = [
     "badge": null,
     "badgeTone": null,
     "body": [
-      "Azoknak a gyermekeknek, akik már ismerkednek a német nyelvvel, és szeretnének többet tanulni játékos formában.",
+      "Azoknak a gyerekeknek, akik már ismerkednek a német nyelvvel, és szeretnének többet tanulni játékos formában.",
       "A feladatok bővítik a szókincset és fejlesztik a nyelvi készségeket, miközben a tanulás valóban élménnyé válik.",
       "Eredetileg kórházi foglalkozásokra készült. Az adományodból a programjainkat valósítjuk meg."
     ],
@@ -145,7 +145,7 @@ window.AMIGOS_PRODUCTS = [
     "body": [
       "Hiszünk benne, hogy a nyelvtanulás új világokat nyit meg. Az angollal való ismerkedés lehet játékos és inspiráló — különösen, ha az első lépéseket örömmel tesszük meg.",
       "A feladatok segítenek az alapok elsajátításában, bővítik a szókincset, és megszerettetik a nyelvtanulást a kezdetektől.",
-      "Eredetileg kórházban lévő gyermekeknek készítettük, hogy a gyógyulás ideje is tartalmasabb legyen."
+      "Eredetileg kórházban lévő gyerekeknek készítettük, hogy a gyógyulás ideje is tartalmasabb legyen."
     ],
     "stock": 10
   },
@@ -164,7 +164,7 @@ window.AMIGOS_PRODUCTS = [
     "body": [
       "Ez a haladó szintű füzet azoknak szól, akik már ismerik az alapokat, és tovább fejlesztenék a tudásukat.",
       "A feladatok bővítik a szókincset, elmélyítik a nyelvi készségeket, és magabiztosabbá teszik az angol használatát.",
-      "Eredetileg kórházi foglalkozásokra készült — most szeretnénk, ha még több gyermekhez eljutna."
+      "Eredetileg kórházi foglalkozásokra készült — most szeretnénk, ha még több gyerekhez eljutna."
     ],
     "stock": 10
   },
@@ -183,7 +183,7 @@ window.AMIGOS_PRODUCTS = [
     "body": [
       "Ismerd meg velünk, mennyire színes a világ! Ebben a füzetben többféle nyelvvel találkozhatsz — a franciától és a spanyoltól egészen a törökig vagy a vietnámiig.",
       "A játékos feladatokkal új szavakat tanulhatsz, bepillantasz különböző kultúrákba, és felfedezheted, milyen sokféleképpen kommunikálnak az emberek.",
-      "Eredetileg kórházban lévő gyermekeknek készítettük, hogy megmutassuk: a tanulás egyszerre lehet izgalmas és örömteli."
+      "Eredetileg kórházban lévő gyerekeknek készítettük, hogy megmutassuk: a tanulás egyszerre lehet izgalmas és örömteli."
     ],
     "stock": 10
   },
@@ -221,7 +221,7 @@ window.AMIGOS_PRODUCTS = [
     "body": [
       "Ez a füzet a labdarúgást és a német nyelvet hozza össze egy játékos kalandban.",
       "Saját címer, a hozzád illő poszt, saját induló — és közben egyre többet tudsz meg a sportág különlegességeiről.",
-      "A kaland során Abigél és Aladár, az Amigo kalandorok is végigkísérnek, videós és extra tartalmakkal. Eredetileg kórházban lévő gyermekeknek készítettük."
+      "A kaland során Abigél és Aladár, az Amigo kalandorok is végigkísérnek, videós és extra tartalmakkal. Eredetileg kórházban lévő gyerekeknek készítettük."
     ],
     "stock": 10
   },
@@ -260,7 +260,7 @@ window.AMIGOS_PRODUCTS = [
     "body": [
       "Lepd meg magad vagy egy szerettedet egy vidám, tavaszi mintás zoknival, miközben egy jó ügyet is támogatsz.",
       "A csomag egy pár zoknit tartalmaz, 31–34, 35–38, 39–42 és 43–46 méretben. A designt Varsányi Orsi grafikusnak köszönhetjük.",
-      "Az adományoddal hozzájárulsz ahhoz, hogy az Amigók még több kórházban fekvő gyermekhez eljuthassanak."
+      "Az adományoddal hozzájárulsz ahhoz, hogy az Amigók még több kórházban fekvő gyerekhez eljuthassanak."
     ],
     "stock": 183
   },

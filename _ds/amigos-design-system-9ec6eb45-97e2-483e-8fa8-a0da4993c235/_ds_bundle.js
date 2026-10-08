@@ -1424,7 +1424,7 @@ function SiteFooter({
       fontWeight: 600,
       fontSize: 22
     }
-  }, "Amigos a gyermekek\xE9rt")), note && /*#__PURE__*/React.createElement("p", {
+  }, "Amigos a gyerekek\xE9rt")), note && /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 15,
       lineHeight: 1.5,
@@ -1504,7 +1504,7 @@ function SiteFooter({
       fontSize: 13,
       color: 'var(--text-on-field-muted)'
     }
-  }, /*#__PURE__*/React.createElement("span", null, "\xA9 ", new Date().getFullYear(), " Amigos a gyermekek\xE9rt Alap\xEDtv\xE1ny"), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", null, "\xA9 ", new Date().getFullYear(), " Amigos a gyerekek\xE9rt Alap\xEDtv\xE1ny"), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       gap: 18
@@ -1933,7 +1933,7 @@ function CtaBand({
   actions,
   tone = 'field',
   pattern = 'type',
-  patternWords = ['EGYÜTT', 'A GYERMEKEKÉRT'],
+  patternWords = ['EGYÜTT', 'A gyerekEKÉRT'],
   style
 }) {
   const tones = {
