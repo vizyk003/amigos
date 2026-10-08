@@ -391,6 +391,10 @@ class Component extends DCLogic {
       if (!this.path) return false;
       this.intro(); this.reveal(); this.layoutKotes(); this.bindFaq(); this.bindNewsletter();
       window.addEventListener('resize', () => this.layoutKotes());
+      // Stacked steps grow as their lazy photos load, which moves the dots
+      // the vertical line runs through; re-lay it out whenever they do.
+      const kotesHost = this.path.closest('svg').parentElement;
+      if (window.ResizeObserver) new ResizeObserver(() => this.layoutKotes()).observe(kotesHost);
       this.alive = true; this.last = -1;
       const loop = () => {
         if (!this.alive) return;
@@ -422,10 +426,22 @@ class Component extends DCLogic {
     if (dots.length < 2) return;
     const hb = host.getBoundingClientRect();
     const pts = dots.map(d => { const r = d.getBoundingClientRect(); return { x: r.left - hb.left + r.width / 2, y: r.top - hb.top + r.height / 2 }; });
-    if (!pts.every(p => Math.abs(p.y - pts[0].y) < 6)) { svg.style.opacity = '0'; this.pathLen = 0; return; }
-    const y = pts[0].y;
-    let d = `M ${pts[0].x} ${y}`;
-    for (let i = 1; i < pts.length; i++) { const a = pts[i - 1], b = pts[i]; const lift = (i % 2 ? -1 : 1) * 10; d += ` C ${a.x + (b.x - a.x) * 0.35} ${y + lift}, ${a.x + (b.x - a.x) * 0.65} ${y - lift}, ${b.x} ${y}`; }
+    const row = pts.every(p => Math.abs(p.y - pts[0].y) < 6);
+    const col = pts.every(p => Math.abs(p.x - pts[0].x) < 6);
+    // Side by side the line runs across the dots; stacked (phones) it runs
+    // down a rail through them. Any other arrangement gets no line.
+    if (!row && !col) { svg.style.opacity = '0'; this.pathLen = 0; return; }
+    this.kotesVertical = !row;
+    let d;
+    if (row) {
+      const y = pts[0].y;
+      d = `M ${pts[0].x} ${y}`;
+      for (let i = 1; i < pts.length; i++) { const a = pts[i - 1], b = pts[i]; const lift = (i % 2 ? -1 : 1) * 10; d += ` C ${a.x + (b.x - a.x) * 0.35} ${y + lift}, ${a.x + (b.x - a.x) * 0.65} ${y - lift}, ${b.x} ${y}`; }
+    } else {
+      const x = pts[0].x;
+      d = `M ${x} ${pts[0].y}`;
+      for (let i = 1; i < pts.length; i++) { const a = pts[i - 1], b = pts[i]; const lift = (i % 2 ? -1 : 1) * 8; d += ` C ${x + lift} ${a.y + (b.y - a.y) * 0.35}, ${x - lift} ${a.y + (b.y - a.y) * 0.65}, ${x} ${b.y}`; }
+    }
     this.path.setAttribute('d', d);
     svg.style.opacity = '1';
     const len = this.path.getTotalLength();
@@ -469,10 +485,17 @@ class Component extends DCLogic {
   apply() {
     const vh = window.innerHeight;
     const clamp = t => Math.max(0, Math.min(1, t));
+    // The steps slide in on reveal, so the dots are not where they will
+    // settle when the line is first laid out (and mid-reveal a row can
+    // read as misaligned and hide the line for good). Re-measure on every
+    // scroll frame; it is three rects.
+    this.layoutKotes();
     if (this.reduced) return;
     if (this.path && this.pathLen) {
-      const r = this.path.closest('section').getBoundingClientRect();
-      const t = clamp((vh * 0.8 - r.top) / (vh * 0.55));
+      // A vertical line is as tall as the three steps, so it draws in step
+      // with the reader's progress down it rather than off the section top.
+      const r = this.kotesVertical ? this.path.closest('svg').parentElement.getBoundingClientRect() : this.path.closest('section').getBoundingClientRect();
+      const t = this.kotesVertical ? clamp((vh * 0.7 - r.top) / r.height) : clamp((vh * 0.8 - r.top) / (vh * 0.55));
       this.path.style.strokeDashoffset = String(this.pathLen * (1 - t));
     }
   }

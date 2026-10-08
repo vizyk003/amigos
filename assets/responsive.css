@@ -493,6 +493,22 @@ nav a { overflow-wrap: break-word; }
      each under their text; same crop, same saving. */
   [data-step] > img { aspect-ratio: 16 / 9 !important; }
 
+  /* Stacked, the step dots lose the line that joins them across the row.
+     Put all three in one column (at 600px wide the grid still fit two plus
+     one, which no line can join) and lift each dot into a left rail beside
+     its step, so the page script draws the same hand-drawn line down
+     through them instead. Scoped to the step grid: the checkout's progress
+     indicator also uses data-step. */
+  div[style*="minmax(220px"]:has(> [data-step]) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  div[style*="minmax(220px"] > [data-step] { padding-left: 46px; }
+  div[style*="minmax(220px"] > [data-step] > span:first-child {
+    position: absolute;
+    left: 0;
+    top: -4px;
+  }
+
   /* Photo-only trios (a grid whose children are all <img>) stacked into
      three full-width photos — over 1250px of scrolling for the portrait
      set. Turn them into a swipeable row with the next photo peeking in,
