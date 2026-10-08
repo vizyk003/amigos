@@ -88,6 +88,13 @@
 .am-underline[class*='--pup-']::after{ width: 92%; aspect-ratio: 1000 / 160; transform: translate(-50%, -18%); }
 /* The long strokes hang lower than the short ones; give their line a
    little more room so they clear whatever follows the title. */
+/* Section headings: the strokes hang below the baseline (the long ones
+   ~0.3em) and ran into the note or paragraph under the heading. The headings carry an
+   inline margin:0, so the room goes in as padding. */
+:is(h2, h3):has(.am-underline){ padding-bottom: 0.24em; }
+:is(h2, h3):has(.am-underline[class*='--pup-'], .am-underline[class*='--kunkor-'], .am-underline[class*='--hurok-'], .am-underline[class*='--szaggatott-']){
+  padding-bottom: 0.6em;
+}
 [data-m="w"]:has(.am-underline[class*='--pup-'], .am-underline[class*='--kunkor-'], .am-underline[class*='--hurok-'], .am-underline[class*='--szaggatott-']){
   margin-bottom: -0.16em !important;
 }

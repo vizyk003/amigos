@@ -127,19 +127,19 @@ for k in range(0, len(trail) - 8, 16):
 M['papirrepulo'] = d
 
 # ceruza — a tilted pencil with a scribble
-d = D(440, 340)
-d.s(poly((70, 280), (300, 50), (360, 110), (130, 340), (70, 280)), amp=1.6)
-d.s(poly((70, 280), (40, 345), (130, 340)), amp=1.2)
+d = D(440, 390)
+d.s(poly((70, 280), (300, 50), (360, 110), (130, 340), (70, 280)), amp=0.7)
+d.s(poly((70, 280), (56, 354), (130, 340)), amp=0.4)   # sharpened tip
+d.s(line((63, 318), (93, 347)), amp=0.3, sw=10)        # where the wood meets the lead
 d.s(poly((260, 90), (320, 150)), amp=1.2)
-d.s(sample_bez((150, 330), (230, 300), (260, 340), (330, 300)) + sample_bez((330, 300), (380, 270), (390, 320), (420, 290))[1:])
+d.s(sample_bez((176, 334), (240, 300), (268, 342), (330, 306)) + sample_bez((330, 306), (380, 278), (392, 322), (420, 294))[1:])
 M['ceruza'] = d
 
 # mosoly — a smiley with cheek ticks
 d = D()
-d.s(arc(200, 200, 160, 156, -95, 262))
+d.s(arc(200, 200, 160, 156, -95, 262), amp=1.2)
 d.dot(145, 160, 16).dot(255, 160, 16)
-d.s(arc(200, 205, 88, 80, 25, 155))
-d.s(line((86, 222), (102, 238))); d.s(line((314, 222), (298, 238)))
+d.s(arc(200, 196, 92, 84, 22, 158), amp=0.5)
 M['mosoly'] = d
 
 # szivárvány — three arcs and a little cloud foot
