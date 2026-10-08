@@ -35,7 +35,7 @@ What v2 changed, and how this copy carries it
 * **Type:** Amatic SC Bold for campaign/display titles only, Familjen Grotesk
   600 for editorial headings and numbers, Instrument Sans for all body and UI,
   and **Caveat for quotes** (v2 moves these off Instrument Serif italic).
-* **Corners:** buttons are pills, cards 16px, UI 8px; the circle is the
+* **Corners:** buttons are pills, cards 16px, UI 8px — **on alt-green the scale is 12 / 24 / 56**: `--radius-sm` 12px, `--radius-md` 24px (inputs, UI, the patch sticker), `--radius-lg` 56px (cards, photos, dialogs, `.am-photo`). Nested corners use `calc(var(--radius-card) - <padding>)`. The 22px checkbox (6px) and the paper note sticker (2px) stay small; the circle is the
   signature shape. Cards stay flat; only stickers/cetli and floating layers
   get a lift.
 

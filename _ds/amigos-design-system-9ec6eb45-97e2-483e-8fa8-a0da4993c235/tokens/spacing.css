@@ -13,8 +13,10 @@
 --container:1200px;
 --gutter:clamp(20px,4vw,48px);
 
-/* --- Radii — 8px UI, 16px cards, pill buttons, circle as signature - */
---radius-none:0;--radius-sm:4px;--radius-md:8px;--radius-lg:16px;
+/* --- Radii — alt-green scale 12 / 24 / 56 (v2: 4 / 8 / 16): 24px UI, 56px
+   cards/photos, pill buttons, circle as signature. Kept small on purpose:
+   the 22px checkbox (6px), the paper note sticker (2px). */
+--radius-none:0;--radius-sm:12px;--radius-md:24px;--radius-lg:56px;
 --radius-pill:999px;--radius-circle:50%;
 
 /* --- Borders — the stitch ------------------------------------------ */
@@ -44,8 +46,8 @@
 
 --radius-full:var(--radius-pill);
 --radius-button:var(--radius-pill);   /* v2: buttons are pills */
---radius-input:var(--radius-md);      /* v2: UI corners are 8px */
---radius-card:var(--radius-lg);       /* v2: cards are 16px */
+--radius-input:var(--radius-md);      /* alt-green: UI corners are 24px (v2: 8px) */
+--radius-card:var(--radius-lg);       /* alt-green: cards are 56px (v2: 16px) */
 --radius-image:var(--radius-lg);
 --radius-tag:var(--radius-pill);
 --radius-dialog:var(--radius-lg);

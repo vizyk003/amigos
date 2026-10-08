@@ -156,7 +156,7 @@ h1 > span:has(> .am-underline):not(:last-child){
 .am-sticker--note{ padding: 10px 16px; font-size: 28px; border-radius: 2px; }
 .am-sticker--circle{ width: 112px; height: 112px; border-radius: 50%; font-size: 30px; }
 .am-sticker--patch{
-  padding: 12px 20px; font-size: 30px; border-radius: 8px;
+  padding: 12px 20px; font-size: 30px; border-radius: var(--radius-md);
   outline: 2px dashed currentColor; outline-offset: -6px;
 }
 .am-sticker--green{ background: var(--amigos-green); color: var(--amigos-white); }

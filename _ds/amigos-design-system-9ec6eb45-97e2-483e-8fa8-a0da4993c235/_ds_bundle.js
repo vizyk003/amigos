@@ -691,7 +691,7 @@ function Dialog({
       justifyContent: 'center',
       padding: 24,
       background: 'rgba(23,28,18,0.5)',
-      borderRadius: 12
+      borderRadius: 'var(--radius-md)'
     }
   }, panel);
   return /*#__PURE__*/React.createElement("div", {
