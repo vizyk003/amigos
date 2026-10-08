@@ -58,11 +58,37 @@
 .am-underline--pup-purple::after{ background-image: url('underlines/amigos-alahuzas-pup-purple.png'); }
 .am-underline--pup-white::after{ background-image: url('underlines/amigos-alahuzas-pup-white.png'); }
 .am-underline--pup-yellow::after{ background-image: url('underlines/amigos-alahuzas-pup-yellow.png'); }
-.am-underline[class*='--kunkor-']::after{ width: 100%; aspect-ratio: 1000 / 140; transform: translate(-50%, 0); }
+/* Extra strokes generated in the same brush style (tools/amigos-underlines.py):
+   cikcakk, dupla, rugo are short like hullam; hurok, szaggatott are long
+   like kunkor. Vary the shape from heading to heading — no shape twice
+   on one page. */
+.am-underline--cikcakk-green::after{ background-image: url('underlines/amigos-alahuzas-cikcakk-green.png'); }
+.am-underline--cikcakk-purple::after{ background-image: url('underlines/amigos-alahuzas-cikcakk-purple.png'); }
+.am-underline--cikcakk-white::after{ background-image: url('underlines/amigos-alahuzas-cikcakk-white.png'); }
+.am-underline--cikcakk-yellow::after{ background-image: url('underlines/amigos-alahuzas-cikcakk-yellow.png'); }
+.am-underline--dupla-green::after{ background-image: url('underlines/amigos-alahuzas-dupla-green.png'); }
+.am-underline--dupla-purple::after{ background-image: url('underlines/amigos-alahuzas-dupla-purple.png'); }
+.am-underline--dupla-white::after{ background-image: url('underlines/amigos-alahuzas-dupla-white.png'); }
+.am-underline--dupla-yellow::after{ background-image: url('underlines/amigos-alahuzas-dupla-yellow.png'); }
+.am-underline--rugo-green::after{ background-image: url('underlines/amigos-alahuzas-rugo-green.png'); }
+.am-underline--rugo-purple::after{ background-image: url('underlines/amigos-alahuzas-rugo-purple.png'); }
+.am-underline--rugo-white::after{ background-image: url('underlines/amigos-alahuzas-rugo-white.png'); }
+.am-underline--rugo-yellow::after{ background-image: url('underlines/amigos-alahuzas-rugo-yellow.png'); }
+.am-underline--hurok-green::after{ background-image: url('underlines/amigos-alahuzas-hurok-green.png'); }
+.am-underline--hurok-purple::after{ background-image: url('underlines/amigos-alahuzas-hurok-purple.png'); }
+.am-underline--hurok-white::after{ background-image: url('underlines/amigos-alahuzas-hurok-white.png'); }
+.am-underline--hurok-yellow::after{ background-image: url('underlines/amigos-alahuzas-hurok-yellow.png'); }
+.am-underline--szaggatott-green::after{ background-image: url('underlines/amigos-alahuzas-szaggatott-green.png'); }
+.am-underline--szaggatott-purple::after{ background-image: url('underlines/amigos-alahuzas-szaggatott-purple.png'); }
+.am-underline--szaggatott-white::after{ background-image: url('underlines/amigos-alahuzas-szaggatott-white.png'); }
+.am-underline--szaggatott-yellow::after{ background-image: url('underlines/amigos-alahuzas-szaggatott-yellow.png'); }
+.am-underline[class*='--kunkor-']::after,
+.am-underline[class*='--hurok-']::after,
+.am-underline[class*='--szaggatott-']::after{ width: 100%; aspect-ratio: 1000 / 140; transform: translate(-50%, 0); }
 .am-underline[class*='--pup-']::after{ width: 92%; aspect-ratio: 1000 / 160; transform: translate(-50%, -18%); }
 /* The long strokes hang lower than the short ones; give their line a
    little more room so they clear whatever follows the title. */
-[data-m="w"]:has(.am-underline[class*='--pup-'], .am-underline[class*='--kunkor-']){
+[data-m="w"]:has(.am-underline[class*='--pup-'], .am-underline[class*='--kunkor-'], .am-underline[class*='--hurok-'], .am-underline[class*='--szaggatott-']){
   margin-bottom: -0.16em !important;
 }
 
