@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Amigos rajzok</title>
+<link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+<style>
+  body{margin:0;background:var(--amigos-paper);color:var(--amigos-ink);font-family:var(--font-body);}
+  .wrap{max-width:1180px;margin:0 auto;padding:48px clamp(16px,4vw,48px) 120px;}
+  h1{font-family:var(--font-hand);font-weight:700;font-size:64px;line-height:.95;margin:0 0 8px;}
+  .note{font-size:15px;line-height:1.5;color:var(--amigos-ink-2);max-width:66ch;margin:0 0 32px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+  .card{border:1px solid var(--amigos-line);border-radius:16px;overflow:hidden;background:var(--amigos-white);}
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);}
+  .swatches span{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:10px;}
+  .swatches img{max-width:100%;max-height:100%;display:block;}
+  .on-paper{background:var(--amigos-paper);} .on-green{background:var(--amigos-green);} .on-ink{background:var(--amigos-ink);}
+  .meta{padding:12px 14px;display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap;}
+  .meta b{font-family:var(--font-display);font-weight:600;font-size:16px;}
+  .meta span{font-size:13px;color:var(--amigos-ink-2);}
+  .new{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amigos-green-text);}
+  code{font-size:13px;}
+</style></head><body><div class="wrap">
+
+<h1>Rajzok</h1>
+<p class="note">Az <code>assets/illustrations/</code> mappa összes rajza, mind a négy színben:
+zöld és tinta papíron, fehér és sárga pulcsizöldön. Fájlnév:
+<code>amigos-ill-&lt;motívum&gt;-&lt;green|white|yellow|ink&gt;.png</code>. Használati szabályok a
+DS readme „Drawings” fejezetében. Az <span class="new">új</span> jelölésűek generáltak
+(<code>tools/amigos-illustrations.py</code>).</p>
+
+<div class="grid" id="grid"></div>
+
+<script>
+  const motifs = [
+    ['buborek','beszélgetés, történetek'], ['ceruza','tanulás, kézműveskedés',1], ['csillag','siker, büszkeség',1],
+    ['csillanas','varázslatos pillanat'], ['felho','nyugalom, álmok',1], ['hangjegy','éneklés, móka',1],
+    ['kocka','társasjáték',1], ['konfetti','ünneplés',1], ['konyv','olvasás, korrepetálás',1],
+    ['labda','játék',1], ['lego','építés, a doboz'], ['lufi','buli, ajándék',1],
+    ['mosoly','öröm',1], ['nap','napsütés (csak sárga/fehér)'], ['naptar','időpont, minden héten'],
+    ['nyil','rámutat a CTA-ra'], ['orveny','energia, móka'], ['papirrepulo','online, üzenet',1],
+    ['puzzle','összetartozás',1], ['ragyogas','kiemelés'], ['sziv','szeretet, köszönet'],
+    ['szivarvany','remény',1], ['szivdobbanas','törődés, adomány'], ['virag','növekedés, gyógyulás',1]
+  ];
+  const cols = [['green','on-paper'],['ink','on-paper'],['white','on-green'],['yellow','on-green']];
+  const grid = document.getElementById('grid');
+  for (const [m, label, isNew] of motifs) {
+    const card = document.createElement('div'); card.className = 'card';
+    const sw = document.createElement('div'); sw.className = 'swatches';
+    for (const [c, bg] of cols) {
+      const cell = document.createElement('span'); cell.className = bg;
+      const img = new Image(); img.alt = m + ' ' + c; img.loading = 'lazy';
+      img.src = `assets/illustrations/amigos-ill-${m}-${c}.png`;
+      img.onerror = () => { cell.textContent = '—'; };
+      cell.appendChild(img); sw.appendChild(cell);
+    }
+    const meta = document.createElement('div'); meta.className = 'meta';
+    meta.innerHTML = `<b>${m}</b><span>${label}</span>` + (isNew ? '<span class="new">új</span>' : '');
+    card.append(sw, meta); grid.appendChild(card);
+  }
+</script>
+</div></body></html>

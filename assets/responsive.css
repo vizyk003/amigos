@@ -491,7 +491,8 @@ nav a { overflow-wrap: break-word; }
 
   /* The 01–03 step cards ("Egy foglalkozás menete") carry a 4:3 photo
      each under their text; same crop, same saving. */
-  [data-step] > img { aspect-ratio: 16 / 9 !important; }
+  [data-step] > img,
+  [data-step] > .am-tint > img { aspect-ratio: 16 / 9 !important; }
 
   /* Stacked, the step dots lose the line that joins them across the row.
      Put all three in one column (at 600px wide the grid still fit two plus
@@ -509,13 +510,14 @@ nav a { overflow-wrap: break-word; }
     top: -4px;
   }
 
-  /* Photo-only trios (a grid whose children are all <img>) stacked into
+  /* Photo-only trios (a grid whose children are all <img>, bare or in an
+     .am-tint wrapper) stacked into
      three full-width photos — over 1250px of scrolling for the portrait
      set. Turn them into a swipeable row with the next photo peeking in,
      the same pattern as the homepage stats strip. Grids that mix text
      and images are left stacked. */
-  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img))),
-  [style*="minmax(220px,1fr)"]:not(:has(> :not(img))) {
+  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img, .am-tint))),
+  [style*="minmax(220px,1fr)"]:not(:has(> :not(img, .am-tint))) {
     grid-template-columns: none !important;
     grid-auto-flow: column;
     grid-auto-columns: 72%;
@@ -524,12 +526,12 @@ nav a { overflow-wrap: break-word; }
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
   }
-  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img)))::-webkit-scrollbar,
-  [style*="minmax(220px,1fr)"]:not(:has(> :not(img)))::-webkit-scrollbar { display: none; }
-  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img))) > img,
-  [style*="minmax(220px,1fr)"]:not(:has(> :not(img))) > img { scroll-snap-align: start; }
-  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img))) > img:last-child,
-  [style*="minmax(220px,1fr)"]:not(:has(> :not(img))) > img:last-child { scroll-snap-align: end; }
+  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img, .am-tint)))::-webkit-scrollbar,
+  [style*="minmax(220px,1fr)"]:not(:has(> :not(img, .am-tint)))::-webkit-scrollbar { display: none; }
+  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img, .am-tint))) > *,
+  [style*="minmax(220px,1fr)"]:not(:has(> :not(img, .am-tint))) > * { scroll-snap-align: start; }
+  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img, .am-tint))) > :last-child,
+  [style*="minmax(220px,1fr)"]:not(:has(> :not(img, .am-tint))) > :last-child { scroll-snap-align: end; }
 }
 
 @media (max-width: 760px) {
