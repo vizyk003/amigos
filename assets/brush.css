@@ -10,10 +10,10 @@
    Never a full-page field, and no text over the texture except white
    Amatic (var(--font-hand)).
 
-   The texture PNGs are opaque and average #578C26, a little lighter and
-   more saturated than --amigos-green (#437613); the background-color
-   below is a fallback, not a tint. A brushed surface therefore reads
-   slightly brighter than a flat pulcsizöld field next to it.
+   The texture PNGs are opaque and were recoloured (alt-green branch) to
+   average --amigos-green (#00A74A); the background-color
+   below is a fallback, not a tint. A brushed surface therefore sits
+   tonally level with a flat pulcsizöld field next to it.
    ===================================================================== */
 
 .am-brush,

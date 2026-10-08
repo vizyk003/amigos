@@ -26,7 +26,7 @@
   <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
   <style>
     html,body{margin:0;background:var(--amigos-paper);}
-    a{color:var(--amigos-green);} a:hover{color:var(--amigos-green-deep);}
+    a{color:var(--amigos-green-text);} a:hover{color:var(--amigos-green-deep);}
     @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
     @keyframes am-wave-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}
     @keyframes am-wave-drift{0%{transform:translate(-50%,0);}50%{transform:translate(-50%,1.5px);}100%{transform:translate(-50%,0);}}
@@ -37,7 +37,7 @@
     [data-size-pill]:has(input:checked){background:var(--amigos-green);border-color:var(--amigos-green) !important;color:var(--amigos-white);}
     [data-size-pill]:has(input:focus-visible){outline:3px solid var(--focus-color);outline-offset:2px;}
     [data-size-pill]:has(input:disabled){opacity:0.4;cursor:not-allowed !important;text-decoration:line-through;}
-    [data-product-link]:focus-visible{outline:3px solid var(--focus-color);outline-offset:4px;border-radius:var(--radius-card);}
+    [data-product-link]:focus-visible{outline:3px solid var(--focus-color);outline-offset:4px;border-radius:var(--radius-md);}
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
   <link rel="stylesheet" href="assets/brand.css">
@@ -53,10 +53,11 @@
     <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
       <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
       <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
-        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Legyél Amigo</a>
-        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Munkánk &amp; Hatásunk</a>
-        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Gyermekek &amp; Szülők</a>
-        <a href="Adomanybolt.dc.html" aria-current="page" style="color:var(--amigos-green);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Legyél Amigo</a>
+        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Gyermekek &amp; Szülők</a>
+        <a href="Adomanybolt.dc.html" aria-current="page" style="color:var(--amigos-green-text);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#00A74A" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Kapcsolat.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Kapcsolat</a>
       </nav>
       <div style="display:flex;justify-content:flex-end;align-items:center;gap:16px;">
         <button data-cart-open="" type="button" style="display:flex;align-items:center;gap:10px;background:transparent;border:0;font:inherit;font-size:var(--text-nav);font-weight:500;color:var(--amigos-ink);cursor:pointer;padding:0;">
@@ -92,10 +93,10 @@
         </div>
 
         <div style="display:flex;flex-direction:column;gap:20px;">
-          <span data-p-cat="" style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);"></span>
+          <span data-p-cat="" style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);"></span>
           <h1 data-p-name="" style="margin:0;font-family:var(--font-display);font-weight:600;font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-0.02em;max-width:20ch;text-wrap:pretty;"></h1>
           <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;">
-            <span data-p-price="" style="font-family:var(--font-display);font-weight:600;font-size:28px;line-height:1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);"></span>
+            <span data-p-price="" style="font-family:var(--font-display);font-weight:600;font-size:28px;line-height:1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);"></span>
             <span data-p-stock="" style="font-size:14px;color:var(--amigos-ink-3);"></span>
           </div>
 
@@ -127,7 +128,7 @@
   <section data-p-related-wrap="" data-screen-label="Ajánlott termékek" style="background:var(--amigos-white);border-top:1px solid var(--amigos-line);padding:clamp(72px,10vw,120px) 0;">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(28px,4vw,48px);">
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Adománybolt</span>
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">Adománybolt</span>
         <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);">Ezeket is ajánljuk</h2>
       </div>
       <div data-p-related="" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:clamp(16px,2vw,24px);"></div>
@@ -147,7 +148,7 @@
   </section>
 
   <div data-cart="" role="dialog" aria-label="Kosár" aria-hidden="true" style="position:fixed;inset:0;z-index:60;pointer-events:none;">
-    <div data-cart-scrim="" style="position:absolute;inset:0;background:rgba(23,28,18,0.5);opacity:0;transition:opacity 240ms cubic-bezier(0.2,0.7,0.2,1);"></div>
+    <div data-cart-scrim="" style="position:absolute;inset:0;background:rgba(19,29,21,0.5);opacity:0;transition:opacity 240ms cubic-bezier(0.2,0.7,0.2,1);"></div>
     <aside data-cart-panel="" style="position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);background:var(--amigos-paper);border-left:1px solid var(--amigos-line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform 280ms cubic-bezier(0.2,0.7,0.2,1);">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,4vw,32px);border-bottom:1px solid var(--amigos-line);">
         <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;">Kosár</span>
@@ -182,7 +183,7 @@
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
           <div style="display:flex;flex-direction:column;gap:9px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Ügyintézés</span>
-            <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Kapcsolat.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
             <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
             <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
             <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
@@ -311,13 +312,13 @@ class Component extends DCLogic {
     box.innerHTML = list.map(p => `
       <article data-product="" style="display:flex;flex-direction:column;gap:10px;">
         <a data-product-link="" href="Termek.dc.html?p=${encodeURIComponent(p.slug)}" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="${esc(p.img)}" alt="${esc(p.alt || p.name)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">${esc(p.name)}</h3>
         </a>
-        <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">${fmtNum(p.price)} Ft-tól</span>
-        <button data-add="" data-slug="${esc(p.slug)}" type="button" aria-label="${p.variants ? 'Méretet választok' : 'Kosárba'}: ${esc(p.name)}" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">${p.variants ? 'Méretet választok →' : 'Kosárba'}</button>
+        <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">${fmtNum(p.price)} Ft-tól</span>
+        <button data-add="" data-slug="${esc(p.slug)}" type="button" aria-label="${p.variants ? 'Méretet választok' : 'Kosárba'}: ${esc(p.name)}" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">${p.variants ? 'Méretet választok →' : 'Kosárba'}</button>
       </article>`).join('');
   }
   renderVals() { return {}; }

@@ -141,6 +141,58 @@
     };
   }
 
+  /* Section illustrations ([data-ill-pop], styled in brand.css) spring in
+     the first time they reach the viewport; SVG ones draw themselves on,
+     and .am-underline strokes wipe in (brand.css). Only attributes are set, so
+     React's nodes stay untouched; drawings React mounts later are picked
+     up by the MutationObserver. */
+  function illustrationsPop() {
+    if (!('IntersectionObserver' in window)) return;
+    document.documentElement.setAttribute('data-ill-js', '');
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var n = 0;
+    var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+    function show(el) {
+      /* An SVG drawing animates itself from the moment it loads, so reload
+         it under a fresh URL as it scrolls in and reveal it once that copy
+         has loaded — the stroke then draws on in view. */
+      if (!still && el.tagName === 'IMG' && /\.svg(\?|$)/.test(el.getAttribute('src') || '')) {
+        /* Blank it first (so the finished drawing never flashes), make it
+           visible, then load the fresh copy: Chrome only runs an SVG
+           image's animation if the image is visible when it loads. */
+        var url = el.getAttribute('src').split('?')[0] + '?draw=' + (++n);
+        if (el.naturalWidth) el.style.aspectRatio = el.naturalWidth + ' / ' + el.naturalHeight;
+        el.setAttribute('src', BLANK);
+        el.setAttribute('data-ill-in', '');
+        /* Next frame, or a timer where frames are throttled (a background
+           tab, headless) — whichever comes first, so it never stays blank. */
+        var go = function () { if (el.getAttribute('src') === BLANK) el.setAttribute('src', url); };
+        requestAnimationFrame(go);
+        setTimeout(go, 80);
+        return;
+      }
+      el.setAttribute('data-ill-in', '');
+    }
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (!entries[i].isIntersecting) continue;
+        show(entries[i].target);
+        io.unobserve(entries[i].target);
+      }
+    }, { rootMargin: '0px 0px -10% 0px' });
+    function scan() {
+      var els = document.querySelectorAll('[data-ill-pop]:not([data-ill-seen]), .am-underline:not([data-ill-seen])');
+      for (var i = 0; i < els.length; i++) {
+        els[i].setAttribute('data-ill-seen', '');
+        io.observe(els[i]);
+      }
+    }
+    scan();
+    new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
+  }
+
+  ready(illustrationsPop);
+
   ready(function () {
     whenSettled(function () {
       var syncers = bars().map(enhance);
@@ -155,4 +207,27 @@
       });
     });
   });
+
+  /* Design review: reviewers get a comment button (assets/feedback.js).
+     ?review switches it on for this browser, ?review=off switches it
+     off; ordinary visitors never download it. Rides on this file
+     because every exported page already loads it. */
+  (function reviewLoader() {
+    var KEY = 'am-review', on = false;
+    try {
+      var q = new URLSearchParams(location.search);
+      if (q.has('review')) {
+        if (q.get('review') === 'off') localStorage.removeItem(KEY);
+        else localStorage.setItem(KEY, '1');
+      }
+      on = localStorage.getItem(KEY) === '1';
+    } catch (e) {
+      on = /[?&]review(=|&|$)/.test(location.search) && !/[?&]review=off/.test(location.search);
+    }
+    if (!on) return;
+    var s = document.createElement('script');
+    s.src = 'assets/feedback.js';
+    s.defer = true;
+    document.head.appendChild(s);
+  })();
 })();

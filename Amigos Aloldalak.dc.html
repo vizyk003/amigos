@@ -20,7 +20,7 @@
   <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
   <style>
     html,body{margin:0;background:var(--amigos-paper);}
-    a{color:var(--amigos-green);} a:hover{color:var(--amigos-green-deep);}
+    a{color:var(--amigos-green-text);} a:hover{color:var(--amigos-green-deep);}
     @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
@@ -58,7 +58,7 @@
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,4vw,48px);">
           <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
             <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--amigos-ink);padding-top:14px;">
-              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">{{ g.title }}</span>
+              <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">{{ g.title }}</span>
               <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="5">
                 <a href="{{ i.href }}" style="text-decoration:none;color:var(--amigos-ink);font-size:15px;padding:3px 0;">{{ i.title }}</a>
               </sc-for>
@@ -152,7 +152,7 @@
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,3vw,40px);">
                   <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="3">
                     <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--amigos-green);padding-top:16px;">
-                      <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:var(--amigos-green);">{{ i.n }}</span>
+                      <span style="font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;color:var(--amigos-green-text);">{{ i.n }}</span>
                       <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">{{ i.title }}</span>
                       <span style="font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);">{{ i.text }}</span>
                     </div>
@@ -167,7 +167,7 @@
               <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:clamp(20px,3vw,40px);">
                 <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="4">
                   <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--amigos-line);padding-top:16px;">
-                    <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green);font-variant-numeric:tabular-nums;">{{ i.n }}</span>
+                    <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green-text);font-variant-numeric:tabular-nums;">{{ i.n }}</span>
                     <span style="font-size:var(--text-body);color:var(--amigos-ink-2);">{{ i.label }}</span>
                     <span style="font-size:13px;color:var(--amigos-ink-3);">{{ i.note }}</span>
                   </div>
@@ -207,7 +207,7 @@
             <section style="background:var(--amigos-paper);padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--amigos-line);">
               <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:4fr 8fr;gap:clamp(32px,5vw,72px);align-items:start;">
                 <nav style="position:sticky;top:96px;display:flex;flex-direction:column;gap:8px;font-size:15px;">
-                  <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Tartalom</span>
+                  <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">Tartalom</span>
                   <sc-for list="{{ s.toc }}" as="t" hint-placeholder-count="5">
                     <span style="color:var(--amigos-ink-2);">{{ t.label }}</span>
                   </sc-for>
@@ -440,7 +440,7 @@ class Component extends DCLogic {
       ] },
 
       'tortenetek': { title: 'Történetek', url: '/munkank/tortenetek', sections: [
-        hero({ crumb: 'Főoldal / Munkánk / Történetek', eyebrow: 'Történetek', title: 'Amigók és szülők mesélik', text: 'gyermek soha nem azonosítható. Minden történet szülői hozzájárulással jelenik meg.', media: 'FOTÓ – Amigo portré', ctas: [] }),
+        hero({ crumb: 'Főoldal / Munkánk / Történetek', eyebrow: 'Történetek', title: 'Amigók és szülők mesélik', text: 'Gyermek soha nem azonosítható. Minden történet szülői hozzájárulással jelenik meg.', media: 'FOTÓ – Amigo portré', ctas: [] }),
         list('Legutóbbi történetek', [
           { title: 'Az első félévem Amigóként', text: 'Anna, Szeged', meta: '2026. szeptember' },
           { title: 'Amikor a gyermek kérdez rá, hogy jövő héten is jössz-e', text: 'Máté, Budapest', meta: '2026. augusztus' },
@@ -450,8 +450,8 @@ class Component extends DCLogic {
         cta({ title: 'Te is Amigo lennél?', text: 'A következő Akadémia a szemeszter elején indul.', ctas: [ctaI('Jelentkezem', '#jelentkezes')] })
       ] },
 
-      'csaladoknak': { title: 'gyermekek és szülők', url: '/csaladoknak', sections: [
-        hero({ crumb: 'Főoldal / gyermekek és szülők', eyebrow: 'Családoknak', title: 'Mi történik, amikor bekopog egy Amigo?', text: 'Röviden: semmi kötelező. A gyermek dönti el, hogy van-e kedve, és hogy mihez.', media: 'FOTÓ – közös játék', ctas: [ctaG('Szülőknek', '#szuloknek'), ctaO('Kalandozz!', '#kalandozz')] }),
+      'csaladoknak': { title: 'Gyermekek és szülők', url: '/csaladoknak', sections: [
+        hero({ crumb: 'Főoldal / Gyermekek és szülők', eyebrow: 'Családoknak', title: 'Mi történik, amikor bekopog egy Amigo?', text: 'Röviden: semmi kötelező. A gyermek dönti el, hogy van-e kedve, és hogy mihez.', media: 'FOTÓ – közös játék', ctas: [ctaG('Szülőknek', '#szuloknek'), ctaO('Kalandozz!', '#kalandozz')] }),
         cards('Két út', [
           { title: 'Szülőknek', text: 'Mi történik egy foglalkozáson, hogyan kezeljük a képeket, kihez fordulhatsz.', media: 'FOTÓ – szülő és gyermek', link: 'Szülőknek', href: '#szuloknek' },
           { title: 'Kalandozz!', text: 'Online játékok és feladatok kórházban töltött napokra.', media: 'ILLUSZTRÁCIÓ – Kalandozz', link: 'Kalandozz!', href: '#kalandozz' }
@@ -464,19 +464,19 @@ class Component extends DCLogic {
       ] },
 
       'szuloknek': { title: 'Szülőknek', url: '/csaladoknak/szuloknek', sections: [
-        hero({ crumb: 'Főoldal / gyermekek és szülők / Szülőknek', eyebrow: 'Szülőknek', title: 'Egy foglalkozás, lépésről lépésre', text: 'Heti egy alkalom, kb. két óra. Az Amigo mindig ugyanaz a személy, és mindig bemutatkozik.', media: 'FOTÓ – foglalkozás', ctas: [] }),
+        hero({ crumb: 'Főoldal / Gyermekek és szülők / Szülőknek', eyebrow: 'Szülőknek', title: 'Egy foglalkozás, lépésről lépésre', text: 'Heti egy alkalom, kb. két óra. Az Amigo mindig ugyanaz a személy, és mindig bemutatkozik.', media: 'FOTÓ – foglalkozás', ctas: [] }),
         steps('Hogyan zajlik', [
           { n: '01', title: 'Bejelentkezés', text: 'Az Amigo az osztályon jelentkezik be, az ápolókkal egyeztet.' },
           { n: '02', title: 'Kopogás', text: 'Megkérdezi a gyermeket, van-e kedve. A nem is válasz.' },
           { n: '03', title: 'Együtt töltött idő', text: 'Játék, beszélgetés, tanulás — amit a gyermek választ.' },
           { n: '04', title: 'Elköszönés', text: 'Megbeszélik, mikor jön legközelebb.' }
         ]),
-        split('Fotók és adatok', 'gyermekről csak írásos szülői hozzájárulással készül kép, és soha nem azonosítható módon. Nevet nem közlünk.', ['A hozzájárulás bármikor visszavonható', 'Az Amigók nem kérnek és nem tárolnak egészségügyi adatot', 'Kérdés esetén az Amigo-felelős elérhető']),
+        split('Fotók és adatok', 'Gyermekről csak írásos szülői hozzájárulással készül kép, és soha nem azonosítható módon. Nevet nem közlünk.', ['A hozzájárulás bármikor visszavonható', 'Az Amigók nem kérnek és nem tárolnak egészségügyi adatot', 'Kérdés esetén az Amigo-felelős elérhető']),
         cta({ title: 'Kérdésed vagy visszajelzésed van?', text: 'Az osztályod Amigo-felelősének írhatsz közvetlenül.', ctas: [ctaI('Kapcsolat', '#kapcsolat'), ctaIO('Gyakori kérdések', '#csaladoknak-gyik')] })
       ] },
 
       'kalandozz': { title: 'Kalandozz!', url: '/kalandozz', sections: [
-        heroGreen({ crumb: 'Főoldal / Kalandozz!', eyebrow: 'gyermekeknek', title: 'Kalandozz!', text: 'Játékok és feladatok azokra a napokra, amikor nem lehet felkelni az ágyból.', media: 'ILLUSZTRÁCIÓ – karakterek', ctas: [ctaI('Kezdjük!', '#')] }),
+        heroGreen({ crumb: 'Főoldal / Kalandozz!', eyebrow: 'Gyermekeknek', title: 'Kalandozz!', text: 'Játékok és feladatok azokra a napokra, amikor nem lehet felkelni az ágyból.', media: 'ILLUSZTRÁCIÓ – karakterek', ctas: [ctaI('Kezdjük!', '#')] }),
         cards('Kalandok', [
           { title: 'Űrutazás', text: 'Négy feladat, kb. 20 perc.', media: 'ILLUSZTRÁCIÓ – rakéta' },
           { title: 'Állatkert', text: 'Rajzolós kaland kicsiknek.', media: 'ILLUSZTRÁCIÓ – állatok' },
@@ -486,7 +486,7 @@ class Component extends DCLogic {
       ] },
 
       'csaladoknak-gyik': { title: 'Gyakori kérdések (családoknak)', url: '/csaladoknak/gyik', sections: [
-        hero({ crumb: 'Főoldal / gyermekek és szülők / GYIK', eyebrow: 'GYIK', title: 'Amit a szülők leggyakrabban kérdeznek', text: 'Ha nem találod a választ, írj az Amigo-felelősnek — 48 órán belül válaszolunk.', media: 'KÖR – kérdőjel', ctas: [] }),
+        hero({ crumb: 'Főoldal / Gyermekek és szülők / GYIK', eyebrow: 'GYIK', title: 'Amit a szülők leggyakrabban kérdeznek', text: 'Ha nem találod a választ, írj az Amigo-felelősnek — 48 órán belül válaszolunk.', media: 'KÖR – kérdőjel', ctas: [] }),
         list('Kérdések', [
           { title: 'Kötelező részt venni a foglalkozáson?', text: 'Nem. A gyermek bármikor nemet mondhat, és ez nem befolyásol semmit.', meta: '+' },
           { title: 'Egészségügyi dolgozók az Amigók?', text: 'Nem. Képzett egyetemista önkéntesek, orvosi feladatot nem látnak el.', meta: '+' },
@@ -677,7 +677,7 @@ class Component extends DCLogic {
       ] },
 
       'adatkezeles': { title: 'Adatkezelési tájékoztató', url: '/adatkezeles', sections: [
-        hero({ crumb: 'Főoldal / Adatkezelési tájékoztató', eyebrow: 'Jogi', title: 'Adatkezelési tájékoztató', text: 'Milyen adatot kezelünk, meddig, és kinek adjuk át. gyermekekről személyes adatot nem tárolunk.', media: 'IKON – dokumentum', mediaRadius: '12px', ctas: [] }),
+        hero({ crumb: 'Főoldal / Adatkezelési tájékoztató', eyebrow: 'Jogi', title: 'Adatkezelési tájékoztató', text: 'Milyen adatot kezelünk, meddig, és kinek adjuk át. Gyermekekről személyes adatot nem tárolunk.', media: 'IKON – dokumentum', mediaRadius: '12px', ctas: [] }),
         legal({ toc: [{ label: '1. Az adatkezelő' }, { label: '2. Kezelt adatok köre' }, { label: '3. Az adatkezelés célja' }, { label: '4. Megőrzési idő' }, { label: '5. Adatfeldolgozók' }, { label: '6. Jogaid' }, { label: '7. Jogorvoslat' }],
           blocks: [
             { title: '1. Az adatkezelő', h: '72px' }, { title: '2. Kezelt adatok köre', h: '120px' },
@@ -714,7 +714,7 @@ class Component extends DCLogic {
     const groups = [
       g('Legyél Amigo!', ['legyel-amigo', 'jelentkezes', 'legyel-koszonjuk']),
       g('Munkánk és hatásunk', ['munkank', 'programok', 'hatas', 'atlathatosag', 'partnerek', 'tortenetek']),
-      g('gyermekek és szülők', ['csaladoknak', 'szuloknek', 'kalandozz', 'csaladoknak-gyik']),
+      g('Gyermekek és szülők', ['csaladoknak', 'szuloknek', 'kalandozz', 'csaladoknak-gyik']),
       g('Adományozás', ['tamogatom', 'orokbefogadas', 'vallalati', 'egyeb', 'ado-1-szazalek', 'tamogatom-checkout', 'tamogatom-koszonjuk']),
       g('Adománybolt', ['bolt', 'bolt-termekek', 'bolt-termek', 'kosar', 'penztar', 'bolt-koszonjuk']),
       g('Ügyintézés', ['kapcsolat', 'gyik', 'dokumentumok', 'adatkezeles', 'aszf'])

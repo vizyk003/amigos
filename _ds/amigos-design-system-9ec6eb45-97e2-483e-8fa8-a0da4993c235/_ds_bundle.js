@@ -691,7 +691,7 @@ function Dialog({
       justifyContent: 'center',
       padding: 24,
       background: 'rgba(23,28,18,0.5)',
-      borderRadius: 12
+      borderRadius: 'var(--radius-md)'
     }
   }, panel);
   return /*#__PURE__*/React.createElement("div", {
@@ -1605,7 +1605,7 @@ function SiteHeader({
         textDecoration: on ? 'underline' : 'none',
         textUnderlineOffset: '0.35em',
         textDecorationThickness: 2,
-        textDecorationColor: dark ? 'var(--am-green-200)' : 'var(--color-primary)',
+        textDecorationColor: dark ? 'var(--text-on-field-muted)' : 'var(--color-primary)',
         opacity: on ? 1 : 0.85,
         whiteSpace: 'nowrap'
       }
@@ -1933,7 +1933,7 @@ function CtaBand({
   actions,
   tone = 'field',
   pattern = 'type',
-  patternWords = ['EGYÜTT', 'A gyermekEKÉRT'],
+  patternWords = ['EGYÜTT', 'A GYERMEKEKÉRT'],
   style
 }) {
   const tones = {

@@ -72,6 +72,11 @@
   to = "/Blog.dc.html"
   status = 200
 
+[[redirects]]
+  from = "/kapcsolat"
+  to = "/Kapcsolat.dc.html"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # Superseded explorations and the internal wireframe deck.
 #
@@ -102,5 +107,12 @@
 
 [[headers]]
   for = "/Ket kor - alt story.dc.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Design review: the static declaration of the comment form that
+# assets/feedback.js posts to. Not a page anyone should land on.
+[[headers]]
+  for = "/feedback-form.html"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"

@@ -58,11 +58,55 @@
 .am-underline--pup-purple::after{ background-image: url('underlines/amigos-alahuzas-pup-purple.png'); }
 .am-underline--pup-white::after{ background-image: url('underlines/amigos-alahuzas-pup-white.png'); }
 .am-underline--pup-yellow::after{ background-image: url('underlines/amigos-alahuzas-pup-yellow.png'); }
-.am-underline[class*='--kunkor-']::after{ width: 100%; aspect-ratio: 1000 / 140; transform: translate(-50%, 0); }
+/* Extra strokes generated in the same brush style (tools/amigos-underlines.py):
+   cikcakk, dupla, rugo are short like hullam; hurok, szaggatott are long
+   like kunkor. Vary the shape from heading to heading — no shape twice
+   on one page. */
+.am-underline--cikcakk-green::after{ background-image: url('underlines/amigos-alahuzas-cikcakk-green.png'); }
+.am-underline--cikcakk-purple::after{ background-image: url('underlines/amigos-alahuzas-cikcakk-purple.png'); }
+.am-underline--cikcakk-white::after{ background-image: url('underlines/amigos-alahuzas-cikcakk-white.png'); }
+.am-underline--cikcakk-yellow::after{ background-image: url('underlines/amigos-alahuzas-cikcakk-yellow.png'); }
+.am-underline--dupla-green::after{ background-image: url('underlines/amigos-alahuzas-dupla-green.png'); }
+.am-underline--dupla-purple::after{ background-image: url('underlines/amigos-alahuzas-dupla-purple.png'); }
+.am-underline--dupla-white::after{ background-image: url('underlines/amigos-alahuzas-dupla-white.png'); }
+.am-underline--dupla-yellow::after{ background-image: url('underlines/amigos-alahuzas-dupla-yellow.png'); }
+.am-underline--rugo-green::after{ background-image: url('underlines/amigos-alahuzas-rugo-green.png'); }
+.am-underline--rugo-purple::after{ background-image: url('underlines/amigos-alahuzas-rugo-purple.png'); }
+.am-underline--rugo-white::after{ background-image: url('underlines/amigos-alahuzas-rugo-white.png'); }
+.am-underline--rugo-yellow::after{ background-image: url('underlines/amigos-alahuzas-rugo-yellow.png'); }
+.am-underline--hurok-green::after{ background-image: url('underlines/amigos-alahuzas-hurok-green.png'); }
+.am-underline--hurok-purple::after{ background-image: url('underlines/amigos-alahuzas-hurok-purple.png'); }
+.am-underline--hurok-white::after{ background-image: url('underlines/amigos-alahuzas-hurok-white.png'); }
+.am-underline--hurok-yellow::after{ background-image: url('underlines/amigos-alahuzas-hurok-yellow.png'); }
+.am-underline--szaggatott-green::after{ background-image: url('underlines/amigos-alahuzas-szaggatott-green.png'); }
+.am-underline--szaggatott-purple::after{ background-image: url('underlines/amigos-alahuzas-szaggatott-purple.png'); }
+.am-underline--szaggatott-white::after{ background-image: url('underlines/amigos-alahuzas-szaggatott-white.png'); }
+.am-underline--szaggatott-yellow::after{ background-image: url('underlines/amigos-alahuzas-szaggatott-yellow.png'); }
+.am-underline[class*='--kunkor-']::after,
+.am-underline[class*='--hurok-']::after,
+.am-underline[class*='--szaggatott-']::after{ width: 100%; aspect-ratio: 1000 / 140; transform: translate(-50%, 0); }
 .am-underline[class*='--pup-']::after{ width: 92%; aspect-ratio: 1000 / 160; transform: translate(-50%, -18%); }
 /* The long strokes hang lower than the short ones; give their line a
    little more room so they clear whatever follows the title. */
-[data-m="w"]:has(.am-underline[class*='--pup-'], .am-underline[class*='--kunkor-']){
+/* Draw-on: the stroke wipes in left to right when its heading scrolls
+   into view (assets/responsive.js sets data-ill-in), like the brush being
+   pulled. Only once JS has marked <html data-ill-js>, never with reduced
+   motion. */
+@media (prefers-reduced-motion: no-preference){
+  html[data-ill-js] .am-underline::after{
+    transition: clip-path 460ms cubic-bezier(0.6, 0, 0.25, 1) 120ms;
+  }
+  html[data-ill-js] .am-underline:not([data-ill-in])::after{ clip-path: inset(-20% 100% -20% 0); }
+  html[data-ill-js] .am-underline[data-ill-in]::after{ clip-path: inset(-20% 0 -20% 0); }
+}
+/* Section headings: the strokes hang below the baseline (the long ones
+   ~0.3em) and ran into the note or paragraph under the heading. The headings carry an
+   inline margin:0, so the room goes in as padding. */
+:is(h2, h3):has(.am-underline){ padding-bottom: 0.24em; }
+:is(h2, h3):has(.am-underline[class*='--pup-'], .am-underline[class*='--kunkor-'], .am-underline[class*='--hurok-'], .am-underline[class*='--szaggatott-']){
+  padding-bottom: 0.6em;
+}
+[data-m="w"]:has(.am-underline[class*='--pup-'], .am-underline[class*='--kunkor-'], .am-underline[class*='--hurok-'], .am-underline[class*='--szaggatott-']){
   margin-bottom: -0.16em !important;
 }
 
@@ -123,7 +167,7 @@ h1 > span:has(> .am-underline):not(:last-child){
 .am-sticker--note{ padding: 10px 16px; font-size: 28px; border-radius: 2px; }
 .am-sticker--circle{ width: 112px; height: 112px; border-radius: 50%; font-size: 30px; }
 .am-sticker--patch{
-  padding: 12px 20px; font-size: 30px; border-radius: 8px;
+  padding: 12px 20px; font-size: 30px; border-radius: var(--radius-md);
   outline: 2px dashed currentColor; outline-offset: -6px;
 }
 .am-sticker--green{ background: var(--amigos-green); color: var(--amigos-white); }
@@ -180,7 +224,9 @@ h1 > span:has(> .am-underline):not(:last-child){
 /* ---------------------------------------------------------------------
    Illustration layer (components/brand/Illustration) — a hand-drawn
    line drawn on the photo, reacting to something in it. One colour
-   (white, ink or sun), at most two per image, never over a face.
+   (white, ink, sun or — on light surfaces — green), at most two per
+   image, never over a face. The motif list is in the DS readme
+   ("Drawings"); _illustrations.html shows them all.
    Position each one inline (left/top/width as % of its frame).
    ------------------------------------------------------------------ */
 .am-ill{
@@ -190,3 +236,58 @@ h1 > span:has(> .am-underline):not(:last-child){
   pointer-events: none;
   z-index: 2;
 }
+
+/* Pop-in for section illustrations: [data-ill-pop] drawings spring in
+   when they reach the viewport; ="wiggle" then sways a few degrees.
+   Uses the individual scale/rotate properties so the inline transform
+   (each drawing's own tilt) is left alone. Hidden only once
+   assets/responsive.js has marked <html data-ill-js>, so without the
+   script — or with reduced motion — the drawings simply sit in place. */
+@keyframes am-ill-wiggle{ 0%,100%{ rotate: -3deg; } 50%{ rotate: 3deg; } }
+@media (prefers-reduced-motion: no-preference){
+  html[data-ill-js] [data-ill-pop]{
+    transition: opacity 360ms ease-out, scale 560ms cubic-bezier(0.34,1.56,0.64,1);
+  }
+  html[data-ill-js] [data-ill-pop]:not([data-ill-in]){ opacity: 0; scale: 0.55; }
+  /* SVG drawings (assets/illustrations/svg/) draw their own strokes on, so
+     they only fade in — no spring. */
+  html[data-ill-js] img[data-ill-pop][src*=".svg"]{ transition: opacity 120ms linear; }
+  html[data-ill-js] img[data-ill-pop][src*=".svg"]:not([data-ill-in]){ scale: 1; }
+  html[data-ill-js] [data-ill-pop="wiggle"][data-ill-in]{
+    animation: am-ill-wiggle 5s ease-in-out 1.6s infinite;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Green photo overlay — takes the clinical edge off a photo: a clearly
+   visible pulcsizöld fade rises from the bottom edge (normal blend, so it
+   reads as an overlay rather than a colour cast) and the top half stays
+   natural. Put .am-tint on the photo's (positioned or not) wrapper; it
+   follows the wrapper's corners. --soft is a shorter, lighter fade for
+   small or busy crops. Only on a photo that carries no
+   other brand element (sticker, drawing, caption band) — those already
+   do the work. Never on the hero, product shots or video. Hover lifts the
+   wash on linked cards.
+   ------------------------------------------------------------------ */
+.am-tint{ position: relative; isolation: isolate; }
+.am-tint::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(to top,
+    color-mix(in srgb, var(--amigos-green) 92%, transparent) 0%,
+    color-mix(in srgb, var(--amigos-green) 60%, transparent) 22%,
+    color-mix(in srgb, var(--amigos-green) 18%, transparent) 46%,
+    transparent 64%);
+  transition: opacity 240ms ease-out;
+}
+.am-tint--soft::after{
+  background: linear-gradient(to top,
+    color-mix(in srgb, var(--amigos-green) 70%, transparent) 0%,
+    transparent 45%);
+}
+a:hover .am-tint::after, a:hover.am-tint::after{ opacity: 0.55; }
+.am-tint > figcaption, .am-tint > .am-story-caption{ z-index: 2; }

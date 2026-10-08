@@ -26,7 +26,7 @@
   <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
   <style>
     html,body{margin:0;background:var(--amigos-paper);}
-    a{color:var(--amigos-green);} a:hover{color:var(--amigos-green-deep);}
+    a{color:var(--amigos-green-text);} a:hover{color:var(--amigos-green-deep);}
     @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
     @keyframes am-wave-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}
     @keyframes am-wave-drift{0%{transform:translate(-50%,0);}50%{transform:translate(-50%,1.5px);}100%{transform:translate(-50%,0);}}
@@ -35,7 +35,7 @@
     @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
     [data-add]:hover,[data-add][data-added]{background:var(--amigos-green) !important;color:var(--amigos-white) !important;}
     [data-product-link]{flex:1 1 auto;}
-    [data-product-link]:focus-visible{outline:3px solid var(--focus-color);outline-offset:4px;border-radius:var(--radius-card);}
+    [data-product-link]:focus-visible{outline:3px solid var(--focus-color);outline-offset:4px;border-radius:var(--radius-md);}
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
   <link rel="stylesheet" href="assets/brand.css">
@@ -51,10 +51,11 @@
     <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
       <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
       <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
-        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Legyél Amigo</a>
-        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Munkánk &amp; Hatásunk</a>
-        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:#437613;">Gyermekek &amp; Szülők</a>
-        <a href="Adomanybolt.dc.html" aria-current="page" style="color:var(--amigos-green);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#437613" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Legyél Amigo</a>
+        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Gyermekek &amp; Szülők</a>
+        <a href="Adomanybolt.dc.html" aria-current="page" style="color:var(--amigos-green-text);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#00A74A" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Kapcsolat.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Kapcsolat</a>
       </nav>
       <div style="display:flex;justify-content:flex-end;align-items:center;gap:16px;">
         <button data-cart-open="" type="button" style="display:flex;align-items:center;gap:10px;background:transparent;border:0;font:inherit;font-size:var(--text-nav);font-weight:500;color:var(--amigos-ink);cursor:pointer;padding:0;">
@@ -68,7 +69,7 @@
 <main id="tartalom">
 
   <section data-screen-label="Hero" style="position:relative;background:var(--amigos-white);color:var(--amigos-ink);overflow:hidden;padding:clamp(48px,6vw,88px) 0 clamp(56px,7vw,96px);">
-    <div data-value-word="" data-m="pattern" aria-hidden="true" style="position:absolute;left:0;bottom:-0.18em;font-family:var(--font-hand);font-weight:700;font-size:clamp(64px,20.7vw,340px);line-height:1;letter-spacing:0.01em;color:rgba(42,74,11,0.07);white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">KÖZÖSSÉG</div>
+    <div data-value-word="" data-m="pattern" aria-hidden="true" style="position:absolute;left:0;bottom:-0.18em;font-family:var(--font-hand);font-weight:700;font-size:clamp(64px,20.7vw,340px);line-height:1;letter-spacing:0.01em;color:rgba(5,101,44,0.07);white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">KÖZÖSSÉG</div>
     <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
       <div style="display:flex;flex-direction:column;gap:20px;">
         <span style="font-size:13px;color:var(--amigos-green-deep);">Főoldal / Adománybolt</span>
@@ -88,7 +89,7 @@
         <div aria-hidden="true" style="position:absolute;inset:0;background:var(--amigos-zsalya);border-radius:var(--radius-lg);transform:translate(5%,4%) rotate(2deg);"></div>
         <figure class="am-photo" style="aspect-ratio:4/5;">
           <img src="assets/community/photos/korhaz-rajzolas-babaval.jpg" alt="Egy Amigo és egy gyermek együtt rajzol a kórházban" style="object-position:60% 50%;" width="1600" height="1341">
-          <img class="am-ill" src="assets/illustrations/amigos-ill-csillanas-white.png" alt="" aria-hidden="true" style="left:42%;top:4%;width:16%;transform:rotate(8deg);">
+          <img data-ill-pop class="am-ill" src="assets/illustrations/svg/amigos-ill-csillanas-white.svg" alt="" aria-hidden="true" style="left:42%;top:4%;width:16%;transform:rotate(8deg);">
         </figure>
         <span class="am-sticker am-sticker--patch am-sticker--deep" style="position:absolute;top:6%;left:-8%;--am-rot:-5deg;">100% barátság</span>
       </div>
@@ -98,9 +99,10 @@
   <section id="termekek" data-screen-label="Termékek" style="background:var(--amigos-paper);padding:clamp(72px,10vw,128px) 0;">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(28px,4vw,48px);">
       <div data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
-        <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;">
-          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Termékek</span>
-          <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Amit megvehetsz</h2>
+        <div data-reveal="" style="position:relative;display:flex;flex-direction:column;gap:16px;">
+          <img class="am-ill" data-ill-pop="wiggle" src="assets/illustrations/svg/amigos-ill-ceruza-green.svg" alt="" aria-hidden="true" style="right:2%;top:-20px;width:clamp(76px,7vw,108px);transform:rotate(-4deg);">
+          <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">Termékek</span>
+          <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Amit <span class="am-underline am-underline--lendulet-green">megvehetsz</span></h2>
         </div>
         <p data-reveal="" style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:var(--amigos-ink-2);">Minden kiadványunkat eredetileg kórházban gyógyuló gyermekeknek készítettük. A csomagot a megrendelést követő két héten belül, ingyenesen küldjük a választott Foxpost automatába.</p>
       </div>
@@ -117,7 +119,7 @@
 
         <article data-product="" data-slug="egy-vilagraszolo-felfedezes" data-cat="konyv" data-name="Egy világraszóló felfedezés" data-stock="20" data-price="3990" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=egy-vilagraszolo-felfedezes" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="assets/community/photos/korhaz-felolvasas-agynal.jpg" alt="Munkafüzet egy kórházi ágy mellett" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);" width="1600" height="1341">
             <span style="position:absolute;left:12px;top:12px;height:28px;padding:0 12px;border-radius:999px;background:var(--amigos-green);color:var(--amigos-white);font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;display:flex;align-items:center;">Népszerű</span>
           </div>
@@ -125,143 +127,143 @@
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Egy világraszóló felfedezés</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">3 990 Ft-tól</span>
-          <button data-add="" data-slug="egy-vilagraszolo-felfedezes" type="button" aria-label="Kosárba: Egy világraszóló felfedezés" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">3 990 Ft-tól</span>
+          <button data-add="" data-slug="egy-vilagraszolo-felfedezes" type="button" aria-label="Kosárba: Egy világraszóló felfedezés" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="amigos-parparade" data-cat="jatek" data-name="Amigos PárParádé" data-stock="10" data-price="4990" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=amigos-parparade" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/ParParade.jpg" alt="Amigos PárParádé" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Amigos PárParádé</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">4 990 Ft-tól</span>
-          <button data-add="" data-slug="amigos-parparade" type="button" aria-label="Kosárba: Amigos PárParádé" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">4 990 Ft-tól</span>
+          <button data-add="" data-slug="amigos-parparade" type="button" aria-label="Kosárba: Amigos PárParádé" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="amigos-vilagutazo-memoriajatek" data-cat="jatek" data-name="Amigos Világutazó memóriajáték" data-stock="55" data-price="2790" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=amigos-vilagutazo-memoriajatek" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/03/Vilagutazo-memoria-1.jpg" alt="Amigos Világutazó memóriajáték" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Amigos Világutazó memóriajáték</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">2 790 Ft-tól</span>
-          <button data-add="" data-slug="amigos-vilagutazo-memoriajatek" type="button" aria-label="Kosárba: Amigos Világutazó memóriajáték" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">2 790 Ft-tól</span>
+          <button data-add="" data-slug="amigos-vilagutazo-memoriajatek" type="button" aria-label="Kosárba: Amigos Világutazó memóriajáték" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="amigos-vilagutazo-kartyajatek" data-cat="jatek" data-name="Amigos Világutazó kártyajáték" data-stock="58" data-price="2990" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=amigos-vilagutazo-kartyajatek" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/03/Vilagutazo.jpg" alt="Amigos Világutazó kártyajáték" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Amigos Világutazó kártyajáték</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">2 990 Ft-tól</span>
-          <button data-add="" data-slug="amigos-vilagutazo-kartyajatek" type="button" aria-label="Kosárba: Amigos Világutazó kártyajáték" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">2 990 Ft-tól</span>
+          <button data-add="" data-slug="amigos-vilagutazo-kartyajatek" type="button" aria-label="Kosárba: Amigos Világutazó kártyajáték" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="nemet-nyelvgyakorlo-fuzet-ismerkedo-szint" data-cat="fuzet" data-name="Német nyelvgyakorló füzet — ismerkedő szint" data-stock="10" data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=nemet-nyelvgyakorlo-fuzet-ismerkedo-szint" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Nemet-ismerkedo-munkafuzet-scaled.png" alt="Német nyelvgyakorló füzet — ismerkedő szint" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Német nyelvgyakorló füzet — ismerkedő szint</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">1 990 Ft-tól</span>
-          <button data-add="" data-slug="nemet-nyelvgyakorlo-fuzet-ismerkedo-szint" type="button" aria-label="Kosárba: Német nyelvgyakorló füzet — ismerkedő szint" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">1 990 Ft-tól</span>
+          <button data-add="" data-slug="nemet-nyelvgyakorlo-fuzet-ismerkedo-szint" type="button" aria-label="Kosárba: Német nyelvgyakorló füzet — ismerkedő szint" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="nemet-nyelvgyakorlo-fuzet-halado-szint" data-cat="fuzet" data-name="Német nyelvgyakorló füzet — haladó szint" data-stock="10" data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=nemet-nyelvgyakorlo-fuzet-halado-szint" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Nemet-halado-munkafuzet-1.jpg" alt="Német nyelvgyakorló füzet — haladó szint" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Német nyelvgyakorló füzet — haladó szint</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">1 990 Ft-tól</span>
-          <button data-add="" data-slug="nemet-nyelvgyakorlo-fuzet-halado-szint" type="button" aria-label="Kosárba: Német nyelvgyakorló füzet — haladó szint" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">1 990 Ft-tól</span>
+          <button data-add="" data-slug="nemet-nyelvgyakorlo-fuzet-halado-szint" type="button" aria-label="Kosárba: Német nyelvgyakorló füzet — haladó szint" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="angol-nyelvgyakorlo-fuzet-ismerkedo-szint" data-cat="fuzet" data-name="Angol nyelvgyakorló füzet — ismerkedő szint" data-stock="10" data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=angol-nyelvgyakorlo-fuzet-ismerkedo-szint" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Angol-ismerkedo-munkafuzet-1.jpg" alt="Angol nyelvgyakorló füzet — ismerkedő szint" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Angol nyelvgyakorló füzet — ismerkedő szint</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">1 990 Ft-tól</span>
-          <button data-add="" data-slug="angol-nyelvgyakorlo-fuzet-ismerkedo-szint" type="button" aria-label="Kosárba: Angol nyelvgyakorló füzet — ismerkedő szint" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">1 990 Ft-tól</span>
+          <button data-add="" data-slug="angol-nyelvgyakorlo-fuzet-ismerkedo-szint" type="button" aria-label="Kosárba: Angol nyelvgyakorló füzet — ismerkedő szint" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="angol-nyelvgyakorlo-fuzet-halado-szint" data-cat="fuzet" data-name="Angol nyelvgyakorló füzet — haladó szint" data-stock="10" data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=angol-nyelvgyakorlo-fuzet-halado-szint" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Angol-halado-munkafuzet-2.-kiadas-1.jpg" alt="Angol nyelvgyakorló füzet — haladó szint" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Angol nyelvgyakorló füzet — haladó szint</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">1 990 Ft-tól</span>
-          <button data-add="" data-slug="angol-nyelvgyakorlo-fuzet-halado-szint" type="button" aria-label="Kosárba: Angol nyelvgyakorló füzet — haladó szint" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">1 990 Ft-tól</span>
+          <button data-add="" data-slug="angol-nyelvgyakorlo-fuzet-halado-szint" type="button" aria-label="Kosárba: Angol nyelvgyakorló füzet — haladó szint" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="nyelvi-kavalkad-munkafuzet" data-cat="fuzet" data-name="Nyelvi kavalkád munkafüzet" data-stock="10" data-price="1990" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=nyelvi-kavalkad-munkafuzet" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/Nyelvi-kavalkad.jpg" alt="Nyelvi kavalkád munkafüzet" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Nyelvi kavalkád munkafüzet</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">1 990 Ft-tól</span>
-          <button data-add="" data-slug="nyelvi-kavalkad-munkafuzet" type="button" aria-label="Kosárba: Nyelvi kavalkád munkafüzet" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">1 990 Ft-tól</span>
+          <button data-add="" data-slug="nyelvi-kavalkad-munkafuzet" type="button" aria-label="Kosárba: Nyelvi kavalkád munkafüzet" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="egy-palyan-a-nagyokkal-focis-munkafuzet-angol" data-cat="fuzet" data-name="Egy pályán a nagyokkal — focis munkafüzet (angol)" data-stock="10" data-price="2490" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=egy-palyan-a-nagyokkal-focis-munkafuzet-angol" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/focis-munkafuzet-angol-1-scaled.png" alt="Egy pályán a nagyokkal — focis munkafüzet (angol)" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Egy pályán a nagyokkal — focis munkafüzet (angol)</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">2 490 Ft-tól</span>
-          <button data-add="" data-slug="egy-palyan-a-nagyokkal-focis-munkafuzet-angol" type="button" aria-label="Kosárba: Egy pályán a nagyokkal — focis munkafüzet (angol)" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">2 490 Ft-tól</span>
+          <button data-add="" data-slug="egy-palyan-a-nagyokkal-focis-munkafuzet-angol" type="button" aria-label="Kosárba: Egy pályán a nagyokkal — focis munkafüzet (angol)" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="egy-palyan-a-nagyokkal-focis-munkafuzet-nemet" data-cat="fuzet" data-name="Egy pályán a nagyokkal — focis munkafüzet (német)" data-stock="10" data-price="2490" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=egy-palyan-a-nagyokkal-focis-munkafuzet-nemet" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/05/nemet_UEFA-x-Amigos-munkafuzet_VEGLEGES.png" alt="Egy pályán a nagyokkal — focis munkafüzet (német)" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Egy pályán a nagyokkal — focis munkafüzet (német)</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">2 490 Ft-tól</span>
-          <button data-add="" data-slug="egy-palyan-a-nagyokkal-focis-munkafuzet-nemet" type="button" aria-label="Kosárba: Egy pályán a nagyokkal — focis munkafüzet (német)" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">2 490 Ft-tól</span>
+          <button data-add="" data-slug="egy-palyan-a-nagyokkal-focis-munkafuzet-nemet" type="button" aria-label="Kosárba: Egy pályán a nagyokkal — focis munkafüzet (német)" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Kosárba</button>
         </article>
 
         <article data-product="" data-slug="husveti-adomanyozokni-2026" data-cat="zokni" data-name="Húsvéti AdományoZokni 2026" data-stock="183" data-price="3490" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=husveti-adomanyozokni-2026" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/03/Husveti-zokni-2026-1-1-1.jpg" alt="Húsvéti AdományoZokni 2026" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
             <span style="position:absolute;left:12px;top:12px;height:28px;padding:0 12px;border-radius:999px;background:var(--amigos-plum);color:var(--amigos-white);font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;display:flex;align-items:center;">Kampány</span>
           </div>
@@ -269,62 +271,64 @@
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Húsvéti AdományoZokni 2026</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">3 490 Ft-tól</span>
-          <button data-add="" data-slug="husveti-adomanyozokni-2026" type="button" aria-label="Méretet választok: Húsvéti AdományoZokni 2026" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Méretet választok →</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">3 490 Ft-tól</span>
+          <button data-add="" data-slug="husveti-adomanyozokni-2026" type="button" aria-label="Méretet választok: Húsvéti AdományoZokni 2026" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Méretet választok →</button>
         </article>
 
         <article data-product="" data-slug="husveti-nosztalgia-adomanyozokni-2025" data-cat="zokni" data-name="Húsvéti Nosztalgia AdományoZokni 2025" data-stock="83" data-price="3490" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=husveti-nosztalgia-adomanyozokni-2025" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2025/04/zokni-2-3-scaled.jpg" alt="Húsvéti Nosztalgia AdományoZokni 2025" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Húsvéti Nosztalgia AdományoZokni 2025</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">3 490 Ft-tól</span>
-          <button data-add="" data-slug="husveti-nosztalgia-adomanyozokni-2025" type="button" aria-label="Méretet választok: Húsvéti Nosztalgia AdományoZokni 2025" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Méretet választok →</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">3 490 Ft-tól</span>
+          <button data-add="" data-slug="husveti-nosztalgia-adomanyozokni-2025" type="button" aria-label="Méretet választok: Húsvéti Nosztalgia AdományoZokni 2025" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Méretet választok →</button>
         </article>
 
         <article data-product="" data-slug="husveti-nosztalgia-adomanyozokni-2022" data-cat="zokni" data-name="Húsvéti Nosztalgia AdományoZokni 2022" data-stock="14" data-price="3490" style="display:flex;flex-direction:column;gap:10px;">
           <a data-product-link="" href="Termek.dc.html?p=husveti-nosztalgia-adomanyozokni-2022" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="https://amigos-20546.kxcdn.com/wp-content/uploads/2026/03/Husveti-zokni2022-1.jpg" alt="Húsvéti Nosztalgia AdományoZokni 2022" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
           </div>
           <div style="display:flex;flex-direction:column;gap:0px;">
             <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">Húsvéti Nosztalgia AdományoZokni 2022</h3>
           </div>
           </a>
-          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green);margin-top:-6px;">3 490 Ft-tól</span>
-          <button data-add="" data-slug="husveti-nosztalgia-adomanyozokni-2022" type="button" aria-label="Méretet választok: Húsvéti Nosztalgia AdományoZokni 2022" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Méretet választok →</button>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--amigos-green-text);margin-top:-6px;">3 490 Ft-tól</span>
+          <button data-add="" data-slug="husveti-nosztalgia-adomanyozokni-2022" type="button" aria-label="Méretet választok: Húsvéti Nosztalgia AdományoZokni 2022" style="height:44px;margin-top:2px;border-radius:var(--radius-pill);border:2px solid var(--amigos-green);background:transparent;color:var(--amigos-green-text);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background 160ms cubic-bezier(0.2,0.7,0.2,1),color 160ms cubic-bezier(0.2,0.7,0.2,1);">Méretet választok →</button>
         </article>
 
       </div>
     </div>
   </section>
 
-  <section id="hova-megy" data-screen-label="Hova megy a bevétel" style="background:var(--amigos-white);border-top:1px solid var(--amigos-line);border-bottom:1px solid var(--amigos-line);padding:clamp(88px,12vw,160px) 0;">
+  <section id="hova-megy" data-screen-label="Hova megy a bevétel" style="position:relative;overflow:hidden;background:var(--amigos-green);color:var(--amigos-ink);padding:clamp(88px,12vw,160px) 0;">
     <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,104px);align-items:start;">
       <div data-reveal="" data-sticky="" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:20px;">
-        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green);">Hova megy a bevétel</span>
-        <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;">Egy vásárlás, egy konkrét tétel</h2>
-        <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:38ch;color:var(--amigos-ink-2);">Az összegek a belső költségbecslésünkön alapulnak, és minden évben a nyilvános beszámolóban is elszámolunk velük.</p>
-        <a href="Munkank es hatasunk.dc.html#atlathatosag" style="font-size:var(--text-body);font-weight:600;text-decoration:none;">Átláthatóság →</a>
+        <img class="am-ill" data-ill-pop="wiggle" src="assets/illustrations/svg/amigos-ill-szivdobbanas-white.svg" alt="" aria-hidden="true" style="right:6%;top:-16px;width:clamp(64px,6vw,92px);transform:rotate(8deg);">
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-ink);">Hova megy a bevétel</span>
+        <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;color:var(--amigos-white);">Egy vásárlás, egy konkrét <span class="am-underline am-underline--hullam-yellow">tétel</span></h2>
+        <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:38ch;color:var(--amigos-ink);">Az összegek a belső költségbecslésünkön alapulnak, és minden évben a nyilvános beszámolóban is elszámolunk velük.</p>
+        <a href="Munkank es hatasunk.dc.html#atlathatosag" style="font-size:var(--text-body);font-weight:600;text-decoration:none;color:var(--amigos-ink);">Átláthatóság →</a>
       </div>
-      <div style="display:flex;flex-direction:column;border-top:1px solid var(--amigos-line);">
-        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:baseline;padding:26px 0;border-bottom:1px solid var(--amigos-line);">
-          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green);font-variant-numeric:tabular-nums;white-space:nowrap;">1 munkafüzet</span>
+      <div style="position:relative;display:flex;flex-direction:column;border-top:1px solid rgba(19,29,21,0.25);">
+        <img class="am-ill" data-ill-pop data-ill-secondary src="assets/illustrations/svg/amigos-ill-konfetti-yellow.svg" alt="" aria-hidden="true" style="right:0;bottom:-28px;width:clamp(96px,9vw,136px);">
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:baseline;padding:26px 0;border-bottom:1px solid rgba(19,29,21,0.25);">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-white);font-variant-numeric:tabular-nums;white-space:nowrap;">1 munkafüzet</span>
           <span style="font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink);">= egy kórházi foglalkozás teljes alapanyaga</span>
         </div>
-        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:baseline;padding:26px 0;border-bottom:1px solid var(--amigos-line);">
-          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green);font-variant-numeric:tabular-nums;white-space:nowrap;">1 zokni</span>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:baseline;padding:26px 0;border-bottom:1px solid rgba(19,29,21,0.25);">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-white);font-variant-numeric:tabular-nums;white-space:nowrap;">1 zokni</span>
           <span style="font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink);">= egy Amigo havi útiköltsége, négy kórházi látogatásra</span>
         </div>
-        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:baseline;padding:26px 0;border-bottom:1px solid var(--amigos-line);">
-          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-green);font-variant-numeric:tabular-nums;white-space:nowrap;">1 kalandkönyv</span>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:baseline;padding:26px 0;border-bottom:1px solid rgba(19,29,21,0.25);">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;color:var(--amigos-white);font-variant-numeric:tabular-nums;white-space:nowrap;">1 kalandkönyv</span>
           <span style="font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink);">= egy nyelvi foglalkozás öt gyermeknek, eszközökkel együtt</span>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:20px 40px;padding-top:26px;font-size:15px;color:var(--amigos-ink-2);">
+        <div style="display:flex;flex-wrap:wrap;gap:20px 40px;padding-top:26px;font-size:15px;color:var(--amigos-ink);">
           <span>Ingyenes Foxpost kiszállítás</span>
           <span>A csomag két héten belül érkezik</span>
           <span>Kérdés: kapcsolat@amigos.hu</span>
@@ -333,20 +337,32 @@
     </div>
   </section>
 
-  <section data-screen-label="Rendszeres támogatás" style="background:var(--amigos-malyva);color:var(--amigos-ink);padding:clamp(72px,10vw,120px) 0;">
-    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,56px);align-items:center;">
-      <div data-reveal="" style="display:flex;flex-direction:column;gap:14px;">
-        <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:17ch;text-wrap:pretty;color:var(--amigos-ink);">Egy könyv egy foglalkozás. Egy rendszeres támogatás egy egész év.</h2>
-        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;">Havi 5 000 Ft-tal egy Amigo útiköltségét fedezed — bármikor módosítható vagy leállítható.</p>
+  <section data-screen-label="Rendszeres támogatás" style="position:relative;overflow:hidden;background:var(--amigos-malyva);color:var(--amigos-ink);padding:clamp(80px,10vw,128px) 0;">
+    <div data-value-word="" aria-hidden="true" style="position:absolute;left:-0.02em;bottom:-0.5em;font-family:var(--font-hand);font-weight:700;font-size:clamp(120px,15vw,240px);line-height:1;letter-spacing:0.01em;color:color-mix(in srgb, var(--amigos-plum) 9%, transparent);white-space:nowrap;user-select:none;pointer-events:none;">EGÉSZ ÉV</div>
+    <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
+      <div data-reveal="" style="position:relative;display:flex;flex-direction:column;gap:18px;">
+        <img class="am-ill" data-ill-pop="wiggle" src="assets/illustrations/svg/amigos-ill-virag-ink.svg" alt="" aria-hidden="true" style="right:4%;top:-24px;height:clamp(56px,5.6vw,80px);width:auto;transform:rotate(10deg);">
+        <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:17ch;text-wrap:pretty;color:var(--amigos-ink);">Egy könyv egy foglalkozás. Egy rendszeres támogatás egy <span class="am-underline am-underline--hurok-purple">egész év.</span></h2>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:42ch;">A bolt egy-egy foglalkozást tesz lehetővé. A havi támogatás azt, hogy egész évben ott lehessünk a gyermekek mellett.</p>
       </div>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;">
-        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="lg" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,52px">Rendszeres támogatás</x-import>
+      <div data-reveal="" style="position:relative;background:var(--amigos-white);border-radius:var(--radius-card);padding:clamp(28px,3.4vw,44px);display:flex;flex-direction:column;gap:18px;">
+        <span aria-hidden="true" style="position:absolute;right:clamp(-12px,-1vw,-4px);top:clamp(-56px,-4vw,-36px);width:clamp(96px,9vw,128px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:5px solid var(--amigos-malyva);background:var(--am-green-100);"><img src="assets/community/photos/lift-dobozzal.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" width="940" height="788"></span>
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-plum);">Rendszeres támogatás</span>
+        <span style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;"><span style="font-family:var(--font-display);font-weight:600;font-size:clamp(44px,4.6vw,64px);line-height:1;letter-spacing:var(--ls-stat);color:var(--amigos-plum);font-variant-numeric:tabular-nums;white-space:nowrap;">5 000 Ft</span><span style="font-size:var(--text-body-lg);color:var(--amigos-ink-2);">havonta</span></span>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink);"><span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:var(--amigos-plum);display:block;transform:translateY(-1px);"></span><span>= egy Amigo havi útiköltsége a kórházba</span></li>
+          <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink);"><span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:var(--amigos-plum);display:block;transform:translateY(-1px);"></span><span>= négy kórházi látogatás</span></li>
+          <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink);"><span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:var(--amigos-plum);display:block;transform:translateY(-1px);"></span><span>bármikor módosítható vagy leállítható</span></li>
+        </ul>
+        <div style="padding-top:6px;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="lg" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,52px">Rendszeres támogatás</x-import>
+        </div>
       </div>
     </div>
   </section>
 
   <div data-cart="" role="dialog" aria-label="Kosár" aria-hidden="true" style="position:fixed;inset:0;z-index:60;pointer-events:none;">
-    <div data-cart-scrim="" style="position:absolute;inset:0;background:rgba(23,28,18,0.5);opacity:0;transition:opacity 240ms cubic-bezier(0.2,0.7,0.2,1);"></div>
+    <div data-cart-scrim="" style="position:absolute;inset:0;background:rgba(19,29,21,0.5);opacity:0;transition:opacity 240ms cubic-bezier(0.2,0.7,0.2,1);"></div>
     <aside data-cart-panel="" style="position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);background:var(--amigos-paper);border-left:1px solid var(--amigos-line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform 280ms cubic-bezier(0.2,0.7,0.2,1);">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,4vw,32px);border-bottom:1px solid var(--amigos-line);">
         <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h4);letter-spacing:-0.02em;">Kosár</span>
@@ -370,39 +386,39 @@
   </div>
 
   </main>
-<footer style="background:var(--amigos-ink);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
+<footer style="background:var(--amigos-green-deep);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
           <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
-          <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyermekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyermekekért, 2014 óta.</span>
-          <span style="font-size:14px;color:var(--text-on-ink);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-field-muted);max-width:34ch;">Amigos a gyermekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyermekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:var(--text-on-field-muted);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
           <div style="display:flex;flex-direction:column;gap:9px;">
-            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Ügyintézés</span>
-            <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Ügyintézés</span>
+            <a href="Kapcsolat.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
             <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
             <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
             <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
             <a href="Amigos Aloldalak.dc.html#gyik" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">GYIK</a>
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
-            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Támogatás</span>
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Támogatás</span>
             <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
             <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
             <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
             <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
-            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Jogi</span>
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Jogi</span>
             <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
             <a href="Amigos Aloldalak.dc.html#aszf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
             <a href="Amigos Aloldalak.dc.html#sitemap" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Oldaltérkép</a>
           </div>
         </div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid var(--amigos-ink-2);padding-top:20px;font-size:14px;color:var(--text-on-ink);">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid rgba(255,255,255,0.22);padding-top:20px;font-size:14px;color:var(--text-on-field-muted);">
         <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
       </div>
     </div>

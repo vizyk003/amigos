@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Design feedback</title>
+</head>
+<body>
+<!-- Static declaration of the design-review form, so Netlify's form
+     detection finds it at deploy time. The live form is built by
+     assets/feedback.js, which posts here; every field it sends must
+     also be listed below, or Netlify drops it. -->
+<form name="design-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+  <input name="bot-field">
+  <input name="name">
+  <textarea name="comment"></textarea>
+  <input name="page">
+  <input name="spot">
+  <input name="screenshot" type="file">
+  <input name="url">
+  <input name="host">
+  <input name="viewport">
+  <input name="scroll">
+  <input name="selector">
+  <input name="position">
+  <input name="browser">
+</form>
+</body>
+</html>
