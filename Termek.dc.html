@@ -37,7 +37,7 @@
     [data-size-pill]:has(input:checked){background:var(--amigos-green);border-color:var(--amigos-green) !important;color:var(--amigos-white);}
     [data-size-pill]:has(input:focus-visible){outline:3px solid var(--focus-color);outline-offset:2px;}
     [data-size-pill]:has(input:disabled){opacity:0.4;cursor:not-allowed !important;text-decoration:line-through;}
-    [data-product-link]:focus-visible{outline:3px solid var(--focus-color);outline-offset:4px;border-radius:var(--radius-card);}
+    [data-product-link]:focus-visible{outline:3px solid var(--focus-color);outline-offset:4px;border-radius:var(--radius-md);}
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
   <link rel="stylesheet" href="assets/brand.css">
@@ -311,7 +311,7 @@ class Component extends DCLogic {
     box.innerHTML = list.map(p => `
       <article data-product="" style="display:flex;flex-direction:column;gap:10px;">
         <a data-product-link="" href="Termek.dc.html?p=${encodeURIComponent(p.slug)}" style="display:flex;flex-direction:column;gap:10px;color:inherit;text-decoration:none;">
-          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
             <img src="${esc(p.img)}" alt="${esc(p.alt || p.name)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.15;letter-spacing:-0.02em;">${esc(p.name)}</h3>
