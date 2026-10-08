@@ -88,6 +88,17 @@
 .am-underline[class*='--pup-']::after{ width: 92%; aspect-ratio: 1000 / 160; transform: translate(-50%, -18%); }
 /* The long strokes hang lower than the short ones; give their line a
    little more room so they clear whatever follows the title. */
+/* Draw-on: the stroke wipes in left to right when its heading scrolls
+   into view (assets/responsive.js sets data-ill-in), like the brush being
+   pulled. Only once JS has marked <html data-ill-js>, never with reduced
+   motion. */
+@media (prefers-reduced-motion: no-preference){
+  html[data-ill-js] .am-underline::after{
+    transition: clip-path 460ms cubic-bezier(0.6, 0, 0.25, 1) 120ms;
+  }
+  html[data-ill-js] .am-underline:not([data-ill-in])::after{ clip-path: inset(-20% 100% -20% 0); }
+  html[data-ill-js] .am-underline[data-ill-in]::after{ clip-path: inset(-20% 0 -20% 0); }
+}
 /* Section headings: the strokes hang below the baseline (the long ones
    ~0.3em) and ran into the note or paragraph under the heading. The headings carry an
    inline margin:0, so the room goes in as padding. */
@@ -238,8 +249,12 @@ h1 > span:has(> .am-underline):not(:last-child){
     transition: opacity 360ms ease-out, scale 560ms cubic-bezier(0.34,1.56,0.64,1);
   }
   html[data-ill-js] [data-ill-pop]:not([data-ill-in]){ opacity: 0; scale: 0.55; }
+  /* SVG drawings (assets/illustrations/svg/) draw their own strokes on, so
+     they only fade in — no spring. */
+  html[data-ill-js] img[data-ill-pop][src*=".svg"]{ transition: opacity 120ms linear; }
+  html[data-ill-js] img[data-ill-pop][src*=".svg"]:not([data-ill-in]){ scale: 1; }
   html[data-ill-js] [data-ill-pop="wiggle"][data-ill-in]{
-    animation: am-ill-wiggle 5s ease-in-out 700ms infinite;
+    animation: am-ill-wiggle 5s ease-in-out 1.6s infinite;
   }
 }
 

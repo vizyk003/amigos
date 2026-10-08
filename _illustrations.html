@@ -22,11 +22,12 @@
 </style></head><body><div class="wrap">
 
 <h1>Rajzok</h1>
-<p class="note">Az <code>assets/illustrations/</code> mappa összes rajza, mind a négy színben:
+<p class="note">Az <code>assets/illustrations/svg/</code> mappa összes rajza, mind a négy színben:
 zöld és tinta papíron, fehér és sárga pulcsizöldön. Fájlnév:
-<code>amigos-ill-&lt;motívum&gt;-&lt;green|white|yellow|ink&gt;.png</code>. Használati szabályok a
-DS readme „Drawings” fejezetében. Az <span class="new">új</span> jelölésűek generáltak
-(<code>tools/amigos-illustrations.py</code>).</p>
+<code>amigos-ill-&lt;motívum&gt;-&lt;green|white|yellow|ink&gt;.svg</code> (a PNG-k a
+szülőmappában maradnak). Minden SVG magától kirajzolódik (~0,7 s); egy kártyára kattintva
+újrajátszható. Használati szabályok a DS readme „Drawings” fejezetében. Az
+<span class="new">új</span> jelölésűek generáltak (<code>tools/amigos-illustrations.py</code>).</p>
 
 <div class="grid" id="grid"></div>
 
@@ -54,14 +55,16 @@ Egy oldalon minden forma csak egyszer szerepeljen. Az <span class="new">új</spa
     const sw = document.createElement('div'); sw.className = 'swatches';
     for (const [c, bg] of cols) {
       const cell = document.createElement('span'); cell.className = bg;
-      const img = new Image(); img.alt = m + ' ' + c; img.loading = 'lazy';
-      img.src = `assets/illustrations/amigos-ill-${m}-${c}.png`;
+      const img = new Image(); img.alt = m + ' ' + c;
+      img.src = `assets/illustrations/svg/amigos-ill-${m}-${c}.svg`;
       img.onerror = () => { cell.textContent = '—'; };
       cell.appendChild(img); sw.appendChild(cell);
     }
     const meta = document.createElement('div'); meta.className = 'meta';
     meta.innerHTML = `<b>${m}</b><span>${label}</span>` + (isNew ? '<span class="new">új</span>' : '');
     card.append(sw, meta); grid.appendChild(card);
+    card.style.cursor = 'pointer';
+    card.onclick = () => card.querySelectorAll('img').forEach(i => { i.src = i.src.split('?')[0] + '?r=' + Date.now(); });
   }
   const shapes = [['hullam'],['lendulet'],['ugralas'],['kunkor'],['pup'],['cikcakk',1],['dupla',1],['rugo',1],['hurok',1],['szaggatott',1]];
   const ul = document.getElementById('ul');

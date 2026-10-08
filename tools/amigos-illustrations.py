@@ -79,6 +79,62 @@ class D:
             else:
                 out.append(f'<path d="{path_d(data)} Z" fill="{col}" stroke="{col}" stroke-width="3" stroke-linejoin="round"/>')
         out.append('</svg>'); return '\n'.join(out)
+    def svg_anim(self, col, total=0.7):
+        """Self-animating SVG: strokes draw on one after another (time
+        shared by length), then dots / sparkles pop in. pathLength="1" lets
+        one dash rule fit every path; reduced motion shows the end state."""
+        lens = []
+        for kind, data, sw in self.items:
+            lens.append(sum(math.dist(a, b) for a, b in zip(data, data[1:])) if kind == 's' else 0)
+        L = sum(lens) or 1
+        css = ('.s{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1.02;'
+               'stroke-dashoffset:1.01;animation:d linear forwards}'
+               '@keyframes d{to{stroke-dashoffset:0}}'
+               '.f{opacity:0;transform-box:fill-box;transform-origin:center;animation:p .24s cubic-bezier(.34,1.56,.64,1) forwards}'
+               '@keyframes p{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}'
+               '@media (prefers-reduced-motion:reduce){.s{animation:none;stroke-dashoffset:0}.f{animation:none;opacity:1}}')
+        out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{self.w}" height="{self.h}" viewBox="0 0 {self.w} {self.h}">',
+               f'<style>{css}</style>']
+        # share `total` by length, give short strokes a floor, then rescale
+        # so many-stroke motifs (naptár) still finish in about `total`
+        durs = [max(0.05, total * ln / L) if ln else 0 for ln in lens]
+        k = total / ((sum(durs) * 0.92) or 1)
+        durs = [d * min(1.0, k) for d in durs]
+        t = 0.0; fills = []
+        for (kind, data, sw), ln, dur in zip(self.items, lens, durs):
+            if kind == 's':
+                out.append(f'<path class="s" pathLength="1" style="animation-duration:{dur:.2f}s;animation-delay:{t:.2f}s" '
+                           f'd="{path_d(data)}" stroke="{col}" stroke-width="{sw}"/>')
+                t += dur * 0.92
+            else:
+                fills.append((kind, data))
+        for i, (kind, data) in enumerate(fills):
+            delay = f'animation-delay:{t + 0.035 * i:.2f}s'
+            if kind == 'c':
+                x, y, r = data
+                out.append(f'<circle class="f" style="{delay}" cx="{x}" cy="{y}" r="{r}" fill="{col}"/>')
+            else:
+                out.append(f'<path class="f" style="{delay}" d="{path_d(data)} Z" fill="{col}" stroke="{col}" stroke-width="3" stroke-linejoin="round"/>')
+        out.append('</svg>'); return '\n'.join(out)
+
+def heart(cx, cy, size, n=160):
+    """Classic heart curve, starting and ending at the top notch."""
+    pts = []
+    for i in range(n + 1):
+        t = math.pi * 2 * i / n
+        x = 16 * math.sin(t) ** 3
+        y = -(13 * math.cos(t) - 5 * math.cos(2 * t) - 2 * math.cos(3 * t) - math.cos(4 * t))
+        pts.append((cx + x * size / 16, cy + y * size / 16))
+    return pts
+
+def concave_star(cx, cy, r, pinch=0.16):
+    """Four-point outlined sparkle with sides pulled in toward the centre."""
+    tips = [(cx, cy - r), (cx + r, cy), (cx, cy + r), (cx - r, cy)]
+    out = []
+    for a, b in zip(tips, tips[1:] + tips[:1]):
+        c = (cx + (a[0] + b[0] - 2 * cx) * pinch, cy + (a[1] + b[1] - 2 * cy) * pinch)
+        seg = sample_bez(a, c, c, b, 24); out += seg if not out else seg[1:]
+    return out
 
 M = {}
 
@@ -213,12 +269,121 @@ d.s(arc(60, 190, 18, 18, 0, 300), amp=0.4, sw=10)
 d.sparkle(260, 250, 18).sparkle(400, 40, 14)
 M['konfetti'] = d
 
+# ---------------------------------------------------------------------
+# The brandbook's nine, redrawn as strokes so they can draw on as SVG.
+# Their PNGs stay the brandbook originals; only the SVGs come from here.
+# ---------------------------------------------------------------------
+O = {}
+
+# buborék — speech bubble with a tail and three dots
+d = D()
+d.s(arc(205, 175, 150, 118, 128, 482) + poly((112, 266), (64, 336), (150, 286))[1:])
+d.dot(150, 178, 13).dot(205, 178, 13).dot(260, 178, 13)
+O['buborek'] = d
+
+# csillanás — two outlined sparkles, a filled one and a few dots
+d = D(400, 470)
+d.s(concave_star(150, 170, 110)).s(concave_star(285, 320, 78))
+d.sparkle(320, 150, 22).dot(60, 330, 7).dot(345, 60, 6).dot(110, 420, 9).dot(220, 50, 5)
+O['csillanas'] = d
+
+# lego — one brick with three studs
+d = D()
+d.s(poly((50, 180), (352, 172), (356, 312), (54, 318), (50, 180)), amp=1.4)
+for x in (90, 175, 260):
+    d.s(poly((x, 180), (x - 2, 132), (x + 62, 130), (x + 64, 178)), amp=1.0)
+d.s(line((90, 270), (140, 272)), amp=0.6, sw=10)
+O['lego'] = d
+
+# naptár — calendar with ring hooks, dashed rows and a circled day
+d = D(380, 360)
+d.s(poly((40, 70), (340, 66), (344, 316), (44, 320), (40, 70)), amp=1.2)
+d.s(line((42, 120), (342, 116)), amp=1.0)
+d.s(line((110, 40), (112, 92)), amp=0.6); d.s(line((268, 38), (270, 90)), amp=0.6)
+for y in (170, 220, 270):
+    for x in (80, 150, 220):
+        d.s(line((x, y), (x + 36, y)), amp=0.3, sw=10)
+d.s(arc(298, 270, 34, 30, -80, 275), amp=0.8)
+d.s(poly((282, 270), (294, 284), (316, 254)), amp=0.3, sw=10)
+O['naptar'] = d
+
+# nyíl — a rising swoosh with an arrow head and a sparkle
+d = D(440, 280)
+d.s(sample_bez((30, 230), (140, 240), (260, 170), (360, 80)))
+d.s(poly((300, 74), (362, 78), (352, 140)), amp=0.8)
+d.sparkle(405, 40, 18)
+O['nyil'] = d
+
+# örvény — an outward spiral
+d = D()
+sp = []
+for i in range(330):
+    t = i / 329 * 3.1 * 2 * math.pi
+    r = 8 + 23.5 * t / (2 * math.pi) * 2.05
+    sp.append((205 + r * math.cos(t), 200 + r * math.sin(t)))
+d.s(sp, amp=1.2)
+O['orveny'] = d
+
+# ragyogás — burst lines fanning out, with a sparkle
+d = D(420, 420)
+for a, l in ((-100, 120), (-70, 140), (-40, 150), (-12, 130), (16, 110)):
+    r = math.radians(a)
+    sx, sy = 90 + 70 * math.cos(r), 330 + 70 * math.sin(r)
+    d.s(line((sx, sy), (sx + l * math.cos(r), sy + l * math.sin(r))), amp=1.0)
+d.sparkle(350, 70, 22).sparkle(250, 150, 12)
+O['ragyogas'] = d
+
+# szív — lacy heart: a tall heart inside a ring of little scallops
+def tall_heart(cx, cy, w, h, n=200):
+    return [(cx + (x - cx) * w, cy + (y - cy) * h) for x, y in heart(cx, cy, 100, n)]
+d = D(260, 350)
+inner = tall_heart(130, 170, 0.78, 1.18)
+q = len(inner) // 4
+d.s(inner[q:] + inner[1:q + 3], amp=1.0)   # start on the side, not in the notch
+outer = tall_heart(130, 168, 0.98, 1.42, 400)
+L = [0.0]
+for p0, p1 in zip(outer, outer[1:]):
+    L.append(L[-1] + math.dist(p0, p1))
+k = 30; marks = []
+for j in range(k + 1):
+    target = L[-1] * j / k
+    i = min(range(len(L)), key=lambda q: abs(L[q] - target))
+    marks.append(outer[i])
+lace = []
+for p0, p1 in zip(marks, marks[1:]):
+    mx, my = (p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2
+    dx, dy = p1[0] - p0[0], p1[1] - p0[1]; dl = math.hypot(dx, dy) or 1
+    r = dl / 2
+    base = math.degrees(math.atan2(dy, dx))
+    tipy = max(y for _, y in outer)
+    if my > tipy - 26:                      # at the tip: run straight through
+        seg = [p0, p1]
+    else:
+        seg = arc(mx, my, r, r * 0.9, base + 180, base + 360, 14)
+    lace += seg if not lace else seg[1:]
+d.s(lace, amp=0.3, sw=7)
+O['sziv'] = d
+
+# szívdobbanás — a plain heart with a little highlight
+d = D()
+d.s(heart(200, 190, 150), amp=1.2)
+d.s(arc(150, 140, 42, 42, 200, 255), amp=0.4, sw=11)
+O['szivdobbanas'] = d
+
 if __name__ == '__main__':
-    outdir = sys.argv[1]; tmp = sys.argv[2]
+    # python3 tools/amigos-illustrations.py <png-dir> <tmp-dir> [<svg-dir>]
+    outdir, tmp = sys.argv[1], sys.argv[2]
+    svgdir = sys.argv[3] if len(sys.argv) > 3 else None
     os.makedirs(tmp, exist_ok=True)
     for name, dr in M.items():
         for cname, col in COLORS.items():
             sv = os.path.join(tmp, f'{name}-{cname}.svg')
             open(sv, 'w').write(dr.svg(col))
             subprocess.run(['rsvg-convert', '-o', os.path.join(outdir, f'amigos-ill-{name}-{cname}.png'), sv], check=True)
-    print('made', len(M), 'motifs x', len(COLORS))
+    print('made', len(M), 'motifs x', len(COLORS), 'PNGs')
+    if svgdir:
+        os.makedirs(svgdir, exist_ok=True)
+        for name, dr in {**M, **O}.items():
+            for cname, col in COLORS.items():
+                open(os.path.join(svgdir, f'amigos-ill-{name}-{cname}.svg'), 'w').write(dr.svg_anim(col))
+        print('made', len(M) + len(O), 'motifs x', len(COLORS), 'animated SVGs')
