@@ -464,6 +464,37 @@ nav a { overflow-wrap: break-word; }
   p[aria-label="Címkék"] > span[style*="nowrap"] { white-space: normal !important; }
 }
 
+@media (max-width: 640px) {
+  /* Story strip (Gyerekek): brand.css stacks it and crops each shot to
+     4:3, which made three full-width photos ~250px tall apiece. 16:9
+     keeps the sequence readable at roughly three quarters the height. */
+  [data-story] img { aspect-ratio: 16 / 9 !important; }
+
+  /* The 01–03 step cards ("Egy foglalkozás menete") carry a 4:3 photo
+     each under their text; same crop, same saving. */
+  [data-step] > img { aspect-ratio: 16 / 9 !important; }
+
+  /* Photo-only trios (a grid whose children are all <img>) stacked into
+     three full-width photos — over 1250px of scrolling for the portrait
+     set. Turn them into a swipeable row with the next photo peeking in,
+     the same pattern as the homepage stats strip. Grids that mix text
+     and images are left stacked. */
+  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img))),
+  [style*="minmax(220px,1fr)"]:not(:has(> :not(img))) {
+    grid-template-columns: none !important;
+    grid-auto-flow: column;
+    grid-auto-columns: 72%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img)))::-webkit-scrollbar,
+  [style*="minmax(220px,1fr)"]:not(:has(> :not(img)))::-webkit-scrollbar { display: none; }
+  [style*="minmax(220px, 1fr)"]:not(:has(> :not(img))) > img,
+  [style*="minmax(220px,1fr)"]:not(:has(> :not(img))) > img { scroll-snap-align: start; }
+}
+
 @media (max-width: 760px) {
   /* Gyerekek & szülők — the cut-out character art is anchored to the
      right edge and hangs past it once the column is full width. */
