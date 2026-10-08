@@ -105,9 +105,11 @@ white or yellow on pulcsizöld, green on pastels, purple on mályva). Only
 underline a word on the heading's last line — on a wrapped line the stroke
 runs into the next one. `_illustrations.html` shows them all.
 
-### Green photo wash
-`.am-tint` on a photo's wrapper fades pulcsizöld up from the bottom
-(multiply); `.am-tint--soft` is an even light wash. Use it on people/activity
+### Green photo overlay
+`.am-tint` on a photo's wrapper lays a clearly visible pulcsizöld fade
+over the bottom of the photo (solid at the edge, gone by ~⅔ height, normal
+blend — an overlay, not a colour cast); `.am-tint--soft` is a shorter,
+lighter fade. Use it on people/activity
 photos to take the clinical edge off — but only where nothing else from
 the brand sits on or beside the photo: no sticker/badge, drawing or caption
 band. Never on the hero, product shots, posters/app screenshots or video.
