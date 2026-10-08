@@ -432,19 +432,6 @@ nav a { overflow-wrap: break-word; }
   .am-ill[style*="right: -30%"],
   .am-ill[style*="right:-30%"] { top: -38% !important; width: 80px !important; }
 
-  /* Gyerekek — moving the doodles onto the photo kept them off the text
-     but lost them in it (ink on a dark photo, yellow on a bright one).
-     Clear a strip of plain section background above each of these
-     photos instead, so the doodle sits on flat colour as on desktop. */
-  figure:has(> .am-ill[style*="bottom: calc(100%"]),
-  figure:has(> .am-ill[style*="bottom:calc(100%"]) {
-    margin-top: 64px !important;
-  }
-  figure > .am-ill[style*="bottom: calc(100%"],
-  figure > .am-ill[style*="bottom:calc(100%"] {
-    bottom: calc(100% + 6px) !important;
-    max-width: 76px !important;
-  }
 }
 
 @media (max-width: 840px) {
@@ -468,7 +455,24 @@ nav a { overflow-wrap: break-word; }
   /* Story strip (Gyerekek): brand.css stacks it and crops each shot to
      4:3, which made three full-width photos ~250px tall apiece. 16:9
      keeps the sequence readable at roughly three quarters the height. */
-  [data-story] img { aspect-ratio: 16 / 9 !important; }
+  [data-story] img:not(.am-ill) { aspect-ratio: 16 / 9 !important; }
+
+  /* The story doodles (Gyerekek) ride above their photo. Stacked, that
+     space is the previous shot's caption, and moving them onto the photo
+     lost them in it (ink on a dark photo, yellow on a bright one). Give
+     every shot the same clear strip above it — so the rhythm stays even
+     whether or not a shot carries a doodle — and fit the doodle into
+     that strip at its own proportions. brand.css's [data-story] img rule
+     would otherwise squash these square drawings to the photo crop. */
+  [data-story] > figure { margin-top: 52px !important; }
+  [data-story] > figure > .am-ill {
+    aspect-ratio: auto !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 60px !important;
+    max-height: 54px !important;
+    bottom: calc(100% + 6px) !important;
+  }
 
   /* The 01–03 step cards ("Egy foglalkozás menete") carry a 4:3 photo
      each under their text; same crop, same saving. */
