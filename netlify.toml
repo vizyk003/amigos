@@ -72,6 +72,11 @@
   to = "/Blog.dc.html"
   status = 200
 
+[[redirects]]
+  from = "/kapcsolat"
+  to = "/Kapcsolat.dc.html"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # Superseded explorations and the internal wireframe deck.
 #
