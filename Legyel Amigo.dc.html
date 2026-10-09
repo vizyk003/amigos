@@ -37,9 +37,9 @@
     #hirlevel input::placeholder{color:var(--amigos-ink-3);opacity:1;}
     #hirlevel input:focus-visible,#jelentkezes input:focus-visible,#jelentkezes select:focus-visible{outline:2px solid var(--amigos-green-text);outline-offset:4px;}
     #jelentkezes option{color:var(--amigos-ink);}
-      /* Testimonials: four in a row; a swipeable row on phones. */
+      /* Testimonials: four in a row, the founder first; a swipeable row on phones. */
     @media (max-width: 840px){
-      [data-testimonials]{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;}
+      [data-testimonials][data-testimonials]{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;}
       [data-testimonials] > *{scroll-snap-align:start;}
     }
     select[name="varos"] option{color:var(--amigos-ink);background:var(--amigos-white);}
@@ -176,15 +176,14 @@
         <p style="position:relative;margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:var(--amigos-ink);"><img class="am-ill" data-ill-pop data-ill-secondary src="assets/illustrations/svg/amigos-ill-hangjegy-yellow.svg" alt="" aria-hidden="true" style="right:0;top:-96px;width:clamp(64px,6vw,96px);transform:rotate(-8deg);">Négy Amigo arról, hogyan kezdték, mit kaptak a közösségtől, és milyen egy-egy kórházi délután.</p>
       </div>
       <div data-testimonials="" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,24px);">
+        <figure data-founder="" style="position:relative;margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green-deep);aspect-ratio:9/16;">
+          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-2-poster.jpg" src="assets/community/web/igexport-DYXdkexsUrY.mp4" aria-label="Sára, az Alapítvány megálmodója" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+          <figcaption style="position:absolute;left:0;right:0;top:20px;display:flex;justify-content:center;pointer-events:none;">
+            <span style="display:inline-block;white-space:nowrap;background:var(--amigos-sun);color:var(--amigos-ink);font-size:13px;font-weight:600;line-height:1;padding:7px 12px;border-radius:var(--radius-pill);"><span style="font-family:var(--font-hand);font-weight:700;font-size:19px;">Sára</span> – az Alapítvány megálmodója</span>
+          </figcaption>
+        </figure>
         <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green-deep);aspect-ratio:9/16;">
           <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-1-poster.jpg" src="assets/community/web/igexport-DYU0z35Mrsr.mp4" aria-label="Amigo-vallomás 1" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-        </figure>
-        <figure data-founder="" style="position:relative;margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green-deep);aspect-ratio:9/16;box-shadow:0 0 0 4px var(--amigos-sun);">
-          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-2-poster.jpg" src="assets/community/web/igexport-DYXdkexsUrY.mp4" aria-label="Sára, az Alapítvány megálmodója" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-          <figcaption style="position:absolute;left:12px;right:12px;top:12px;pointer-events:none;display:flex;flex-direction:column;align-items:flex-start;gap:6px;">
-            <span style="background:var(--amigos-sun);color:var(--amigos-ink);font-family:var(--font-hand);font-weight:700;font-size:22px;line-height:1;padding:6px 14px 7px;border-radius:var(--radius-pill);">Sára</span>
-            <span style="background:var(--amigos-white);color:var(--amigos-ink);font-size:13px;font-weight:600;line-height:1.3;padding:5px 10px;border-radius:var(--radius-pill);">Az Alapítvány megálmodója</span>
-          </figcaption>
         </figure>
         <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green-deep);aspect-ratio:9/16;">
           <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-3-poster.jpg" src="assets/community/web/igexport-DYZ2NE4svcv.mp4" aria-label="Amigo-vallomás 3" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
