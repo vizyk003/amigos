@@ -260,7 +260,7 @@ window.AMIGOS_PRODUCTS = [
     "body": [
       "Lepd meg magad vagy egy szerettedet egy vidám, tavaszi mintás zoknival, miközben egy jó ügyet is támogatsz.",
       "A csomag egy pár zoknit tartalmaz, 31–34, 35–38, 39–42 és 43–46 méretben. A designt Varsányi Orsi grafikusnak köszönhetjük.",
-      "Az adományoddal hozzájárulsz ahhoz, hogy az Amigók még több kórházban fekvő gyerekhez eljuthassanak."
+      "Az adományoddal hozzájárulsz ahhoz, hogy az Amigók még több kórházban gyógyuló gyerekhez eljuthassanak."
     ],
     "stock": 183
   },

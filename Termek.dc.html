@@ -53,10 +53,9 @@
     <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
       <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
       <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
-        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Legyél Amigo</a>
         <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Munkánk &amp; Hatásunk</a>
-        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">gyerekek &amp; Szülők</a>
-        <a href="Adomanybolt.dc.html" aria-current="page" style="color:var(--amigos-green-text);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#00A74A" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Gyerekek &amp; Szülők</a>
+        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Amigóknak</a>
         <a href="Kapcsolat.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Kapcsolat</a>
       </nav>
       <div style="display:flex;justify-content:flex-end;align-items:center;gap:16px;">
@@ -64,7 +63,7 @@
           Kosár
           <span data-cart-count="" style="min-width:26px;height:26px;padding:0 7px;border-radius:999px;background:var(--amigos-green);color:var(--amigos-white);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;">0</span>
         </button>
-        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Adomanybolt.dc.html" hint-size="auto,40px">Adományozok</x-import>
       </div>
     </div>
   </header>
@@ -142,7 +141,7 @@
         <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:46ch;">Havi 5 000 Ft-tal egy Amigo útiköltségét fedezed — bármikor módosítható vagy leállítható.</p>
       </div>
       <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;">
-        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="lg" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,52px">Rendszeres támogatás</x-import>
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="lg" href="Adomanybolt.dc.html#tamogatom" hint-size="auto,52px">Rendszeres támogatás</x-import>
       </div>
     </div>
   </section>
@@ -177,7 +176,7 @@
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
           <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
-          <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban gyógyuló gyerekekért, 2014 óta.</span>
           <span style="font-size:14px;color:var(--text-on-ink);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
@@ -191,7 +190,7 @@
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Támogatás</span>
-            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
             <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
             <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
             <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>

@@ -8,13 +8,13 @@
 <body>
 <x-dc>
 <helmet>
-  <title>Adománybolt — Amigos a gyerekekért Alapítvány</title>
-  <meta name="description" content="Veszel egy könyvet: két gyerekhez is eljut egy élmény. Vásárlásoddal a kórházi foglalkozásainkat támogatod.">
+  <title>Adományozás — Amigos a gyerekekért Alapítvány</title>
+  <meta name="description" content="Adományozz egyszer vagy rendszeresen, vagy válassz ajándékot az adományboltunkból: minden forint a kórházban gyógyuló gyerekekhez jut el.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="hu_HU">
   <meta property="og:site_name" content="Amigos a gyerekekért Alapítvány">
-  <meta property="og:title" content="Adománybolt — Amigos a gyerekekért Alapítvány">
-  <meta property="og:description" content="Veszel egy könyvet: két gyerekhez is eljut egy élmény. Vásárlásoddal a kórházi foglalkozásainkat támogatod.">
+  <meta property="og:title" content="Adományozás — Amigos a gyerekekért Alapítvány">
+  <meta property="og:description" content="Adományozz egyszer vagy rendszeresen, vagy válassz ajándékot az adományboltunkból: minden forint a kórházban gyógyuló gyerekekhez jut el.">
   <meta property="og:image" content="assets/community/photos/lift-dobozzal.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
@@ -35,6 +35,9 @@
     @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
     [data-add]:hover,[data-add][data-added]{background:var(--amigos-green) !important;color:var(--amigos-white) !important;}
     [data-product-link]{flex:1 1 auto;}
+    #tamogatom input::placeholder{color:var(--text-on-plum-muted);opacity:1;}
+    #tamogatom input:focus-visible{outline:2px solid var(--amigos-white);outline-offset:4px;}
+    #tamogatom button[type="submit"]{color:var(--amigos-plum) !important;}
     [data-product-link]:focus-visible{outline:3px solid var(--focus-color);outline-offset:4px;border-radius:var(--radius-md);}
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
@@ -51,10 +54,9 @@
     <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
       <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
       <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
-        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Legyél Amigo</a>
         <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Munkánk &amp; Hatásunk</a>
-        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">gyerekek &amp; Szülők</a>
-        <a href="Adomanybolt.dc.html" aria-current="page" style="color:var(--amigos-green-text);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Adománybolt<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#00A74A" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Gyerekek &amp; Szülők</a>
+        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Amigóknak</a>
         <a href="Kapcsolat.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Kapcsolat</a>
       </nav>
       <div style="display:flex;justify-content:flex-end;align-items:center;gap:16px;">
@@ -62,23 +64,74 @@
           Kosár
           <span data-cart-count="" style="min-width:26px;height:26px;padding:0 7px;border-radius:999px;background:var(--amigos-green);color:var(--amigos-white);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;">0</span>
         </button>
-        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="#tamogatom" hint-size="auto,40px">Adományozok</x-import>
       </div>
     </div>
   </header>
 <main id="tartalom">
 
-  <section data-screen-label="Hero" style="position:relative;background:var(--amigos-white);color:var(--amigos-ink);overflow:hidden;padding:clamp(48px,6vw,88px) 0 clamp(56px,7vw,96px);">
+  <section id="tamogatom" data-m="donate" data-screen-label="Adományozás" style="position:relative;background:var(--amigos-plum);color:var(--amigos-white);padding:clamp(64px,8vw,104px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,6vw,88px);align-items:center;">
+      <div style="position:relative;display:flex;flex-direction:column;gap:18px;">
+        <img class="am-ill" data-ill-pop="wiggle" src="assets/illustrations/svg/amigos-ill-csillag-yellow.svg" alt="" aria-hidden="true" style="right:0;top:-12px;width:clamp(60px,6vw,88px);transform:rotate(10deg);">
+        <span style="font-size:13px;color:var(--text-on-plum-muted);">Főoldal / Adományozás</span>
+        <div style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-plum-muted);">Adományozás</div>
+        <h1 style="margin: 0; font-family: var(--font-hand); font-weight:700; font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); max-width: 17ch; text-wrap: pretty; color: var(--amigos-white)">Segíts, hogy egy nap minden gyerek mellett lehessen egy Amigo!</h1>
+        <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:46ch;">Segíts, hogy 2026-ban is a lehető legtöbb kisgyerek mellett ott lehessünk! Amigóink hetente több mint 60 foglalkozáson keresztül, több mint 20 kórházi egységben barátkoznak a kórházban gyógyuló gyerekekkel.</p>
+        <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:46ch;">Válaszd Te is a kis összegű, de rendszeres adományozást, hogy egészen a gyógyulásáig látogathassuk a gyerkőcöket!</p>
+      </div>
+
+      <!-- Frequency + amount only: "Támogatom" hands over to Stripe, which
+           collects the donor's details and the card. The Stripe links are
+           mocked in bindDonate() until the real payment links exist. -->
+      <form data-donate-form="" aria-label="Adományozás" style="position:relative;display:flex;flex-direction:column;gap:24px;">
+        <div role="radiogroup" aria-label="Gyakoriság" style="display:flex;gap:28px;font-size:var(--text-body);font-weight:600;">
+          <button data-freq="rendszeres" type="button" role="radio" aria-checked="true" style="background:transparent;border:0;border-bottom:2px solid var(--amigos-white);color:var(--amigos-white);font:inherit;padding:0 0 6px;cursor:pointer;">Rendszeres</button>
+          <button data-freq="egyszeri" type="button" role="radio" aria-checked="false" style="background:transparent;border:0;border-bottom:2px solid transparent;color:var(--text-on-plum-muted);font:inherit;padding:0 0 6px;cursor:pointer;">Egyszeri</button>
+        </div>
+
+        <div role="radiogroup" aria-label="Összeg" style="display:flex;gap:clamp(10px,1.4vw,18px);flex-wrap:wrap;align-items:center;">
+          <div style="display:flex;flex-wrap:nowrap;gap:clamp(10px,1.4vw,18px);flex-shrink:0;max-width:100%;">
+          <button data-amount="2000" type="button" role="radio" aria-checked="false" style="flex:0 1 auto;width:clamp(84px,8.6vw,118px);min-width:0;aspect-ratio:1/1;border-radius:50%;border:2px solid var(--amigos-white);background:transparent;color:var(--amigos-white);font-family:var(--font-display);font-weight:600;font-size:clamp(18px,1.9vw,24px);letter-spacing:-0.02em;cursor:pointer;font-variant-numeric:tabular-nums;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1" aria-label="2 000 Ft"><span data-amt-fig="">2 000</span><span data-amt-unit="" style="font-size:0.5em;font-weight:500;letter-spacing:0.04em;opacity:0.9;">Ft</span></button>
+          <button data-amount="5000" type="button" role="radio" aria-checked="true" style="flex:0 1 auto;width:clamp(84px,8.6vw,118px);min-width:0;aspect-ratio:1/1;border-radius:50%;border:2px solid var(--amigos-white);background:var(--amigos-white);color:var(--amigos-plum);font-family:var(--font-display);font-weight:600;font-size:clamp(18px,1.9vw,24px);letter-spacing:-0.02em;cursor:pointer;font-variant-numeric:tabular-nums;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1" aria-label="5 000 Ft"><span data-amt-fig="">5 000</span><span data-amt-unit="" style="font-size:0.5em;font-weight:500;letter-spacing:0.04em;opacity:0.9;">Ft</span></button>
+          <button data-amount="10000" type="button" role="radio" aria-checked="false" style="flex:0 1 auto;width:clamp(84px,8.6vw,118px);min-width:0;aspect-ratio:1/1;border-radius:50%;border:2px solid var(--amigos-white);background:transparent;color:var(--amigos-white);font-family:var(--font-display);font-weight:600;font-size:clamp(18px,1.9vw,24px);letter-spacing:-0.02em;cursor:pointer;font-variant-numeric:tabular-nums;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1" aria-label="10 000 Ft"><span data-amt-fig="">10 000</span><span data-amt-unit="" style="font-size:0.5em;font-weight:500;letter-spacing:0.04em;opacity:0.9;">Ft</span></button>
+          <button data-amount="20000" type="button" role="radio" aria-checked="false" style="flex:0 1 auto;width:clamp(84px,8.6vw,118px);min-width:0;aspect-ratio:1/1;border-radius:50%;border:2px solid var(--amigos-white);background:transparent;color:var(--amigos-white);font-family:var(--font-display);font-weight:600;font-size:clamp(18px,1.9vw,24px);letter-spacing:-0.02em;cursor:pointer;font-variant-numeric:tabular-nums;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1" aria-label="20 000 Ft"><span data-amt-fig="">20 000</span><span data-amt-unit="" style="font-size:0.5em;font-weight:500;letter-spacing:0.04em;opacity:0.9;">Ft</span></button>
+          </div>
+          <label style="display:flex;flex-direction:column;justify-content:center;gap:6px;flex:1 1 140px;min-width:140px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-plum-muted);">Egyedi összeg</span>
+            <span style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid var(--amigos-white);padding-bottom:6px;">
+              <input data-custom="" inputmode="numeric" placeholder="0" aria-label="Egyedi összeg forintban" style="width: 100%; min-width: 0; background: transparent; border: 0; color: var(--amigos-white); font-family: var(--font-display); font-weight: 600; font-size: 28px; letter-spacing: -0.02em">
+              <span style="font-size:15px;">Ft</span>
+            </span>
+          </label>
+        </div>
+
+        <div style="overflow:hidden;min-height:2.8em;margin-top:-12px;">
+          <p data-cover="" style="margin:0;font-size:var(--text-caption);line-height:var(--lh-caption);max-width:52ch;color:var(--text-on-plum-muted);will-change:transform,opacity;">{{ coverText }}</p>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" type="submit" hint-size="auto,52px">Támogatom</x-import>
+          <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);font-size:var(--text-body);font-weight:600;">Adó 1% →</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--text-on-plum-muted);border-top:1px solid rgba(255,255,255,0.35);padding-top:16px;">
+          <span>Biztonságos fizetés a Stripe-on keresztül</span><span>Rendszeres támogatás bármikor lemondható</span><a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:inherit;">Adatkezelési tájékoztató</a><!-- FORRÁS: ide jön az adat forrása és dátuma, pl. „Közhasznúsági beszámoló, 2025”. Addig nem jelenik meg. -->
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <section id="bolt" data-screen-label="Adománybolt" style="position:relative;background:var(--amigos-white);color:var(--amigos-ink);overflow:hidden;padding:clamp(48px,6vw,88px) 0 clamp(56px,7vw,96px);">
     <div data-value-word="" data-m="pattern" aria-hidden="true" style="position:absolute;left:0;bottom:-0.18em;font-family:var(--font-hand);font-weight:700;font-size:clamp(64px,20.7vw,340px);line-height:1;letter-spacing:0.01em;color:rgba(5,101,44,0.07);white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">KÖZÖSSÉG</div>
     <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,88px);align-items:center;">
       <div style="display:flex;flex-direction:column;gap:20px;">
-        <span style="font-size:13px;color:var(--amigos-green-deep);">Főoldal / Adománybolt</span>
         <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-deep);">Adománybolt</span>
-        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);text-wrap:pretty;color:var(--amigos-green-deep);">
+        <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);text-wrap:pretty;color:var(--amigos-green-deep);">
           <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;color:var(--amigos-ink);">Veszel egy könyvet:</span></span>
           <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">két gyerekhez is</span></span>
           <span data-m="w" style="display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;"><span data-m="wi" style="display:block;">eljut egy <span class="am-underline am-underline--kunkor-yellow">élmény</span>.</span></span>
-        </h1>
+        </h2>
         <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:44ch;color:var(--amigos-ink-2);text-wrap:pretty;">Könyvek, munkafüzetek és játékok, amiket eredetileg kórházban gyógyuló gyerekeknek készítettünk. A befolyt adományból a heti foglalkozásainkat valósítjuk meg.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:4px;">
           <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="primary" size="lg" href="#termekek" hint-size="auto,52px">Termékek</x-import>
@@ -355,7 +408,7 @@
           <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink);"><span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:var(--amigos-plum);display:block;transform:translateY(-1px);"></span><span>bármikor módosítható vagy leállítható</span></li>
         </ul>
         <div style="padding-top:6px;">
-          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="lg" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,52px">Rendszeres támogatás</x-import>
+          <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="lg" href="#tamogatom" hint-size="auto,52px">Rendszeres támogatás</x-import>
         </div>
       </div>
     </div>
@@ -391,7 +444,7 @@
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
           <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
-          <span style="font-size:15px;line-height:1.5;color:var(--text-on-field-muted);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-field-muted);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban gyógyuló gyerekekért, 2014 óta.</span>
           <span style="font-size:14px;color:var(--text-on-field-muted);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
@@ -405,7 +458,7 @@
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Támogatás</span>
-            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
             <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
             <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
             <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
@@ -427,13 +480,19 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
 class Component extends DCLogic {
+  state = { amount: 5000, freq: 'rendszeres' };
   componentDidMount() {
     this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const bind = () => {
       this.pattern = document.querySelector('[data-m="pattern"]');
       this.grid = document.querySelector('[data-grid]');
       if (!this.grid) return false;
-      this.intro(); this.reveal(); this.bindFilters();
+      this.intro(); this.reveal(); this.bindFilters(); this.bindDonate();
+      // arriving from another page with a #hash: the section only exists after mount
+      if (location.hash) {
+        const t = document.querySelector(location.hash);
+        if (t) setTimeout(() => { window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 72, behavior: 'auto' }); }, 120);
+      }
       window.__amigosMounted = true; if (window.AmigosCart) window.AmigosCart.mounted();
       this.alive = true; this.last = -1;
       const loop = () => {
@@ -475,6 +534,51 @@ class Component extends DCLogic {
       card.onmouseleave = () => { img.style.transform = 'none'; };
     });
   }
+  bindDonate() {
+    const freq = Array.from(document.querySelectorAll('[data-freq]'));
+    freq.forEach(b => b.onclick = () => {
+      this.setState({ freq: b.dataset.freq }, () => this.flipCover());
+      freq.forEach(o => { const on = o === b; o.setAttribute('aria-checked', String(on)); o.style.borderBottomColor = on ? 'var(--amigos-white)' : 'transparent'; o.style.color = on ? 'var(--amigos-white)' : 'var(--text-on-plum-muted)'; });
+    });
+    const amts = Array.from(document.querySelectorAll('[data-amount]'));
+    const custom = document.querySelector('[data-custom]');
+    const paint = active => amts.forEach(o => {
+      const on = o === active;
+      o.setAttribute('aria-checked', String(on));
+      o.style.background = on ? 'var(--amigos-white)' : 'transparent';
+      o.style.color = on ? 'var(--amigos-plum)' : 'var(--amigos-white)';
+    });
+    amts.forEach(b => b.onclick = () => {
+      if (custom) custom.value = '';
+      this.setState({ amount: +b.dataset.amount }, () => this.flipCover());
+      paint(b);
+    });
+    if (custom) custom.oninput = () => {
+      custom.value = custom.value.replace(/\D/g, '');
+      custom.setCustomValidity('');
+      paint(null);
+      this.setState({ amount: custom.value ? +custom.value : 0 }, () => this.flipCover());
+    };
+    // The browser has already checked the required fields when submit fires.
+    // Payment provider hand-off goes here; until then, on to the checkout page.
+    const form = document.querySelector('[data-donate-form]');
+    if (form) form.onsubmit = e => {
+      e.preventDefault();
+      if (!this.state.amount && custom) { custom.setCustomValidity('Válassz vagy adj meg egy összeget.'); custom.reportValidity(); return; }
+      // MOCK: low-fi stand-in for Stripe Checkout (stripe-mock.html). Swap
+      // for the foundation's real Stripe Payment Links (one monthly, one
+      // one-off); Stripe collects name, e-mail and card.
+      location.href = `stripe-mock.html?freq=${this.state.freq || 'rendszeres'}&amount=${this.state.amount}`;
+    };
+  }
+  flipCover() {
+    // the cover line clips up on change — same vocabulary as the hero headline
+    const el = document.querySelector('[data-cover]'); if (!el || this.reduced) return;
+    el.style.transition = 'none'; el.style.transform = 'translateY(100%)'; el.style.opacity = '0';
+    void el.offsetHeight;
+    el.style.transition = 'transform 200ms cubic-bezier(0.2,0.7,0.2,1), opacity 200ms cubic-bezier(0.2,0.7,0.2,1)';
+    el.style.transform = 'translateY(0)'; el.style.opacity = '1';
+  }
   bindFilters() {
     const btns = Array.from(document.querySelectorAll('[data-filter]'));
     btns.forEach(b => b.onclick = () => {
@@ -496,7 +600,20 @@ class Component extends DCLogic {
     const r = this.pattern.parentElement.getBoundingClientRect();
     this.pattern.style.transform = `translate3d(${-(window.innerHeight - r.top) * 0.16}px,0,0)`;
   }
-  renderVals() { return {}; }
+  renderVals() {
+    const covers = {
+      // FORRÁS: a 2 000 és 20 000 Ft-os sor helyőrző — az Alapítvány hagyja jóvá a tényleges felhasználást.
+      2000: 'Egy kórházi foglalkozás kreatív alapanyaga — gyurma, papír, filc, társasjáték-pótlás.',
+      5000: 'Egy Amigo havi útiköltsége a kórházba, négy látogatásra.',
+      10000: 'Egy TanulTablet havi tartalomfrissítése egy osztályon.',
+      20000: 'Egy Kalandobozz, amely egy kórházban gyógyuló gyerekhez viszi el az Amigos-élményt.'
+    };
+    const a = this.state.amount;
+    const freqWord = this.state.freq === 'rendszeres' ? 'Havonta' : 'Egyszeri támogatásként';
+    return {
+      coverText: covers[a] ? `${freqWord}: ${covers[a]}` : `${freqWord} szabadon választott összeggel támogatod a heti kórházi látogatásokat.`
+    };
+  }
 }
 </script>
 </body>

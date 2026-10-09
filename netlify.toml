@@ -39,6 +39,11 @@
   status = 200
 
 [[redirects]]
+  from = "/adomanyozas"
+  to = "/Adomanybolt.dc.html"
+  status = 200
+
+[[redirects]]
   from = "/adomanybolt"
   to = "/Adomanybolt.dc.html"
   status = 200
