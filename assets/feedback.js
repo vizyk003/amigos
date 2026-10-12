@@ -9,7 +9,8 @@
      beside it. "Az egész oldalhoz" leaves a note on the page as a whole.
    - Screenshot: drag a rectangle; the browser's tab capture takes one
      frame, cropped to the rectangle, and attaches it to the note.
-   - List: the notes sent from this browser, across pages.
+   - List: everyone's notes, across pages (read back through
+     netlify/functions/feedback.mjs), plus any just sent from here.
 
    Notes go to Netlify Forms as "design-feedback" (declared statically in
    feedback-form.html, which is how the deploy detects it; fields not
@@ -224,8 +225,8 @@
         '<button class="btn primary" type="submit">Küldés</button>' +
       '</div>' +
     '</form>' +
-    '<aside class="list" aria-label="Megjegyzéseid" hidden>' +
-      '<header><div><h2>Megjegyzéseid</h2><p>Az ebből a böngészőből küldöttek. Mi minden megjegyzést megkapunk.</p></div>' +
+    '<aside class="list" aria-label="Megjegyzések" hidden>' +
+      '<header><div><h2>Megjegyzések</h2><p>Mindenki megjegyzései, minden oldalról.</p></div>' +
       '<button type="button" data-close-list aria-label="Bezárás">' + I.close + '</button></header>' +
       '<ol></ol>' +
       '<footer><button class="btn" type="button" data-general>Megjegyzés az egész oldalhoz</button></footer>' +
@@ -517,6 +518,7 @@
         if (!res.ok) throw new Error(res.status);
         addPin(spot, comment);
         closeComposer();
+        setTimeout(loadTeam, 3000);
         say('Köszönjük, megkaptuk!');
       })
       .catch(function () {
@@ -540,9 +542,40 @@
      what they've already said. Each sits at the same relative point
      inside its element, so it follows the layout across breakpoints. */
 
-  function allPins() { return load(PINS_KEY, []); }
+  /* Everyone's notes come back from netlify/functions/feedback.mjs; the
+     ones sent from this browser fill in until the next load has them. */
+  var TEAM_URL = '/.netlify/functions/feedback';
+  var team = [];
+  function loadTeam() {
+    fetch(TEAM_URL, { cache: 'no-store' })
+      .then(function (res) { return res.ok ? res.json() : []; })
+      .then(function (notes) {
+        if (Array.isArray(notes)) { team = notes; drawPins(); if (!list.hidden) openList(); }
+      })
+      .catch(function () {});
+  }
+
+  function allPins() {
+    var seen = {};
+    team.forEach(function (p) { seen[p.comment + '|' + p.selector] = true; });
+    return team.concat(load(PINS_KEY, []).filter(function (p) {
+      return !seen[p.comment + '|' + p.selector];
+    })).sort(function (a, b) { return a.at - b.at; });
+  }
+
+  /* One page has several addresses: the root, clean URLs (/legyel-amigo)
+     and the file itself, with or without .html and in any case. */
+  function pageKey(path) {
+    var p = path;
+    try { p = decodeURIComponent(path); } catch (e) {}
+    p = p.toLowerCase().replace(/\.html$/, '').replace(/\/$/, '');
+    if (p === '' || p === '/home') p = '/amigos fooldal v2.dc';
+    p = p.replace(/-/g, ' ').replace(/\s+/g, ' ');
+    return /\.dc$/.test(p) ? p : p + '.dc';
+  }
   function pagePins() {
-    return allPins().filter(function (p) { return p.page === location.pathname; });
+    var here = pageKey(location.pathname);
+    return allPins().filter(function (p) { return pageKey(p.page) === here; });
   }
 
   function addPin(s, comment) {
@@ -598,7 +631,7 @@
         b.className = 'bubble';
         b.textContent = p.comment;
         var meta = document.createElement('small');
-        meta.textContent = when(p.at);
+        meta.textContent = (p.name ? p.name + ' · ' : '') + when(p.at);
         b.appendChild(meta);
         pinsEl.appendChild(b);
         place(b, { x: at.x, y: at.y }, 260);
@@ -635,7 +668,7 @@
     var numbers = {};
     pagePins().filter(function (p) { return p.selector; }).forEach(function (p, i) { numbers[p.id] = i + 1; });
     pins.forEach(function (p) {
-      var here = p.page === location.pathname;
+      var here = pageKey(p.page) === pageKey(location.pathname);
       var li = document.createElement('li');
       var item = document.createElement(here ? 'button' : 'a');
       if (here) { item.type = 'button'; item.className = 'item'; }
@@ -647,7 +680,7 @@
       body.textContent = clip(p.comment, 160);
       var meta = document.createElement('span');
       meta.className = 'meta';
-      meta.textContent = (here ? '' : (p.title || p.page) + ' · ') + clip(p.spot || '', 60) + ' · ' + when(p.at);
+      meta.textContent = (p.name ? p.name + ' · ' : '') + (here ? '' : (p.title || p.page) + ' · ') + clip(p.spot || '', 60) + ' · ' + when(p.at);
       body.appendChild(meta);
       item.appendChild(n);
       item.appendChild(body);
@@ -741,4 +774,5 @@
   document.addEventListener('transitionend', redraw, true);
   if (window.ResizeObserver) new ResizeObserver(redraw).observe(document.body);
   redraw();
+  loadTeam();
 })();
