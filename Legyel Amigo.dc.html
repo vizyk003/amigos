@@ -37,9 +37,9 @@
     #hirlevel input::placeholder{color:var(--amigos-ink-3);opacity:1;}
     #hirlevel input:focus-visible,#jelentkezes input:focus-visible,#jelentkezes select:focus-visible{outline:2px solid var(--amigos-green-text);outline-offset:4px;}
     #jelentkezes option{color:var(--amigos-ink);}
-      /* Testimonials: four in a row; a swipeable row on phones. */
+      /* Testimonials: four in a row, the founder first; a swipeable row on phones. */
     @media (max-width: 840px){
-      [data-testimonials]{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;}
+      [data-testimonials][data-testimonials]{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;}
       [data-testimonials] > *{scroll-snap-align:start;}
     }
     select[name="varos"] option{color:var(--amigos-ink);background:var(--amigos-white);}
@@ -57,14 +57,13 @@
     <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
       <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
       <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
-        <a href="Legyel Amigo.dc.html" aria-current="page" style="color:var(--amigos-green-text);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Legyél Amigo<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#00A74A" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
         <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Munkánk &amp; Hatásunk</a>
-        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">gyerekek &amp; Szülők</a>
-        <a href="Adomanybolt.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Adománybolt</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Gyerekek &amp; Szülők</a>
+        <a href="Legyel Amigo.dc.html" aria-current="page" style="color:var(--amigos-green-text);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Amigóknak<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#00A74A" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
         <a href="Kapcsolat.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Kapcsolat</a>
       </nav>
       <div style="display:flex;justify-content:flex-end;">
-        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Adomanybolt.dc.html" hint-size="auto,40px">Adományozok</x-import>
       </div>
     </div>
   </header>
@@ -127,10 +126,10 @@
     </div>
   </section>
 
-  <section id="miert-jo" data-screen-label="Ezért jó Amigónak lenni" style="background:var(--amigos-zsalya);padding:clamp(72px,8vw,112px) 0;">
+  <section id="miert-jo" data-screen-label="Ezért jó Amigónak lenni" style="background:var(--amigos-white);padding:clamp(72px,8vw,112px) 0;">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px);">
       <div data-reveal="" data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
-        <div style="position:relative;display:flex;flex-direction:column;gap:16px;">
+        <div style="align-self:start;position:relative;display:flex;flex-direction:column;gap:16px;">
           <img class="am-ill" data-ill-pop="wiggle" src="assets/illustrations/svg/amigos-ill-mosoly-green.svg" alt="" aria-hidden="true" style="right:0;top:-12px;height:clamp(56px,5.6vw,80px);width:auto;transform:rotate(10deg);">
           <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-deep);">Ezért jó Amigónak lenni</span>
           <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:16ch;text-wrap:pretty;">Adsz az idődből. Közben te is <span class="am-underline am-underline--pup-green">sokat kapsz.</span></h2>
@@ -169,7 +168,7 @@
   <section id="amigok-mondjak" data-screen-label="Amigók mondják" style="position:relative;overflow:hidden;background:var(--amigos-green);color:var(--amigos-ink);padding:clamp(72px,8vw,112px) 0;">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px);">
       <div data-reveal="" data-split="" style="display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:end;">
-        <div style="position:relative;display:flex;flex-direction:column;gap:16px;">
+        <div style="align-self:start;position:relative;display:flex;flex-direction:column;gap:16px;">
           <img class="am-ill" data-ill-pop="wiggle" src="assets/illustrations/svg/amigos-ill-buborek-white.svg" alt="" aria-hidden="true" style="left:clamp(220px,24vw,330px);top:-6px;width:clamp(72px,7vw,104px);transform:rotate(8deg);">
           <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-ink);">Amigók mondják</span>
           <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;color:var(--amigos-white);">Hallgasd meg <span class="am-underline am-underline--rugo-yellow">őket.</span></h2>
@@ -177,11 +176,14 @@
         <p style="position:relative;margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:52ch;color:var(--amigos-ink);"><img class="am-ill" data-ill-pop data-ill-secondary src="assets/illustrations/svg/amigos-ill-hangjegy-yellow.svg" alt="" aria-hidden="true" style="right:0;top:-96px;width:clamp(64px,6vw,96px);transform:rotate(-8deg);">Négy Amigo arról, hogyan kezdték, mit kaptak a közösségtől, és milyen egy-egy kórházi délután.</p>
       </div>
       <div data-testimonials="" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,24px);">
-        <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green-deep);aspect-ratio:9/16;">
-          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-1-poster.jpg" src="assets/community/web/igexport-DYU0z35Mrsr.mp4" aria-label="Amigo-vallomás 1" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+        <figure data-founder="" style="position:relative;margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green-deep);aspect-ratio:9/16;">
+          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-2-poster.jpg" src="assets/community/web/igexport-DYXdkexsUrY.mp4" aria-label="Sára, az Alapítvány megálmodója" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+          <figcaption style="position:absolute;left:0;right:0;top:20px;display:flex;justify-content:center;pointer-events:none;">
+            <span style="display:inline-block;white-space:nowrap;background:var(--amigos-sun);color:var(--amigos-ink);font-size:13px;font-weight:600;line-height:1;padding:7px 12px;border-radius:var(--radius-pill);"><span style="font-family:var(--font-hand);font-weight:700;font-size:19px;">Sára</span> – az Alapítvány megálmodója</span>
+          </figcaption>
         </figure>
         <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green-deep);aspect-ratio:9/16;">
-          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-2-poster.jpg" src="assets/community/web/igexport-DYXdkexsUrY.mp4" aria-label="Amigo-vallomás 2" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+          <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-1-poster.jpg" src="assets/community/web/igexport-DYU0z35Mrsr.mp4" aria-label="Amigo-vallomás 1" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
         </figure>
         <figure style="margin:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--amigos-green-deep);aspect-ratio:9/16;">
           <video data-testimonial="" preload="none" playsinline="" poster="assets/community/video/vallomas-3-poster.jpg" src="assets/community/web/igexport-DYZ2NE4svcv.mp4" aria-label="Amigo-vallomás 3" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
@@ -198,7 +200,7 @@
        interest for the next round. The mode follows the calendar unless the
        "jelentkezesMod" prop pins it (auto | nyitott | zarva). Not wired to a
        backend yet — bindApply() validates and thanks the applicant. -->
-  <section id="jelentkezes" data-screen-label="Jelentkezés" data-apply-mode="zarva" style="background:var(--amigos-green-pale);color:var(--amigos-ink);padding:clamp(72px,8vw,112px) 0;">
+  <section id="jelentkezes" data-screen-label="Jelentkezés" data-apply-mode="zarva" style="background:var(--amigos-white);color:var(--amigos-ink);padding:clamp(72px,8vw,112px) 0;">
     <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,88px);align-items:start;">
       <div data-reveal="" style="position:relative;display:flex;flex-direction:column;gap:20px;">
         <img class="am-ill" data-ill-pop="wiggle" src="assets/illustrations/svg/amigos-ill-naptar-green.svg" alt="" aria-hidden="true" style="right:2%;top:-24px;width:clamp(72px,7vw,104px);transform:rotate(9deg);">
@@ -212,15 +214,15 @@
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
           <label style="display:flex;flex-direction:column;gap:8px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-ink);">Név</span>
-            <input name="nev" type="text" autocomplete="name" required placeholder="Kovács Anna" style="height:52px;padding:0 16px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-white);color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
+            <input name="nev" type="text" autocomplete="name" required placeholder="Kovács Anna" style="height:52px;padding:0 16px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-paper);color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
           </label>
           <label style="display:flex;flex-direction:column;gap:8px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-ink);">E-mail cím</span>
-            <input name="email" type="email" autocomplete="email" required placeholder="anna@pelda.hu" style="height:52px;padding:0 16px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-white);color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
+            <input name="email" type="email" autocomplete="email" required placeholder="anna@pelda.hu" style="height:52px;padding:0 16px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-paper);color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
           </label>
           <label style="display:flex;flex-direction:column;gap:8px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-ink);">A város, ahova jelentkezni szeretnél</span>
-            <select name="varos" required style="height:52px;padding:0 52px 0 20px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-white) url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1.5 1.5L7 7l5.5-5.5' stroke='%23111D18' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E&quot;) no-repeat right 22px center / 14px 9px;-webkit-appearance:none;appearance:none;cursor:pointer;color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
+            <select name="varos" required style="height:52px;padding:0 52px 0 20px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-paper) url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1.5 1.5L7 7l5.5-5.5' stroke='%23111D18' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E&quot;) no-repeat right 22px center / 14px 9px;-webkit-appearance:none;appearance:none;cursor:pointer;color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
               <option value="" disabled selected>Válassz várost</option>
               <option>Budapest</option>
               <option>Debrecen</option>
@@ -232,16 +234,16 @@
           </label>
           <label style="display:flex;flex-direction:column;gap:8px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-ink);">Milyen szakon tanulsz?</span>
-            <input name="szak" type="text" required placeholder="pl. gépészmérnök" style="height:52px;padding:0 16px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-white);color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
+            <input name="szak" type="text" required placeholder="pl. gépészmérnök" style="height:52px;padding:0 16px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-paper);color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
           </label>
         </div>
         <label style="display:flex;flex-direction:column;gap:8px;">
           <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-ink);">Honnan hallottál rólunk?</span>
-          <input name="forras" type="text" placeholder="pl. Instagram, egy barátom, egyetemi rendezvény" style="height:52px;padding:0 16px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-white);color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
+          <input name="forras" type="text" placeholder="pl. Instagram, egy barátom, egyetemi rendezvény" style="height:52px;padding:0 16px;border:2px solid var(--border-control);border-radius:var(--radius-pill);background:var(--amigos-paper);color:var(--amigos-ink);font:inherit;font-size:16px;min-width:0;">
         </label>
         <label style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;cursor:pointer;">
           <input name="adatvedelem" type="checkbox" required style="width:22px;height:22px;margin-top:2px;accent-color:var(--amigos-green);flex:none;cursor:pointer;">
-          <span>Elfogadom az <a href="Amigos Aloldalak.dc.html#adatkezeles" target="_blank" rel="noopener" style="color:var(--amigos-ink);font-weight:600;">adatvédelmi nyilatkozatban</a> foglaltakat.</span>
+          <span>Elfogadom az <a href="assets/media/2022/08/Adatvedelmi-Nyilatkozat_202208.pdf" target="_blank" rel="noopener" style="color:var(--amigos-ink);font-weight:600;">adatvédelmi nyilatkozatban</a> foglaltakat.</span>
         </label>
         <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
           <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="primary" size="lg" type="submit" hint-size="auto,52px">Értesítést kérek</x-import>
@@ -267,14 +269,7 @@
             <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Mikor van felvételi? Hogyan adhatom le a jelentkezésem?</span>
             <span data-faq-icon="" aria-hidden="true" style="width:28px;height:28px;border-radius:50%;border:2px solid var(--amigos-green);display:flex;align-items:center;justify-content:center;color:var(--amigos-green-text);font-size:18px;line-height:1;flex:none;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">+</span>
           </button>
-          <div data-faq-a="" style="overflow:hidden;height:0;transition:height 240ms cubic-bezier(0.2,0.7,0.2,1);"><div style="padding-bottom:8px;"><p style="margin:0 0 14px;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);max-width:60ch;">A tavaszi és őszi félév elején, egy évben kétszer hirdetünk felvételi jelentkezést. Először egy kreatív írásbeli feladatlapot kell kitöltened, ezután pedig, ha elérted a szükséges ponthatárt, egy szóbeli beszélgetésre hívunk a saját városodban. Ne izgulj a felvételi folyamat miatt, csak add önmagad, mert a lényeg, hogy megismerjünk téged és neked is lehetőséged legyen velünk megismerkedni.</p><p style="margin:0 0 14px;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);max-width:60ch;"><a href="https://amigos.hu/felveteli" target="_blank" rel="noopener" style="font-weight:600;">Bővebb infókért kattints ide →</a></p></div></div>
-        </div>
-        <div data-faq="" style="border-bottom:1px solid var(--amigos-line);">
-          <button data-faq-q="" type="button" aria-expanded="false" style="width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:22px 0;border:0;background:transparent;font:inherit;text-align:left;cursor:pointer;color:var(--amigos-ink);">
-            <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Milyen előírásokkal járhattok kórházba?</span>
-            <span data-faq-icon="" aria-hidden="true" style="width:28px;height:28px;border-radius:50%;border:2px solid var(--amigos-green);display:flex;align-items:center;justify-content:center;color:var(--amigos-green-text);font-size:18px;line-height:1;flex:none;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">+</span>
-          </button>
-          <div data-faq-a="" style="overflow:hidden;height:0;transition:height 240ms cubic-bezier(0.2,0.7,0.2,1);"><div style="padding-bottom:8px;"><p style="margin:0 0 14px;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);max-width:60ch;">A gyerekek és egymás védelme érdekében igyekszünk a maximális egészségügyi előírások betartására. Kórházba csak az intézmény által előírt COVID szabályozásoknak megfelelve mehetünk, illetve a maszk használata is kötelező lehet. Emellett egyes kórházakban, osztályokon (például onkológián) egyéb védőruházatra – cipővédőre, kesztyűre, orvosi köpenyre – is szükség lehet.</p></div></div>
+          <div data-faq-a="" style="overflow:hidden;height:0;transition:height 240ms cubic-bezier(0.2,0.7,0.2,1);"><div style="padding-bottom:8px;"><p style="margin:0 0 14px;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);max-width:60ch;">A tavaszi és őszi félév elején, egy évben kétszer hirdetünk felvételi jelentkezést. Először egy kreatív írásbeli feladatlapot kell kitöltened, ezután pedig, ha elérted a szükséges ponthatárt, egy szóbeli beszélgetésre hívunk a saját városodban. Ne izgulj a felvételi folyamat miatt, csak add önmagad, mert a lényeg, hogy megismerjünk téged és neked is lehetőséged legyen velünk megismerkedni.</p><p style="margin:0 0 14px;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);max-width:60ch;"><a href="#jelentkezes" style="font-weight:600;">Bővebb infókért kattints ide →</a></p></div></div>
         </div>
         <div data-faq="" style="border-bottom:1px solid var(--amigos-line);">
           <button data-faq-q="" type="button" aria-expanded="false" style="width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:22px 0;border:0;background:transparent;font:inherit;text-align:left;cursor:pointer;color:var(--amigos-ink);">
@@ -343,7 +338,7 @@
         </div>
         <label style="display:flex;gap:12px;align-items:flex-start;font-size:var(--text-body);line-height:1.45;cursor:pointer;">
           <input name="adatvedelem" type="checkbox" required style="width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--amigos-green);cursor:pointer;">
-          <span>Elfogadom az <a href="Amigos Aloldalak.dc.html#adatkezeles" target="_blank" rel="noopener" style="color:var(--amigos-ink);font-weight:600;">adatvédelmi nyilatkozatot</a>.</span>
+          <span>Elfogadom az <a href="assets/media/2022/08/Adatvedelmi-Nyilatkozat_202208.pdf" target="_blank" rel="noopener" style="color:var(--amigos-ink);font-weight:600;">adatvédelmi nyilatkozatot</a>.</span>
         </label>
         <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
           <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="inverse" size="lg" type="submit" hint-size="auto,52px">Feliratkozom</x-import>
@@ -358,8 +353,8 @@
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
           <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
-          <span style="font-size:15px;line-height:1.5;color:var(--text-on-field-muted);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
-          <span style="font-size:14px;color:var(--text-on-field-muted);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-field-muted);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban gyógyuló gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:var(--text-on-field-muted);">Bankszámla: 11600006-00000001-96501947<br>Adószám: 18758227-1-19</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
           <div style="display:flex;flex-direction:column;gap:9px;">
@@ -372,15 +367,16 @@
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Támogatás</span>
-            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Egyszeri adomány</a>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
             <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
             <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
             <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
             <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Jogi</span>
-            <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
-            <a href="Amigos Aloldalak.dc.html#aszf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="assets/media/2022/08/Adatvedelmi-Nyilatkozat_202208.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="assets/media/2022/07/AMIGOS-ASZF-20220630.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
             <a href="Amigos Aloldalak.dc.html#sitemap" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Oldaltérkép</a>
           </div>
         </div>

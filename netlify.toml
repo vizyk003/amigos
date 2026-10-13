@@ -39,6 +39,11 @@
   status = 200
 
 [[redirects]]
+  from = "/adomanyozas"
+  to = "/Adomanybolt.dc.html"
+  status = 200
+
+[[redirects]]
   from = "/adomanybolt"
   to = "/Adomanybolt.dc.html"
   status = 200
@@ -72,9 +77,23 @@
   to = "/Blog.dc.html"
   status = 200
 
+# Blog posts: one template, the post picked by ?p=<slug> (see
+# assets/blog/index.js). The slugs are the ones the posts had on the
+# amigos.hu WordPress blog. The short alias redirects rather than rewrites,
+# because the template's asset paths are relative to the site root.
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/Bejegyzes.dc.html?p=:slug"
+  status = 301
+
 [[redirects]]
   from = "/kapcsolat"
   to = "/Kapcsolat.dc.html"
+  status = 200
+
+[[redirects]]
+  from = "/tamogatoink"
+  to = "/Tamogatoink.dc.html"
   status = 200
 
 # ---------------------------------------------------------------------------

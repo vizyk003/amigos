@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Blog — Amigos a gyerekekért Alapítvány</title>
+  <meta name="description" content="Mi történik az Amigosnál: hírek, történetek és beszámolók az önkénteseinktől.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="Amigos a gyerekekért Alapítvány">
+  <meta property="og:title" content="Blog — Amigos a gyerekekért Alapítvány">
+  <meta property="og:description" content="Mi történik az Amigosnál: hírek, történetek és beszámolók az önkénteseinktől.">
+  <meta property="og:image" content="assets/community/photos/amigok-paros-selfie.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;background:var(--amigos-paper);}
+    a{color:var(--amigos-green-text);} a:hover{color:var(--amigos-green-deep);}
+    [data-card-link]:hover [data-arrow]{transform:translateX(6px);}
+    [data-card-link]:hover img{transform:scale(1.02);}
+    [data-card-link]:hover h3{color:var(--amigos-green-text);}
+    [data-card-link]:focus-visible{outline:3px solid var(--focus-color);outline-offset:6px;border-radius:var(--radius-md);}
+    /* Long-form post body: migrated WordPress HTML, so every rule is scoped here. */
+    [data-post-body]{width:100%;max-width:68ch;margin:0 auto;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);overflow-wrap:break-word;}
+    [data-post-body] > *{margin:0 0 1.15em;}
+    [data-post-body] > :last-child{margin-bottom:0;}
+    [data-post-body] h2,[data-post-body] h3,[data-post-body] h4{font-family:var(--font-display);font-weight:600;color:var(--amigos-ink);letter-spacing:-0.02em;text-wrap:balance;}
+    [data-post-body] h2{font-size:clamp(24px,2.4vw,30px);line-height:1.15;margin:1.8em 0 0.6em;}
+    [data-post-body] h3{font-size:var(--text-h4);line-height:var(--lh-h4);margin:1.6em 0 0.5em;}
+    [data-post-body] h4{font-size:var(--text-h5);line-height:var(--lh-h5);margin:1.4em 0 0.4em;}
+    [data-post-body] > :first-child{margin-top:0;}
+    [data-post-body] strong,[data-post-body] b{font-weight:600;color:var(--amigos-ink);}
+    [data-post-body] a{color:var(--amigos-green-text);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;}
+    [data-post-body] a:hover{color:var(--amigos-green-deep);}
+    [data-post-body] a:focus-visible{outline:3px solid var(--focus-color);outline-offset:2px;border-radius:4px;}
+    [data-post-body] figure{margin:1.8em 0;}
+    [data-post-body] img,[data-post-body] video{display:block;width:auto;max-width:100%;height:auto;max-height:min(80vh,760px);margin:0 auto;border-radius:var(--radius-lg);background:var(--am-green-100);}
+    [data-post-body] video{width:100%;}
+    [data-post-body] p img{display:inline-block;max-width:min(100%,320px);margin:0.3em 1em 0.6em 0;border-radius:var(--radius-md);vertical-align:top;}
+    [data-post-body] figure:has(img + img){display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:12px;}
+    [data-post-body] figure:has(img + img) img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-md);}
+    [data-post-body] figcaption{margin-top:10px;font-size:14px;line-height:1.5;color:var(--amigos-ink-3);text-align:center;}
+    [data-post-body] blockquote{margin:1.8em 0;padding:clamp(20px,3vw,28px) 0;border-top:2px solid var(--amigos-green);border-bottom:2px solid var(--amigos-green);font-family:var(--font-quote);font-weight:500;font-size:var(--text-quote);line-height:var(--lh-quote);color:var(--amigos-ink);text-wrap:pretty;}
+    [data-post-body] blockquote p{margin:0 0 0.6em;} [data-post-body] blockquote p:last-child{margin:0;}
+    [data-post-body] blockquote strong,[data-post-body] blockquote b{font-weight:600;}
+    [data-post-body] ul,[data-post-body] ol{padding-left:1.4em;}
+    [data-post-body] li{margin:0.35em 0;}
+    [data-post-body] li::marker{color:var(--amigos-green-text);}
+    @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-post-body]{font-size:var(--text-body-lg-m);} [data-post-body] img,[data-post-body] video{border-radius:var(--radius-md);} }
+    @media (prefers-reduced-motion: reduce){ [data-arrow],[data-card-link] img{transition:none !important;} }
+  </style>
+  <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/brand.css">
+  <script src="assets/responsive.js" defer></script>
+  <script src="assets/blog/index.js"></script>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--amigos-ink);">
+
+  <a href="#tartalom" style="position:absolute;left:-9999px;top:0;z-index:100;background:var(--amigos-white);color:var(--amigos-ink);padding:12px 20px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Ugrás a tartalomra</a>
+<header style="position:sticky;top:0;z-index:30;background:var(--amigos-paper);border-bottom:1px solid var(--amigos-line);">
+    <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
+      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Gyerekek &amp; Szülők</a>
+        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Amigóknak</a>
+        <a href="Kapcsolat.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Kapcsolat</a>
+      </nav>
+      <div style="display:flex;justify-content:flex-end;">
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Adomanybolt.dc.html" hint-size="auto,40px">Adományozok</x-import>
+      </div>
+    </div>
+  </header>
+<main id="tartalom">
+
+  <article data-screen-label="Bejegyzés" style="background:var(--amigos-paper);padding:clamp(32px,4vw,56px) 0 clamp(72px,10vw,120px);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(24px,3vw,40px);">
+      <nav aria-label="Morzsamenü" style="font-size:13px;color:var(--amigos-ink-3);display:flex;gap:6px;flex-wrap:wrap;">
+        <a href="Amigos Fooldal v2.dc.html" style="color:var(--amigos-ink-3);text-decoration:none;">Főoldal</a><span aria-hidden="true">/</span>
+        <a href="Blog.dc.html" style="color:var(--amigos-ink-3);text-decoration:none;">Blog</a><span aria-hidden="true">/</span>
+        <span data-b-crumb="" aria-current="page" style="color:var(--amigos-ink-2);"></span>
+      </nav>
+
+      <div data-b-missing="" style="display:none;flex-direction:column;align-items:flex-start;gap:16px;padding:clamp(40px,6vw,80px) 0;">
+        <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);">Ezt a bejegyzést nem találjuk.</h1>
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);color:var(--amigos-ink-2);max-width:52ch;">Lehet, hogy elköltözött, vagy rossz linket kaptál. A blogon kereshetsz az összes történetünk között.</p>
+        <a href="Blog.dc.html" style="font-weight:600;">Vissza a bloghoz →</a>
+      </div>
+
+      <div data-b-found="" style="width:100%;max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(20px,3vw,32px);">
+        <header style="display:flex;flex-direction:column;gap:16px;">
+          <span style="display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;font-size:15px;color:var(--amigos-ink-3);">
+            <a data-b-topic="" href="Blog.dc.html" style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);text-decoration:none;"></a>
+            <span aria-hidden="true">·</span>
+            <time data-b-date=""></time>
+          </span>
+          <h1 data-b-title="" style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);text-wrap:balance;"></h1>
+        </header>
+        <div data-b-hero="" style="aspect-ratio:16/9;border-radius:var(--radius-card);overflow:hidden;background:var(--am-green-100);">
+          <img data-b-img="" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div data-post-body="" aria-busy="true">
+          <p data-b-loading="" style="color:var(--amigos-ink-3);">Betöltés…</p>
+        </div>
+        <div style="max-width:68ch;width:100%;margin:0 auto;border-top:1px solid var(--amigos-line);padding-top:24px;">
+          <a href="Blog.dc.html" style="font-size:16px;font-weight:600;text-decoration:none;">← Vissza a bloghoz</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section data-b-related-wrap="" data-screen-label="Ezt is olvasd" style="background:var(--amigos-white);border-top:1px solid var(--amigos-line);padding:clamp(72px,10vw,120px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(28px,4vw,48px);">
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">Blog</span>
+        <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);">Ezt is olvasd</h2>
+      </div>
+      <div data-b-related="" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(36px,4vw,56px) clamp(20px,2.4vw,32px);"></div>
+    </div>
+  </section>
+
+  </main>
+<footer style="background:var(--amigos-green-deep);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+      <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-field-muted);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban gyógyuló gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:var(--text-on-field-muted);">Bankszámla: 11600006-00000001-96501947<br>Adószám: 18758227-1-19</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Ügyintézés</span>
+            <a href="Kapcsolat.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
+            <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
+            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
+            <a href="Amigos Aloldalak.dc.html#gyik" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">GYIK</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Támogatás</span>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Egyszeri adomány</a>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Jogi</span>
+            <a href="assets/media/2022/08/Adatvedelmi-Nyilatkozat_202208.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="assets/media/2022/07/AMIGOS-ASZF-20220630.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="Amigos Aloldalak.dc.html#sitemap" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Oldaltérkép</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid rgba(255,255,255,0.22);padding-top:20px;font-size:14px;color:var(--text-on-field-muted);">
+        <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const bind = () => {
+      if (!document.querySelector('[data-b-found]') || !window.AMIGOS_POSTS) return false;
+      this.render();
+      return true;
+    };
+    if (!bind()) { this.iv = setInterval(() => { if (bind()) clearInterval(this.iv); }, 100); }
+  }
+  componentWillUnmount() { clearInterval(this.iv); }
+  slug() {
+    // Bejegyzes.dc.html?p=<slug>, or the /blog/<slug> alias
+    const q = new URLSearchParams(location.search).get('p');
+    if (q) return q;
+    const m = location.pathname.match(/\/blog\/([^/]+)\/?$/);
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+  render() {
+    const all = window.AMIGOS_POSTS;
+    const p = all.find(x => x.slug === this.slug());
+    const $ = s => document.querySelector(s);
+    const months = ['január', 'február', 'március', 'április', 'május', 'június', 'július', 'augusztus', 'szeptember', 'október', 'november', 'december'];
+    const fmtDate = d => { const [y, m, day] = d.split('-').map(Number); return `${y}. ${months[m - 1]} ${day}.`; };
+    if (!p) {
+      $('[data-b-found]').style.display = 'none';
+      $('[data-b-missing]').style.display = 'flex';
+      $('[data-b-crumb]').textContent = 'Nem található';
+      this.related(all.slice(0, 3));
+      return;
+    }
+    // The helmet writes the static <title> after mount, so set it again once that has run.
+    const title = `${p.title} — Amigos a gyerekekért Alapítvány`;
+    const setTitle = () => { if (document.title !== title) document.title = title; };
+    setTitle(); setTimeout(setTitle, 0); setTimeout(setTitle, 400);
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute('content', p.excerpt);
+
+    $('[data-b-crumb]').textContent = p.title;
+    $('[data-b-title]').textContent = p.title;
+    const topic = $('[data-b-topic]');
+    topic.textContent = p.topic;
+    topic.href = `Blog.dc.html?tema=${encodeURIComponent(p.topic)}`;
+    const date = $('[data-b-date]');
+    date.textContent = fmtDate(p.date);
+    date.setAttribute('datetime', p.date);
+    const img = $('[data-b-img]');
+    img.src = p.img;
+    img.onerror = () => { $('[data-b-hero]').style.display = 'none'; };
+
+    const body = $('[data-post-body]');
+    fetch(`assets/blog/posts/${encodeURIComponent(p.slug)}.json`)
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(post => {
+        if (post.img) img.src = post.img;
+        // Trusted, pre-sanitised HTML produced by the migration script (see assets/blog/index.js).
+        body.innerHTML = post.html;
+        body.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+        body.removeAttribute('aria-busy');
+      })
+      .catch(() => {
+        body.innerHTML = '<p>Ezt a bejegyzést most nem sikerült betölteni. Frissítsd az oldalt, vagy <a href="Blog.dc.html">térj vissza a bloghoz</a>.</p>';
+        body.removeAttribute('aria-busy');
+      });
+
+    const others = all.filter(x => x.slug !== p.slug);
+    this.related(others.filter(x => x.topic === p.topic).concat(others.filter(x => x.topic !== p.topic)).slice(0, 3));
+  }
+  related(list) {
+    const box = document.querySelector('[data-b-related]');
+    if (!box) return;
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const months = ['január', 'február', 'március', 'április', 'május', 'június', 'július', 'augusztus', 'szeptember', 'október', 'november', 'december'];
+    const fmtDate = d => { const [y, m, day] = d.split('-').map(Number); return `${y}. ${months[m - 1]} ${day}.`; };
+    box.innerHTML = list.map(p => `
+      <article style="display:flex;flex-direction:column;">
+        <a data-card-link="" href="Bejegyzes.dc.html?p=${encodeURIComponent(p.slug)}" style="display:flex;flex-direction:column;gap:14px;height:100%;color:inherit;text-decoration:none;">
+          <div style="aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;background:var(--am-green-100);">
+            <img src="${esc(p.img)}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">
+          </div>
+          <span style="display:flex;align-items:center;gap:8px 10px;flex-wrap:wrap;font-size:14px;color:var(--amigos-ink-3);">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">${esc(p.topic)}</span>
+            <span aria-hidden="true">·</span>
+            <time datetime="${esc(p.date)}">${fmtDate(p.date)}</time>
+          </span>
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:clamp(20px,1.9vw,24px);line-height:1.15;letter-spacing:-0.02em;text-wrap:pretty;">${esc(p.title)}</h3>
+          <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">${esc(p.excerpt)}</p>
+          <span data-arrow="" style="margin-top:auto;font-size:16px;font-weight:600;color:var(--amigos-green-text);display:inline-block;transition:transform 200ms cubic-bezier(0.2,0.7,0.2,1);">Elolvasom →</span>
+        </a>
+      </article>`).join('');
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

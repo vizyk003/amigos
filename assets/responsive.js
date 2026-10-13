@@ -208,6 +208,27 @@
     });
   });
 
+  /* In-page links (#hatas, #jelenlet, …) glide to their section and stop
+     just below the sticky header, on every page. Done here rather than
+     with CSS scroll-margin alone, because some sections (overflow:hidden,
+     animated heroes) ignore it. Reduced-motion visitors get the jump. */
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href*="#"]');
+    if (!a || a.target === '_blank') return;
+    var url = new URL(a.href, location.href);
+    if (url.origin !== location.origin || url.pathname !== location.pathname || url.search !== location.search) return;
+    var id = decodeURIComponent(url.hash.slice(1));
+    var el = id && document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    var head = document.querySelector('header');
+    var off = head && /sticky|fixed/.test(getComputedStyle(head).position) ? head.getBoundingClientRect().height : 0;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - off - 8, behavior: reduce ? 'auto' : 'smooth' });
+    if (location.hash !== url.hash) history.pushState(null, '', url.hash);
+  });
+
   /* Design review: reviewers get a comment button (assets/feedback.js).
      ?review switches it on for this browser, ?review=off switches it
      off; ordinary visitors never download it. Rides on this file

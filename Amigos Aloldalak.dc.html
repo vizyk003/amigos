@@ -35,20 +35,15 @@
       <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
         <a href="#legyel-amigo" style="color:var(--amigos-ink);text-decoration:none;">Legyél Amigo</a>
         <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Munkánk &amp; Hatásunk</a>
-        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;">gyerekek &amp; Szülők</a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Gyerekek &amp; Szülők</a>
         <a href="Adomanybolt.dc.html" style="color:var(--amigos-ink);text-decoration:none;">Adománybolt</a>
       </nav>
       <div style="display:flex;justify-content:flex-end;">
-        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Amigos Fooldal v2.dc.html#tamogatom" hint-size="auto,40px">Adományozok</x-import>
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Adomanybolt.dc.html" hint-size="auto,40px">Adományozok</x-import>
       </div>
     </div>
   </header>
 
-  <div style="background:var(--am-green-50);border-bottom:1px solid var(--amigos-line);font-size:13px;color:var(--amigos-ink-3);">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1280px;margin:0 auto;padding:8px clamp(20px,4vw,48px);">
-      <span>Low-fidelity wireframe — {{ pageUrl }}</span>
-      <span style="display:flex;gap:20px;"><a href="#sitemap" style="text-decoration:none;">Oldaltérkép</a><a href="Amigos Fooldal v2.dc.html" style="text-decoration:none;">Főoldal (kész design)</a></span>
-    </div>
   </div>
 
   <main style="flex:1;">
@@ -189,7 +184,12 @@
                     <sc-for list="{{ s.fields }}" as="f" hint-placeholder-count="4">
                       <label style="display:flex;flex-direction:column;gap:7px;">
                         <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-ink-3);">{{ f.label }}</span>
-                        <span style="height:{{ f.h }};border:2px solid var(--amigos-line);border-radius:var(--radius-pill);background:var(--amigos-white);display:flex;align-items:center;padding:0 16px;font-size:15px;color:var(--amigos-ink-3);">{{ f.hint }}</span>
+                        <sc-if value="{{ f.tall }}" hint-placeholder-val="{{ false }}">
+                          <textarea placeholder="{{ f.hint }}" style="height:{{ f.h }};border:2px solid var(--amigos-line);border-radius:var(--radius-md);background:var(--amigos-white);padding:12px 16px;font:inherit;font-size:15px;color:var(--amigos-ink);resize:vertical;"></textarea>
+                        </sc-if>
+                        <sc-if value="{{ f.short }}" hint-placeholder-val="{{ true }}">
+                          <input type="{{ f.type }}" placeholder="{{ f.hint }}" style="height:{{ f.h }};border:2px solid var(--amigos-line);border-radius:var(--radius-pill);background:var(--amigos-white);padding:0 16px;font:inherit;font-size:15px;color:var(--amigos-ink);">
+                        </sc-if>
                       </label>
                     </sc-for>
                   </div>
@@ -246,39 +246,40 @@
     </sc-if>
   </main>
 
-  <footer style="background:var(--amigos-ink);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
+  <footer style="background:var(--amigos-green-deep);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
       <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
         <div style="display:flex;flex-direction:column;gap:14px;">
           <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
-          <span style="font-size:15px;line-height:1.5;color:var(--text-on-ink);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban fekvő gyerekekért, 2014 óta.</span>
-          <span style="font-size:14px;color:var(--text-on-ink);">Bankszámla: 10700024-04616002-51100005<br>Adószám: 18516378-1-42</span>
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-field-muted);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban gyógyuló gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:var(--text-on-field-muted);">Bankszámla: 11600006-00000001-96501947<br>Adószám: 18758227-1-19</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
           <div style="display:flex;flex-direction:column;gap:9px;">
-            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Ügyintézés</span>
-            <a href="Amigos Aloldalak.dc.html#kapcsolat" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Ügyintézés</span>
+            <a href="Kapcsolat.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
             <a href="Amigos Aloldalak.dc.html#dokumentumok" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
             <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
             <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
             <a href="Amigos Aloldalak.dc.html#gyik" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">GYIK</a>
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
-            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Támogatás</span>
-            <a href="Amigos Fooldal v2.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Támogatás</span>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Egyszeri adomány</a>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
             <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
             <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
             <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
           </div>
           <div style="display:flex;flex-direction:column;gap:9px;">
-            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--text-on-ink-muted);">Jogi</span>
-            <a href="Amigos Aloldalak.dc.html#adatkezeles" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
-            <a href="Amigos Aloldalak.dc.html#aszf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Jogi</span>
+            <a href="assets/media/2022/08/Adatvedelmi-Nyilatkozat_202208.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="assets/media/2022/07/AMIGOS-ASZF-20220630.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
             <a href="Amigos Aloldalak.dc.html#sitemap" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Oldaltérkép</a>
           </div>
         </div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid var(--amigos-ink-2);padding-top:20px;font-size:14px;color:var(--text-on-ink);">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid rgba(255,255,255,0.22);padding-top:20px;font-size:14px;color:var(--text-on-field-muted);">
         <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
       </div>
     </div>
@@ -292,7 +293,7 @@ class Component extends DCLogic {
     const read = () => {
       const r = (location.hash || '#legyel-amigo').slice(1);
       this.setState({ route: r });
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'instant' });
     };
     read();
     window.addEventListener('hashchange', read);
@@ -317,7 +318,13 @@ class Component extends DCLogic {
     const list = (title, items) => ({ t: 'list', bg: PAPER, title, items: items.map(i => Object.assign({ href: '#', meta: '', text: '' }, i)) });
     const steps = (title, items) => ({ t: 'steps', bg: PAPER, title, items });
     const stats = (items) => ({ t: 'stats', bg: PAPER, items });
-    const form = (o) => Object.assign({ t: 'form', bg: PAPER, consent: 'Elfogadom az adatkezelési tájékoztatót.', submitBg: G, alt: 'Adatkezelési tájékoztató', altHref: '#adatkezeles', progress: '', text: '' }, o, { fields: o.fields.map(f => Object.assign({ h: '48px', hint: '' }, f)) });
+    const form = (o) => Object.assign({ t: 'form', bg: PAPER, consent: 'Elfogadom az adatkezelési tájékoztatót.', submitBg: G, alt: 'Adatkezelési tájékoztató', altHref: '#adatkezeles', progress: '', text: '' }, o, { fields: o.fields.map(f => {
+      // Real, typeable fields: tall ones become a textarea, the rest inputs.
+      const x = Object.assign({ h: '48px', hint: '' }, f);
+      x.tall = parseInt(x.h, 10) > 60; x.short = !x.tall;
+      x.type = /e-mail/i.test(x.label) ? 'email' : /telefon/i.test(x.label) ? 'tel' : 'text';
+      return x;
+    }) });
     const legal = (o) => Object.assign({ t: 'legal', updated: 'Utolsó módosítás: 2026. szeptember' }, o);
     const cta = (o) => Object.assign({ t: 'cta', bg: G, fg: W, ctas: [] }, o);
 
@@ -371,7 +378,7 @@ class Component extends DCLogic {
         ]),
         cards('Három pillér', [
           { title: 'Heti kórházi foglalkozások', text: 'Ugyanaz az Amigo, ugyanabban az időpontban, minden héten.', media: 'FOTÓ – foglalkozás', link: 'Programjaink', href: '#programok' },
-          { title: 'Saját fejlesztésű eszközök', text: 'TanulTablet, Amigos Mini, Kalandozz — kórházi használatra tervezve.', media: 'FOTÓ – eszköz', link: 'Eszközeink', href: '#programok' },
+          { title: 'Saját fejlesztésű eszközök', text: 'Kalandobozz, Amigos Kalandor, Kalandozz — kórházi használatra tervezve.', media: 'FOTÓ – eszköz', link: 'Eszközeink', href: '#programok' },
           { title: 'Képzett Amigók', text: 'Felvételi, Akadémia, Senior Amigo-kíséret.', media: 'FOTÓ – képzés', link: 'Legyél Amigo!', href: '#legyel-amigo' }
         ]),
         list('Hol vagyunk jelen', [
@@ -389,8 +396,8 @@ class Component extends DCLogic {
         hero({ crumb: 'Főoldal / Munkánk / Programjaink', eyebrow: 'Programok', title: 'Amit beviszünk a kórterembe', text: 'Négy program, mind kórházi körülményekre tervezve: fertőtleníthető, ágy mellett is működik, egy gyerekkel és csoporttal is használható.', media: 'FOTÓ – eszköz részlet', ctas: [] }),
         cards('Programjaink', [
           { title: 'Heti foglalkozás', text: 'Játék, beszélgetés, közös alkotás — a gyerek választ.', media: 'FOTÓ – foglalkozás' },
-          { title: 'TanulTablet', text: 'Digitális tananyag, hogy a kórházi hetek ne essenek ki az iskolából.', media: 'FOTÓ – tablet' },
-          { title: 'Amigos Mini', text: 'A legkisebbeknek szóló játékcsomag.', media: 'ILLUSZTRÁCIÓ – sub-brand' },
+          { title: 'Kalandobozz', text: 'Dobozba zárt élmény: az Amigos-játék azoknak, akikhez nem jutunk el személyesen.', media: 'FOTÓ – Kalandobozz' },
+          { title: 'Amigos Kalandor', text: 'Online kalandjáték, amit a gyerek a kórházi ágyból is játszhat.', media: 'ILLUSZTRÁCIÓ – Kalandor' },
           { title: 'Kalandozz!', text: 'Online kalandok azoknak a napoknak, amikor nem lehet felkelni.', media: 'ILLUSZTRÁCIÓ – Kalandozz', link: 'Kalandozz!', href: '#kalandozz' }
         ]),
         split('Hogyan kerül be egy eszköz', 'Minden fejlesztést kórházi szakemberekkel közösen tesztelünk, mielőtt bármelyik osztályra bevinnénk.', ['Ötlet Amigóktól vagy ápolóktól', 'Prototípus és tesztelés egy osztályon', 'Higiéniai jóváhagyás', 'Bevezetés minden városban']),
@@ -440,7 +447,7 @@ class Component extends DCLogic {
       ] },
 
       'tortenetek': { title: 'Történetek', url: '/munkank/tortenetek', sections: [
-        hero({ crumb: 'Főoldal / Munkánk / Történetek', eyebrow: 'Történetek', title: 'Amigók és szülők mesélik', text: 'gyerek soha nem azonosítható. Minden történet szülői hozzájárulással jelenik meg.', media: 'FOTÓ – Amigo portré', ctas: [] }),
+        hero({ crumb: 'Főoldal / Munkánk / Történetek', eyebrow: 'Történetek', title: 'Amigók és szülők mesélik', text: 'Gyerek soha nem azonosítható. Minden történet szülői hozzájárulással jelenik meg.', media: 'FOTÓ – Amigo portré', ctas: [] }),
         list('Legutóbbi történetek', [
           { title: 'Az első félévem Amigóként', text: 'Anna, Szeged', meta: '2026. szeptember' },
           { title: 'Amikor a gyerek kérdez rá, hogy jövő héten is jössz-e', text: 'Máté, Budapest', meta: '2026. augusztus' },
@@ -450,8 +457,8 @@ class Component extends DCLogic {
         cta({ title: 'Te is Amigo lennél?', text: 'A következő Akadémia a szemeszter elején indul.', ctas: [ctaI('Jelentkezem', '#jelentkezes')] })
       ] },
 
-      'csaladoknak': { title: 'gyerekek és szülők', url: '/csaladoknak', sections: [
-        hero({ crumb: 'Főoldal / gyerekek és szülők', eyebrow: 'Családoknak', title: 'Mi történik, amikor bekopog egy Amigo?', text: 'Röviden: semmi kötelező. A gyerek dönti el, hogy van-e kedve, és hogy mihez.', media: 'FOTÓ – közös játék', ctas: [ctaG('Szülőknek', '#szuloknek'), ctaO('Kalandozz!', '#kalandozz')] }),
+      'csaladoknak': { title: 'Gyerekek és szülők', url: '/csaladoknak', sections: [
+        hero({ crumb: 'Főoldal / Gyerekek és szülők', eyebrow: 'Családoknak', title: 'Mi történik, amikor bekopog egy Amigo?', text: 'Röviden: semmi kötelező. A gyerek dönti el, hogy van-e kedve, és hogy mihez.', media: 'FOTÓ – közös játék', ctas: [ctaG('Szülőknek', '#szuloknek'), ctaO('Kalandozz!', '#kalandozz')] }),
         cards('Két út', [
           { title: 'Szülőknek', text: 'Mi történik egy foglalkozáson, hogyan kezeljük a képeket, kihez fordulhatsz.', media: 'FOTÓ – szülő és gyerek', link: 'Szülőknek', href: '#szuloknek' },
           { title: 'Kalandozz!', text: 'Online játékok és feladatok kórházban töltött napokra.', media: 'ILLUSZTRÁCIÓ – Kalandozz', link: 'Kalandozz!', href: '#kalandozz' }
@@ -464,19 +471,19 @@ class Component extends DCLogic {
       ] },
 
       'szuloknek': { title: 'Szülőknek', url: '/csaladoknak/szuloknek', sections: [
-        hero({ crumb: 'Főoldal / gyerekek és szülők / Szülőknek', eyebrow: 'Szülőknek', title: 'Egy foglalkozás, lépésről lépésre', text: 'Heti egy alkalom, kb. két óra. Az Amigo mindig ugyanaz a személy, és mindig bemutatkozik.', media: 'FOTÓ – foglalkozás', ctas: [] }),
+        hero({ crumb: 'Főoldal / Gyerekek és szülők / Szülőknek', eyebrow: 'Szülőknek', title: 'Egy foglalkozás, lépésről lépésre', text: 'Heti egy alkalom, kb. két óra. Az Amigo mindig ugyanaz a személy, és mindig bemutatkozik.', media: 'FOTÓ – foglalkozás', ctas: [] }),
         steps('Hogyan zajlik', [
           { n: '01', title: 'Bejelentkezés', text: 'Az Amigo az osztályon jelentkezik be, az ápolókkal egyeztet.' },
           { n: '02', title: 'Kopogás', text: 'Megkérdezi a gyereket, van-e kedve. A nem is válasz.' },
           { n: '03', title: 'Együtt töltött idő', text: 'Játék, beszélgetés, tanulás — amit a gyerek választ.' },
           { n: '04', title: 'Elköszönés', text: 'Megbeszélik, mikor jön legközelebb.' }
         ]),
-        split('Fotók és adatok', 'gyerekről csak írásos szülői hozzájárulással készül kép, és soha nem azonosítható módon. Nevet nem közlünk.', ['A hozzájárulás bármikor visszavonható', 'Az Amigók nem kérnek és nem tárolnak egészségügyi adatot', 'Kérdés esetén az Amigo-felelős elérhető']),
+        split('Fotók és adatok', 'Gyerekről csak írásos szülői hozzájárulással készül kép, és soha nem azonosítható módon. Nevet nem közlünk.', ['A hozzájárulás bármikor visszavonható', 'Az Amigók nem kérnek és nem tárolnak egészségügyi adatot', 'Kérdés esetén az Amigo-felelős elérhető']),
         cta({ title: 'Kérdésed vagy visszajelzésed van?', text: 'Az osztályod Amigo-felelősének írhatsz közvetlenül.', ctas: [ctaI('Kapcsolat', '#kapcsolat'), ctaIO('Gyakori kérdések', '#csaladoknak-gyik')] })
       ] },
 
       'kalandozz': { title: 'Kalandozz!', url: '/kalandozz', sections: [
-        heroGreen({ crumb: 'Főoldal / Kalandozz!', eyebrow: 'gyerekeknek', title: 'Kalandozz!', text: 'Játékok és feladatok azokra a napokra, amikor nem lehet felkelni az ágyból.', media: 'ILLUSZTRÁCIÓ – karakterek', ctas: [ctaI('Kezdjük!', '#')] }),
+        heroGreen({ crumb: 'Főoldal / Kalandozz!', eyebrow: 'Gyerekeknek', title: 'Kalandozz!', text: 'Játékok és feladatok azokra a napokra, amikor nem lehet felkelni az ágyból.', media: 'ILLUSZTRÁCIÓ – karakterek', ctas: [ctaI('Kezdjük!', '#')] }),
         cards('Kalandok', [
           { title: 'Űrutazás', text: 'Négy feladat, kb. 20 perc.', media: 'ILLUSZTRÁCIÓ – rakéta' },
           { title: 'Állatkert', text: 'Rajzolós kaland kicsiknek.', media: 'ILLUSZTRÁCIÓ – állatok' },
@@ -486,7 +493,7 @@ class Component extends DCLogic {
       ] },
 
       'csaladoknak-gyik': { title: 'Gyakori kérdések (családoknak)', url: '/csaladoknak/gyik', sections: [
-        hero({ crumb: 'Főoldal / gyerekek és szülők / GYIK', eyebrow: 'GYIK', title: 'Amit a szülők leggyakrabban kérdeznek', text: 'Ha nem találod a választ, írj az Amigo-felelősnek — 48 órán belül válaszolunk.', media: 'KÖR – kérdőjel', ctas: [] }),
+        hero({ crumb: 'Főoldal / Gyerekek és szülők / GYIK', eyebrow: 'GYIK', title: 'Amit a szülők leggyakrabban kérdeznek', text: 'Ha nem találod a választ, írj az Amigo-felelősnek — 48 órán belül válaszolunk.', media: 'KÖR – kérdőjel', ctas: [] }),
         list('Kérdések', [
           { title: 'Kötelező részt venni a foglalkozáson?', text: 'Nem. A gyerek bármikor nemet mondhat, és ez nem befolyásol semmit.', meta: '+' },
           { title: 'Egészségügyi dolgozók az Amigók?', text: 'Nem. Képzett egyetemista önkéntesek, orvosi feladatot nem látnak el.', meta: '+' },
@@ -499,22 +506,22 @@ class Component extends DCLogic {
 
       'tamogatom': { title: 'Adományozok', url: '/tamogatom', sections: [
         heroPurple({ crumb: 'Főoldal / Adományozok', eyebrow: 'Támogatás', title: 'Egy gyerek barátsága nem egyszeri alkalom.', text: 'A heti látogatás akkor működik, ha jövő héten is ott tudunk lenni. Válassz összeget és gyakoriságot.', media: 'KÖR – 5 000 Ft', ctas: [{ label: 'Rendszeresen támogatom', href: '#tamogatom-checkout', bg: 'var(--amigos-white)', fg: 'var(--amigos-plum)', border: 'var(--amigos-white)' }, ctaIO('Egyszeri támogatás', '#tamogatom-checkout')] }),
-        split('Mit fedez', 'Minden összeghez konkrét tétel tartozik, a belső költségbecslésünk alapján.', ['3 000 Ft — egy foglalkozás kreatív alapanyaga', '5 000 Ft — egy Amigo havi útiköltsége, négy látogatásra', '10 000 Ft — egy TanulTablet havi tartalomfrissítése', 'Egyedi összeg — szabadon választható']),
+        split('Mit fedez', 'Minden összeghez konkrét tétel tartozik, a belső költségbecslésünk alapján.', ['3 000 Ft — egy foglalkozás kreatív alapanyaga', '5 000 Ft — egy Amigo havi útiköltsége, négy látogatásra', '10 000 Ft — egy osztály havi játék- és alapanyag-pótlása', 'Egyedi összeg — szabadon választható']),
         cards('Támogatás más formában', [
           { title: 'Kórházi örökbefogadás', text: 'Egy teljes osztály éves támogatása.', media: 'DIAGRAM – osztály', link: 'Részletek', href: '#orokbefogadas' },
           { title: 'Vállalati támogatás', text: 'Céges partnerség, önkéntesnap, eszköztámogatás.', media: 'LOGÓ – partner', link: 'Részletek', href: '#vallalati' },
           { title: 'Adó 1%', text: 'Nem kerül semmibe, mégis sokat számít.', media: 'SZÁM – adószám', link: 'Adószám', href: '#ado-1-szazalek' },
           { title: 'Támogatás más módon', text: 'Tárgyi felajánlás és nem egyetemista önkéntesség.', media: 'DOBOZ – felajánlás', link: 'Részletek', href: '#egyeb' }
         ]),
-        split('Bizalom', 'Etikus adománygyűjtő tanúsítvánnyal rendelkezünk, és minden évben nyilvános beszámolóban számolunk el.', ['Bankszámla: 10700024-04616002-51100005', 'Adószám: 18516378-1-42', 'A rendszeres támogatás bármikor módosítható vagy leállítható'])
+        split('Bizalom', 'Etikus adománygyűjtő tanúsítvánnyal rendelkezünk, és minden évben nyilvános beszámolóban számolunk el.', ['Bankszámla: 11600006-00000001-96501947', 'Adószám: 18758227-1-19', 'A rendszeres támogatás bármikor módosítható vagy leállítható'])
       ] },
 
       'orokbefogadas': { title: 'Kórházi örökbefogadás', url: '/tamogatom/orokbefogadas', sections: [
         hero({ crumb: 'Főoldal / Adományozok / Kórházi örökbefogadás', eyebrow: 'Örökbefogadás', title: 'Fogadj örökbe egy kórházi osztályt', text: 'Egy osztály éves működése: Amigók útiköltsége, eszközök, képzés. Névre szóló beszámolóval.', media: 'DIAGRAM – osztály', ctas: [ctaP('Érdeklődöm', '#kapcsolat')] }),
         list('Elérhető osztályok', [
-          { title: 'gyerekonkológia — Budapest', text: 'Heti 2 látogatás, 12 Amigo', meta: '2 400 000 Ft / év' },
-          { title: 'gyereksebészet — Debrecen', text: 'Heti 1 látogatás, 8 Amigo', meta: '1 600 000 Ft / év' },
-          { title: 'gyerekpszichiátria — Szeged', text: 'Heti 1 látogatás, 6 Amigo', meta: '1 200 000 Ft / év' }
+          { title: 'Gyerekonkológia — Budapest', text: 'Heti 2 látogatás, 12 Amigo', meta: '2 400 000 Ft / év' },
+          { title: 'Gyereksebészet — Debrecen', text: 'Heti 1 látogatás, 8 Amigo', meta: '1 600 000 Ft / év' },
+          { title: 'Gyerekpszichiátria — Szeged', text: 'Heti 1 látogatás, 6 Amigo', meta: '1 200 000 Ft / év' }
         ]),
         split('Mit tartalmaz', 'Az örökbefogadás egy teljes évre szól, és minden félévben írásos beszámolót kapsz.', ['Amigók útiköltsége és képzése', 'Eszközök és alapanyagok az osztályra', 'Féléves beszámoló és éves látogatás', 'Megjelenés a partnerek között (opcionális)'])
       ] },
@@ -523,7 +530,7 @@ class Component extends DCLogic {
         hero({ crumb: 'Főoldal / Adományozok / Vállalati támogatás', eyebrow: 'Cégeknek', title: 'Vállalati partnerség', text: 'Pénzbeli támogatás, eszköz, céges önkéntesnap vagy osztály-örökbefogadás — számlával, beszámolóval.', media: 'LOGÓRÁCS', ctas: [ctaP('Ajánlatot kérek', '#kapcsolat')] }),
         cards('Együttműködési formák', [
           { title: 'Pénzbeli támogatás', text: 'Egyszeri vagy éves keret, számlával.', media: 'DIAGRAM' },
-          { title: 'Eszköztámogatás', text: 'TanulTablet, alapanyag, IT eszköz.', media: 'FOTÓ – eszköz' },
+          { title: 'Eszköztámogatás', text: 'Kalandobozz, alapanyag, IT eszköz.', media: 'FOTÓ – eszköz' },
           { title: 'Céges önkéntesnap', text: 'Csapatépítés, ami tényleg segít.', media: 'FOTÓ – csapat' },
           { title: 'Osztály-örökbefogadás', text: 'Egy osztály teljes éves háttere.', media: 'DIAGRAM – osztály', link: 'Részletek', href: '#orokbefogadas' }
         ]),
@@ -539,7 +546,7 @@ class Component extends DCLogic {
         list('Amire éppen szükség van', [
           { title: 'Társasjátékok', text: 'Új vagy alig használt, fertőtleníthető', meta: 'Folyamatos' },
           { title: 'Rajzeszközök', text: 'Filc, gyurma, papír', meta: 'Folyamatos' },
-          { title: 'Tabletek', text: 'TanulTablet programhoz, min. 2020-as modell', meta: '4 db' },
+          { title: 'Tabletek', text: 'Online foglalkozásokhoz, min. 2020-as modell', meta: '4 db' },
           { title: 'Nyomdai szolgáltatás', text: 'Éves beszámoló és szülői tájékoztató', meta: 'Évente' }
         ]),
         form({ title: 'Felajánlás bejelentése', text: 'Írd le, mit ajánlanál fel, és felvesszük veled a kapcsolatot.', fields: [
@@ -549,9 +556,9 @@ class Component extends DCLogic {
       ] },
 
       'ado-1-szazalek': { title: 'Adó 1%', url: '/tamogatom/ado-1-szazalek', sections: [
-        hero({ crumb: 'Főoldal / Adományozok / Adó 1%', eyebrow: 'Adó 1%', title: 'Neked nem kerül semmibe.', text: 'Az adód egy százaléka egy teljes félévnyi látogatást fedezhet egy osztályon.', media: '18516378-1-42', ctas: [ctaG('Rendelkezem', '#')] }),
+        hero({ crumb: 'Főoldal / Adományozok / Adó 1%', eyebrow: 'Adó 1%', title: 'Neked nem kerül semmibe.', text: 'Az adód egy százaléka egy teljes félévnyi látogatást fedezhet egy osztályon.', media: '18758227-1-19', ctas: [ctaG('Rendelkezem', '#')] }),
         steps('Három lépés', [
-          { n: '01', title: 'Add meg az adószámot', text: '18516378-1-42 — Amigos a gyerekekért Alapítvány' },
+          { n: '01', title: 'Add meg az adószámot', text: '18758227-1-19 — Amigos a gyerekekért Alapítvány' },
           { n: '02', title: 'Töltsd ki a nyilatkozatot', text: 'Online az eSZJA felületen, vagy papíron.' },
           { n: '03', title: 'Határidő', text: 'Minden év május 20.' }
         ]),
@@ -663,21 +670,98 @@ class Component extends DCLogic {
       ] },
 
       'dokumentumok': { title: 'Dokumentumok', url: '/dokumentumok', sections: [
-        hero({ crumb: 'Főoldal / Dokumentumok', eyebrow: 'Letöltés', title: 'Dokumentumok', text: 'Beszámolók, alapító okirat, tanúsítványok — évenként rendezve.', media: 'IKON – PDF', mediaRadius: '12px', ctas: [] }),
-        list('2025', [
-          { title: 'Éves beszámoló 2025', text: 'Pénzügyi beszámoló és közhasznúsági melléklet', meta: 'PDF · 1,4 MB' },
-          { title: 'Közhasznúsági jelentés 2025', text: 'Tevékenységi beszámoló', meta: 'PDF · 820 KB' }
-        ]),
+        hero({ crumb: 'Főoldal / Dokumentumok', eyebrow: 'Letöltés', title: 'Dokumentumok', text: 'Alapító okirat, irányelvek, és minden év beszámolói, jelentései és jegyzőkönyvei, évenként rendezve.', media: 'IKON – PDF', mediaRadius: '12px', ctas: [] }),
         list('Állandó dokumentumok', [
-          { title: 'Alapító okirat', text: 'Hatályos, egységes szerkezetben', meta: 'PDF · 340 KB' },
-          { title: 'Etikus adománygyűjtő tanúsítvány', text: 'Érvényes 2027-ig', meta: 'PDF · 210 KB' },
-          { title: 'Szülői tájékoztató', text: 'Kórházi foglalkozásokról', meta: 'PDF · 180 KB' },
-          { title: 'Logócsomag sajtónak', text: 'PNG és SVG', meta: 'ZIP · 4,2 MB' }
+          { title: 'Alapító okirat', text: 'Hatályos, egységes szerkezetben', meta: 'PDF', href: 'assets/media/2025/06/00-Alilpito-Okirat-es-Vegzes-egyben-2025.05.22.pdf' },
+          { title: 'Gyermekvédelmi irányelv', text: 'Hogyan védjük a gyerekeket a foglalkozásokon', meta: 'PDF', href: 'assets/media/2023/01/Aktualis-gyermekvedelmi-2022-nyar.docx.pdf' },
+          { title: 'Adatvédelmi tájékoztató', text: 'Milyen adatot kezelünk és miért', meta: 'PDF', href: 'assets/media/2022/08/Adatvedelmi-Nyilatkozat_202208.pdf' },
+          { title: 'ÁSZF', text: 'Az Adománybolt vásárlási feltételei', meta: 'PDF', href: 'assets/media/2022/07/AMIGOS-ASZF-20220630.pdf' }
+        ]),
+        list('2026', [
+          { title: 'Kuratóriumi gyűlés - meghívó', meta: 'PDF', href: 'assets/media/2026/05/2026-MEGHIVO-kuratoriumi-ulesre-_2026-majus-1.docx-1.pdf' },
+          { title: '2026. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2026/06/20260527_Kuratoriumi-jegyzokonyv-es-szavazolap.pdf' },
+          { title: '2026. évi Felügyelőbizottsági jegyzőkönyv', meta: 'PDF', href: 'assets/media/2026/06/20260527_FB-jegyzokonyv-es-szavazolapok.pdf' }
+        ]),
+        list('2025', [
+          { title: '2025. évi beszámoló és kiegészítő melléklet', meta: 'PDF', href: 'assets/media/2026/05/2025_Beszamolo-es-Kiegeszito-melleklet.pdf' },
+          { title: 'Közlemény a 2025-ben felhasznált SzJA 1% támogatások felhasználásáról', meta: 'PDF', href: 'assets/media/2026/05/24KOZ_Amigos.pdf' },
+          { title: '2025. évi kreatív közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2026/05/Kozhasznusagi-beszamolo-2025-KATTINTHATO_compressed.pdf' },
+          { title: 'Statisztikai jelentés a szervezet tevékenységéről 2025', meta: 'PDF', href: 'assets/media/2026/06/1156_KSH_2025_Amigos-1.pdf' },
+          { title: '2025. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2025/05/20250526_Kuratoriumi-jegyzokonyv-es-Nyilatkozatok.pdf' },
+          { title: '2025. évi Felügyelőbizottsági jegyzőkönyv', meta: 'PDF', href: 'assets/media/2025/05/20250526_FB-jegyzokonyv-es-Nyilatkozatok-1.pdf' },
+          { title: 'Kuratóriumi gyűlés - meghívó', meta: 'PDF', href: 'assets/media/2025/05/MEGHIVO-kuratoriumi-ulesre-2025-majus.pdf' },
+          { title: 'Panaszkezelési beszámoló - 2025', meta: 'PDF', href: 'assets/media/2026/06/Panaszkezelesi-beszamolo-2025.-ev.docx.pdf' }
+        ]),
+        list('2024', [
+          { title: '2024. évi beszámoló és kiegészítő melléklet', meta: 'PDF', href: 'assets/media/2025/06/Amigos-beszamolo_kiegmelleklet-2024.pdf' },
+          { title: 'Közlemény a 2024-ben felhasznált SzJA 1% támogatások felhasználásáról', meta: 'PDF', href: 'assets/media/2025/05/23KOZ_Amigos.pdf' },
+          { title: '2024. évi kreatív közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2025/06/Kozhasznusagi-beszamolo-2024-KATTINTHATO_compressed-1.pdf' },
+          { title: 'Panaszkezelési beszámoló - 2024', meta: 'PDF', href: 'assets/media/2025/06/Panaszkezelesi-beszamolo-2024.-ev.docx.pdf' },
+          { title: 'Statisztikai jelentés a szervezet tevékenységéről 2024', meta: 'PDF', href: 'assets/media/2025/06/1156_KSH_2024.pdf' },
+          { title: '2024. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2024/06/2024.05.27.-kuratoriumi-jegyzokonyv.FIN_.pdf' },
+          { title: '2024. évi Felügyelőbizottsági jegyzőkönyv', meta: 'PDF', href: 'assets/media/2024/06/2024.05.27.-Jegyzokonyv-FEB.FIN_.pdf' },
+          { title: 'Kuratóriumi gyűlés - meghívó', meta: 'PDF', href: 'assets/media/2024/04/kuratoriumi-gyules-2024.pdf' },
+          { title: 'Kuratóriumi gyűlés - meghívó', meta: 'PDF', href: 'assets/media/2024/02/Meghivo-kuratoriumi-ulesre_2021.08.05.pdf' },
+          { title: 'Kuratóriumi gyűlés - meghívó', meta: 'PDF', href: 'assets/media/2024/02/MEGHIVO-kuratoriumi-ulesre-2020.pdf' }
+        ]),
+        list('2023', [
+          { title: '2023. évi beszámoló és kiegészítő melléklet', meta: 'PDF', href: 'assets/media/2024/06/beszamolo_2023_AMIGOS.pdf' },
+          { title: 'Közlemény a 2023-ban felhasznált SzJA 1% támogatások felhasználásáról', meta: 'PDF', href: 'assets/media/2024/06/22KOZ_18758227119_Amigos_a_gyerekekert_Alapitvany_846996236145200_395901983354.pdf' },
+          { title: '2023. évi kreatív közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2024/05/Amigos-kozhasznusagi-beszamolo-2023.pdf' },
+          { title: 'Panaszkezelési beszámoló - 2023', meta: 'PDF', href: 'assets/media/2024/06/Panaszkezelesi-beszamolo-2023.pdf' },
+          { title: 'Statisztikai jelentés a szervezet tevékenységéről 2023', meta: 'PDF', href: 'assets/media/2024/06/KSH_1156_2023_Amigos.pdf' },
+          { title: '2023. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2023/06/2023.05.21.-Kuratoriumi-jegyzokonyv.pdf' },
+          { title: '2023. évi Felügyelőbizottsági jegyzőkönyv', meta: 'PDF', href: 'assets/media/2023/06/2023.05.21.-Felugyelobizottsagi-jegyzokonyv.pdf' },
+          { title: 'Kuratóriumi gyűlés - meghívó', meta: 'PDF', href: 'assets/media/2023/05/Meghivo-kuratoriumi-ulesre-2023.-majus.pdf' }
+        ]),
+        list('2022', [
+          { title: '2022. évi beszámoló és kiegészítő melléklet', meta: 'PDF', href: 'assets/media/2023/06/2022.-evi-beszamolo-es-kiegeszito-melleklet_2023.05.21.pdf' },
+          { title: 'Közlemény a 2022-ben felhasznált SzJA 1% támogatások felhasználásáról', meta: 'PDF', href: 'assets/media/2023/06/21KOZ_18758227119_Amigos_a_Gyerekekert_Alapitvany_1740811736509700.pdf' },
+          { title: '2022. évi kreatív közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2023/06/2022.evi-kreativ-kozhasznusagi-beszamolo-Amigos-Alapitvany-2.pdf' },
+          { title: 'Alapító okirat - 2022', meta: 'PDF', href: 'assets/media/2023/03/Amigos-Alapitvany_Alapito-okirat-modositas_22.11.09-1.pdf' },
+          { title: 'Statisztikai jelentés a szervezet tevékenységéről 2022', meta: 'PDF', href: 'assets/media/2023/06/1156_KSH_Amigos-1.pdf' },
+          { title: '2022. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2022/07/Document-2022-07-13-111659-1.pdf' },
+          { title: 'Kuratóriumi gyűlés - meghívó', meta: 'PDF', href: 'assets/media/2022/07/Meghivo-kuratoriumi-uleesre-2022.06.22.pdf' }
+        ]),
+        list('2021', [
+          { title: '2021. évi beszámoló és kiegészítő melléklet', meta: 'PDF', href: 'assets/media/2023/06/2021.evi-kozhasznusagi-beszamolo.pdf' },
+          { title: '2021. évi kreatív közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2022/10/Kreativ-kozhasznusagi-beszamolo_2021_final_compressed.pdf' },
+          { title: 'KSH jelentés', meta: 'PDF', href: 'assets/media/2022/10/KSH_Amigos_KSH_1156_2021_17462018-2.pdf' },
+          { title: '2021. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2024/02/2021.-evi-kuratoriumi-jegyzokonyv.pdf' }
+        ]),
+        list('2020', [
+          { title: 'Közlemény a 2020 évben kiutalt SzJA 1% támogatások felhasználásáról', meta: 'PDF', href: 'assets/media/2022/10/20KOZ_18758227119_Amigos_a_Gyerekekert_Alapitvany_1322713704404800_332917833759-1.pdf' },
+          { title: '2020. évi beszámoló', meta: 'PDF', href: 'assets/media/2024/02/2020.-evi-beszamolo.pdf' },
+          { title: 'Végzés közhasznúsági besorolásról', meta: 'PDF', href: 'assets/media/2024/02/Vegzes-kozhasznusagi-besorolasrol2020.pdf' },
+          { title: '2020. évi közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2024/02/2020.-evi-kozhasznusagi-jelentes.pdf' },
+          { title: '2020. évi kreatív közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2024/02/2020-kreativ-kozhasznusagi-jelentes.pdf' },
+          { title: '1% felhasználás', meta: 'PDF', href: 'assets/media/2022/07/20KOZ_18758227119_Amigos_a_Gyerekekert_Alapitvany_1322713704404800_332917833759.pdf' },
+          { title: '2020. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2024/02/kuratoriumi-jegyzokonyv-2020.pdf' }
+        ]),
+        list('2019', [
+          { title: '2019. évi beszámoló', meta: 'PDF', href: 'assets/media/2024/02/2019-beszamolo.pdf' },
+          { title: '2019. évi közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2024/02/Amigos-Kozhasznusagi-Jelentes-2019.pdf' },
+          { title: '2019. évi kreatív közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2024/02/2019-kreativ-kozhasznusagi-jelentes.pdf' },
+          { title: '2019. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2024/02/kuratoriumi-jegyzokonyv-2019.pdf' },
+          { title: 'Alapító okirat - 2019', meta: 'PDF', href: 'assets/media/2024/02/alapito-okirat-2019.pdf' }
+        ]),
+        list('2018', [
+          { title: '2018. évi beszámoló', meta: 'PDF', href: 'assets/media/2024/02/Amigos-a-gyerekekert-2018-Annual-Report-1.pdf' },
+          { title: '2018. évi közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2024/02/2018-kozhasznusagi-jelentes.pdf' },
+          { title: '2018. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2024/02/2018-kuratoriumi.pdf' }
+        ]),
+        list('2017', [
+          { title: '2017. évi beszámoló', meta: 'PDF', href: 'assets/media/2024/02/2017-beszamolo.pdf' },
+          { title: '2017. évi közhasznúsági jelentés', meta: 'PDF', href: 'assets/media/2024/02/2017-kozhasznu-jelentes.pdf' },
+          { title: '2017. évi kuratóriumi jegyzőkönyv', meta: 'PDF', href: 'assets/media/2024/02/kuratoriumi-jegyzokonyv-2017.pdf' }
+        ]),
+        list('2016', [
+          { title: '2016. évi beszámoló', meta: 'PDF', href: 'assets/media/2024/02/2016.evi-beszamolo.pdf' }
         ])
       ] },
 
       'adatkezeles': { title: 'Adatkezelési tájékoztató', url: '/adatkezeles', sections: [
-        hero({ crumb: 'Főoldal / Adatkezelési tájékoztató', eyebrow: 'Jogi', title: 'Adatkezelési tájékoztató', text: 'Milyen adatot kezelünk, meddig, és kinek adjuk át. gyerekekről személyes adatot nem tárolunk.', media: 'IKON – dokumentum', mediaRadius: '12px', ctas: [] }),
+        hero({ crumb: 'Főoldal / Adatkezelési tájékoztató', eyebrow: 'Jogi', title: 'Adatkezelési tájékoztató', text: 'Milyen adatot kezelünk, meddig, és kinek adjuk át. Gyerekekről személyes adatot nem tárolunk.', media: 'IKON – dokumentum', mediaRadius: '12px', ctas: [] }),
         legal({ toc: [{ label: '1. Az adatkezelő' }, { label: '2. Kezelt adatok köre' }, { label: '3. Az adatkezelés célja' }, { label: '4. Megőrzési idő' }, { label: '5. Adatfeldolgozók' }, { label: '6. Jogaid' }, { label: '7. Jogorvoslat' }],
           blocks: [
             { title: '1. Az adatkezelő', h: '72px' }, { title: '2. Kezelt adatok köre', h: '120px' },
@@ -714,7 +798,7 @@ class Component extends DCLogic {
     const groups = [
       g('Legyél Amigo!', ['legyel-amigo', 'jelentkezes', 'legyel-koszonjuk']),
       g('Munkánk és hatásunk', ['munkank', 'programok', 'hatas', 'atlathatosag', 'partnerek', 'tortenetek']),
-      g('gyerekek és szülők', ['csaladoknak', 'szuloknek', 'kalandozz', 'csaladoknak-gyik']),
+      g('Gyerekek és szülők', ['csaladoknak', 'szuloknek', 'kalandozz', 'csaladoknak-gyik']),
       g('Adományozás', ['tamogatom', 'orokbefogadas', 'vallalati', 'egyeb', 'ado-1-szazalek', 'tamogatom-checkout', 'tamogatom-koszonjuk']),
       g('Adománybolt', ['bolt', 'bolt-termekek', 'bolt-termek', 'kosar', 'penztar', 'bolt-koszonjuk']),
       g('Ügyintézés', ['kapcsolat', 'gyik', 'dokumentumok', 'adatkezeles', 'aszf'])

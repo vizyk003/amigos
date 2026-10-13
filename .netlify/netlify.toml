@@ -1,14 +1,13 @@
+functionsDirectory = "/Users/vizyzsu/Documents/GitHub/amigos/netlify/functions"
+functionsDirectoryOrigin = "default"
 headersOrigin = "config"
 redirectsOrigin = "config"
 plugins = []
 
-[functions]
-
-[functions."*"]
-
 [build]
 publish = "/Users/vizyzsu/Documents/GitHub/amigos"
 publishOrigin = "default"
+functions = "/Users/vizyzsu/Documents/GitHub/amigos/netlify/functions"
 
 [build.environment]
 
@@ -23,6 +22,10 @@ publishOrigin = "default"
 [build.processing.js]
 
 [build.services]
+
+[functions]
+
+[functions."*"]
 
 [[headers]]
 for = "/Amigos Aloldalak.dc.html"
@@ -109,8 +112,20 @@ force = false
 [redirects.headers]
 
 [[redirects]]
-from = "/gyermekek-es-szulok"
+from = "/gyerekek-es-szulok"
 to = "/Gyerekek%20es%20szulok.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/adomanyozas"
+to = "/Adomanybolt.dc.html"
 status = 200.0
 force = false
 
@@ -183,6 +198,42 @@ force = false
 [[redirects]]
 from = "/blog"
 to = "/Blog.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/blog/:slug"
+to = "/Bejegyzes.dc.html?p=:slug"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/kapcsolat"
+to = "/Kapcsolat.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/tamogatoink"
+to = "/Tamogatoink.dc.html"
 status = 200.0
 force = false
 
