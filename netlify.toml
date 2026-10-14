@@ -96,6 +96,11 @@
   to = "/Tamogatoink.dc.html"
   status = 200
 
+[[redirects]]
+  from = "/dokumentumok"
+  to = "/Dokumentumok.dc.html"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # Superseded explorations and the internal wireframe deck.
 #
