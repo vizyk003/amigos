@@ -1,0 +1,113 @@
+{
+  "slug": "iskolas",
+  "title": "Iskolás KALANDobOZZ",
+  "eyebrow": "KALANDobOZZ · Iskolásoknak",
+  "lead": "Az iskolás KALANDobOZZ összeállításánál a nyelvtanulást helyeztük a középpontba. A cél az volt, hogy az országok felfedezését, új ismeretek megtanulását egy minél játékosabb köntösbe bújtassuk. Miközben megalkottuk a dobozt, támaszkodtunk a tavalyi tapasztalatokra, az Amigók, szülők és gyerekek visszajelzéseire!",
+  "summary": "Malomjáték, kincses térkép és kártyajáték: az iskolás dobozban az országok felfedezése és a nyelvtanulás a középpont.",
+  "video": "oT4IIyONzyY",
+  "hero": "assets/media/2023/08/kalandobozz-video-vagokepek-8.jpg",
+  "items": [
+    {
+      "title": "Malomjáték",
+      "img": "assets/media/2023/08/kalandobozz-video-vagokepek-8.jpg",
+      "text": [
+        "A varázsbőrönd már önmagában is lehetőséget teremt a játékra! Elég csak megfordítani és máris egy malomjátékkal találkozhatunk.",
+        "A játékhoz a bábukat a számolókorongokos dobókockában találjuk, mint kék és piros körök. Célunk az volt ezzel a társassal, hogy ne csak egy újrajátszható játékot találjunk, hanem egy igazi klasszikust mutathassunk be a gyerekeknek. A malomjáték közben stratégiát kell kialakítani, egymással kell versenyezni és még a logikai képességeket is használni kell."
+      ],
+      "link": null
+    },
+    {
+      "title": "Építőkockák",
+      "img": "assets/media/2022/11/52441164647_81730b3ce5_o-scaled.jpg",
+      "text": [
+        "Az építőkockákkal való játék nem csak azért olyan népszerű, mert csak fantázia szab határt annak, hogy milyen saját alkotás születik egy adott mennyiségű kockából, hanem azért is mert az alkotás öröme közben számos fejlesztő hatással is bír.",
+        "Nagyobb gyerekek esetében a valóság leképezésére is szolgál. A vizuális fejlődés mellett a szociális és a társas érintkezés szabályai, normái is jól gyakoroltathatók ezekkel az eszközökkel.",
+        "A KALANDobOZZ során ezek az építőkockák lesznek segítségül az iskolás gyerekeknek, hogy a világűrben különböző küldetéseket teljesítsenek, mint pl. távcsövet építsenek egy új bolygó felfedezéséhez. De ezekből a színes kockákból kell majd megépíteni a társasjátékhoz szükséges bábukat is."
+      ],
+      "link": {
+        "label": "Megnézem a Kalandot!",
+        "url": "https://www.youtube.com/watch?v=xdrlbH0iLNs",
+        "lead": "Vágj bele a különleges űrutazásos kalandba az Amigókkal és a KALANDobOZZal!"
+      }
+    },
+    {
+      "title": "Világutazó kincses térkép",
+      "img": "assets/media/2023/08/Kincses-terkep-scaled.jpg",
+      "text": [
+        "Ez a különleges térkép egyik oldalán a Föld állatait, nevezetességeit és különleges pontjait rejti magában, míg másik oldalán izgalmasabbnál izgalmasabb feladatokban (például keresztrejtvény vagy szókereső) segítségével ismerhetnek meg új nyelveket és kultúrákat a gyerekek. A feladatok megoldásához szükség van kreativitásra, ügyességre és problémamegoldásra is!"
+      ],
+      "link": null
+    },
+    {
+      "title": "Világutazó Kártyajáték",
+      "img": "assets/media/2022/11/313991486_1270019700608814_484661525979890529_n.jpg",
+      "text": [
+        "Ki ne szeretne kártyázni? A kártyázás olyan társasjáték, amely izgalmas, szórakoztató és óriási előnye, hogy kis helyen is elfér, bárhová magunkkal vihetjük és viszonylag rövid játékidővel bír.",
+        "Ezzel az Amigos által fejlesztett Világutazó Kártyajátékkal a gyerekek megismerkedhetnek  16 ország zászlajával, legjellemzőbb szimbólumaival és nem utolsó sorban mind a 16 nyelven megtanulhatnak  köszönni!",
+        "A nyelvtanulás a szabadidő hasznos eltöltése, amihez ezzel a kártyajátékkal is szeretnénk meghozni az iskolások kedvét, felkelteni érdeklődésüket különböző kultúrák iránt.",
+        "A játékot kétféleképpen is lehet játszani: klasszikus “Fekete Péter”-ként, de memória játékként is.",
+        "A kártyázás a memórián, a logikán és a kudarctűrésen túl a színek, formák megismerését, illetve a számolás, matematikai készségeket is fejleszti. A játék örömén túl remek lehetőséget teremt új szavak tanulására, szókincs bővítésére is. Ez a játék elősegíti, hogy a gyerekek könnyedén, szórakozva tanuljanak új szavakat."
+      ],
+      "link": {
+        "label": "Megnézem a szabályokat!",
+        "url": "https://www.youtube.com/watch?v=3AEcikZciSY",
+        "lead": "Megmutatjuk neked, hogyan kell játszani a kártyákkal!"
+      }
+    },
+    {
+      "title": "Csodafüzet",
+      "img": "assets/media/2022/11/image_6483441-12-scaled.jpg",
+      "text": [
+        "A Kalandobozzban lévő játékokból a gyerekek rendkívül sok művészi és kreatív ötletet merítenek. A játék egyes elemeinek felhasználása, vagy a játék világának elképzelése annak grafikáján keresztül segítheti egy-egy saját koncepció megragadását. Ez a füzet szolgálhat a gyermek saját alkotásainak, történeteinek és játékainak alapjául. Szeretnénk teret biztosítani arra, hogy saját világot képzeljen el magának minél részletesebben, melyet ebbe a füzetbe feljegyezhet, megtervezhet, lerajzolhat."
+      ],
+      "link": null
+    },
+    {
+      "title": "Varázs színes eszközök",
+      "img": "assets/media/2022/11/image_6483441-15-scaled.jpg",
+      "text": [
+        "A kreatív alkotóerő kiaknázásához szükség van eszközökre. Az iskolás dobozban COOL by Victoria színes ceruzák segítik a minél kreatívabb alkotások megszületését.",
+        "Hisszük, hogy az alkotás öröme mindenkinek jár!"
+      ],
+      "link": null
+    },
+    {
+      "title": "Gyurma",
+      "img": "assets/media/2023/08/gyurma-scaled.jpg",
+      "text": [
+        "Alkotni nemcsak füzetben és lapokon lehet: a KALANDobOZZokba azért kerültek gyurmák, hogy felszabadítsuk a kreativitás egy új módját és a gyerekek formát adhassanak minden elképzelésüknek!"
+      ],
+      "link": null
+    },
+    {
+      "title": "Dominó",
+      "img": "assets/media/2023/08/domino-scaled.jpg",
+      "text": [
+        "A számok, kockák és játékok világa nagyon izgalmas! Ebben a világba vezet minket be a dominó is, amivel amellett, hogy játszahtunk a tradícionlis módon, építhetünk tornyot, gyakorolhatjuk az összeadást, de akár még új játékszabályokat is kitalálhatunk!"
+      ],
+      "link": null
+    },
+    {
+      "title": "Matricák",
+      "img": "assets/media/2023/08/matricak-scaled.jpg",
+      "text": [
+        "Kedves üzeneteket hagyhatunk velük, feljegyezhetjük gondolataink és még ragadnak is! A legújabb Amigos matricák a gyerekeket is arra invitálják, hogy személyre szabják a saját matricáik!"
+      ],
+      "link": null
+    },
+    {
+      "title": "Relaxációs mesék",
+      "img": "assets/media/2023/08/adnijoga-x-amigos-mesek.jpg",
+      "text": [
+        "Nyugodt, ellazító mesék iskolásoknak, hogy a kórházi napokon is legyen egy kis csend és pihenés. Hallgasd meg őket bármikor!"
+      ],
+      "link": {
+        "label": "Irány a relaxáció!",
+        "url": "https://soundcloud.com/amigosalapitvany/sets/iskolas-relaxmesek/s-tfdpxLeZGdn",
+        "lead": "Meghallgatom a meséket!"
+      }
+    }
+  ],
+  "closing": "A KALANDobOZZ egy különleges ajándék a kórházba kerülő kisgyerekeknek. Évről évre több beteg gyerekhez jutnak el az Amigók, de nem lehetünk ott mindenhol. Ugyanakkor szeretnénk minden gyerekosztályra eljuttatni a játékos foglalkozásainkat. Ezért megterveztünk egy igazi Amigos élménydobozt a kórházba kerülő gyerekeknek. Nagy örömünkre a LEGO Csoport úgy döntött, hogy támogatják és lehetővé teszik ennek megvalósulását.",
+  "contentsTitle": "Mi minden rejlik a dobozban?"
+}

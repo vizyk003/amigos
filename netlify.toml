@@ -106,6 +106,12 @@
   to = "/Oldalterkep.dc.html"
   status = 200
 
+# KALANDobOZZ pages: one template, the box picked by ?d=<slug>.
+[[redirects]]
+  from = "/kalandobozz/:slug"
+  to = "/Kalandobozz.dc.html?d=:slug"
+  status = 301
+
 # ---------------------------------------------------------------------------
 # Superseded explorations and the internal wireframe deck.
 #

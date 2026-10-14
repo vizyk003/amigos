@@ -254,3 +254,15 @@ force = false
 [redirects.conditions]
 
 [redirects.headers]
+
+[[redirects]]
+from = "/oldalterkep"
+to = "/Oldalterkep.dc.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>KALANDobOZZ — Amigos a gyerekekért Alapítvány</title>
+  <meta name="description" content="KALANDobOZZ: dobozba zárt Amigos-élmény kórházban gyógyuló gyerekeknek – játékok, füzetek, mesék és kreatív eszközök.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="Amigos a gyerekekért Alapítvány">
+  <meta property="og:title" content="KALANDobOZZ — Amigos a gyerekekért Alapítvány">
+  <meta property="og:description" content="KALANDobOZZ: dobozba zárt Amigos-élmény kórházban gyógyuló gyerekeknek – játékok, füzetek, mesék és kreatív eszközök.">
+  <meta property="og:image" content="assets/community/photos/amigok-pulcsiban.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;background:var(--amigos-paper);}
+    a{color:var(--amigos-green-text);} a:hover{color:var(--amigos-green-deep);}
+    @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
+    @keyframes am-wave-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}
+    @keyframes am-wave-drift{0%{transform:translate(-50%,0);}50%{transform:translate(-50%,1.5px);}100%{transform:translate(-50%,0);}}
+    @media (prefers-reduced-motion: reduce){ [data-wave]{animation:none !important;} [data-wave] path{animation:none !important;stroke-dashoffset:0 !important;} }
+    @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
+    [data-k-item] p{margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--amigos-ink-2);}
+    [data-k-item] img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:var(--radius-md);background:var(--amigos-paper);}
+    [data-k-video]{position:relative;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;background:var(--amigos-ink);}
+    [data-k-video] iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+    [data-k-btn]{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;border:2px solid var(--amigos-green);color:var(--amigos-green-text);font-weight:600;font-size:15px;text-decoration:none;align-self:flex-start;}
+    [data-k-btn]:hover{background:var(--amigos-green);color:var(--amigos-white);}
+  </style>
+  <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/brand.css">
+  <link rel="stylesheet" href="assets/brush.css">
+  <script src="assets/responsive.js" defer></script>
+  <script src="assets/kalandobozz/index.js"></script>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--amigos-ink);">
+
+  <a href="#tartalom" style="position:absolute;left:-9999px;top:0;z-index:100;background:var(--amigos-white);color:var(--amigos-ink);padding:12px 20px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Ugrás a tartalomra</a>
+<header style="position:sticky;top:0;z-index:30;background:var(--amigos-paper);border-bottom:1px solid var(--amigos-line);">
+    <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
+      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+        <a href="Munkank es hatasunk.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Munkánk &amp; Hatásunk</a>
+        <a href="Gyerekek es szulok.dc.html" aria-current="page" style="color:var(--amigos-green-text);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Gyerekek &amp; Szülők<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#00A74A" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Amigóknak</a>
+        <a href="Kapcsolat.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Kapcsolat</a>
+      </nav>
+      <div style="display:flex;justify-content:flex-end;">
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Adomanybolt.dc.html" hint-size="auto,40px">Adományozok</x-import>
+      </div>
+    </div>
+  </header>
+<main id="tartalom">
+
+  <!-- KALANDobOZZ page template: Kalandobozz.dc.html?d=<slug>. The content of
+       each box is assets/kalandobozz/<slug>.json; the list of boxes is
+       assets/kalandobozz/index.js. A new box needs only those two edits. -->
+  <section data-screen-label="Hero" style="background:var(--amigos-paper);border-bottom:1px solid var(--amigos-line);padding:clamp(48px,7vw,96px) 0 clamp(48px,6vw,80px);">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:6fr 6fr;gap:clamp(32px,5vw,72px);align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <span style="font-size:13px;color:var(--amigos-ink-3);"><a href="Amigos Fooldal v2.dc.html" style="color:inherit;text-decoration:none;">Főoldal</a> / <a href="Gyerekek es szulok.dc.html#ajandekok" style="color:inherit;text-decoration:none;">Gyerekek és szülők</a> / <span data-k-crumb="">KALANDobOZZ</span></span>
+        <span data-k-eyebrow="" style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">KALANDobOZZ</span>
+        <h1 data-k-title="" style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);text-wrap:balance;">KALANDobOZZ</h1>
+        <p data-k-lead="" style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:50ch;color:var(--amigos-ink-2);"></p>
+        <a href="#tartalma" style="align-self:flex-start;display:inline-flex;align-items:center;height:52px;padding:0 26px;border-radius:999px;background:var(--amigos-green);color:var(--amigos-white);font-weight:600;text-decoration:none;">Mi van a dobozban? ↓</a>
+      </div>
+      <div style="position:relative;">
+        <img data-k-hero="" src="" alt="" style="width:100%;aspect-ratio:5/4;object-fit:cover;display:block;border-radius:var(--radius-lg);background:var(--amigos-white);">
+        <img class="am-ill" data-ill-pop="" src="assets/illustrations/svg/amigos-ill-csillanas-yellow.svg" alt="" aria-hidden="true" style="right:-4%;top:-10%;width:22%;transform:rotate(8deg);">
+      </div>
+    </div>
+  </section>
+
+  <section data-k-video-wrap="" data-screen-label="Videó" style="background:var(--amigos-white);padding:clamp(56px,8vw,96px) 0;">
+    <div style="max-width:960px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:20px;">
+      <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);">Nézd meg, hogyan <span class="am-underline am-underline--hullam-yellow">működik</span></h2>
+      <div data-k-video=""></div>
+    </div>
+  </section>
+
+  <section id="tartalma" data-screen-label="Tartalom" style="background:var(--amigos-paper);border-top:1px solid var(--amigos-line);padding:clamp(56px,8vw,112px) 0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(28px,4vw,48px);">
+      <h2 data-k-contents-title="" style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);">Mi minden rejlik a dobozban?</h2>
+      <div data-k-items="" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(20px,3vw,32px);align-items:start;"></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Támogatás" style="position:relative;overflow:hidden;background:var(--amigos-green);color:var(--amigos-white);padding:clamp(72px,10vw,128px) 0;">
+    <div data-split="" style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,72px);align-items:end;">
+      <div style="align-self:start;display:flex;flex-direction:column;gap:20px;">
+        <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;">Egy doboz, egy kaland</span>
+        <p data-k-closing="" style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:56ch;"></p>
+        <a href="Adomanybolt.dc.html#tamogatom" style="align-self:flex-start;display:inline-flex;align-items:center;height:52px;padding:0 26px;border-radius:999px;background:var(--amigos-white);color:var(--amigos-green-deep);font-weight:600;text-decoration:none;">Támogatom, hogy több doboz jusson el →</a>
+      </div>
+      <div data-k-others="" style="display:flex;flex-direction:column;gap:12px;"></div>
+    </div>
+  </section>
+
+  <section data-k-missing="" hidden data-screen-label="Nincs ilyen doboz" style="background:var(--amigos-paper);padding:clamp(72px,10vw,128px) 0;">
+    <div style="max-width:720px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:16px;">
+      <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);">Ezt a dobozt nem találjuk</h2>
+      <p style="margin:0;font-size:var(--text-body-lg);color:var(--amigos-ink-2);">Lehet, hogy elírás van a címben. Itt megtalálod az összes KALANDobOZZ-t:</p>
+      <div data-k-missing-list="" style="display:flex;flex-direction:column;gap:12px;"></div>
+    </div>
+  </section>
+
+  </main>
+<footer style="background:var(--amigos-green-deep);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+      <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-field-muted);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban gyógyuló gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:var(--text-on-field-muted);">Bankszámla: 11600006-00000001-96501947<br>Adószám: 18758227-1-19</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Ügyintézés</span>
+            <a href="Kapcsolat.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Dokumentumok.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
+            <a href="Munkank es hatasunk.dc.html#atlathatosag" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Átláthatóság</a>
+            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Támogatás</span>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Egyszeri adomány</a>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Jogi</span>
+            <a href="assets/media/2022/08/Adatvedelmi-Nyilatkozat_202208.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="assets/media/2022/07/AMIGOS-ASZF-20220630.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="Oldalterkep.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Oldaltérkép</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid rgba(255,255,255,0.22);padding-top:20px;font-size:14px;color:var(--text-on-field-muted);">
+        <span>Facebook</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const bind = () => {
+      if (!document.querySelector('[data-k-items]')) return false;
+      this.load();
+      return true;
+    };
+    if (!bind()) { const iv = setInterval(() => { if (bind()) clearInterval(iv); }, 100); }
+  }
+  // Fill the template from assets/kalandobozz/<slug>.json (?d=<slug>).
+  load() {
+    const $ = s => document.querySelector(s);
+    const esc = s => String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const boxes = window.AMIGOS_BOXES || [];
+    const slug = new URLSearchParams(location.search).get('d') || (boxes[0] && boxes[0].slug);
+    const card = b => `<a href="Kalandobozz.dc.html?d=${encodeURIComponent(b.slug)}" style="display:flex;gap:14px;align-items:center;padding:12px;border-radius:var(--radius-md);background:rgba(255,255,255,.12);color:inherit;text-decoration:none;"><img src="${esc(b.img)}" alt="" style="width:72px;height:72px;object-fit:cover;border-radius:16px;flex:none;"><span style="display:flex;flex-direction:column;gap:2px;"><strong style="font-weight:600;">${esc(b.title)} →</strong><span style="font-size:14px;opacity:.85;">${esc(b.summary)}</span></span></a>`;
+    const missing = () => {
+      document.querySelectorAll('main > section').forEach(s => { s.hidden = !s.hasAttribute('data-k-missing'); });
+      const l = $('[data-k-missing-list]');
+      if (l) l.innerHTML = boxes.map(b => card(b).replace('rgba(255,255,255,.12)', 'var(--amigos-white)')).join('');
+    };
+    if (!boxes.some(b => b.slug === slug)) return missing();
+    fetch(`assets/kalandobozz/${encodeURIComponent(slug)}.json`).then(r => { if (!r.ok) throw r; return r.json(); }).then(d => {
+      document.title = d.title + ' — Amigos a gyerekekért Alapítvány';
+      $('[data-k-title]').textContent = d.title;
+      $('[data-k-crumb]').textContent = d.title;
+      $('[data-k-eyebrow]').textContent = d.eyebrow || 'KALANDobOZZ';
+      $('[data-k-lead]').textContent = d.lead || '';
+      const hero = $('[data-k-hero]'); hero.src = d.hero; hero.alt = d.title;
+      if (d.contentsTitle) $('[data-k-contents-title]').textContent = d.contentsTitle;
+      const v = $('[data-k-video]');
+      if (d.video) v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(d.video)}" title="${esc(d.title)} – videó" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+      else $('[data-k-video-wrap]').hidden = true;
+      $('[data-k-items]').innerHTML = (d.items || []).map(it => `
+        <article data-k-item="" style="display:flex;flex-direction:column;gap:14px;background:var(--amigos-white);border:1px solid var(--amigos-line);border-radius:var(--radius-md);padding:clamp(16px,2vw,20px);">
+          ${it.img ? `<img src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy">` : ''}
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">${esc(it.title)}</h3>
+          ${(it.text || []).map(p => `<p>${esc(p)}</p>`).join('')}
+          ${it.link ? `${it.link.lead ? `<p style="font-weight:600;color:var(--amigos-ink);">${esc(it.link.lead)}</p>` : ''}<a data-k-btn="" href="${esc(it.link.url)}" target="_blank" rel="noopener">${esc(it.link.label)} ↗</a>` : ''}
+        </article>`).join('');
+      $('[data-k-closing]').textContent = d.closing || '';
+      const others = boxes.filter(b => b.slug !== slug);
+      $('[data-k-others]').innerHTML = others.length ? '<span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;">Másik doboz</span>' + others.map(card).join('') : '';
+    }).catch(missing);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
