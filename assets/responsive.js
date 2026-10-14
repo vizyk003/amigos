@@ -208,6 +208,19 @@
     });
   });
 
+  /* Default choices in forms. The renderer turns a `checked` attribute into a
+     React-controlled input that can never be changed, so pages mark the
+     default with data-default-checked instead and it is ticked here, once,
+     after the inputs are mounted. */
+  (function defaultChecked() {
+    function apply() {
+      var els = document.querySelectorAll('input[data-default-checked]:not([data-default-done])');
+      for (var i = 0; i < els.length; i++) { els[i].setAttribute('data-default-done', ''); els[i].checked = true; }
+    }
+    ready(apply);
+    new MutationObserver(apply).observe(document.documentElement, { childList: true, subtree: true });
+  })();
+
   /* In-page links (#hatas, #jelenlet, …) glide to their section and stop
      just below the sticky header, on every page. Done here rather than
      with CSS scroll-margin alone, because some sections (overflow:hidden,
