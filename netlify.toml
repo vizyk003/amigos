@@ -101,6 +101,11 @@
   to = "/Dokumentumok.dc.html"
   status = 200
 
+[[redirects]]
+  from = "/oldalterkep"
+  to = "/Oldalterkep.dc.html"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # Superseded explorations and the internal wireframe deck.
 #
