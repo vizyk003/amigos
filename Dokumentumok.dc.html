@@ -596,7 +596,7 @@
           </ul>
         </div>
       </div>
-      <p data-doc-empty="" hidden style="margin:0;font-size:var(--text-body);color:var(--amigos-ink-2);">Ebben az évben nincs ilyen típusú dokumentum.</p>
+      <p data-doc-empty="" style="display:none;margin:0;font-size:var(--text-body);color:var(--amigos-ink-2);">Ebben az évben nincs ilyen típusú dokumentum.</p>
     </div>
   </section>
 
@@ -670,7 +670,7 @@ class Component extends DCLogic {
         if (vis) n += shown;
       });
       const c = document.querySelector('[data-doc-count]'); if (c) c.textContent = n + ' dokumentum';
-      const e = document.querySelector('[data-doc-empty]'); if (e) e.hidden = n > 0;
+      const e = document.querySelector('[data-doc-empty]'); if (e) e.style.display = n > 0 ? 'none' : 'block';
       chips.forEach(ch => {
         const on = ch.dataset.kindChip === kind;
         ch.setAttribute('aria-pressed', String(on));

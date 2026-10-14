@@ -109,7 +109,7 @@
     </div>
   </section>
 
-  <section data-k-missing="" hidden data-screen-label="Nincs ilyen doboz" style="background:var(--amigos-paper);padding:clamp(72px,10vw,128px) 0;">
+  <section data-k-missing="" data-screen-label="Nincs ilyen doboz" style="display:none;background:var(--amigos-paper);padding:clamp(72px,10vw,128px) 0;">
     <div style="max-width:720px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:16px;">
       <h2 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);">Ezt a dobozt nem találjuk</h2>
       <p style="margin:0;font-size:var(--text-body-lg);color:var(--amigos-ink-2);">Lehet, hogy elírás van a címben. Itt megtalálod az összes KALANDobOZZ-t:</p>
@@ -179,7 +179,7 @@ class Component extends DCLogic {
     const slug = new URLSearchParams(location.search).get('d') || (boxes[0] && boxes[0].slug);
     const card = b => `<a href="Kalandobozz.dc.html?d=${encodeURIComponent(b.slug)}" style="display:flex;gap:14px;align-items:center;padding:12px;border-radius:var(--radius-md);background:rgba(255,255,255,.12);color:inherit;text-decoration:none;"><img src="${esc(b.img)}" alt="" style="width:72px;height:72px;object-fit:cover;border-radius:16px;flex:none;"><span style="display:flex;flex-direction:column;gap:2px;"><strong style="font-weight:600;">${esc(b.title)} →</strong><span style="font-size:14px;opacity:.85;">${esc(b.summary)}</span></span></a>`;
     const missing = () => {
-      document.querySelectorAll('main > section').forEach(s => { s.hidden = !s.hasAttribute('data-k-missing'); });
+      document.querySelectorAll('main > section').forEach(s => { s.style.display = s.hasAttribute('data-k-missing') ? 'block' : 'none'; });
       const l = $('[data-k-missing-list]');
       if (l) l.innerHTML = boxes.map(b => card(b).replace('rgba(255,255,255,.12)', 'var(--amigos-white)')).join('');
     };
@@ -194,7 +194,7 @@ class Component extends DCLogic {
       if (d.contentsTitle) $('[data-k-contents-title]').textContent = d.contentsTitle;
       const v = $('[data-k-video]');
       if (d.video) v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(d.video)}" title="${esc(d.title)} – videó" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
-      else $('[data-k-video-wrap]').hidden = true;
+      else $('[data-k-video-wrap]').style.display = 'none';
       $('[data-k-items]').innerHTML = (d.items || []).map(it => `
         <article data-k-item="" style="display:flex;flex-direction:column;gap:14px;background:var(--amigos-white);border:1px solid var(--amigos-line);border-radius:var(--radius-md);padding:clamp(16px,2vw,20px);">
           ${it.img ? `<img src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy">` : ''}
