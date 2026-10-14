@@ -160,8 +160,12 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
 class Component extends DCLogic {
   componentDidMount() {
+    // The renderer adds the head scripts asynchronously, so wait for the
+    // box list (assets/kalandobozz/index.js) as well as the template.
+    let tries = 0;
     const bind = () => {
       if (!document.querySelector('[data-k-items]')) return false;
+      if (!window.AMIGOS_BOXES && tries++ < 50) return false;
       this.load();
       return true;
     };
@@ -179,7 +183,7 @@ class Component extends DCLogic {
       const l = $('[data-k-missing-list]');
       if (l) l.innerHTML = boxes.map(b => card(b).replace('rgba(255,255,255,.12)', 'var(--amigos-white)')).join('');
     };
-    if (!boxes.some(b => b.slug === slug)) return missing();
+    if (!slug || !/^[a-z0-9-]+$/.test(slug)) return missing();
     fetch(`assets/kalandobozz/${encodeURIComponent(slug)}.json`).then(r => { if (!r.ok) throw r; return r.json(); }).then(d => {
       document.title = d.title + ' — Amigos a gyerekekért Alapítvány';
       $('[data-k-title]').textContent = d.title;

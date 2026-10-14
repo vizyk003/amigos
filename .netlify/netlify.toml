@@ -266,3 +266,15 @@ force = false
 [redirects.conditions]
 
 [redirects.headers]
+
+[[redirects]]
+from = "/kalandobozz/:slug"
+to = "/Kalandobozz.dc.html?d=:slug"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
