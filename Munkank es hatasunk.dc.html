@@ -50,6 +50,7 @@
     }
     @media (max-width: 560px){ [data-team-teaser]{grid-template-columns:repeat(2,minmax(0,1fr)) !important;} [data-team-teaser] > :last-child{grid-column:1 / -1;aspect-ratio:auto !important;} }
     @media (max-width: 860px){ [data-logo-row]{grid-template-columns:repeat(3,minmax(0,1fr)) !important;} }
+    @media (min-width: 841px) and (max-width: 1100px){ [data-stat-track]{grid-template-columns:repeat(2,minmax(0,1fr)) !important;row-gap:8px;} }
   </style>
   <link rel="stylesheet" href="assets/responsive.css">
   <link rel="stylesheet" href="assets/brand.css">
@@ -101,31 +102,31 @@
 
   <!-- Számok — 2×2 on desktop; below 860px a swipeable slider
        (scroll-snap, see [data-stat-track] in the page styles). -->
-  <section data-screen-label="Számok" aria-labelledby="szamok-cim" style="background:var(--amigos-green);color:var(--amigos-white);position:relative;overflow:hidden;padding:clamp(64px,8vw,104px) 0;">
+  <section data-screen-label="Számok" aria-labelledby="szamok-cim" style="background:var(--amigos-green);color:var(--amigos-white);position:relative;overflow:hidden;padding:clamp(56px,6vw,88px) 0;">
     <div data-value-word="" data-m="pattern2" aria-hidden="true" style="position:absolute;left:-0.04em;bottom:-0.18em;font-family:var(--font-hand);font-weight:700;font-size:clamp(64px,23.6vw,390px);line-height:1;letter-spacing:0.01em;color:var(--type-pattern-on-green);white-space:nowrap;user-select:none;pointer-events:none;will-change:transform;">JÁTSZVA TANULÁS</div>
-    <div data-split="" style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,88px);align-items:center;">
-      <div data-reveal="" data-sticky="" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:20px;">
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(28px,3.5vw,44px);">
+      <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;">
         <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-white);">Hatásunk számokban</span>
-        <h2 id="szamok-cim" style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:14ch;text-wrap:pretty;color:var(--amigos-white);">Ennyi minden történik a zöld pulcsik körül</h2>
+        <h2 id="szamok-cim" style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:var(--ls-h2);max-width:24ch;text-wrap:balance;color:var(--amigos-white);">Ennyi minden történik a zöld pulcsik körül</h2>
       </div>
-      <div data-stat-track="" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,4vw,56px);border-top:1px solid rgba(255,255,255,0.35);">
-        <div data-stat-item="" style="display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.5vw,32px) 0;border-bottom:1px solid rgba(255,255,255,0.35);">
-          <span data-stat="" data-count="20770" style="font-family:var(--font-hand);font-weight:700;font-size:clamp(56px,6.4vw,96px);line-height:0.9;letter-spacing:0.01em;font-variant-numeric:tabular-nums;white-space:nowrap;">0</span>
+      <div data-stat-track="" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:clamp(20px,3vw,40px);border-top:1px solid rgba(255,255,255,0.35);">
+        <div data-stat-item="" style="display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.2vw,28px) 0 0;">
+          <span data-stat="" data-count="20770" style="font-family:var(--font-hand);font-weight:700;font-size:clamp(48px,4.6vw,76px);line-height:0.9;letter-spacing:0.01em;font-variant-numeric:tabular-nums;white-space:nowrap;">0</span>
           <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">elért gyerek 2025-ben</span>
           <span style="font-size:15px;line-height:1.5;color:var(--amigos-white);max-width:34ch;">Ennyi gyerekkel foglalkoztunk, vagy ennyi gyerekhez jutottak el saját fejlesztésű játékaink és ajándékaink.</span>
         </div>
-        <div data-stat-item="" style="display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.5vw,32px) 0;border-bottom:1px solid rgba(255,255,255,0.35);">
-          <span data-stat="" data-count="300" style="font-family:var(--font-hand);font-weight:700;font-size:clamp(56px,6.4vw,96px);line-height:0.9;letter-spacing:0.01em;font-variant-numeric:tabular-nums;white-space:nowrap;">0</span>
+        <div data-stat-item="" style="display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.2vw,28px) 0 0;">
+          <span data-stat="" data-count="300" style="font-family:var(--font-hand);font-weight:700;font-size:clamp(48px,4.6vw,76px);line-height:0.9;letter-spacing:0.01em;font-variant-numeric:tabular-nums;white-space:nowrap;">0</span>
           <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">egyetemista Amigo</span>
           <span style="font-size:15px;line-height:1.5;color:var(--amigos-white);max-width:34ch;">Felkészített önkéntesekből álló közösség hat városban.</span>
         </div>
-        <div data-stat-item="" style="display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.5vw,32px) 0;border-bottom:1px solid rgba(255,255,255,0.35);">
-          <span data-stat="" data-count="250" style="font-family:var(--font-hand);font-weight:700;font-size:clamp(56px,6.4vw,96px);line-height:0.9;letter-spacing:0.01em;font-variant-numeric:tabular-nums;white-space:nowrap;">0</span>
+        <div data-stat-item="" style="display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.2vw,28px) 0 0;">
+          <span data-stat="" data-count="250" style="font-family:var(--font-hand);font-weight:700;font-size:clamp(48px,4.6vw,76px);line-height:0.9;letter-spacing:0.01em;font-variant-numeric:tabular-nums;white-space:nowrap;">0</span>
           <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">kórházi foglalkozás havonta</span>
           <span style="font-size:15px;line-height:1.5;color:var(--amigos-white);max-width:34ch;">Rendszeres találkozások, amelyekben jut idő játékra, tanulásra és figyelmes kapcsolódásra.</span>
         </div>
-        <div data-stat-item="" style="display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.5vw,32px) 0;border-bottom:1px solid rgba(255,255,255,0.35);">
-          <span style="font-family:var(--font-hand);font-weight:700;font-size:clamp(44px,4.6vw,72px);line-height:0.9;letter-spacing:0.01em;white-space:nowrap;min-height:clamp(50px,5.76vw,86px);display:flex;align-items:flex-end;">Országos</span>
+        <div data-stat-item="" style="display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.2vw,28px) 0 0;">
+          <span style="font-family:var(--font-hand);font-weight:700;font-size:clamp(40px,3.6vw,60px);line-height:0.9;letter-spacing:0.01em;white-space:nowrap;min-height:clamp(43px,4.14vw,68px);display:flex;align-items:flex-end;">Országos</span>
           <span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">elérés</span>
           <span style="font-size:15px;line-height:1.5;color:var(--amigos-white);max-width:34ch;">Személyesen jelen vagyunk valamennyi hazai gyermekonkológiai központban, ajándékainkkal pedig további közel 50 egészségügyi intézménybe jutunk el.</span>
         </div>
