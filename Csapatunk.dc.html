@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Csapatunk — Amigos a gyerekekért Alapítvány</title>
+  <meta name="description" content="Az Amigo Felelősök, a Boldogság és a Fenntarthatóság Csapat és a kuratórium: akik az Amigók munkáját szervezik, és a szervezeti kereteket biztosítják.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="Amigos a gyerekekért Alapítvány">
+  <meta property="og:title" content="Csapatunk — Amigos a gyerekekért Alapítvány">
+  <meta property="og:description" content="Az Amigo Felelősök, a Boldogság és a Fenntarthatóság Csapat és a kuratórium: akik az Amigók munkáját szervezik, és a szervezeti kereteket biztosítják.">
+  <meta property="og:image" content="assets/community/photos/amigok-pulcsiban.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/tokens/base.css">
+  <link rel="stylesheet" href="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/styles.css">
+  <script src="_ds/amigos-design-system-9ec6eb45-97e2-483e-8fa8-a0da4993c235/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;background:var(--amigos-paper);}
+    a{color:var(--amigos-green-text);} a:hover{color:var(--amigos-green-deep);}
+    @media (prefers-reduced-motion: reduce){ [data-m]{transition:none !important;} }
+    @keyframes am-wave-draw{from{stroke-dashoffset:1;}to{stroke-dashoffset:0;}}
+    @keyframes am-wave-drift{0%{transform:translate(-50%,0);}50%{transform:translate(-50%,1.5px);}100%{transform:translate(-50%,0);}}
+    @media (prefers-reduced-motion: reduce){ [data-wave]{animation:none !important;} [data-wave] path{animation:none !important;stroke-dashoffset:0 !important;} }
+    @media (max-width: 860px){ [data-split]{grid-template-columns:minmax(0,1fr) !important;} [data-sticky]{position:static !important;} }
+  </style>
+  <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/brand.css">
+  <link rel="stylesheet" href="assets/brush.css">
+  <script src="assets/responsive.js" defer></script>
+</helmet>
+
+<div style="font-family:var(--font-body);color:var(--amigos-ink);">
+
+  <a href="#tartalom" style="position:absolute;left:-9999px;top:0;z-index:100;background:var(--amigos-white);color:var(--amigos-ink);padding:12px 20px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Ugrás a tartalomra</a>
+<header style="position:sticky;top:0;z-index:30;background:var(--amigos-paper);border-bottom:1px solid var(--amigos-line);">
+    <div data-split="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(16px,2vw,32px);max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);">
+      <a href="Amigos Fooldal v2.dc.html" style="display:block;line-height:0;"><img src="assets/amigos-logo.png" alt="Amigos" style="height:56px;width:auto;display:block;" width="484" height="484"></a>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);font-size:var(--text-nav);font-weight:500;flex-wrap:wrap;">
+        <a href="Munkank es hatasunk.dc.html" aria-current="page" style="color:var(--amigos-green-text);text-decoration:none;font-weight:600;position:relative;display:inline-block;">Munkánk &amp; Hatásunk<svg data-wave="" aria-hidden="true" viewBox="0 0 12 8" preserveAspectRatio="none" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:20px;height:7px;overflow:visible;"><path pathLength="1" d="M0 4 C 3 0, 3 8, 6 4 S 9 0, 12 4" fill="none" stroke="#00A74A" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:1;animation:am-wave-draw 200ms cubic-bezier(0.2,0.7,0.2,1) 220ms both;"></path></svg></a>
+        <a href="Gyerekek es szulok.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Gyerekek &amp; Szülők</a>
+        <a href="Legyel Amigo.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Amigóknak</a>
+        <a href="Kapcsolat.dc.html" style="color:var(--amigos-ink);text-decoration:none;transition:color 160ms cubic-bezier(0.2,0.7,0.2,1);" style-hover="color:var(--amigos-green-text);">Kapcsolat</a>
+      </nav>
+      <div style="display:flex;justify-content:flex-end;">
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="accent" size="sm" href="Adomanybolt.dc.html" hint-size="auto,40px">Adományozok</x-import>
+      </div>
+    </div>
+  </header>
+<main id="tartalom">
+
+  <section data-screen-label="Hero" style="position:relative;overflow:hidden;background:var(--amigos-paper);border-bottom:1px solid var(--amigos-line);padding:clamp(56px,8vw,104px) 0 clamp(48px,6vw,80px);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:24px;">
+      <span style="font-size:13px;color:var(--amigos-ink-3);"><a href="Amigos Fooldal v2.dc.html" style="color:inherit;text-decoration:none;">Főoldal</a> / <a href="Munkank es hatasunk.dc.html#csapatunk" style="color:inherit;text-decoration:none;">Munkánk és hatásunk</a> / Csapatunk</span>
+      <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-text);">Csapatunk</span>
+      <h1 style="margin:0;font-family:var(--font-hand);font-weight:700;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);max-width:16ch;text-wrap:balance;">Akik a zöld pulcsik mögött <span class="am-underline am-underline--hullam-yellow">dolgoznak</span></h1>
+      <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:56ch;color:var(--amigos-ink-2);">Az Amigo Felelősök csapatát az Amigos fizetett munkavállalói alkotják, akik az Amigók tevékenységének szervezését és a szervezeti kereteket biztosítják. Legtöbbjük maga is önkéntes Amigóként kezdte.</p>
+    </div>
+  </section>
+
+  <section id="csapatok" data-screen-label="Csapatok" style="background:var(--amigos-paper);padding:clamp(48px,7vw,96px) 0 clamp(88px,12vw,160px);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(48px,7vw,88px);">
+        <div id="vezetes" data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,64px);align-items:start;border-top:1px solid var(--amigos-line);padding-top:clamp(28px,4vw,40px);">
+          <div data-reveal="" data-sticky="" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:12px;">
+            <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;">Amigo Felelősök</h2>
+            <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:36ch;color:var(--amigos-ink-2);">Az alapító és az ügyvezető: ők fogják össze a két csapat munkáját.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:clamp(28px,3vw,40px) clamp(16px,2vw,24px);"><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/forgacs-fabian-sara.jpg" alt="Forgács-Fábián Sára" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="533" height="800"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Forgács-Fábián Sára</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Megálmodó és a kuratórium elnöke</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">Gyerekkorában maga is sok időt töltött kórházban; azért dolgozik, hogy a kórházban gyógyuló gyerekek könnyebben vészeljék át ezt az időszakot.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>La Grande Bellezza, Mézga Géza</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/halasz-erika.jpg" alt="Halász Erika" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="793" height="800"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Halász Erika</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Ügyvezető és Fenntarthatóságért Felelős Vezető</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2026 elején csatlakozott, júliustól vezeti az alapítványt. Közgazdász, szolgáltatástervezést tanult, korábban a versenyszférában dolgozott.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>Némó nyomában</em></span></div></div>
+        </div>
+        <div id="boldogsag" data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,64px);align-items:start;border-top:1px solid var(--amigos-line);padding-top:clamp(28px,4vw,40px);">
+          <div data-reveal="" data-sticky="" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:12px;">
+            <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;">Boldogság Csapat</h2>
+            <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:36ch;color:var(--amigos-ink-2);">Ők adják a kórházi látogatások kereteit: a pszichológusi támogatást, a közösségi és szakmai programokat, az ajándékokat és a logisztikát.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:clamp(28px,3vw,40px) clamp(16px,2vw,24px);"><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/tanacs-dorka.jpg" alt="Tanács Dorka" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="533" height="800"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Tanács Dorka</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Boldogságért Felelős Vezető</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">Ő felel azért, hogy a kórházi látogatásoknak meglegyen minden kerete, a pszichológusi támogatástól a közösségi és szakmai programokig.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>Fel!</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/takacs-nora.jpg" alt="Takács Nóra" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="532" height="800"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Takács Nóra</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Kalandozásért felelős Amigo</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2022-ben pszichológushallgatóként csatlakozott, 2024-ben klinikai és egészségpszichológusként végzett. 2026 márciusa óta az online programokat, az e-learning felületet és az Amigo Napokat viszi.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>A kis herceg, 12 táncoló hercegnő</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/zenkl-zsanna.jpg" alt="Zenkl Zsanna" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="533" height="800"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Zenkl Zsanna</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Gyerekek boldogságáért felelős Amigo</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2024-ben csatlakozott, 2026 februárja óta ő szervezi a kórházi látogatásokat, tartja a kapcsolatot a kórházi dolgozókkal, és segíti az Amigók lelki jóllétét. Klinikai és egészségpszichológiát tanul.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>Wall-E és Oroszlánkirály</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/raposa-renata.jpg" alt="Raposa Renáta" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="800" height="533"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Raposa Renáta</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Projektmenedzser</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2019 óta Amigo, három évig közösségért felelős Amigo volt. Azon dolgozik, hogy minél több gyerekhez eljussunk, azokban a városokban is, ahol még nincs Amigos-csapat.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>A varázslatos iskolabusz, Coco és Verdák</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/gocza-borbala.jpg" alt="Gócza Borbála Sára" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="590" height="800"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Gócza Borbála Sára</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Közösségért felelős Amigo</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2022-ben csatlakozott, 2024 óta ő szervezi a csapatépítőket és a képzéseket. Pszichológiát tanult, gyermekpszichológiával szeretne tovább foglalkozni.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>L’ecsó és Verdák</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/labszky-gergely.jpg" alt="Lábszky Gergely" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="800" height="533"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Lábszky Gergely</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Ajándékozásért és adminisztrációért felelős Amigo</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2022-ben önkéntesként kezdte, főként a Tűzoltó utcai gyermekklinikán. Ő intézi a látogatások logisztikáját és az ajándékokat azoknak a gyerekeknek, akikhez személyesen nem jutunk el.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>L’ecsó</em></span></div></div>
+        </div>
+        <div id="fenntarthatosag" data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,64px);align-items:start;border-top:1px solid var(--amigos-line);padding-top:clamp(28px,4vw,40px);">
+          <div data-reveal="" data-sticky="" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:12px;">
+            <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;">Fenntarthatóság Csapat</h2>
+            <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:36ch;color:var(--amigos-ink-2);">Ők gondoskodnak arról, hogy az Amigos hosszú távon is működni tudjon: forrásteremtés, magán- és vállalati adományok, kommunikáció, pénzügyek.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:clamp(28px,3vw,40px) clamp(16px,2vw,24px);"><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/palfi-kinga.jpg" alt="Pálfi Kinga" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="604" height="800"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Pálfi Kinga</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Szenior Forrásteremtésért Felelős Amigo-felelős</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2026 januárjában csatlakozott; korábban gyógyszeripari és pénzügyi marketingben dolgozott.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>Encanto és A kis herceg</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/aranyi-dorottya.jpg" alt="Arányi Dorottya" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="800" height="533"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Arányi Dorottya</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Magánadomány-szervezésért felelős Amigo</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2023 óta önkéntes, 2025 februárja óta ebben a szerepben dolgozik. Gyógypedagógiát tanul az ELTE-n.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>Locsi-fecsi Márta</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/mullner-berta.jpg" alt="Müllner Berta" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="800" height="533"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Müllner Berta</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Vállalati adományszervezésért felelős Amigo</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2023 óta önkéntes, 2026 májusától munkatárs. Nemzetközi gazdálkodást és jogot tanul.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>Aranyhaj, Gru</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;aspect-ratio:4/5;border-radius:var(--radius-lg);background:var(--amigos-zsalya);font-family:var(--font-hand);font-weight:700;font-size:clamp(44px,5vw,64px);color:var(--amigos-green-deep);">FV</span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Fórián Virág Panna</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Kommunikációért felelős Amigo</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2022-ben anglisztika szakosként csatlakozott, ma interkulturális üzleti kommunikációt tanul. A történeteinkért és az önkéntestoborzásért felel.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>Szörny Rt. és Encanto</em></span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:10px;min-width:0;"><span class="am-tint" style="display:block;border-radius:var(--radius-lg);overflow:hidden;"><img src="assets/media/csapat/hortobagyi-dora.jpg" alt="Hortobágyi Dóra" loading="lazy" style="width:100%;min-height:0;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;display:block;border-radius:var(--radius-lg);" width="532" height="800"></span><span style="margin-top:6px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);line-height:1.1;letter-spacing:-0.02em;">Hortobágyi Dóra</span><span style="font-size:14px;font-weight:600;line-height:1.4;color:var(--amigos-green-text);">Pénzügyi vezető</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">2024-ben csatlakozott.</span><span style="font-size:13px;line-height:1.45;color:var(--amigos-ink-3);">Kedvenc mese: <em>Kung Fu Panda</em></span></div></div>
+        </div>
+        <div id="kuratorium" data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,64px);align-items:start;border-top:1px solid var(--amigos-line);padding-top:clamp(28px,4vw,40px);">
+          <div data-reveal="" style="display:flex;flex-direction:column;gap:12px;">
+            <h2 style="margin:0;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:1.05;letter-spacing:-0.02em;">Kuratórium</h2>
+            <p style="margin:0;font-size:var(--text-body);line-height:var(--lh-body);max-width:36ch;color:var(--amigos-ink-2);">Az alapítvány kuratóriuma. Elnöke Forgács-Fábián Sára.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,3vw,32px);"><div data-reveal="" style="display:flex;flex-direction:column;gap:8px;border-top:2px solid var(--amigos-green);padding-top:16px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Fehér Balázs</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">Alapító tag, üzleti tanácsadó.</span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:8px;border-top:2px solid var(--amigos-green);padding-top:16px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Rácz Kamilla</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">Közel három évig volt Amigo; társadalmi vállalkozások befektetésében szerzett tapasztalatot.</span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:8px;border-top:2px solid var(--amigos-green);padding-top:16px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Veszelszki Márta</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">Közgazdász, az Amigos kezdetei óta támogatja az alapítványt.</span></div><div data-reveal="" style="display:flex;flex-direction:column;gap:8px;border-top:2px solid var(--amigos-green);padding-top:16px;"><span style="font-family:var(--font-display);font-weight:600;font-size:var(--text-h5);letter-spacing:-0.02em;">Fábián József</span><span style="font-size:14px;line-height:1.55;color:var(--amigos-ink-2);">Tíz év tapasztalat a nonprofit szektorban: szervezetépítés, pénzügyek, pályázatok.</span></div></div>
+        </div>
+      <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border-top:1px solid var(--amigos-line);padding-top:clamp(28px,4vw,40px);">
+        <p style="margin:0;font-size:var(--text-body-lg);line-height:var(--lh-body-lg);max-width:44ch;">A csapat legtöbb tagja önkéntesként kezdte. Te is közénk tartoznál?</p>
+        <x-import component-from-global-scope="AmigosDesignSystem_9ec6eb.Button" variant="primary" size="lg" href="Legyel Amigo.dc.html" hint-size="auto,52px">Legyél Amigo</x-import>
+      </div>
+    </div>
+  </section>
+
+  </main>
+<footer style="background:var(--amigos-green-deep);color:var(--amigos-white);padding:clamp(48px,7vw,80px) 0 32px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px;">
+      <div data-split="" style="display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,56px);">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <img src="assets/amigos-logo-inverse.png" alt="Amigos" style="height:65px;width:65px;object-fit:contain;display:block;" width="500" height="500">
+          <span style="font-size:15px;line-height:1.5;color:var(--text-on-field-muted);max-width:34ch;">Amigos a gyerekekért Alapítvány — egyetemista önkéntesek kórházban gyógyuló gyerekekért, 2014 óta.</span>
+          <span style="font-size:14px;color:var(--text-on-field-muted);">Bankszámla: 11600006-00000001-96501947<br>Adószám: 18758227-1-19</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Ügyintézés</span>
+            <a href="Kapcsolat.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Kapcsolat</a>
+            <a href="Dokumentumok.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Dokumentumok</a>
+            <a href="Blog.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Blog</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Támogatás</span>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Egyszeri adomány</a>
+            <a href="Adomanybolt.dc.html#tamogatom" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Rendszeres támogatás</a>
+            <a href="Ado 1 szazalek.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adó 1%</a>
+            <a href="Vallalati tamogatas.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Vállalati támogatás</a>
+            <a href="Adomanybolt.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adománybolt</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <span style="font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600;color:var(--amigos-green-pale);">Jogi</span>
+            <a href="assets/media/2022/08/Adatvedelmi-Nyilatkozat_202208.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Adatkezelési tájékoztató</a>
+            <a href="assets/media/2022/07/AMIGOS-ASZF-20220630.pdf" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">ÁSZF</a>
+            <a href="Oldalterkep.dc.html" style="color:var(--amigos-white);text-decoration:none;font-size:15px;">Oldaltérkép</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid rgba(255,255,255,0.22);padding-top:20px;font-size:14px;color:var(--text-on-field-muted);">
+        <a href="https://www.facebook.com/amigosagyerekekert/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Facebook</a><a href="https://www.instagram.com/amigosagyerekekert/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Instagram</a><a href="https://www.tiktok.com/@amigosagyerekekert" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">TikTok</a><a href="https://www.linkedin.com/company/amigos-a-gyerekek%C3%A9rt/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const bind = () => {
+      if (!document.querySelector('#csapatok')) return false;
+      this.reveal();
+      return true;
+    };
+    if (!bind()) { const iv = setInterval(() => { if (bind()) clearInterval(iv); }, 100); }
+  }
+  reveal() {
+    if (this.reduced || !('IntersectionObserver' in window)) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach((el, i) => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
+      el.style.transition = `opacity 200ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 80}ms, transform 200ms cubic-bezier(0.2,0.7,0.2,1) ${(i % 4) * 80}ms`;
+    });
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1'; e.target.style.transform = '';
+      setTimeout(() => { e.target.style.transition = ''; }, 600);
+      io.unobserve(e.target);
+    }), { rootMargin: '0px 0px -10% 0px' });
+    els.forEach(el => io.observe(el));
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

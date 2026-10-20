@@ -92,6 +92,11 @@
   status = 200
 
 [[redirects]]
+  from = "/csapatunk"
+  to = "/Csapatunk.dc.html"
+  status = 200
+
+[[redirects]]
   from = "/tamogatoink"
   to = "/Tamogatoink.dc.html"
   status = 200
