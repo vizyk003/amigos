@@ -106,10 +106,11 @@ wipe in left to right the same way (no markup needed).
 
 ### Underlines (aláhúzások)
 `.am-underline--<shape>-<green|purple|white|yellow>` on one keyword of a
-heading (assets/brand.css). Shapes: the brandbook's hullam, lendulet,
+heading (assets/brand.css). Shapes: the brandbook's hullam,
 ugralas (short), kunkor, pup (long), plus five generated in the same brush
 style by `tools/amigos-underlines.py` — cikcakk, dupla, rugo (short) and
-hurok, szaggatott (long) — and `--sun` (mosoly). **Never the same shape
+hurok, szaggatott (long). The brandbook's lendület and the mosoly stroke are
+retired: a smile-shaped swoosh under green type reads as the Amazon logo. **Never the same shape
 twice on one page**; colour follows the surface (yellow/green on paper,
 white or yellow on pulcsizöld, green on pastels, purple on mályva). Only
 underline a word on the heading's last line — on a wrapped line the stroke

@@ -66,7 +66,7 @@ Egy oldalon minden forma csak egyszer szerepeljen. Az <span class="new">új</spa
     card.style.cursor = 'pointer';
     card.onclick = () => card.querySelectorAll('img').forEach(i => { i.src = i.src.split('?')[0] + '?r=' + Date.now(); });
   }
-  const shapes = [['hullam'],['lendulet'],['ugralas'],['kunkor'],['pup'],['cikcakk',1],['dupla',1],['rugo',1],['hurok',1],['szaggatott',1]];
+  const shapes = [['hullam'],['ugralas'],['kunkor'],['pup'],['cikcakk',1],['dupla',1],['rugo',1],['hurok',1],['szaggatott',1]];
   const ul = document.getElementById('ul');
   for (const [sh, isNew] of shapes) {
     const card = document.createElement('div'); card.className = 'card';

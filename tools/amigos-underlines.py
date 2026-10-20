@@ -1,7 +1,7 @@
 """Generate extra Amigos underline strokes in the brandbook's brush style:
 a filled stroke that swells in the middle and tapers at both ends, with a
 couple of dry-brush streaks cut out of it. Short strokes are 320 x 100
-(like hullám / lendület / ugrálás), long ones 1000 x 140 (like kunkor).
+(like hullám / ugrálás), long ones 1000 x 140 (like kunkor).
 
     python3 tools/amigos-underlines.py assets/underlines /tmp/ul-svg
 

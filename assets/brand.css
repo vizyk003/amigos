@@ -33,19 +33,15 @@
   pointer-events: none;
 }
 /* Stroke set (assets/underlines/amigos-alahuzas-<shape>-<colour>.png).
-   Short strokes (hullam, lendulet, ugralas) sit under ~⅓ of the word;
+   Short strokes (hullam, ugralas) sit under ~⅓ of the word;
    long ones (kunkor, pup) run the full word. Colour follows the
    surface: yellow or green on paper, white on the green field, green
-   on pale and pastel fields. */
-.am-underline--sun::after{ background-image: url('underlines/mosoly.png'); }
+   on pale and pastel fields. No smile-shaped strokes (lendület, mosoly):
+   under green type they read as the Amazon logo. */
 .am-underline--hullam-green::after{ background-image: url('underlines/amigos-alahuzas-hullam-green.png'); }
 .am-underline--hullam-purple::after{ background-image: url('underlines/amigos-alahuzas-hullam-purple.png'); }
 .am-underline--hullam-white::after{ background-image: url('underlines/amigos-alahuzas-hullam-white.png'); }
 .am-underline--hullam-yellow::after{ background-image: url('underlines/amigos-alahuzas-hullam-yellow.png'); }
-.am-underline--lendulet-green::after{ background-image: url('underlines/amigos-alahuzas-lendulet-green.png'); }
-.am-underline--lendulet-purple::after{ background-image: url('underlines/amigos-alahuzas-lendulet-purple.png'); }
-.am-underline--lendulet-white::after{ background-image: url('underlines/amigos-alahuzas-lendulet-white.png'); }
-.am-underline--lendulet-yellow::after{ background-image: url('underlines/amigos-alahuzas-lendulet-yellow.png'); }
 .am-underline--ugralas-green::after{ background-image: url('underlines/amigos-alahuzas-ugralas-green.png'); }
 .am-underline--ugralas-purple::after{ background-image: url('underlines/amigos-alahuzas-ugralas-purple.png'); }
 .am-underline--ugralas-white::after{ background-image: url('underlines/amigos-alahuzas-ugralas-white.png'); }
