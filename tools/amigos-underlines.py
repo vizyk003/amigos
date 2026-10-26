@@ -10,7 +10,7 @@ needs one .am-underline--<shape>-<colour> rule per colour (and the long
 shapes their width/aspect-ratio override)."""
 import math, os, subprocess, sys
 
-COLORS = {'green': '#00A649', 'purple': '#9C3268', 'white': '#FFFFFF', 'yellow': '#F6B700'}
+COLORS = {'green': '#437613', 'purple': '#9C3268', 'white': '#FFFFFF', 'yellow': '#F6B700'}
 
 def bez(p0, p1, p2, p3, n=60):
     out = []

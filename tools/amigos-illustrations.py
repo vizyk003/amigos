@@ -5,7 +5,7 @@ to PNG in the four set colours with rsvg-convert."""
 import math, random, subprocess, os, sys
 
 SW = 13            # stroke width on the 400px canvas
-COLORS = {'green': '#00A74A', 'white': '#FFFFFF', 'yellow': '#F2B400', 'ink': '#171C12'}
+COLORS = {'green': '#437613', 'white': '#FFFFFF', 'yellow': '#F2B400', 'ink': '#171C12'}
 
 def wobble(pts, amp=2.2, seed=0):
     """Offset a dense polyline along its normal by smooth low-frequency noise."""
